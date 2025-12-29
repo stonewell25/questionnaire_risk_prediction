@@ -702,10 +702,14 @@
         <h2>回答を送信しました</h2>
         <p>ご協力ありがとうございました！</p>
         <div class="download-buttons" style="margin-bottom: 24px;">
-          <button class="btn btn-primary" onclick="downloadCSV()">CSVでダウンロード</button>
+          <button class="btn btn-primary" id="btn-send-spreadsheet" onclick="sendToSpreadsheet()" style="background-color: #34a853; color: white;">
+            📊 Google Spreadsheetに送信
+          </button>
+          <button class="btn btn-secondary" onclick="downloadCSV()">CSVでダウンロード</button>
           <button class="btn btn-secondary" onclick="downloadJSON()">JSONでダウンロード</button>
           <button class="btn btn-secondary" onclick="downloadImagePaths()">画像パス一覧をダウンロード</button>
         </div>
+        <div id="spreadsheet-status" style="margin-top: 16px; padding: 12px; border-radius: 8px; display: none;"></div>
 
         <div style="margin-top: 8px; margin-bottom: 24px;">
           <p style="color: #5f6368; margin-bottom: 8px;">
@@ -757,7 +761,7 @@
       SIMPLIFY_THOUGHT: false,
       
       // 画像グループ分け設定
-      ENABLE_GROUPING: false,  // グループ分けを有効化するか
+      ENABLE_GROUPING: true,  // グループ分けを有効化するか
       GROUP_SIZE: 3,          // グループあたりの画像数
       
       // JSONファイルのパス
@@ -798,7 +802,12 @@
         '7': [
           'obs_20251227_042651_90f7ed19/rgb.jpg'
         ]
-      }
+      },
+      
+      // Google Spreadsheet連携設定
+      // Google Apps ScriptのデプロイURLを設定してください
+      // 設定方法: google_apps_script.gs を参照
+      SPREADSHEET_ENDPOINT: 'https://script.google.com/macros/s/AKfycbzW98z-PjOdpmv-ySBm7XDW6eOyKy6A8fVA2BgbcYi9gnYubPkO-lEhZafYBa8OB-CwXg/exec'  // 例: 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec'
     };
     
     // 対象のエージェントキー（すべてのエージェント）
@@ -1500,6 +1509,152 @@
       document.getElementById('progress-container').classList.add('hidden');
       document.getElementById('phase-validity').classList.add('hidden');
       document.getElementById('phase-complete').classList.remove('hidden');
+    }
+
+    // ============================================
+    // Google Spreadsheet送信
+    // ============================================
+    
+    async function sendToSpreadsheet() {
+      const endpoint = CONFIG.SPREADSHEET_ENDPOINT;
+      
+      if (!endpoint || endpoint.trim() === '') {
+        showSpreadsheetStatus('エラー: Google Spreadsheetのエンドポイントが設定されていません。CONFIG.SPREADSHEET_ENDPOINTを設定してください。', 'error');
+        return;
+      }
+      
+      const btn = document.getElementById('btn-send-spreadsheet');
+      const statusDiv = document.getElementById('spreadsheet-status');
+      
+      // ボタンを無効化
+      btn.disabled = true;
+      btn.textContent = '送信中...';
+      statusDiv.style.display = 'block';
+      statusDiv.style.backgroundColor = '#fff3cd';
+      statusDiv.style.color = '#856404';
+      statusDiv.textContent = 'Google Spreadsheetに送信中...';
+      
+      try {
+        // データをGoogle Apps Scriptが期待する形式に変換
+        const validityData = [];
+        for (const result of surveyData.validityResults) {
+          for (const [agentKey, assessment] of Object.entries(result.assessments)) {
+            if (assessment.agreeRating !== null || assessment.thoughtRating !== null) {
+              validityData.push({
+                imageId: result.imageId,
+                room: result.room,
+                agentId: agentKey,
+                judge: assessment.judge || '',
+                agreeRating: assessment.agreeRating || null,
+                thoughtRating: assessment.thoughtRating || null
+              });
+            }
+          }
+        }
+        
+        const payload = {
+          participant: {
+            name: surveyData.participant.name,
+            email: surveyData.participant.email || '',
+            startTime: surveyData.participant.startTime,
+            endTime: surveyData.participant.endTime
+          },
+          coverage: [], // Coverage評価は現在実装されていないため空配列
+          validity: validityData
+        };
+        
+        // デバッグ: 送信データをログに出力
+        console.log('送信するデータ:', payload);
+        console.log('Validityデータ件数:', validityData.length);
+        console.log('エンドポイント:', endpoint);
+        
+        // POSTリクエストを送信
+        // Google Apps ScriptはCORSをサポートしているため、通常のfetchを使用
+        let response;
+        try {
+          response = await fetch(endpoint, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(payload)
+          });
+        } catch (fetchError) {
+          // CORSエラーの場合、no-corsモードで再試行
+          console.warn('CORSエラーが発生しました。no-corsモードで再試行します。', fetchError);
+          console.log('送信データ:', JSON.stringify(payload));
+          
+          try {
+            await fetch(endpoint, {
+              method: 'POST',
+              mode: 'no-cors',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(payload)
+            });
+            // no-corsモードではレスポンスを取得できないため、少し待ってから成功とみなす
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            statusDiv.style.backgroundColor = '#fff3cd';
+            statusDiv.style.color = '#856404';
+            statusDiv.innerHTML = `⚠️ Google Spreadsheetに送信しました（no-corsモード）<br><small>送信データ: ${validityData.length}件のValidity評価<br>データは「Validity評価」シートに記録されているはずです。Spreadsheetで確認してください。<br>もしデータが記録されていない場合は、Google Apps Scriptのログを確認してください。</small>`;
+            btn.textContent = '⚠️ 送信完了（確認要）';
+          } catch (noCorsError) {
+            console.error('no-corsモードでもエラー:', noCorsError);
+            throw new Error(`送信に失敗しました: ${noCorsError.message}`);
+          }
+          return;
+        }
+        
+        // レスポンスを確認
+        console.log('レスポンスステータス:', response.status, response.statusText);
+        
+        if (response.ok) {
+          const result = await response.json();
+          console.log('レスポンスデータ:', result);
+          
+          if (result.success) {
+            // 成功メッセージを表示
+            statusDiv.style.backgroundColor = '#d4edda';
+            statusDiv.style.color = '#155724';
+            statusDiv.innerHTML = `✅ Google Spreadsheetに正常に送信されました！<br><small>参加者: ${result.participant || surveyData.participant.name}<br>Validity評価: ${result.validityCount || validityData.length}件<br>データは「Validity評価」シートに記録されています。</small>`;
+            btn.textContent = '✅ 送信完了';
+          } else {
+            throw new Error(result.error || '送信に失敗しました');
+          }
+        } else {
+          const errorText = await response.text();
+          console.error('エラーレスポンス:', errorText);
+          throw new Error(`HTTPエラー: ${response.status} - ${errorText}`);
+        }
+        
+      } catch (error) {
+        // エラーメッセージを表示
+        console.error('送信エラー詳細:', error);
+        statusDiv.style.backgroundColor = '#f8d7da';
+        statusDiv.style.color = '#721c24';
+        statusDiv.innerHTML = `❌ 送信エラー: ${error.message}<br><small>送信データ: ${validityData.length}件のValidity評価<br>エンドポイント: ${endpoint}<br><br>トラブルシューティング:<br>1. Google Apps Scriptのデプロイ設定を確認してください<br>2. ブラウザのコンソール（F12）でエラー詳細を確認してください<br>3. Google Apps Scriptの実行ログを確認してください<br>4. CSVまたはJSONでダウンロードして、手動でSpreadsheetにコピーしてください</small>`;
+        btn.disabled = false;
+        btn.textContent = '📊 Google Spreadsheetに送信';
+      }
+    }
+    
+    function showSpreadsheetStatus(message, type = 'info') {
+      const statusDiv = document.getElementById('spreadsheet-status');
+      statusDiv.style.display = 'block';
+      
+      if (type === 'error') {
+        statusDiv.style.backgroundColor = '#f8d7da';
+        statusDiv.style.color = '#721c24';
+      } else if (type === 'success') {
+        statusDiv.style.backgroundColor = '#d4edda';
+        statusDiv.style.color = '#155724';
+      } else {
+        statusDiv.style.backgroundColor = '#fff3cd';
+        statusDiv.style.color = '#856404';
+      }
+      
+      statusDiv.textContent = message;
     }
 
     // ============================================
