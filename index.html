@@ -695,7 +695,12 @@
       <!-- 動的に生成 -->
     </div>
 
-    <!-- Phase 2: 完了 -->
+    <!-- Phase 2: タスク計画評価 -->
+    <div id="phase-task-planning" class="hidden">
+      <!-- 動的に生成 -->
+    </div>
+
+    <!-- Phase 3: 完了 -->
     <div id="phase-complete" class="hidden">
       <div class="complete-card">
         <div class="complete-icon">✅</div>
@@ -768,6 +773,11 @@
       JSON_FILES: [
         './evaluation_dataset_Kitchen.json',
         './evaluation_dataset_LivingLab.json'
+      ],
+      // タスク計画JSONファイルのパス
+      TASK_PLANNING_FILES: [
+        './Kitchen_task_planning_20251229_161805.json',
+        './LivingLab_task_planning_20251229_162003.json'
       ],
       // 画像のベースパス（相対パスで指定、または絶対パス）
       IMAGE_BASE_PATHS: {
@@ -883,13 +893,17 @@
     let surveyData = {
       participant: { name: '', email: '', startTime: null, endTime: null },
       assignedGroup: null,  // 割り当てられたグループ番号（0始まり）
-      validityResults: []
+      validityResults: [],
+      taskPlanningResults: []  // タスク計画評価結果
     };
     let currentImageIndex = 0;
+    let currentTaskPlanningIndex = 0;  // タスク計画評価の現在のインデックス
+    let taskPlanningImageIds = [];  // タスク計画評価対象の画像IDリスト
     let imageIds = [];  // フィルタリング後の画像IDリスト（グループ分け後）
     let allImageIds = [];  // 全画像IDリスト（グループ分け前）
     let imagePaths = {};  // 各番号に対する画像パス群 { "0": ["path1", "path2", ...], ... }
     let imageBasePaths = {};  // 各番号のベースパス { "0": "Kitchen" or "LivingLab", ... }
+    let taskPlanningData = {};  // タスク計画データ { "Kitchen": { "0": {...}, ... }, "LivingLab": { "0": {...}, ... } }
     let skipValidationClickCount = 0;  // クリック回数カウンター（隠しコマンド用）
     let skipValidationEnabled = false;  // バリデーションスキップフラグ（隠しコマンド用）
 
@@ -899,18 +913,52 @@
     
     async function init() {
       try {
-        // 2つのJSONファイルを並列で読み込む
-        const [kitchenResponse, livinglabResponse] = await Promise.all([
+        // 2つのJSONファイルとタスク計画JSONファイルを並列で読み込む
+        const [kitchenResponse, livinglabResponse, kitchenTaskResponse, livinglabTaskResponse] = await Promise.all([
           fetch(CONFIG.JSON_FILES[0]),
-          fetch(CONFIG.JSON_FILES[1])
+          fetch(CONFIG.JSON_FILES[1]),
+          fetch(CONFIG.TASK_PLANNING_FILES[0]),
+          fetch(CONFIG.TASK_PLANNING_FILES[1])
         ]);
         
         if (!kitchenResponse.ok || !livinglabResponse.ok) {
           throw new Error(`HTTP error! Kitchen: ${kitchenResponse.status}, LivingLab: ${livinglabResponse.status}`);
         }
         
+        if (!kitchenTaskResponse.ok || !livinglabTaskResponse.ok) {
+          console.warn(`タスク計画JSONファイルの読み込みに失敗: Kitchen: ${kitchenTaskResponse.status}, LivingLab: ${livinglabTaskResponse.status}`);
+        }
+        
         const kitchenData = await kitchenResponse.json();
         const livinglabData = await livinglabResponse.json();
+        
+        // タスク計画データを読み込む
+        taskPlanningData = {
+          'Kitchen': {},
+          'LivingLab': {}
+        };
+        
+        if (kitchenTaskResponse.ok) {
+          const kitchenTaskData = await kitchenTaskResponse.json();
+          if (kitchenTaskData.task_planning && Array.isArray(kitchenTaskData.task_planning)) {
+            kitchenTaskData.task_planning.forEach(task => {
+              const predictionId = task.risk_prediction_id.toString();
+              taskPlanningData['Kitchen'][predictionId] = task;
+            });
+          }
+        }
+        
+        if (livinglabTaskResponse.ok) {
+          const livinglabTaskData = await livinglabTaskResponse.json();
+          if (livinglabTaskData.task_planning && Array.isArray(livinglabTaskData.task_planning)) {
+            livinglabTaskData.task_planning.forEach(task => {
+              const predictionId = task.risk_prediction_id.toString();
+              taskPlanningData['LivingLab'][predictionId] = task;
+            });
+          }
+        }
+        
+        console.log('タスク計画データ:', taskPlanningData);
         
         // データを統合（キーが重複しない前提、または接頭辞を付ける）
         riskData = {};
@@ -1180,7 +1228,8 @@
     
     function loadCurrentImage() {
       if (currentImageIndex >= imageIds.length) {
-        finishSurvey();
+        // リスク評価が完了したら、タスク計画評価フェーズに進む
+        startTaskPlanningPhase();
         return;
       }
 
@@ -1500,6 +1549,240 @@
     }
 
     // ============================================
+    // タスク計画評価
+    // ============================================
+    
+    function startTaskPlanningPhase() {
+      // タスク計画が存在する画像IDのみを抽出
+      taskPlanningImageIds = imageIds.filter(imageId => {
+        const basePath = imageBasePaths[imageId];
+        const predictionId = basePath === 'LivingLab' 
+          ? (parseInt(imageId) - Math.max(...Object.keys(riskData).filter(k => imageBasePaths[k] === 'Kitchen').map(k => parseInt(k) || 0)) - 1).toString()
+          : imageId;
+        return taskPlanningData[basePath] && taskPlanningData[basePath][predictionId];
+      });
+      
+      if (taskPlanningImageIds.length === 0) {
+        // タスク計画がない場合は完了ページへ
+        finishSurvey();
+        return;
+      }
+      
+      currentTaskPlanningIndex = 0;
+      document.getElementById('phase-validity').classList.add('hidden');
+      document.getElementById('phase-task-planning').classList.remove('hidden');
+      loadCurrentTaskPlanning();
+    }
+    
+    function loadCurrentTaskPlanning() {
+      if (currentTaskPlanningIndex >= taskPlanningImageIds.length) {
+        finishSurvey();
+        return;
+      }
+      
+      const imageId = taskPlanningImageIds[currentTaskPlanningIndex];
+      const basePath = imageBasePaths[imageId];
+      
+      // LivingLabの場合は元のprediction_idを計算
+      let predictionId = imageId;
+      if (basePath === 'LivingLab') {
+        const maxKitchenKey = Math.max(...Object.keys(riskData).filter(k => imageBasePaths[k] === 'Kitchen').map(k => parseInt(k) || 0));
+        predictionId = (parseInt(imageId) - maxKitchenKey - 1).toString();
+      }
+      
+      const taskPlan = taskPlanningData[basePath][predictionId];
+      if (!taskPlan) {
+        currentTaskPlanningIndex++;
+        loadCurrentTaskPlanning();
+        return;
+      }
+      
+      const container = document.getElementById('phase-task-planning');
+      
+      // プログレス更新
+      const progress = ((currentTaskPlanningIndex) / taskPlanningImageIds.length) * 100;
+      document.getElementById('progress-fill').style.width = `${progress}%`;
+      document.getElementById('progress-text').textContent = `タスク計画評価: ${currentTaskPlanningIndex + 1} / ${taskPlanningImageIds.length}`;
+      
+      // 画像を取得
+      const paths = imagePaths[imageId] || [];
+      const firstImagePath = paths.length > 0 ? paths[0] : null;
+      const imageSrc = firstImagePath 
+        ? `${CONFIG.IMAGE_BASE_PATHS[basePath]}${firstImagePath}`
+        : `https://via.placeholder.com/600x400?text=Image+${imageId}`;
+      
+      // HTMLを生成
+      let html = `
+        <div class="section-header">
+          <h2>タスク計画評価: 画像 ${imageId}</h2>
+          <p>${currentTaskPlanningIndex + 1} / ${taskPlanningImageIds.length} 枚目</p>
+        </div>
+        
+        <div class="card" style="margin-bottom: 24px;">
+          <div class="card-title">画像</div>
+          <img src="${imageSrc}" alt="画像 ${imageId}" style="max-width: 100%; border-radius: 8px; margin-top: 8px;">
+        </div>
+        
+        <div class="card" style="margin-bottom: 24px;">
+          <div class="card-title">リスク評価</div>
+          <div style="background: #f8f9fa; padding: 16px; border-radius: 8px; margin-top: 8px;">
+            <p><strong>リスク判断:</strong> ${getRiskLabel(taskPlan.updated_judge_01)}</p>
+            <p style="margin-top: 8px;"><strong>リスク理由:</strong></p>
+            <p style="margin-top: 4px; color: #5f6368;">${taskPlan.updated_reason_01 || ''}</p>
+          </div>
+        </div>
+        
+        <div class="card" style="margin-bottom: 24px;">
+          <div class="card-title">タスク計画</div>
+          <div style="background: #f8f9fa; padding: 16px; border-radius: 8px; margin-top: 8px;">
+            <p><strong>タスク:</strong></p>
+            <p style="margin-top: 4px; color: #5f6368;">${taskPlan.task || ''}</p>
+            ${taskPlan.action ? `
+              <p style="margin-top: 12px;"><strong>アクション:</strong></p>
+              <pre style="margin-top: 4px; background: white; padding: 12px; border-radius: 4px; overflow-x: auto; font-size: 13px;">${JSON.stringify(taskPlan.action, null, 2)}</pre>
+            ` : ''}
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-title">タスク計画の評価<span class="required">*</span></div>
+          
+          <div style="margin-top: 16px;">
+            <div class="card-title" style="font-size: 14px; margin-bottom: 12px;">1. タスク計画の妥当性</div>
+            <div class="rating-group" id="task-validity-group-${imageId}">
+              ${[5, 4, 3, 2, 1].map(value => `
+                <label class="radio-label">
+                  <input type="radio" name="task-validity-${imageId}" value="${value}" id="task-validity-${imageId}-${value}">
+                  <span>${value === 5 ? '非常に妥当' : value === 4 ? '概ね妥当' : value === 3 ? 'どちらともいえない' : value === 2 ? 'あまり妥当でない' : '全く妥当でない'}</span>
+                </label>
+              `).join('')}
+            </div>
+          </div>
+          
+          <div style="margin-top: 24px;">
+            <div class="card-title" style="font-size: 14px; margin-bottom: 12px;">2. タスク計画の実行可能性</div>
+            <div class="rating-group" id="task-feasibility-group-${imageId}">
+              ${[5, 4, 3, 2, 1].map(value => `
+                <label class="radio-label">
+                  <input type="radio" name="task-feasibility-${imageId}" value="${value}" id="task-feasibility-${imageId}-${value}">
+                  <span>${value === 5 ? '非常に実行可能' : value === 4 ? '概ね実行可能' : value === 3 ? 'どちらともいえない' : value === 2 ? 'あまり実行可能でない' : '全く実行不可能'}</span>
+                </label>
+              `).join('')}
+            </div>
+          </div>
+        </div>
+        
+        <div class="btn-group">
+          <button class="btn btn-secondary" onclick="prevTaskPlanning()" ${currentTaskPlanningIndex === 0 ? 'disabled' : ''}>前へ</button>
+          <button class="btn btn-primary" onclick="nextTaskPlanning()">${currentTaskPlanningIndex >= taskPlanningImageIds.length - 1 ? '完了' : '次へ'}</button>
+        </div>
+      `;
+      
+      container.innerHTML = html;
+      
+      // 既存の回答を復元
+      restoreTaskPlanningResponses(imageId);
+      
+      // スクロールを一番上に
+      window.scrollTo(0, 0);
+    }
+    
+    function saveTaskPlanningResponses(validate = true) {
+      const imageId = taskPlanningImageIds[currentTaskPlanningIndex];
+      const basePath = imageBasePaths[imageId];
+      
+      let predictionId = imageId;
+      if (basePath === 'LivingLab') {
+        const maxKitchenKey = Math.max(...Object.keys(riskData).filter(k => imageBasePaths[k] === 'Kitchen').map(k => parseInt(k) || 0));
+        predictionId = (parseInt(imageId) - maxKitchenKey - 1).toString();
+      }
+      
+      const taskPlan = taskPlanningData[basePath][predictionId];
+      if (!taskPlan) return true;
+      
+      const validityInput = document.querySelector(`input[name="task-validity-${imageId}"]:checked`);
+      const feasibilityInput = document.querySelector(`input[name="task-feasibility-${imageId}"]:checked`);
+      
+      if (validate) {
+        const unanswered = [];
+        if (!validityInput) {
+          unanswered.push({ type: 'validity', groupId: `task-validity-group-${imageId}` });
+        }
+        if (!feasibilityInput) {
+          unanswered.push({ type: 'feasibility', groupId: `task-feasibility-group-${imageId}` });
+        }
+        
+        if (unanswered.length > 0) {
+          unanswered.forEach(item => {
+            const group = document.getElementById(item.groupId);
+            if (group) {
+              group.classList.add('error');
+            }
+          });
+          
+          const firstError = unanswered[0];
+          const firstGroup = document.getElementById(firstError.groupId);
+          if (firstGroup) {
+            firstGroup.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+          
+          showUnansweredAlert(unanswered.length);
+          return false;
+        }
+      }
+      
+      // 既存の結果を探す
+      const existingIndex = surveyData.taskPlanningResults.findIndex(r => r.imageId === imageId);
+      const result = {
+        imageId: imageId,
+        room: basePath,
+        riskPredictionId: predictionId,
+        task: taskPlan.task,
+        action: taskPlan.action,
+        validityRating: validityInput ? parseInt(validityInput.value) : null,
+        feasibilityRating: feasibilityInput ? parseInt(feasibilityInput.value) : null
+      };
+      
+      if (existingIndex >= 0) {
+        surveyData.taskPlanningResults[existingIndex] = result;
+      } else {
+        surveyData.taskPlanningResults.push(result);
+      }
+      
+      return true;
+    }
+    
+    function restoreTaskPlanningResponses(imageId) {
+      const existingResult = surveyData.taskPlanningResults.find(r => r.imageId === imageId);
+      if (existingResult) {
+        if (existingResult.validityRating) {
+          const validityInput = document.getElementById(`task-validity-${imageId}-${existingResult.validityRating}`);
+          if (validityInput) validityInput.checked = true;
+        }
+        if (existingResult.feasibilityRating) {
+          const feasibilityInput = document.getElementById(`task-feasibility-${imageId}-${existingResult.feasibilityRating}`);
+          if (feasibilityInput) feasibilityInput.checked = true;
+        }
+      }
+    }
+    
+    function nextTaskPlanning() {
+      if (!saveTaskPlanningResponses()) {
+        return;
+      }
+      currentTaskPlanningIndex++;
+      loadCurrentTaskPlanning();
+    }
+    
+    function prevTaskPlanning() {
+      if (currentTaskPlanningIndex > 0) {
+        saveTaskPlanningResponses(false);
+        currentTaskPlanningIndex--;
+        loadCurrentTaskPlanning();
+      }
+    }
+
+    // ============================================
     // 完了
     // ============================================
     
@@ -1508,6 +1791,7 @@
       
       document.getElementById('progress-container').classList.add('hidden');
       document.getElementById('phase-validity').classList.add('hidden');
+      document.getElementById('phase-task-planning').classList.add('hidden');
       document.getElementById('phase-complete').classList.remove('hidden');
     }
 
@@ -1552,6 +1836,15 @@
           }
         }
         
+        // タスク計画評価データを変換
+        const taskPlanningData = surveyData.taskPlanningResults.map(result => ({
+          imageId: result.imageId,
+          room: result.room,
+          riskPredictionId: result.riskPredictionId,
+          validityRating: result.validityRating || null,
+          feasibilityRating: result.feasibilityRating || null
+        }));
+        
         const payload = {
           participant: {
             name: surveyData.participant.name,
@@ -1560,7 +1853,8 @@
             endTime: surveyData.participant.endTime
           },
           coverage: [], // Coverage評価は現在実装されていないため空配列
-          validity: validityData
+          validity: validityData,
+          taskPlanning: taskPlanningData
         };
         
         // デバッグ: 送信データをログに出力
@@ -1731,6 +2025,15 @@
           }
         }
         csv += '\n';
+      }
+      
+      // タスク計画評価セクション
+      if (surveyData.taskPlanningResults.length > 0) {
+        csv += '\n=== タスク計画評価 ===\n\n';
+        csv += '画像ID,部屋,リスク予測ID,タスク計画の妥当性,タスク計画の実行可能性\n';
+        for (const result of surveyData.taskPlanningResults) {
+          csv += `${result.imageId},${result.room},${result.riskPredictionId},${result.validityRating || ''},${result.feasibilityRating || ''}\n`;
+        }
       }
 
       const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });

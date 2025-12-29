@@ -1,0 +1,162 @@
+{
+  "task_planning": [
+    {
+      "risk_prediction_id": 0,
+      "state_instance_id": 0,
+      "state_category": "on fire",
+      "related_room": "Kitchen",
+      "related_landmarks": "コンロ",
+      "related_objects_01": "タオル",
+      "related_objects_01_id": 0,
+      "related_objects_02": "コンロ",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "IH/電気コンロの上にタオルが広範囲に敷かれており、誤って電源が入った場合、タオルが発火し火災や熱傷を引き起こす極めて高いリスクがある。ロボットは柔らかい布を確実に把持・除去する制約があるため、ユーザーに直ちに警告する必要がある。",
+      "priority": 0,
+      "task": "コンロの上にタオルが置かれており、発火の危険性が極めて高いため、ユーザーに対して緊急の音声警告を行い、直ちにタオルを取り除くよう促す。",
+      "action": {
+        "object_name": "ユーザー",
+        "action_name": "announce",
+        "statement": "【緊急警告】キッチンコンロの上にタオルが置かれています。発火の危険性がありますので、すぐにコンロからタオルを取り除いてください。"
+      }
+    },
+    {
+      "risk_prediction_id": 1,
+      "state_instance_id": 0,
+      "state_category": "stacked",
+      "related_room": "Kitchen",
+      "related_landmarks": "",
+      "related_objects_01": "皿",
+      "related_objects_01_id": 0,
+      "related_objects_02": "鍋",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "IHヒーター上に調理後の鍋が残されており、誤操作による再加熱や接触による熱傷・火災の潜在的リスクがある。また、カウンター上に不安定に積み重ねられた皿があり、落下・破損による怪我のリスクがある。",
+      "priority": 0,
+      "task": "カウンター上の不安定な皿を掴んで安全な場所に移動させ、落下・破損のリスクを解消する（tidy_up）。同時に、IHヒーター上の鍋の存在と潜在的な熱源リスクについてユーザーに音声で警告し、管理を促す（announce）。",
+      "action": {
+        "皿": "tidy_up",
+        "鍋": "announce",
+        "statement": "IHヒーターの上に調理後の鍋が置かれています。熱傷や誤操作にご注意ください。また、カウンターの皿が不安定ですので、落下防止のため、安全な場所に移動させます。"
+      }
+    },
+    {
+      "risk_prediction_id": 2,
+      "state_instance_id": 0,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "",
+      "related_objects_01": "IHヒーター周辺の鍋と布巾",
+      "related_objects_01_id": 0,
+      "related_objects_02": "液体の跡、横倒しのマグカップ",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "IHヒーター上の鍋の放置による熱傷リスク、熱源付近の布巾の放置による発火リスク、およびカウンター上の液体やマグカップによる滑り・転倒リスクが複合的に存在する。特に熱源周りの危険は緊急性が高い。",
+      "priority": 0,
+      "task": "IHヒーター上の鍋と熱源近くの布巾について、熱傷・発火のリスクを警告する。また、カウンター上の液体の跡を拭き取り、横倒しのマグカップを片付けることで、滑り・転倒のリスクを物理的に軽減する。",
+      "action": {
+        "カウンター上の液体の跡": "wipe",
+        "IHヒーター上の鍋": "announce",
+        "横倒しのマグカップ": "tidy_up",
+        "statement": "IHヒーターの上に鍋が放置されています。もし加熱された場合、熱傷を負うリスクがあります。また、熱源の近くに布巾があり発火の危険性がありますので、すぐに移動させてください。"
+      }
+    },
+    {
+      "risk_prediction_id": 3,
+      "state_instance_id": 0,
+      "state_category": "その他",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen Counter",
+      "related_objects_01": "布（ふきん）",
+      "related_objects_01_id": 0,
+      "related_objects_02": "",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "IHクッキングヒーターの加熱部または操作パネル付近に布（ふきん）が置かれている。もしヒーターが誤操作などにより起動した場合、布が焦げ付いたり発火したりするリスクがあり、火災につながる可能性がある。ロボットの制約（柔らかい布の把持不可）により物理的な除去が困難なため、ユーザーへの緊急警告が必要である。",
+      "priority": 0,
+      "task": "IHヒーター周辺の火災リスクを排除するため、ユーザーに布を直ちに除去するよう警告する。",
+      "action": {
+        "布（ふきん）": "announce",
+        "statement": "警告: IHクッキングヒーターの加熱部付近に布が残されています。誤って加熱された場合、火災の原因となります。直ちに布を取り除いてください。"
+      }
+    },
+    {
+      "risk_prediction_id": 4,
+      "state_instance_id": 0,
+      "state_category": "about to fall",
+      "related_room": "Kitchen",
+      "related_landmarks": "作業台またはテーブル",
+      "related_objects_01": "包丁",
+      "related_objects_01_id": 0,
+      "related_objects_02": "",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "作業台またはテーブルの端に包丁がむき出しの状態で放置されており、落下や接触による重篤な切り傷のリスクが極めて高いため、直ちに安全な場所へ移動させる必要がある。",
+      "priority": 0,
+      "task": "緊急重大なリスクを持つ包丁を安全に把持し、作業台の端から離れた、落下や接触の危険がない安全な場所（例えば、作業台の中央や専用の収納スペース）へ移動させる。",
+      "action": {
+        "包丁": "tidy_up"
+      }
+    },
+    {
+      "risk_prediction_id": 5,
+      "state_instance_id": 0,
+      "state_category": "その他",
+      "related_room": "Kitchen",
+      "related_landmarks": "テーブル",
+      "related_objects_01": "刃物（包丁）",
+      "related_objects_01_id": 0,
+      "related_objects_02": "こぼれた液体",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "テーブルの端に放置された刃物は重大な切創事故リスクがあり、即座の対応が必要である。また、広範囲にこぼれた液体は熱傷や床に垂れた場合の転倒のリスクを生じさせているため、複合的に緊急性が高い。",
+      "priority": 0,
+      "task": "緊急重大な切創事故リスクを最優先で排除するため、テーブルの端にある刃物（包丁）の柄を把持し安全な場所（例：シンクや包丁立て）へ移動させる。続いて、熱傷・転倒リスクを低減するために、テーブル上のこぼれた液体を拭き取り、横倒しになっているマグカップを片付ける。",
+      "action": {
+        "刃物（包丁）": "tidy_up",
+        "こぼれた液体": "wipe",
+        "マグカップ": "tidy_up"
+      }
+    },
+    {
+      "risk_prediction_id": 6,
+      "state_instance_id": 0,
+      "state_category": "その他",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen Counter",
+      "related_objects_01": "包丁",
+      "related_objects_01_id": 0,
+      "related_objects_02": "こぼれた液体",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "キッチンカウンターの上に鋭利な包丁が不用意に放置されており、切創事故の危険性が非常に高い。また、同時にこぼれた液体が放置されており、滑り転倒リスクもある。これら二つの緊急リスクを直ちに排除する必要がある。",
+      "priority": 0,
+      "task": "緊急対応として、カウンター上の鋭利な包丁を安全に把持し指定された収納場所へ移動させ、その後、放置されているこぼれた液体を拭き取り、二重のリスクを解消する。",
+      "action": {
+        "包丁": "tidy_up",
+        "こぼれた液体": "wipe"
+      }
+    },
+    {
+      "risk_prediction_id": 7,
+      "state_instance_id": 0,
+      "state_category": "wet",
+      "related_room": "Kitchen",
+      "related_landmarks": "",
+      "related_objects_01": "liquid",
+      "related_objects_01_id": 0,
+      "related_objects_02": "knife",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "テーブル上に大量の液体がこぼれており、近くの電化製品（電気ポット、コーヒーメーカー）へのショート・感電・火災リスクが非常に高いため。また、液体の熱傷リスクや、放置された刃物による切り傷リスクも伴う。",
+      "priority": 0,
+      "task": "テーブル上にこぼれた大量の液体を直ちに拭き取り（ショート・火災・熱傷リスクの低減）、次に放置されている刃物を挟み込んで安全な場所へ移動させる（切り傷リスクの低減）。作業完了後、ユーザーへ状況を報告する。",
+      "action": {
+        "liquid_spill_on_table": "wipe",
+        "knife_on_table": "tidy_up",
+        "user": "announce",
+        "statement": "キッチンテーブル上の液体を拭き取りました。電化製品への影響を防ぐため、確認をお願いします。また、放置されていた刃物を安全な場所に移動させました。"
+      }
+    }
+  ]
+}
