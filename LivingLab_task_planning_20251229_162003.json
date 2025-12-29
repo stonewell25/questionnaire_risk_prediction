@@ -1,0 +1,174 @@
+{
+  "task_planning": [
+    {
+      "risk_prediction_id": 0,
+      "state_instance_id": 0,
+      "state_category": "その他",
+      "related_room": "LivingLab",
+      "related_landmarks": "",
+      "related_objects_01": "電気ヒーター",
+      "related_objects_01_id": 0,
+      "related_objects_02": "衣類",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "動作中の電気ヒーターの非常に近くに衣類が垂れ下がっており、加熱による熱傷や発火のリスクが差し迫っている。衣類は柔らかく把持が困難なため、物理的な移動よりも、緊急でユーザーに警告し介入を促すことが最優先される。",
+      "priority": 0,
+      "task": "動作中の電気ヒーターと接触寸前の衣類による緊急の火災リスクを避けるため、ユーザーに対して即座の対応を求める緊急警告を発する。",
+      "action": {
+        "user": "announce",
+        "statement": "緊急警告！リビングラボの電気ヒーターの近くに衣類があります。すぐに火災が発生する可能性があります。ヒーターの電源を切るか、衣類を離してください。"
+      }
+    },
+    {
+      "risk_prediction_id": 1,
+      "state_instance_id": 0,
+      "state_category": "cluttered",
+      "related_room": "LivingLab",
+      "related_landmarks": "",
+      "related_objects_01": "ケーブル",
+      "related_objects_01_id": 0,
+      "related_objects_02": "掃除機",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "床面に電源ケーブルが多数散乱しており、さらに小型掃除機が歩行動線上に放置されているため、つまずき転倒する緊急性が極めて高い。",
+      "priority": 0,
+      "task": "緊急重大な転倒リスクを軽減するため、ロボットが把持できない散乱したケーブルについてはユーザーに警告(announce)する。また、歩行動線上の障害物である小型掃除機を、軽く押す操作(push)によって動線外へ移動させる。",
+      "action": {
+        "掃除機": "push",
+        "ケーブル": "announce",
+        "statement": "リビングラボの床にケーブルが散乱しており、転倒の危険があります。また、歩行経路上の掃除機を動線外へ移動させました。速やかに床面のケーブルを片付けてください。"
+      }
+    },
+    {
+      "risk_prediction_id": 2,
+      "state_instance_id": 0,
+      "state_category": "cluttered",
+      "related_room": "LivingLab",
+      "related_landmarks": "",
+      "related_objects_01": "掃除機本体",
+      "related_objects_01_id": 0,
+      "related_objects_02": "電源ケーブル",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "床上に掃除機本体、ホース、及び多数の電源ケーブルや延長コードが広範囲に散乱しており、特にホースやケーブルはロボットにとって把持が極めて困難な紐状・複雑な形状である。これは歩行者がすぐにつまずき、転倒する直接的な原因となり、重大な怪我につながる可能性が非常に高いため、直ちに人の介入が必要である。",
+      "priority": 0,
+      "task": "ロボットによる物理的な片付けが困難な紐状の散乱物（ホース、ケーブル）による緊急重大な転倒リスクが存在するため、ユーザーに対して直ちに危険を音声で警告し、手動での片付けを促す。",
+      "action": {
+        "user": "announce",
+        "statement": "緊急警告：リビングの床に掃除機本体と電源ケーブル、ホースが広範囲に散乱しており、重大な転倒事故につながる可能性が非常に高いです。直ちに床上の散乱物を片付けてください。"
+      }
+    },
+    {
+      "risk_prediction_id": 3,
+      "state_instance_id": 0,
+      "state_category": "ajar",
+      "related_room": "LivingLab",
+      "related_landmarks": "洗面台",
+      "related_objects_01": "収納扉",
+      "related_objects_01_id": 0,
+      "related_objects_02": "引き出し",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "洗面台下の収納扉（右側）と引き出し（左側）が両方開いており、洗面台のような狭い空間での転倒リスクが非常に高い。利用者が足や膝をぶつけたり、つまずいて転倒したりする直接的な原因となるため、重大事故を防ぐため直ちに物理的な介入が必要である。",
+      "priority": 0,
+      "task": "緊急の転倒リスクを排除するため、開いた状態になっている洗面台下の収納扉と引き出しをロボットアームを用いて押して閉める。",
+      "action": {
+        "収納扉": "push",
+        "引き出し": "push"
+      }
+    },
+    {
+      "risk_prediction_id": 4,
+      "state_instance_id": 0,
+      "state_category": "ajar",
+      "related_room": "LivingLab",
+      "related_landmarks": "洗面台",
+      "related_objects_01": "三脚",
+      "related_objects_01_id": 0,
+      "related_objects_02": "収納扉/引き出し",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "洗面台下の収納扉および引き出しが開いたままであり、ユーザーが体をぶつけたりつまずいたりするリスクがある。また、床にはつまずき転倒のリスクがある三脚や紙袋が放置されている。ロボットは把持可能な三脚を片付け、その他については警告を行う。",
+      "priority": 0,
+      "task": "床上のつまずきリスクを軽減するため、把持可能な障害物である三脚を掴んで安全な場所へ移動させる。また、開いた状態の収納部分と、把持困難な障害物（紙袋など）についてユーザーに警告し、対応を促す。",
+      "action": {
+        "三脚": "tidy_up",
+        "周辺環境": "announce",
+        "statement": "洗面台下の収納扉と引き出しが開いたままです。また、床に紙袋が残っており、転倒リスクがあります。衝突・転倒を防ぐため、収納を閉め、紙袋を片付けてください。"
+      }
+    },
+    {
+      "risk_prediction_id": 5,
+      "state_instance_id": 0,
+      "state_category": "その他",
+      "related_room": "LivingLab",
+      "related_landmarks": "",
+      "related_objects_01": "電気ヒーター",
+      "related_objects_01_id": 0,
+      "related_objects_02": "衣類",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "稼働中の電気ヒーター（赤熱状態）と可燃性の衣類が極端に近接しており、接触または放射熱による発火で火災に至る可能性が非常に高いため、直ちに介入が必要である。ロボットによる衣類の物理的な移動は制約上困難であるため、最速でユーザーに介入を促す必要がある。",
+      "priority": 0,
+      "task": "火災につながる緊急重大なリスクが存在するため、直ちにユーザーに状況を音声で知らせ、危険な配置にある衣類を移動させるか、ヒーターの電源を切るように警告する。",
+      "action": {
+        "電気ヒーター": "announce",
+        "statement": "【緊急警告】稼働中の電気ヒーターに衣類が異常に接近しています！火災の危険がありますので、直ちに衣類をヒーターから遠ざけるか、電源を切ってください。"
+      }
+    },
+    {
+      "risk_prediction_id": 6,
+      "state_instance_id": 0,
+      "state_category": "cluttered",
+      "related_room": "LivingLab",
+      "related_landmarks": "デスク",
+      "related_objects_01": "ハサミ",
+      "related_objects_01_id": 0,
+      "related_objects_02": "",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "デスクの端に刃先が開いたハサミが放置されており、物を取ろうとした際などに手が触れると、切り傷を負う可能性があり、重大な事故につながりうる潜在的なリスクがある。",
+      "priority": 0,
+      "task": "デスクの端にあり、刃先が開いているハサミを把持し、ユーザーが安全に使用できる引き出しや収納ケースなど指定された安全な場所へ移動させて片付ける。",
+      "action": {
+        "ハサミ": "tidy_up"
+      }
+    },
+    {
+      "risk_prediction_id": 7,
+      "state_instance_id": 0,
+      "state_category": "about to fall",
+      "related_room": "LivingLab",
+      "related_landmarks": "デスク",
+      "related_objects_01": "ハサミ",
+      "related_objects_01_id": 0,
+      "related_objects_02": "",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "デスクの端近くに置かれたハサミ（鋭利な物体）は、誤って手が触れた際に落下しやすく、床に落ちた場合は足元に重大な怪我を負わせるリスクが高い。この潜在的な重大リスクを物理的に排除する必要がある。",
+      "priority": 0,
+      "task": "ユーザーが怪我をするリスクを排除するため、デスクの端近くにあるハサミを挟み込み式グリッパーで慎重に掴み、指定された安全な収納場所（例: 引き出しや収納ボックス）へ移動させる。",
+      "action": {
+        "ハサミ": "tidy_up"
+      }
+    },
+    {
+      "risk_prediction_id": 8,
+      "state_instance_id": 0,
+      "state_category": "cluttered",
+      "related_room": "LivingLab",
+      "related_landmarks": "デスク",
+      "related_objects_01": "ハサミ",
+      "related_objects_01_id": 0,
+      "related_objects_02": "",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "ハサミ（鋭利な物体）がデスクの端に近い位置に置かれており、作業中や離着席時に誤って接触したり、落下させたりすることで、切り傷などの怪我をする潜在的なリスクがある。ロボットはハサミを把持し、安全な場所へ移動させることでリスクを軽減できる。",
+      "priority": 0,
+      "task": "鋭利な物体であるハサミがデスクの端にあり、落下・接触による怪我の危険があるため、ロボットはハサミを把持し、デスクの中央など、より安全な場所へ移動させる。",
+      "action": {
+        "ハサミ": "tidy_up"
+      }
+    }
+  ]
+}

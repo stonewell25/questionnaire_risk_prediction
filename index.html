@@ -1237,6 +1237,7 @@
     function loadCurrentImage() {
       if (currentImageIndex >= imageIds.length) {
         // リスク評価が完了したら、タスク計画評価フェーズに進む
+        console.log(`リスク評価完了: ${currentImageIndex} / ${imageIds.length} 枚評価済み`);
         startTaskPlanningPhase();
         return;
       }
@@ -1561,6 +1562,11 @@
     // ============================================
     
     function startTaskPlanningPhase() {
+      console.log('=== タスク計画評価フェーズ開始 ===');
+      console.log('タスク計画データ:', taskPlanningData);
+      console.log('評価対象画像ID:', imageIds);
+      console.log('画像ベースパス:', imageBasePaths);
+      
       // タスク計画が存在する画像IDのみを抽出
       taskPlanningImageIds = imageIds.filter(imageId => {
         const basePath = imageBasePaths[imageId];
@@ -1570,15 +1576,21 @@
           const maxKitchenKey = Math.max(...Object.keys(riskData).filter(k => imageBasePaths[k] === 'Kitchen').map(k => parseInt(k) || 0));
           predictionId = (parseInt(imageId) - maxKitchenKey - 1).toString();
         }
-        return taskPlanningData[basePath] && taskPlanningData[basePath][predictionId];
+        const hasTaskPlan = taskPlanningData[basePath] && taskPlanningData[basePath][predictionId];
+        console.log(`画像ID ${imageId} (${basePath}, predictionId: ${predictionId}): タスク計画${hasTaskPlan ? 'あり' : 'なし'}`);
+        return hasTaskPlan;
       });
+      
+      console.log('タスク計画評価対象画像ID:', taskPlanningImageIds);
       
       if (taskPlanningImageIds.length === 0) {
         // タスク計画がない場合は完了ページへ
+        console.log('タスク計画が存在しないため、完了ページへ遷移します');
         finishSurvey();
         return;
       }
       
+      console.log(`タスク計画評価フェーズに遷移します（${taskPlanningImageIds.length}枚の画像）`);
       currentTaskPlanningIndex = 0;
       document.getElementById('phase-validity').classList.add('hidden');
       document.getElementById('phase-task-planning').classList.remove('hidden');
