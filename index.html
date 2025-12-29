@@ -528,8 +528,17 @@
       <div class="card">
         <div class="card-title">このアンケートで行うこと</div>
         <p style="font-size: 14px; color: #5f6368; margin-bottom: 8px;">
+          このアンケートは、<strong>2つのステップ</strong>で構成されています。
+        </p>
+        <p style="font-size: 14px; color: #5f6368; margin-bottom: 8px; margin-top: 12px;">
+          <strong>ステップ1: リスク評価の評価</strong><br>
           ・画像を1枚ずつ見ながら、<strong>複数のAIエージェント</strong>が生成した「リスクの説明文」を読みます。<br>
           ・それぞれの説明について、<strong>直感的納得感</strong>と<strong>根拠の妥当性・多角性</strong>の2つを、5段階で評価していただきます。
+        </p>
+        <p style="font-size: 14px; color: #5f6368; margin-bottom: 8px; margin-top: 12px;">
+          <strong>ステップ2: タスク計画の評価</strong><br>
+          ・リスク評価の後、そのリスクに対してAIが提案した「対処方法（タスク計画）」を確認していただきます。<br>
+          ・タスク計画について、<strong>妥当性（適切かどうか）</strong>と<strong>実行可能性（実際に実行できるかどうか）</strong>の2つを、5段階で評価していただきます。
         </p>
         <p style="font-size: 13px; color: #5f6368; margin-top: 8px;">
           ※ 説明文の中には「フィードバックを受けて〜」「前回の評価を維持する」など、<br>
@@ -670,7 +679,11 @@
       <div class="header-card">
         <h1>リスク予測評価アンケート</h1>
         <p>家庭内事故リスク予測システムの評価にご協力ください。<br>
-        各画像について、複数のAIエージェントによるリスク評価を読み、<strong>直感的納得感</strong>と<strong>根拠の妥当性・多角性</strong>を5段階で評価してください。</p>
+        このアンケートでは、<strong>2つのステップ</strong>で評価をお願いします。</p>
+        <p style="margin-top: 8px;">
+          <strong>ステップ1:</strong> 各画像について、複数のAIエージェントによるリスク評価を読み、<strong>直感的納得感</strong>と<strong>根拠の妥当性・多角性</strong>を5段階で評価してください。<br>
+          <strong>ステップ2:</strong> リスク評価の後、AIが提案した対処方法（タスク計画）について、<strong>妥当性</strong>と<strong>実行可能性</strong>を5段階で評価してください。
+        </p>
         <p class="required-note">* は必須項目です</p>
       </div>
 
@@ -1604,7 +1617,19 @@
       }
       
       const imageId = taskPlanningImageIds[currentTaskPlanningIndex];
+      const imageData = riskData[imageId];
       const basePath = imageBasePaths[imageId];
+      const container = document.getElementById('phase-task-planning');
+      
+      // プログレス更新
+      const progress = ((currentTaskPlanningIndex) / taskPlanningImageIds.length) * 100;
+      document.getElementById('progress-fill').style.width = `${progress}%`;
+      let progressText = `タスク計画評価: ${currentTaskPlanningIndex + 1} / ${taskPlanningImageIds.length}`;
+      if (CONFIG.ENABLE_GROUPING && surveyData.assignedGroup !== null) {
+        const totalGroups = Math.ceil(allImageIds.length / CONFIG.GROUP_SIZE);
+        progressText = `グループ${surveyData.assignedGroup + 1}: ${progressText}`;
+      }
+      document.getElementById('progress-text').textContent = progressText;
       
       // LivingLabの場合は元のprediction_idを計算
       let predictionId = imageId;
@@ -1620,81 +1645,106 @@
         return;
       }
       
-      const container = document.getElementById('phase-task-planning');
+      // 表示するエージェントを取得（リスク評価と同じエージェント）
+      const agentsToDisplay = getAgentsToDisplay(imageId);
       
-      // プログレス更新
-      const progress = ((currentTaskPlanningIndex) / taskPlanningImageIds.length) * 100;
-      document.getElementById('progress-fill').style.width = `${progress}%`;
-      document.getElementById('progress-text').textContent = `タスク計画評価: ${currentTaskPlanningIndex + 1} / ${taskPlanningImageIds.length}`;
+      // グループ情報を表示
+      let groupInfo = '';
+      if (CONFIG.ENABLE_GROUPING && surveyData.assignedGroup !== null) {
+        const totalGroups = Math.ceil(allImageIds.length / CONFIG.GROUP_SIZE);
+        groupInfo = `<p style="font-size: 12px; opacity: 0.8; margin-top: 4px;">グループ${surveyData.assignedGroup + 1}/${totalGroups}（全${allImageIds.length}枚中${taskPlanningImageIds.length}枚を評価）</p>`;
+      }
       
-      // 画像を取得
+      // 画像パスを取得
       const paths = imagePaths[imageId] || [];
       const firstImagePath = paths.length > 0 ? paths[0] : null;
       const imageSrc = firstImagePath 
         ? `${CONFIG.IMAGE_BASE_PATHS[basePath]}${firstImagePath}`
         : `https://via.placeholder.com/600x400?text=Image+${imageId}`;
+      const imageLabel = `${basePath} - 画像 ${imageId}${paths.length > 1 ? ` (${paths.length}枚の画像から1枚目を表示)` : ''}`;
       
       // HTMLを生成
       let html = `
         <div class="section-header">
-          <h2>タスク計画評価: 画像 ${imageId}</h2>
+          <h2>画像 ${imageId} のタスク計画評価</h2>
           <p>${currentTaskPlanningIndex + 1} / ${taskPlanningImageIds.length} 枚目</p>
+          ${groupInfo}
         </div>
-        
-        <div class="card" style="margin-bottom: 24px;">
-          <div class="card-title">画像</div>
-          <img src="${imageSrc}" alt="画像 ${imageId}" style="max-width: 100%; border-radius: 8px; margin-top: 8px;">
+
+        <div class="image-section">
+          <img src="${imageSrc}" alt="画像 ${imageId}" onerror="this.src='https://via.placeholder.com/600x400?text=Image+${imageId}'">
+          <div class="image-label">${imageLabel}</div>
+          ${paths.length > 1 ? `<div style="font-size: 12px; color: #5f6368; margin-top: 4px;">この画像IDには${paths.length}枚の画像があります（1枚目を表示）</div>` : ''}
         </div>
-        
-        <div class="card" style="margin-bottom: 24px;">
-          <div class="card-title">リスク評価</div>
-          <div style="background: #f8f9fa; padding: 16px; border-radius: 8px; margin-top: 8px;">
-            <p><strong>リスク判断:</strong> ${getRiskLabel(taskPlan.updated_judge_01 || taskPlan.risk_judge || '')}</p>
-            <p style="margin-top: 8px;"><strong>リスク理由:</strong></p>
-            <p style="margin-top: 4px; color: #5f6368;">${taskPlan.updated_reason_01 || taskPlan.risk_reason || ''}</p>
-          </div>
-        </div>
-        
-        <div class="card" style="margin-bottom: 24px;">
-          <div class="card-title">タスク計画</div>
-          <div style="background: #f8f9fa; padding: 16px; border-radius: 8px; margin-top: 8px;">
-            <p><strong>タスク:</strong></p>
-            <p style="margin-top: 4px; color: #5f6368;">${taskPlan.task || ''}</p>
-            ${taskPlan.action ? `
-              <p style="margin-top: 12px;"><strong>アクション:</strong></p>
-              <pre style="margin-top: 4px; background: white; padding: 12px; border-radius: 4px; overflow-x: auto; font-size: 13px; white-space: pre-wrap;">${JSON.stringify(taskPlan.action, null, 2)}</pre>
-            ` : ''}
-          </div>
-        </div>
-        
-        <div class="card">
-          <div class="card-title">タスク計画の評価<span class="required">*</span></div>
-          
-          <div style="margin-top: 16px;">
-            <div class="card-title" style="font-size: 14px; margin-bottom: 12px;">1. タスク計画の妥当性</div>
-            <div class="rating-group" id="task-validity-group-${imageId}">
-              ${[5, 4, 3, 2, 1].map(value => `
-                <label class="radio-label">
-                  <input type="radio" name="task-validity-${imageId}" value="${value}" id="task-validity-${imageId}-${value}">
-                  <span>${value === 5 ? '非常に妥当' : value === 4 ? '概ね妥当' : value === 3 ? 'どちらともいえない' : value === 2 ? 'あまり妥当でない' : '全く妥当でない'}</span>
-                </label>
-              `).join('')}
+      `;
+
+      // 各エージェントごとのタスク計画評価カードを生成
+      for (const agentKey of agentsToDisplay) {
+        const agentData = imageData[agentKey];
+        if (!agentData) continue;
+
+        // リスク理由と判断を取得
+        const reason = agentData.updated_reason_01 || agentData.risk_reason;
+        const judge = agentData.updated_judge_01 || agentData.risk_judge;
+
+        if (!reason) continue;
+
+        const displayName = AGENT_DISPLAY_NAMES[agentKey] || agentKey;
+        const badgeClass = getBadgeClass(judge);
+
+        html += `
+          <div class="agent-card">
+            <div class="agent-header">
+              <span class="agent-badge">${displayName}</span>
+              <span class="risk-badge ${badgeClass}">${getRiskLabel(judge)}</span>
+            </div>
+            <div class="agent-reason">${reason}</div>
+            
+            <div style="background: #f8f9fa; padding: 16px; border-radius: 8px; margin-top: 16px;">
+              <p style="font-weight: 500; margin-bottom: 8px;"><strong>タスク計画:</strong></p>
+              <p style="margin-bottom: 12px; color: #5f6368;">${taskPlan.task || ''}</p>
+              ${taskPlan.action ? `
+                <p style="font-weight: 500; margin-bottom: 8px;"><strong>アクション:</strong></p>
+                <pre style="background: white; padding: 12px; border-radius: 4px; overflow-x: auto; font-size: 13px; white-space: pre-wrap; margin-bottom: 0;">${JSON.stringify(taskPlan.action, null, 2)}</pre>
+              ` : ''}
+            </div>
+            
+            <div class="rating-group" id="task-validity-group-${imageId}-${agentKey}">
+              <div class="rating-label">
+                1. タスク計画の妥当性<span class="required">*</span>
+              </div>
+              <p style="font-size: 12px; color: #5f6368; margin-bottom: 8px;">このタスク計画は、リスクに対して適切な対処方法ですか？</p>
+              <div class="rating-options">
+                ${[5, 4, 3, 2, 1].map(value => `
+                  <div class="rating-option">
+                    <input type="radio" name="task-validity-${imageId}-${agentKey}" id="task-validity-${imageId}-${agentKey}-${value}" value="${value}" required onchange="clearError(this)">
+                    <label for="task-validity-${imageId}-${agentKey}-${value}">${value === 5 ? '非常に妥当' : value === 4 ? '概ね妥当' : value === 3 ? 'どちらともいえない' : value === 2 ? 'あまり妥当でない' : '全く妥当でない'}</label>
+                  </div>
+                `).join('')}
+              </div>
+              <div class="error-message">この質問に回答してください</div>
+            </div>
+
+            <div class="rating-group" id="task-feasibility-group-${imageId}-${agentKey}">
+              <div class="rating-label">
+                2. タスク計画の実行可能性<span class="required">*</span>
+              </div>
+              <p style="font-size: 12px; color: #5f6368; margin-bottom: 8px;">このタスク計画は、実際に実行可能ですか？</p>
+              <div class="rating-options">
+                ${[5, 4, 3, 2, 1].map(value => `
+                  <div class="rating-option">
+                    <input type="radio" name="task-feasibility-${imageId}-${agentKey}" id="task-feasibility-${imageId}-${agentKey}-${value}" value="${value}" required onchange="clearError(this)">
+                    <label for="task-feasibility-${imageId}-${agentKey}-${value}">${value === 5 ? '非常に実行可能' : value === 4 ? '概ね実行可能' : value === 3 ? 'どちらともいえない' : value === 2 ? 'あまり実行可能でない' : '全く実行不可能'}</label>
+                  </div>
+                `).join('')}
+              </div>
+              <div class="error-message">この質問に回答してください</div>
             </div>
           </div>
-          
-          <div style="margin-top: 24px;">
-            <div class="card-title" style="font-size: 14px; margin-bottom: 12px;">2. タスク計画の実行可能性</div>
-            <div class="rating-group" id="task-feasibility-group-${imageId}">
-              ${[5, 4, 3, 2, 1].map(value => `
-                <label class="radio-label">
-                  <input type="radio" name="task-feasibility-${imageId}" value="${value}" id="task-feasibility-${imageId}-${value}">
-                  <span>${value === 5 ? '非常に実行可能' : value === 4 ? '概ね実行可能' : value === 3 ? 'どちらともいえない' : value === 2 ? 'あまり実行可能でない' : '全く実行不可能'}</span>
-                </label>
-              `).join('')}
-            </div>
-          </div>
-        </div>
-        
+        `;
+      }
+      
+      html += `
         <div class="btn-group">
           <button class="btn btn-secondary" onclick="prevTaskPlanning()" ${currentTaskPlanningIndex === 0 ? 'disabled' : ''}>前へ</button>
           <button class="btn btn-primary" onclick="nextTaskPlanning()">${currentTaskPlanningIndex >= taskPlanningImageIds.length - 1 ? '完了' : '次へ'}</button>
@@ -1712,6 +1762,7 @@
     
     function saveTaskPlanningResponses(validate = true) {
       const imageId = taskPlanningImageIds[currentTaskPlanningIndex];
+      const imageData = riskData[imageId];
       const basePath = imageBasePaths[imageId];
       
       let predictionId = imageId;
@@ -1723,35 +1774,62 @@
       const taskPlan = taskPlanningData[basePath][predictionId];
       if (!taskPlan) return true;
       
-      const validityInput = document.querySelector(`input[name="task-validity-${imageId}"]:checked`);
-      const feasibilityInput = document.querySelector(`input[name="task-feasibility-${imageId}"]:checked`);
+      // 表示されているエージェントのみをチェック
+      const agentsToDisplay = getAgentsToDisplay(imageId);
+      const assessments = {};
+      const unanswered = [];
       
-      if (validate) {
-        const unanswered = [];
-        if (!validityInput) {
-          unanswered.push({ type: 'validity', groupId: `task-validity-group-${imageId}` });
-        }
-        if (!feasibilityInput) {
-          unanswered.push({ type: 'feasibility', groupId: `task-feasibility-group-${imageId}` });
+      // まず全てのエラー表示をクリア
+      document.querySelectorAll('.rating-group.error').forEach(el => el.classList.remove('error'));
+      
+      for (const agentKey of agentsToDisplay) {
+        const agentData = imageData[agentKey];
+        if (!agentData) continue;
+        
+        const reason = agentData.updated_reason_01 || agentData.risk_reason;
+        if (!reason) continue;
+        
+        const validityInput = document.querySelector(`input[name="task-validity-${imageId}-${agentKey}"]:checked`);
+        const feasibilityInput = document.querySelector(`input[name="task-feasibility-${imageId}-${agentKey}"]:checked`);
+        
+        if (validate) {
+          if (!validityInput) {
+            unanswered.push({ type: 'validity', agentKey, displayName: AGENT_DISPLAY_NAMES[agentKey] });
+          }
+          if (!feasibilityInput) {
+            unanswered.push({ type: 'feasibility', agentKey, displayName: AGENT_DISPLAY_NAMES[agentKey] });
+          }
         }
         
-        if (unanswered.length > 0) {
-          unanswered.forEach(item => {
-            const group = document.getElementById(item.groupId);
-            if (group) {
-              group.classList.add('error');
-            }
-          });
-          
-          const firstError = unanswered[0];
-          const firstGroup = document.getElementById(firstError.groupId);
-          if (firstGroup) {
-            firstGroup.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        assessments[agentKey] = {
+          displayName: AGENT_DISPLAY_NAMES[agentKey] || agentKey,
+          validityRating: validityInput ? parseInt(validityInput.value) : null,
+          feasibilityRating: feasibilityInput ? parseInt(feasibilityInput.value) : null
+        };
+      }
+      
+      // 未回答がある場合
+      if (validate && unanswered.length > 0) {
+        // エラー表示
+        unanswered.forEach(item => {
+          const groupId = `task-${item.type}-group-${imageId}-${item.agentKey}`;
+          const group = document.getElementById(groupId);
+          if (group) {
+            group.classList.add('error');
           }
-          
-          showUnansweredAlert(unanswered.length);
-          return false;
+        });
+        
+        // 最初の未回答にスクロール
+        const firstError = unanswered[0];
+        const firstGroupId = `task-${firstError.type}-group-${imageId}-${firstError.agentKey}`;
+        const firstGroup = document.getElementById(firstGroupId);
+        if (firstGroup) {
+          firstGroup.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
+        
+        // アラート表示
+        showUnansweredAlert(unanswered.length);
+        return false;
       }
       
       // 既存の結果を探す
@@ -1762,8 +1840,7 @@
         riskPredictionId: predictionId,
         task: taskPlan.task,
         action: taskPlan.action,
-        validityRating: validityInput ? parseInt(validityInput.value) : null,
-        feasibilityRating: feasibilityInput ? parseInt(feasibilityInput.value) : null
+        assessments: assessments
       };
       
       if (existingIndex >= 0) {
@@ -1777,14 +1854,17 @@
     
     function restoreTaskPlanningResponses(imageId) {
       const existingResult = surveyData.taskPlanningResults.find(r => r.imageId === imageId);
-      if (existingResult) {
-        if (existingResult.validityRating) {
-          const validityInput = document.getElementById(`task-validity-${imageId}-${existingResult.validityRating}`);
-          if (validityInput) validityInput.checked = true;
-        }
-        if (existingResult.feasibilityRating) {
-          const feasibilityInput = document.getElementById(`task-feasibility-${imageId}-${existingResult.feasibilityRating}`);
-          if (feasibilityInput) feasibilityInput.checked = true;
+      
+      if (existingResult && existingResult.assessments) {
+        for (const [agentKey, assessment] of Object.entries(existingResult.assessments)) {
+          if (assessment.validityRating) {
+            const validityInput = document.getElementById(`task-validity-${imageId}-${agentKey}-${assessment.validityRating}`);
+            if (validityInput) validityInput.checked = true;
+          }
+          if (assessment.feasibilityRating) {
+            const feasibilityInput = document.getElementById(`task-feasibility-${imageId}-${agentKey}-${assessment.feasibilityRating}`);
+            if (feasibilityInput) feasibilityInput.checked = true;
+          }
         }
       }
     }
@@ -1859,14 +1939,22 @@
           }
         }
         
-        // タスク計画評価データを変換
-        const taskPlanningDataForSpreadsheet = surveyData.taskPlanningResults.map(result => ({
-          imageId: result.imageId,
-          room: result.room,
-          riskPredictionId: result.riskPredictionId,
-          validityRating: result.validityRating || null,
-          feasibilityRating: result.feasibilityRating || null
-        }));
+        // タスク計画評価データを変換（エージェントごと）
+        const taskPlanningDataForSpreadsheet = [];
+        for (const result of surveyData.taskPlanningResults) {
+          if (result.assessments) {
+            for (const [agentKey, assessment] of Object.entries(result.assessments)) {
+              taskPlanningDataForSpreadsheet.push({
+                imageId: result.imageId,
+                room: result.room,
+                riskPredictionId: result.riskPredictionId,
+                agentId: agentKey,
+                validityRating: assessment.validityRating || null,
+                feasibilityRating: assessment.feasibilityRating || null
+              });
+            }
+          }
+        }
         
         const payload = {
           participant: {
@@ -2053,9 +2141,25 @@
       // タスク計画評価セクション
       if (surveyData.taskPlanningResults.length > 0) {
         csv += '\n=== タスク計画評価 ===\n\n';
-        csv += '画像ID,部屋,リスク予測ID,タスク計画の妥当性,タスク計画の実行可能性\n';
+        // ヘッダー
+        csv += '画像ID,';
+        for (const agentKey of AGENT_KEYS) {
+          csv += `${agentKey}_妥当性,${agentKey}_実行可能性,`;
+        }
+        csv += '\n';
+        
+        // データ
         for (const result of surveyData.taskPlanningResults) {
-          csv += `${result.imageId},${result.room},${result.riskPredictionId},${result.validityRating || ''},${result.feasibilityRating || ''}\n`;
+          csv += result.imageId + ',';
+          for (const agentKey of AGENT_KEYS) {
+            const assessment = result.assessments && result.assessments[agentKey];
+            if (assessment) {
+              csv += `${assessment.validityRating || ''},${assessment.feasibilityRating || ''},`;
+            } else {
+              csv += ',,';
+            }
+          }
+          csv += '\n';
         }
       }
 
