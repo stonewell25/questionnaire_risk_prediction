@@ -1600,6 +1600,9 @@
       loadCurrentTaskPlanning();
     }
     
+    // ============================================
+    // 1. タスク計画画面の表示 (loadCurrentTaskPlanning)
+    // ============================================
     function loadCurrentTaskPlanning() {
       if (currentTaskPlanningIndex >= taskPlanningImageIds.length) {
         finishSurvey();
@@ -1638,7 +1641,7 @@
       // 表示するエージェントを取得
       const agentsToDisplay = getAgentsToDisplay(imageId);
       
-      // 画像表示用のHTML生成（省略なし）
+      // 画像パスを取得
       const paths = imagePaths[imageId] || [];
       const firstImagePath = paths.length > 0 ? paths[0] : null;
       const imageSrc = firstImagePath 
@@ -1666,7 +1669,7 @@
         </div>
       `;
 
-      // ★修正: 各エージェントごとに、そのエージェントが生成したタスクを表示
+      // 各エージェントごとのタスク計画評価カードを生成
       for (const agentKey of agentsToDisplay) {
         // リスク評価データ
         const agentData = imageData[agentKey];
@@ -1675,12 +1678,8 @@
         const judge = agentData.updated_judge_01 || agentData.risk_judge;
         if (!reason) continue;
 
-        // タスク計画データ（エージェントごとのタスクを取得）
-        // taskPlanEntryの中に、agentKey（例: "Semantic_state"）に対応するオブジェクトがあるか確認
+        // タスク計画データ
         const agentTaskData = taskPlanEntry[agentKey];
-        
-        // タスクデータがない場合はスキップ（またはリスク評価のみ表示）
-        // ここではタスク評価なので、タスクがないと評価できないためスキップ
         if (!agentTaskData || !agentTaskData.task) continue;
 
         const displayName = AGENT_DISPLAY_NAMES[agentKey] || agentKey;
@@ -1703,32 +1702,58 @@
               ` : ''}
             </div>
             
-            <div class="rating-group" id="task-validity-group-${imageId}-${agentKey}">
+            <div class="rating-group" id="task-agree-group-${imageId}-${agentKey}">
               <div class="rating-label">
-                1. タスク計画の妥当性<span class="required">*</span>
+                1. 直感的納得感<span class="required">*</span>
+                <span class="help-toggle" onclick="toggleHelp('task-agree-help-${imageId}-${agentKey}')">評価基準</span>
               </div>
-              <p style="font-size: 12px; color: #5f6368; margin-bottom: 8px;">このタスク計画は、リスクに対して適切な対処方法ですか？</p>
+              <div class="help-content" id="task-agree-help-${imageId}-${agentKey}">
+                <strong>質問：</strong>システムが提案したタスク計画は、あなたの直感と一致していますか？<br>
+                <strong>目的：</strong>最終的な「計画結果」の正しさを測る。<br><br>
+                <strong>評価基準：</strong>
+                <ul>
+                  <li><strong>5 - 非常に納得できる</strong>：自分が計画するときも、ほぼ同じ内容にする</li>
+                  <li><strong>4 - 概ね納得できる</strong>：だいたい同意できるが、少し気になる点がある</li>
+                  <li><strong>3 - どちらともいえない</strong>：良いとも悪いとも判断しづらい</li>
+                  <li><strong>2 - あまり納得できない</strong>：自分の感覚とは少し違う</li>
+                  <li><strong>1 - 全く納得できない</strong>：自分の感覚とは全く違う／的外れである</li>
+                </ul>
+              </div>
+              <p style="font-size: 12px; color: #5f6368; margin-bottom: 8px;">システムが提案したタスク計画は、あなたの直感と一致していますか？</p>
               <div class="rating-options">
-                ${[5, 4, 3, 2, 1].map(value => `
+                ${AGREE_CHOICES.map(choice => `
                   <div class="rating-option">
-                    <input type="radio" name="task-validity-${imageId}-${agentKey}" id="task-validity-${imageId}-${agentKey}-${value}" value="${value}" required onchange="clearError(this)">
-                    <label for="task-validity-${imageId}-${agentKey}-${value}">${value === 5 ? '非常に妥当' : value === 4 ? '概ね妥当' : value === 3 ? 'どちらともいえない' : value === 2 ? 'あまり妥当でない' : '全く妥当でない'}</label>
+                    <input type="radio" name="task-agree-${imageId}-${agentKey}" id="task-agree-${imageId}-${agentKey}-${choice.value}" value="${choice.value}" required onchange="clearError(this)">
+                    <label for="task-agree-${imageId}-${agentKey}-${choice.value}">${choice.label}</label>
                   </div>
                 `).join('')}
               </div>
               <div class="error-message">この質問に回答してください</div>
             </div>
 
-            <div class="rating-group" id="task-feasibility-group-${imageId}-${agentKey}">
+            <div class="rating-group" id="task-thought-group-${imageId}-${agentKey}">
               <div class="rating-label">
-                2. タスク計画の実行可能性<span class="required">*</span>
+                2. 根拠の妥当性・多角性<span class="required">*</span>
+                <span class="help-toggle" onclick="toggleHelp('task-thought-help-${imageId}-${agentKey}')">評価基準</span>
               </div>
-              <p style="font-size: 12px; color: #5f6368; margin-bottom: 8px;">このタスク計画は、実際に実行可能ですか？（ロボットやユーザーにとって）</p>
+              <div class="help-content" id="task-thought-help-${imageId}-${agentKey}">
+                <strong>質問：</strong>そのタスクを生成した「論理」や「アクション詳細」は、過不足なく適切ですか？<br>
+                <strong>目的：</strong>計画プロセスの「質」を測る。<br><br>
+                <strong>評価基準：</strong>
+                <ul>
+                  <li><strong>5 - 過剰に反応しすぎている</strong>：些細なリスクに対して大げさな対処をしている</li>
+                  <li><strong>4 - やや考えすぎである</strong>：論理は通っているが、そこまでしなくても良い手順を含む</li>
+                  <li><strong>3 - 適切かつ多角的である</strong>：状況に合わせてバランスよく計画されている</li>
+                  <li><strong>2 - 根拠が不足している</strong>：なぜそのアクションが必要かの説明や手順が足りない</li>
+                  <li><strong>1 - 根拠が不適切・無関係</strong>：全く関係ないアクションが含まれている</li>
+                </ul>
+              </div>
+              <p style="font-size: 12px; color: #5f6368; margin-bottom: 8px;">そのタスク計画の内容（アクション詳細含む）は、過不足なく適切ですか？</p>
               <div class="rating-options">
-                ${[5, 4, 3, 2, 1].map(value => `
+                ${THOUGHT_CHOICES.map(choice => `
                   <div class="rating-option">
-                    <input type="radio" name="task-feasibility-${imageId}-${agentKey}" id="task-feasibility-${imageId}-${agentKey}-${value}" value="${value}" required onchange="clearError(this)">
-                    <label for="task-feasibility-${imageId}-${agentKey}-${value}">${value === 5 ? '非常に実行可能' : value === 4 ? '概ね実行可能' : value === 3 ? 'どちらともいえない' : value === 2 ? 'あまり実行可能でない' : '全く実行不可能'}</label>
+                    <input type="radio" name="task-thought-${imageId}-${agentKey}" id="task-thought-${imageId}-${agentKey}-${choice.value}" value="${choice.value}" required onchange="clearError(this)">
+                    <label for="task-thought-${imageId}-${agentKey}-${choice.value}">${choice.label}</label>
                   </div>
                 `).join('')}
               </div>
@@ -1749,7 +1774,10 @@
       restoreTaskPlanningResponses(imageId);
       window.scrollTo(0, 0);
     }
-    
+
+    // ============================================
+    // 2. タスク計画回答の保存 (saveTaskPlanningResponses)
+    // ============================================
     function saveTaskPlanningResponses(validate = true) {
       const imageId = taskPlanningImageIds[currentTaskPlanningIndex];
       const imageData = riskData[imageId];
@@ -1764,12 +1792,10 @@
       const taskPlan = taskPlanningData[basePath][predictionId];
       if (!taskPlan) return true;
       
-      // 表示されているエージェントのみをチェック
       const agentsToDisplay = getAgentsToDisplay(imageId);
       const assessments = {};
       const unanswered = [];
       
-      // まず全てのエラー表示をクリア
       document.querySelectorAll('.rating-group.error').forEach(el => el.classList.remove('error'));
       
       for (const agentKey of agentsToDisplay) {
@@ -1779,28 +1805,27 @@
         const reason = agentData.updated_reason_01 || agentData.risk_reason;
         if (!reason) continue;
         
-        const validityInput = document.querySelector(`input[name="task-validity-${imageId}-${agentKey}"]:checked`);
-        const feasibilityInput = document.querySelector(`input[name="task-feasibility-${imageId}-${agentKey}"]:checked`);
+        // name属性を 'task-agree-...' と 'task-thought-...' に変更しています
+        const agreeInput = document.querySelector(`input[name="task-agree-${imageId}-${agentKey}"]:checked`);
+        const thoughtInput = document.querySelector(`input[name="task-thought-${imageId}-${agentKey}"]:checked`);
         
         if (validate) {
-          if (!validityInput) {
-            unanswered.push({ type: 'validity', agentKey, displayName: AGENT_DISPLAY_NAMES[agentKey] });
+          if (!agreeInput) {
+            unanswered.push({ type: 'agree', agentKey, displayName: AGENT_DISPLAY_NAMES[agentKey] });
           }
-          if (!feasibilityInput) {
-            unanswered.push({ type: 'feasibility', agentKey, displayName: AGENT_DISPLAY_NAMES[agentKey] });
+          if (!thoughtInput) {
+            unanswered.push({ type: 'thought', agentKey, displayName: AGENT_DISPLAY_NAMES[agentKey] });
           }
         }
         
         assessments[agentKey] = {
           displayName: AGENT_DISPLAY_NAMES[agentKey] || agentKey,
-          validityRating: validityInput ? parseInt(validityInput.value) : null,
-          feasibilityRating: feasibilityInput ? parseInt(feasibilityInput.value) : null
+          agreeRating: agreeInput ? parseInt(agreeInput.value) : null,
+          thoughtRating: thoughtInput ? parseInt(thoughtInput.value) : null
         };
       }
       
-      // 未回答がある場合
       if (validate && unanswered.length > 0) {
-        // エラー表示
         unanswered.forEach(item => {
           const groupId = `task-${item.type}-group-${imageId}-${item.agentKey}`;
           const group = document.getElementById(groupId);
@@ -1809,7 +1834,6 @@
           }
         });
         
-        // 最初の未回答にスクロール
         const firstError = unanswered[0];
         const firstGroupId = `task-${firstError.type}-group-${imageId}-${firstError.agentKey}`;
         const firstGroup = document.getElementById(firstGroupId);
@@ -1817,12 +1841,10 @@
           firstGroup.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
         
-        // アラート表示
         showUnansweredAlert(unanswered.length);
         return false;
       }
       
-      // 既存の結果を探す
       const existingIndex = surveyData.taskPlanningResults.findIndex(r => r.imageId === imageId);
       const result = {
         imageId: imageId,
@@ -1841,21 +1863,149 @@
       
       return true;
     }
-    
+
+    // ============================================
+    // 3. タスク計画回答の復元 (restoreTaskPlanningResponses)
+    // ============================================
     function restoreTaskPlanningResponses(imageId) {
       const existingResult = surveyData.taskPlanningResults.find(r => r.imageId === imageId);
       
       if (existingResult && existingResult.assessments) {
         for (const [agentKey, assessment] of Object.entries(existingResult.assessments)) {
-          if (assessment.validityRating) {
-            const validityInput = document.getElementById(`task-validity-${imageId}-${agentKey}-${assessment.validityRating}`);
-            if (validityInput) validityInput.checked = true;
+          if (assessment.agreeRating) {
+            const agreeInput = document.getElementById(`task-agree-${imageId}-${agentKey}-${assessment.agreeRating}`);
+            if (agreeInput) agreeInput.checked = true;
           }
-          if (assessment.feasibilityRating) {
-            const feasibilityInput = document.getElementById(`task-feasibility-${imageId}-${agentKey}-${assessment.feasibilityRating}`);
-            if (feasibilityInput) feasibilityInput.checked = true;
+          if (assessment.thoughtRating) {
+            const thoughtInput = document.getElementById(`task-thought-${imageId}-${agentKey}-${assessment.thoughtRating}`);
+            if (thoughtInput) thoughtInput.checked = true;
           }
         }
+      }
+    }
+
+    // ============================================
+    // 4. スプレッドシート送信 (sendToSpreadsheet)
+    // ============================================
+    async function sendToSpreadsheet() {
+      const endpoint = CONFIG.SPREADSHEET_ENDPOINT;
+      
+      if (!endpoint || endpoint.trim() === '') {
+        showSpreadsheetStatus('エラー: Google Spreadsheetのエンドポイントが設定されていません。', 'error');
+        return;
+      }
+      
+      const btn = document.getElementById('btn-send-spreadsheet');
+      const statusDiv = document.getElementById('spreadsheet-status');
+      
+      btn.disabled = true;
+      btn.textContent = '送信中...';
+      statusDiv.style.display = 'block';
+      statusDiv.style.backgroundColor = '#fff3cd';
+      statusDiv.style.color = '#856404';
+      statusDiv.textContent = 'Google Spreadsheetに送信中...';
+      
+      try {
+        // Validityデータ (Phase 1)
+        const validityData = [];
+        for (const result of surveyData.validityResults) {
+          for (const [agentKey, assessment] of Object.entries(result.assessments)) {
+            if (assessment.agreeRating !== null || assessment.thoughtRating !== null) {
+              validityData.push({
+                imageId: result.imageId,
+                room: result.room,
+                agentId: agentKey,
+                judge: assessment.judge || '',
+                agreeRating: assessment.agreeRating || null,
+                thoughtRating: assessment.thoughtRating || null
+              });
+            }
+          }
+        }
+        
+        // Task Planningデータ (Phase 2)
+        // ※GAS側を変更しなくて済むよう、新しい「納得感」をvalidityRatingに、「根拠」をfeasibilityRatingにマッピングして送信します
+        const taskPlanningDataForSpreadsheet = [];
+        for (const result of surveyData.taskPlanningResults) {
+          if (result.assessments) {
+            for (const [agentKey, assessment] of Object.entries(result.assessments)) {
+              taskPlanningDataForSpreadsheet.push({
+                imageId: result.imageId,
+                room: result.room,
+                riskPredictionId: result.riskPredictionId,
+                agentId: agentKey,
+                // マッピング: 直感的納得感 -> validityRating (Sheet列名: 妥当性)
+                validityRating: assessment.agreeRating || null, 
+                // マッピング: 根拠の多角性 -> feasibilityRating (Sheet列名: 実行可能性)
+                feasibilityRating: assessment.thoughtRating || null
+              });
+            }
+          }
+        }
+        
+        const payload = {
+          participant: {
+            name: surveyData.participant.name,
+            email: surveyData.participant.email || '',
+            startTime: surveyData.participant.startTime,
+            endTime: surveyData.participant.endTime
+          },
+          coverage: [],
+          validity: validityData,
+          taskPlanning: taskPlanningDataForSpreadsheet
+        };
+        
+        console.log('送信するデータ:', payload);
+        
+        let response;
+        try {
+          response = await fetch(endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+        } catch (fetchError) {
+          console.warn('CORSエラー(通常):', fetchError);
+          // no-corsリトライ
+          try {
+            await fetch(endpoint, {
+              method: 'POST',
+              mode: 'no-cors',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
+            });
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            statusDiv.style.backgroundColor = '#fff3cd';
+            statusDiv.style.color = '#856404';
+            statusDiv.innerHTML = `⚠️ 送信しました（no-cors）<br><small>Validity: ${validityData.length}件, Task: ${taskPlanningDataForSpreadsheet.length}件</small>`;
+            btn.textContent = '⚠️ 送信完了';
+          } catch (noCorsError) {
+            throw new Error(`送信失敗: ${noCorsError.message}`);
+          }
+          return;
+        }
+        
+        if (response.ok) {
+          const result = await response.json();
+          if (result.success) {
+            statusDiv.style.backgroundColor = '#d4edda';
+            statusDiv.style.color = '#155724';
+            statusDiv.innerHTML = `✅ 送信成功！<br><small>参加者: ${result.participant}<br>Validity: ${validityData.length}件<br>Task: ${taskPlanningDataForSpreadsheet.length}件</small>`;
+            btn.textContent = '✅ 送信完了';
+          } else {
+            throw new Error(result.error || '送信失敗');
+          }
+        } else {
+          throw new Error(`HTTPエラー: ${response.status}`);
+        }
+        
+      } catch (error) {
+        console.error('送信エラー:', error);
+        statusDiv.style.backgroundColor = '#f8d7da';
+        statusDiv.style.color = '#721c24';
+        statusDiv.innerHTML = `❌ 送信エラー: ${error.message}`;
+        btn.disabled = false;
+        btn.textContent = '📊 再送信';
       }
     }
     
