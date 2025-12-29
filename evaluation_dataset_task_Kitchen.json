@@ -1,0 +1,4446 @@
+{
+  "6": {
+    "risk_prediction_id": 6,
+    "Semantic_state": {
+      "risk_prediction_id": 6,
+      "state_instance_id": 4,
+      "state_category": "about to fall",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "risk_judge": "緊急重大",
+      "risk_reason": "大きなナイフがまな板に置かれ、刃の大部分がカウンターの端から大きくはみ出している（reason_history参照）。不安定な状態で、落下リスクが非常に高い。鋭利な刃物が落下することは、重篤な切創事故に直結するため、緊急に配置を修正する必要がある。",
+      "priority": 0,
+      "task": "キッチンアイランドの端から大きくはみ出しているナイフ（knife_0またはknife_1）を把持し、落下による重篤な切創事故を防ぐため、カウンターの中央の安全な位置に移動させる。",
+      "action": {
+        "knife": "tidy_up"
+      }
+    },
+    "Semantic_state_RiskScore": {
+      "risk_prediction_id": 6,
+      "state_instance_id": 4,
+      "state_category": "about to fall",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "knife",
+      "related_objects_01_id": "knife_0",
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "前回の判断（緊急重大）を維持します。ナイフ（cuts_stabs: 1.0）が不安定な状態で端からはみ出しており、わずかな接触で直ちに落下し、重篤な切創事故につながる可能性が極めて高いため、発生の即時性および傷害の深刻度の両面から、緊急重大の評価は適切です。",
+      "priority": 0,
+      "task": "重篤な切創事故に直結する危険性があるため、カウンターの端から大きくはみ出しているナイフ（knife_0）を掴み、アイランド中央の安全な場所に移動させる。",
+      "action": {
+        "knife_0": "tidy_up"
+      }
+    },
+    "Semantic_state_RiskScore_Persona_01": {
+      "risk_prediction_id": 6,
+      "state_instance_id": 4,
+      "state_category": "about to fall",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "updated_judge_02": "緊急重大",
+      "updated_reason_02": "フィードバック2（ペルソナ情報）に基づき、リスクカテゴリは変更せず緊急重大を維持する。ナイフの落下はペルソナに関わらず重篤であり、ユーザーの不注意傾向が落下リスクの蓋然性を高める根拠となるため、即時対応の必要性を維持する。",
+      "priority": 0,
+      "task": "キッチンアイランドの端からはみ出しているナイフを把持し、重篤な切創事故を防ぐため、安全性の高いカウンターの中央に移動させる。",
+      "action": {
+        "knife": "tidy_up"
+      }
+    },
+    "Semantic_state_RiskScore_Persona_02": {
+      "risk_prediction_id": 6,
+      "state_instance_id": 4,
+      "state_category": "about to fall",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "初期評価の「緊急重大」という判断は維持するが、理由を定量データとペルソナ情報に基づいて強化する。大きなナイフがカウンターの端から大きくはみ出しており、不安定で直ちに落下するリスクが高い。鋭利な刃物による重篤な切創事故（近隣ノードのcuts_stabsスコア1.0）は、高齢者（67歳）にとって回復が遅く、また反射神経の低下により落下を避けようとして転倒・骨折する二次的リスクも高いため、緊急に配置を修正する必要がある。",
+      "priority": 1,
+      "task": "カウンターの端からはみ出して極めて不安定な状態にあるナイフを把持し、落下しない安全な位置（例：まな板の中央）に配置を修正する。",
+      "action": {
+        "knife": "tidy_up"
+      }
+    },
+    "Semantic_state_RiskScore_Persona_03": {
+      "risk_prediction_id": 6,
+      "state_instance_id": 4,
+      "state_category": "about to fall",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "knife",
+      "related_objects_01_id": "1",
+      "related_objects_02": "pot",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "元の「緊急重大」評価を維持する。Knowledge Reviewerの指摘にあるように、ナイフのcuts_stabsスコア（1.00）が最高リスクであり、その不安定性は即時的な重篤事故リスクを示す。Persona Reviewerの指摘通り、車椅子ユーザーは接触による落下誘発リスクと回避困難性が高いため、重篤な切創事故が即座に発生する可能性があり、最優先の緊急対応が必要である。",
+      "priority": 0,
+      "task": "キッチンアイランドの端からはみ出したナイフ（knife_1）を把持し、即座に落下リスクのない安全な中央部へ移動させる。切創による重篤な傷害を予防する。",
+      "action": {
+        "knife_1": "tidy_up"
+      }
+    },
+    "Semantic_state_RiskScore_Persona_04": {
+      "risk_prediction_id": 6,
+      "state_instance_id": 4,
+      "state_category": "about to fall",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "related_objects_02": null,
+      "related_objects_02_id": null,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "前回の評価「緊急重大」を維持します。ナイフはcuts_stabsスコア1.0と最高レベルの危険物であり、それが端からはみ出し、即座に落下する危険があります。高齢者ユーザーは反応速度が遅く、落下を回避することが極めて困難であるため、重篤な切創事故がすぐに発生する可能性が高く、緊急対応が必須です。",
+      "priority": 0,
+      "task": "キッチンアイランドの端から大きくはみ出しているナイフを把持し、落下による重篤な切創事故を防ぐため、カウンター中央の安全な位置に移動させて固定する。",
+      "action": {
+        "knife": "tidy_up"
+      }
+    },
+    "Semantic_state_RiskScore_Persona_05": {
+      "risk_prediction_id": 6,
+      "state_instance_id": 4,
+      "state_category": "about to fall",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "updated_judge_02": "緊急重大",
+      "updated_reason_02": "フィードバック02の内容を考慮したが、評価は「緊急重大」を維持する。ナイフの重篤な切創リスクに加え、86歳の高齢者かつ認知障害を持つユーザーは、回避行動が遅れ、傷害が重篤化する可能性が高いため、不安定なナイフは直ちに撤去・修正が必要である。",
+      "priority": 1,
+      "task": "カウンターの端から大きくはみ出しているナイフを掴み、落下しない安全な場所（例：カウンターの中央）に移動させることで、重篤な切創事故リスクを直ちに回避する。",
+      "action": {
+        "knife": "tidy_up"
+      }
+    },
+    "Semantic_state_Stickler": {
+      "risk_prediction_id": 6,
+      "state_instance_id": 4,
+      "state_category": "about to fall",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "ナイフが不安定にカウンターの端からはみ出している状態は、わずかな振動でも落下し、重篤な切創事故を引き起こすリスクが極めて高いです。刃物の落下リスクは、他の物体の落下リスクと比較して影響度が桁違いに大きく、即時的な修正が求められるため、「緊急重大」を維持します。",
+      "priority": 0,
+      "task": "キッチンアイランドの端から大きくはみ出しているナイフを把持し、カウンターの中央の安全な位置に移動させて、落下による重篤な切創事故リスクを緊急で除去する。",
+      "action": {
+        "knife": "tidy_up"
+      }
+    },
+    "Semantic_state_Persona_01": {
+      "risk_prediction_id": 6,
+      "state_instance_id": 4,
+      "state_category": "about to fall",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "risk_judge": "緊急重大",
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "ナイフの刃がカウンターから大きくはみ出しており、直ちに落下し重篤な切創事故に繋がる可能性が極めて高いため、「緊急重大」の判断を維持します。フィードバックでも、このリスクの重大性は年齢に関わらず高いと確認されています。",
+      "priority": 0,
+      "task": "キッチンアイランドの端から大きくはみ出しているナイフを把持し、カウンター上の安全で安定した中央位置へ移動させる。重篤な切創事故の即時的回避を目的とする。",
+      "action": {
+        "knife": "tidy_up"
+      }
+    },
+    "Semantic_state_Persona_02": {
+      "risk_prediction_id": 6,
+      "state_instance_id": 4,
+      "state_category": "about to fall",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "フィードバックを受けても、評価を更新しない。ナイフの不安定な配置は、わずかな接触で直ちに落下し、重篤な切創を引き起こす危険性がある（緊急重大）。67歳のユーザーは回復が遅れるため、その緊急性がさらに高まる。フィードバックに基づき、緊急重大を維持する。",
+      "priority": 1,
+      "task": "カウンターの端からはみ出しているナイフを把持し、落下による重篤な切創事故を防ぐため、カウンターの中央など安全な場所に移動させる。",
+      "action": {
+        "knife": "tidy_up"
+      }
+    },
+    "Semantic_state_Persona_03": {
+      "risk_prediction_id": 6,
+      "state_instance_id": 4,
+      "state_category": "about to fall",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "区分は緊急重大を維持する。ナイフがカウンターの端から大きくはみ出しており、極めて高い落下リスクがある。フィードバックを踏まえ、重篤な切創事故に直結するこのリスクはペルソナに関わらず緊急性が高いが、身体障害を持つユーザーは落下物を素早く回避することが難しいため、重傷を負う可能性がより増幅される点を考慮し、緊急重大と評価する。",
+      "priority": 0,
+      "task": "カウンターの端からはみ出して落下リスクが極めて高いナイフ（knife_0, knife_1など）を把持し、カウンター中央の安全なエリアへ移動させて配置を修正する。",
+      "action": {
+        "knife": "tidy_up"
+      }
+    },
+    "Semantic_state_Persona_04": {
+      "risk_prediction_id": 6,
+      "state_instance_id": 4,
+      "state_category": "about to fall",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "他のエージェントからのフィードバックに基づき、リスク評価は緊急重大を維持します。ナイフがカウンター端から大きくはみ出しており、直ちに落下し重篤な切創事故を引き起こす可能性が高いです。特に81歳の高齢ユーザーの場合、重篤な怪我は予後の悪化や合併症リスクが増大するため、このリスクは生命に関わる緊急重大な危険性として、直ちに対応が必要です。",
+      "priority": 1,
+      "task": "カウンター端から大きくはみ出し、落下リスクの高いナイフ（knife_1を代表）を把持し、完全にカウンター上に収まる、刃先が内側に向く安全な位置に移動させる。",
+      "action": {
+        "knife_1": "tidy_up"
+      }
+    },
+    "Semantic_state_Persona_05": {
+      "risk_prediction_id": 6,
+      "state_instance_id": 4,
+      "state_category": "about to fall",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "フィードバックを受け、評価の更新は行わない。「緊急重大」を支持する。ナイフの即時落下リスクは極めて高い。86歳の高齢者は反応速度の遅延や認知障害による危険認識の欠如から落下を避けられず、重篤な切創事故に直結する。この即時性と結果の重大性を考慮し、緊急重大を維持する。",
+      "priority": 0,
+      "task": "カウンターの端から大きくはみ出しているナイフを掴み、アイランド中央の安全な場所に移動させる。重篤な切創事故の緊急回避が目的。",
+      "action": {
+        "knife": "tidy_up"
+      }
+    },
+    "observations": [
+      {
+        "observation_id": "obs_20251227_042926_368f4aab",
+        "timestamp": "2025-12-27T04:29:28",
+        "robot_pose": {
+          "x": 4.613150222585367,
+          "y": -0.3800493145356305,
+          "yaw": 2.9676221427274614
+        },
+        "nearest_landmark": "Kitchen_Island_0",
+        "rgb_path": "obs_20251227_042926_368f4aab/rgb.jpg",
+        "depth_path": "obs_20251227_042926_368f4aab/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              275,
+              506,
+              695,
+              988
+            ],
+            "reason": "Multiple objects (coffee maker, milk frother, grinder, knife, cutting board, cloth) are placed on the counter surface, making it cluttered."
+          },
+          {
+            "category": "about to fall",
+            "score": 0.55,
+            "bbox_2d": [
+              642,
+              569,
+              878,
+              849
+            ],
+            "reason": "A large knife is placed on a cutting board with its handle near the edge of the counter, posing a slight risk of being knocked off or falling if the counter is bumped."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "Kitchen_Island_0",
+          "matched_room": "Kitchen",
+          "matched_category": "about to fall",
+          "matched_detected_state": {
+            "category": "about to fall",
+            "score": 0.55,
+            "bbox_2d": [
+              642,
+              569,
+              878,
+              849
+            ],
+            "reason": "A large knife is placed on a cutting board with its handle near the edge of the counter, posing a slight risk of being knocked off or falling if the counter is bumped."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_042955_c6210061",
+        "timestamp": "2025-12-27T04:29:57",
+        "robot_pose": {
+          "x": 4.048032253505838,
+          "y": -0.6033763155361407,
+          "yaw": 1.7567311648984767
+        },
+        "nearest_landmark": "kitchen_table_top_0",
+        "rgb_path": "obs_20251227_042955_c6210061/rgb.jpg",
+        "depth_path": "obs_20251227_042955_c6210061/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              231,
+              185,
+              508,
+              501
+            ],
+            "reason": "Multiple objects (coffee machines, containers, power strip/cables) are grouped together on a limited surface area (the countertop)."
+          },
+          {
+            "category": "about to fall",
+            "score": 0.7,
+            "bbox_2d": [
+              642,
+              647,
+              970,
+              805
+            ],
+            "reason": "A knife is placed on the edge of the table with a significant portion of the blade hanging over the edge, making it unstable and likely to fall."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "Kitchen_Island_0",
+          "matched_room": "Kitchen",
+          "matched_category": "about to fall",
+          "matched_detected_state": {
+            "category": "about to fall",
+            "score": 0.7,
+            "bbox_2d": [
+              642,
+              647,
+              970,
+              805
+            ],
+            "reason": "A knife is placed on the edge of the table with a significant portion of the blade hanging over the edge, making it unstable and likely to fall."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_043013_0201ff2a",
+        "timestamp": "2025-12-27T04:30:15",
+        "robot_pose": {
+          "x": 4.0603092422919325,
+          "y": -0.5541438195555881,
+          "yaw": 1.5079070507150785
+        },
+        "nearest_landmark": "kitchen_table_top_0",
+        "rgb_path": "obs_20251227_043013_0201ff2a/rgb.jpg",
+        "depth_path": "obs_20251227_043013_0201ff2a/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              342,
+              0,
+              617,
+              340
+            ],
+            "reason": "Multiple objects (coffee machine, milk dispenser, frother) are clustered together on a small area of the counter/table, indicating a cluttered state."
+          },
+          {
+            "category": "wet",
+            "score": 0.6,
+            "bbox_2d": [
+              478,
+              229,
+              588,
+              450
+            ],
+            "reason": "There appears to be a damp or wet area on the paper towel/mat under the coffee machine/dispenser, suggesting liquid spillage."
+          },
+          {
+            "category": "about to fall",
+            "score": 0.75,
+            "bbox_2d": [
+              642,
+              463,
+              1000,
+              618
+            ],
+            "reason": "A knife is placed on a cutting board with a significant portion of its blade hanging over the edge of the table, making it precariously positioned and likely to fall if disturbed."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "Kitchen_Island_0",
+          "matched_room": "Kitchen",
+          "matched_category": "about to fall",
+          "matched_detected_state": {
+            "category": "about to fall",
+            "score": 0.75,
+            "bbox_2d": [
+              642,
+              463,
+              1000,
+              618
+            ],
+            "reason": "A knife is placed on a cutting board with a significant portion of its blade hanging over the edge of the table, making it precariously positioned and likely to fall if disturbed."
+          }
+        }
+      }
+    ],
+    "reason_history": [
+      "A large knife is placed on a cutting board with its handle near the edge of the counter, posing a slight risk of being knocked off or falling if the counter is bumped.",
+      "A knife is placed on the edge of the table with a significant portion of the blade hanging over the edge, making it unstable and likely to fall.",
+      "A knife is placed on a cutting board with a significant portion of its blade hanging over the edge of the table, making it precariously positioned and likely to fall if disturbed."
+    ],
+    "VLM": {
+      "risk_prediction_id": 6,
+      "state_instance_id": 0,
+      "state_category": "その他",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen Counter",
+      "related_objects_01": "包丁",
+      "related_objects_01_id": 0,
+      "related_objects_02": "こぼれた液体",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "キッチンカウンターの上に鋭利な包丁が不用意に放置されており、切創事故の危険性が非常に高い。また、同時にこぼれた液体が放置されており、滑り転倒リスクもある。これら二つの緊急リスクを直ちに排除する必要がある。",
+      "priority": 0,
+      "task": "緊急対応として、カウンター上の鋭利な包丁を安全に把持し指定された収納場所へ移動させ、その後、放置されているこぼれた液体を拭き取り、二重のリスクを解消する。",
+      "action": {
+        "包丁": "tidy_up",
+        "こぼれた液体": "wipe"
+      }
+    }
+  },
+  "5": {
+    "risk_prediction_id": 5,
+    "Semantic_state": {
+      "risk_prediction_id": 5,
+      "state_instance_id": 3,
+      "state_category": "about to fall",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "risk_judge": "緊急重大",
+      "risk_reason": "マグカップが横倒しでテーブルの端に置かれており、極めて不安定な状態である（reason_history参照）。わずかな振動や接触で直ちに落下する可能性が高く、破片による切創や床への液体飛散による転倒リスクなど、即時性の高い重大な事故につながる危険があるため、緊急対応が必要。",
+      "priority": 1,
+      "task": "キッチンアイランドの端で横倒しになっているマグカップを把持し、落下・破損を防ぐためにテーブルの中央など安定した位置に移動させる。",
+      "action": {
+        "mug": "tidy_up"
+      }
+    },
+    "Semantic_state_RiskScore": {
+      "risk_prediction_id": 5,
+      "state_instance_id": 3,
+      "state_category": "about to fall",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "mug (implied)",
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "前回の判断（緊急重大）を変更し、潜在重大に更新します。マグカップは横倒しで端にあり、落下する即時性は非常に高いですが、フィードバックに基づき、マグカップの傷害の深刻度（切創リスク: 0.16未満）が低く、ナイフなどと比較して重大な傷害には至りにくいと判断しました。『緊急重大』の基準は「すぐに重大な事故が起こる可能性」であり、今回は発生の緊急性は高いものの、傷害の深刻度が中程度にとどまる可能性が高いため、総合的に潜在重大と評価するのが妥当です。",
+      "priority": 3,
+      "task": "横倒しになり、テーブルの端にあるマグカップの落下リスクを解消するため、マグカップを把持し、アイランド中央の安定した位置に移動させる。",
+      "action": {
+        "mug": "tidy_up"
+      }
+    },
+    "Semantic_state_RiskScore_Persona_01": {
+      "risk_prediction_id": 5,
+      "state_instance_id": 3,
+      "state_category": "about to fall",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "updated_judge_02": "緊急重大",
+      "updated_reason_02": "フィードバック2（ペルソナ情報）に基づき、リスクカテゴリは変更せず緊急重大を維持する。ユーザーの過去のつまずき事故の履歴を考慮すると、マグカップ落下による床濡れが発生した場合、転倒リスクに対する脆弱性が特に高まるため、即時対応の必要性が裏付けられる。",
+      "priority": 1,
+      "task": "横倒しでテーブルの端にあるマグカップを把持し、直ちに落下するリスクと、落下による床濡れ・転倒の二次リスクを排除するため、安定したテーブル中央に移動させる。",
+      "action": {
+        "mug": "tidy_up"
+      }
+    },
+    "Semantic_state_RiskScore_Persona_02": {
+      "risk_prediction_id": 5,
+      "state_instance_id": 3,
+      "state_category": "about to fall",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "初期評価の「緊急重大」という判断は維持するが、理由を過去の事故履歴に基づいて強化する。マグカップが横倒しでテーブルの端に置かれ、わずかな振動で直ちに落下する（スコア 0.8625）。もし液体が入っていた場合、その飛散により床が濡れることで、67歳のユーザーが過去に濡れたキッチン床で転倒事故を起こした履歴があるため、重大な転倒・骨折事故に直結するリスクが極めて高く、緊急に対応する必要がある。",
+      "priority": 0,
+      "task": "テーブルの端で横倒しになっている不安定なマグカップを把持し、テーブルの中央の安全かつ安定した位置に移動させ、落下と液体飛散による転倒リスクを緊急で解消する。",
+      "action": {
+        "mug": "tidy_up"
+      }
+    },
+    "Semantic_state_RiskScore_Persona_03": {
+      "risk_prediction_id": 5,
+      "state_instance_id": 3,
+      "state_category": "about to fall",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "related_objects_02": "mug",
+      "related_objects_02_id": "N/A",
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "元の「緊急重大」評価を維持する。Knowledge ReviewerとPersona Reviewerの指摘を総合し、マグカップの即時落下リスクが非常に高いことを再確認した。車椅子による振動で容易に落下が誘発され、落下物（破片や液体）を車椅子ユーザーが即座に回避できず、重篤な傷害や転倒に即座につながる可能性が高いため、緊急性が高い。",
+      "priority": 1,
+      "task": "キッチンアイランドの端で横倒しになっているマグカップを把持し、テーブルの中央の安定した場所に立てて再配置する。落下・破損リスクを解消する。",
+      "action": {
+        "mug": "tidy_up"
+      }
+    },
+    "Semantic_state_RiskScore_Persona_04": {
+      "risk_prediction_id": 5,
+      "state_instance_id": 3,
+      "state_category": "about to fall",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "related_objects_02": null,
+      "related_objects_02_id": null,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "前回の評価「緊急重大」を維持します。マグカップは即座に落下する可能性が非常に高く、即時性があります。落下により液体や破片が床に散乱した場合、過去に転倒事故歴のある81歳で身体障害を持つユーザーにとって、転倒・骨折といった極めて重篤な事故に直結するため、最優先で対処すべきリスクです。",
+      "priority": 1,
+      "task": "横倒しで不安定なマグカップを把持し、落下による転倒・切創リスクを回避するため、テーブル中央の安定した場所に立てて移動させる。",
+      "action": {
+        "mug": "tidy_up"
+      }
+    },
+    "Semantic_state_RiskScore_Persona_05": {
+      "risk_prediction_id": 5,
+      "state_instance_id": 3,
+      "state_category": "about to fall",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "updated_judge_02": "緊急重大",
+      "updated_reason_02": "フィードバック02の内容を考慮したが、評価は「緊急重大」を維持する。この緊急性の最大の根拠は、ユーザーが86歳の高齢者であるため、液体飛散による床面転倒が股関節骨折など生命に関わる重大な結果に直結する可能性が非常に高い点にある。状態の即時性と高齢者ペルソナによる重篤性の組み合わせにより、緊急性が裏付けられる。",
+      "priority": 0,
+      "task": "キッチンアイランドの端で横倒しになっている不安定なマグカップを掴み、テーブル中央の安全な位置に移動させる。高齢者（86歳）の転倒リスクを直ちに回避する。",
+      "action": {
+        "mug": "tidy_up"
+      }
+    },
+    "Semantic_state_Stickler": {
+      "risk_prediction_id": 5,
+      "state_instance_id": 3,
+      "state_category": "about to fall",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "マグカップが横倒しでテーブルの端に置かれており、極めて不安定な状態であり、直ちに落下する可能性が高い。落下による破片の切創や床への液体飛散による転倒リスクなど、即時性の高い重大な事故につながる危険があるため、「緊急重大」を維持します。",
+      "priority": 1,
+      "task": "横倒しになりカウンターの端にあるマグカップを把持し、カウンターの中央の安定した場所に移動させて、落下リスクを除去する。",
+      "action": {
+        "mug": "tidy_up"
+      }
+    },
+    "Semantic_state_Persona_01": {
+      "risk_prediction_id": 5,
+      "state_instance_id": 3,
+      "state_category": "about to fall",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "risk_judge": "緊急重大",
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "マグカップが極めて不安定な位置にあるため、即座に落下する可能性が高く「緊急重大」の判断を維持します。フィードバックを考慮し、特にユーザーは過去に転倒履歴があるため、落下により液体が床に飛散した場合、重大な転倒事故につながるリスクが非常に高まることを根拠として強調します。",
+      "priority": 1,
+      "task": "キッチンアイランド端で横倒しになっているマグカップを把持し、落下による切創および液体飛散による転倒を防ぐため、安定したカウンター中央に移動させる。",
+      "action": {
+        "mug": "tidy_up"
+      }
+    },
+    "Semantic_state_Persona_02": {
+      "risk_prediction_id": 5,
+      "state_instance_id": 3,
+      "state_category": "about to fall",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "フィードバックを受けても、評価を更新しない。この状況は非常に不安定であり、直ちに落下し、液体が床に飛散する可能性が高い。67歳のユーザーは過去に濡れた床で転倒歴があるため、この液体飛散は致命的な転倒リスクを誘発する可能性があり、即時対応が必要な緊急重大を維持する。フィードバックもこの判断を強く支持している。",
+      "priority": 0,
+      "task": "キッチンアイランドの端で横倒しになっているマグカップを把持し、落下や中身の液体飛散を防ぐため、テーブルの中央の安定した位置に移動させる。",
+      "action": {
+        "mug": "tidy_up"
+      }
+    },
+    "Semantic_state_Persona_03": {
+      "risk_prediction_id": 5,
+      "state_instance_id": 3,
+      "state_category": "about to fall",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "区分は緊急重大を維持する。横倒しのマグカップは直ちに落下するリスクが高い。フィードバックで指摘された通り、落下により床面に液体が飛散した場合、車椅子での移動が妨げられ、過去の事故履歴と同様に深刻な移動障害につながる。この即時性の高い床面リスクは、ユーザーの生活の安全に直結するため、緊急重大と評価する。",
+      "priority": 1,
+      "task": "テーブルの端で横倒しになっている不安定なマグカップを把持し、落下による液体飛散リスクを避けるため、安定したカウンター中央部に移動させる。",
+      "action": {
+        "mug": "tidy_up"
+      }
+    },
+    "Semantic_state_Persona_04": {
+      "risk_prediction_id": 5,
+      "state_instance_id": 3,
+      "state_category": "about to fall",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "他のエージェントからのフィードバックに基づき、リスク評価は緊急重大を維持します。マグカップは横倒しでテーブルの端にあり、すぐに落下する危険性があります。落下により液体が床に飛散した場合、身体障害があり過去に転倒事故がある81歳のユーザーにとって、床面の濡れは直ちに回避困難な転倒リスクとなり、骨折などの重大事故に繋がるため、緊急対応が必要です。",
+      "priority": 0,
+      "task": "横倒しでテーブルの端にあり、すぐに落下する危険性があるマグカップを把持し、キッチンアイランドの中央の安定した安全な場所に移動させることで、液体飛散による転倒リスクを直ちに除去する。",
+      "action": {
+        "mug": "tidy_up"
+      }
+    },
+    "Semantic_state_Persona_05": {
+      "risk_prediction_id": 5,
+      "state_instance_id": 3,
+      "state_category": "about to fall",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "フィードバックを受け、評価の更新は行わない。「緊急重大」を支持する。マグカップは即時落下リスクが高い。落下した液体が床面に広がることは、86歳の認知障害を持つユーザーにとって、濡れを認識できず転倒し骨折するという極めて重大な事故に直結するため、即時性の観点からも緊急重大は適切である。",
+      "priority": 1,
+      "task": "横倒しで不安定なマグカップを掴み、アイランドの中央の安定した場所に移動させる。落下による破片リスクおよび液体飛散による転倒リスクの回避が目的。",
+      "action": {
+        "mug": "tidy_up"
+      }
+    },
+    "observations": [
+      {
+        "observation_id": "obs_20251227_042651_90f7ed19",
+        "timestamp": "2025-12-27T04:26:53",
+        "robot_pose": {
+          "x": 5.793276814799641,
+          "y": -0.13694568821340125,
+          "yaw": 2.3749846090570887
+        },
+        "nearest_landmark": "Kitchen_Island_0",
+        "rgb_path": "obs_20251227_042651_90f7ed19/rgb.jpg",
+        "depth_path": "obs_20251227_042651_90f7ed19/depth.png",
+        "detected_states": [
+          {
+            "category": "wet",
+            "score": 0.9,
+            "bbox_2d": [
+              485,
+              345,
+              650,
+              570
+            ],
+            "reason": "There is a visible dark patch of liquid on the wooden table surface, indicating the surface is wet."
+          },
+          {
+            "category": "about to fall",
+            "score": 0.8,
+            "bbox_2d": [
+              488,
+              448,
+              638,
+              569
+            ],
+            "reason": "The mug is lying on its side, which is an unstable position, and it is near the edge of the table, making it likely to fall if the table is bumped."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.7,
+            "bbox_2d": [
+              493,
+              34,
+              542,
+              377
+            ],
+            "reason": "Multiple objects (coffee makers, dispensers, paper, and a pen) are piled up/placed close together on the table surface near the wall."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "Kitchen_Island_0",
+          "matched_room": "Kitchen",
+          "matched_category": "about to fall",
+          "matched_detected_state": {
+            "category": "about to fall",
+            "score": 0.8,
+            "bbox_2d": [
+              488,
+              448,
+              638,
+              569
+            ],
+            "reason": "The mug is lying on its side, which is an unstable position, and it is near the edge of the table, making it likely to fall if the table is bumped."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_042725_f65ba2fb",
+        "timestamp": "2025-12-27T04:27:27",
+        "robot_pose": {
+          "x": 5.884625251468738,
+          "y": 0.1316528128691541,
+          "yaw": 2.851047731306095
+        },
+        "nearest_landmark": "Kitchen_Island_0",
+        "rgb_path": "obs_20251227_042725_f65ba2fb/rgb.jpg",
+        "depth_path": "obs_20251227_042725_f65ba2fb/depth.png",
+        "detected_states": [
+          {
+            "category": "about to fall",
+            "score": 0.85,
+            "bbox_2d": [
+              479,
+              574,
+              711,
+              700
+            ],
+            "reason": "The mug is lying on its side on the table, which is an unstable position and it could roll or fall off the edge if the table is bumped."
+          },
+          {
+            "category": "wet",
+            "score": 0.5,
+            "bbox_2d": [
+              499,
+              310,
+              513,
+              400
+            ],
+            "reason": "There are visible dark patches/streaks on the wooden table surface, particularly in the middle, which appear to be liquid spills or wet areas."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.7,
+            "bbox_2d": [
+              485,
+              300,
+              508,
+              380
+            ],
+            "reason": "There are multiple objects (coffee makers, thermos, paper, pen) grouped together on the table surface, indicating a cluttered area."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "Kitchen_Island_0",
+          "matched_room": "Kitchen",
+          "matched_category": "about to fall",
+          "matched_detected_state": {
+            "category": "about to fall",
+            "score": 0.85,
+            "bbox_2d": [
+              479,
+              574,
+              711,
+              700
+            ],
+            "reason": "The mug is lying on its side on the table, which is an unstable position and it could roll or fall off the edge if the table is bumped."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_042841_38c5c71e",
+        "timestamp": "2025-12-27T04:28:43",
+        "robot_pose": {
+          "x": 5.342179861281659,
+          "y": -0.5524834316411735,
+          "yaw": 1.4905619564507375
+        },
+        "nearest_landmark": "refrigerator_0",
+        "rgb_path": "obs_20251227_042841_38c5c71e/rgb.jpg",
+        "depth_path": "obs_20251227_042841_38c5c71e/depth.png",
+        "detected_states": [
+          {
+            "category": "about to fall",
+            "score": 0.9,
+            "bbox_2d": [
+              550,
+              345,
+              617,
+              450
+            ],
+            "reason": "The mug is lying on its side on the table, indicating it has fallen or is in a highly unstable position, likely to roll or fall off the edge."
+          },
+          {
+            "category": "wet",
+            "score": 0.95,
+            "bbox_2d": [
+              560,
+              370,
+              610,
+              460
+            ],
+            "reason": "There is a clear puddle of liquid on the wooden table surface, indicating the surface is wet."
+          },
+          {
+            "category": "stacked",
+            "score": 0.8,
+            "bbox_2d": [
+              737,
+              867,
+              999,
+              999
+            ],
+            "reason": "There are objects (boxes/papers) stacked on the lower shelf of the white shelving unit."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "Kitchen_Island_0",
+          "matched_room": "Kitchen",
+          "matched_category": "about to fall",
+          "matched_detected_state": {
+            "category": "about to fall",
+            "score": 0.9,
+            "bbox_2d": [
+              550,
+              345,
+              617,
+              450
+            ],
+            "reason": "The mug is lying on its side on the table, indicating it has fallen or is in a highly unstable position, likely to roll or fall off the edge."
+          }
+        }
+      }
+    ],
+    "reason_history": [
+      "The mug is lying on its side, which is an unstable position, and it is near the edge of the table, making it likely to fall if the table is bumped.",
+      "The mug is lying on its side on the table, which is an unstable position and it could roll or fall off the edge if the table is bumped.",
+      "The mug is lying on its side on the table, indicating it has fallen or is in a highly unstable position, likely to roll or fall off the edge."
+    ],
+    "VLM": {
+      "risk_prediction_id": 5,
+      "state_instance_id": 0,
+      "state_category": "その他",
+      "related_room": "Kitchen",
+      "related_landmarks": "テーブル",
+      "related_objects_01": "刃物（包丁）",
+      "related_objects_01_id": 0,
+      "related_objects_02": "こぼれた液体",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "テーブルの端に放置された刃物は重大な切創事故リスクがあり、即座の対応が必要である。また、広範囲にこぼれた液体は熱傷や床に垂れた場合の転倒のリスクを生じさせているため、複合的に緊急性が高い。",
+      "priority": 0,
+      "task": "緊急重大な切創事故リスクを最優先で排除するため、テーブルの端にある刃物（包丁）の柄を把持し安全な場所（例：シンクや包丁立て）へ移動させる。続いて、熱傷・転倒リスクを低減するために、テーブル上のこぼれた液体を拭き取り、横倒しになっているマグカップを片付ける。",
+      "action": {
+        "刃物（包丁）": "tidy_up",
+        "こぼれた液体": "wipe",
+        "マグカップ": "tidy_up"
+      }
+    }
+  },
+  "4": {
+    "risk_prediction_id": 4,
+    "Semantic_state": {
+      "risk_prediction_id": 4,
+      "state_instance_id": 1,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "risk_judge": "潜在重大",
+      "risk_reason": "キッチンアイランド上にコーヒーマシン、グラインダー、ナイフ、電源タップなどの複数のオブジェクトが密集している（reason_history参照）。特にナイフを含む密集地帯は、他の物を操作する際に誤って接触し、切り傷を負う潜在的な重大事故リスクがある。",
+      "priority": 2,
+      "task": "コーヒーマシンや電源タップなど、把持が困難または複雑な形状の物体が多く密集しており、ロボット単独での整理が難しいため、ユーザーに対し注意喚起を行う。",
+      "action": {
+        "user": "announce"
+      },
+      "statement": "キッチンアイランドの調理器具（コーヒーマシンなど）が密集しており、電源ケーブルなどに引っかかったり、ナイフに接触したりするリスクがあります。整理をお願いします。"
+    },
+    "Semantic_state_RiskScore": {
+      "risk_prediction_id": 4,
+      "state_instance_id": 1,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "knife",
+      "related_objects_01_id": "knife_0",
+      "related_objects_02": "pot",
+      "related_objects_02_id": "pot_0",
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "前回の判断（潜在重大）を維持します。フィードバックで指摘された通り、この密集地帯には切創リスク（cuts_stabs: 1.0）がシーン内で最高値であるナイフが関与しています。他の機器を操作する際の誤接触により、重大な切創事故に繋がる潜在的な危険性が極めて高いため、潜在重大の評価は適切です。",
+      "priority": 5,
+      "task": "ナイフはID 6のタスクで移動されるため、最大の危険要素は解消される。残りのコーヒーマシンなどの機器は重く複雑な形状であるため、ロボットによる移動は困難であると判断し、現時点では何もしない。",
+      "action": {
+        "nothing": "nothing"
+      }
+    },
+    "Semantic_state_RiskScore_Persona_01": {
+      "risk_prediction_id": 4,
+      "state_instance_id": 1,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "updated_judge_02": "潜在重大",
+      "updated_reason_02": "フィードバック2（ペルソナ情報）に基づき、リスクカテゴリは変更せず潜在重大を維持する。ユーザーは過去に不注意による事故履歴を持つため、散乱したアイランド上での作業ミスにより、cuts_stabsスコア1.0のナイフへ接触する蓋然性が通常より高まっており、重篤な切創事故につながる潜在的リスクは非常に高い。",
+      "priority": 4,
+      "task": "キッチンアイランド（Kitchen_Island_0）上に密集している把持可能な小物（マグカップ、カトラリー、容器など）を移動させ、ナイフを避けた後の作業スペースを確保し、他の作業時の不注意による接触リスクを軽減する。",
+      "action": {
+        "small objects on Kitchen_Island": "tidy_up"
+      }
+    },
+    "Semantic_state_RiskScore_Persona_02": {
+      "risk_prediction_id": 4,
+      "state_instance_id": 1,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "初期評価の「潜在重大」という判断は維持するが、理由をペルソナ情報と定量的な裏付けに基づいて強化する。キッチンアイランド上にコーヒーマシンやナイフなどの複数のオブジェクトが密集しており、ナイフ（近隣ノードのcuts_stabsスコアは1.0）への接触による重篤な切創リスクがある。67歳の高齢者は手の安定性や視力が低下しているため、この密集地帯での操作時に誤ってナイフに触れる可能性が高く、事故が重症化しやすいため、潜在重大と評価する。",
+      "priority": 4,
+      "task": "キッチンアイランドの作業スペースにコーヒー機器や道具が密集しており、高齢者にとって操作ミスによる切創リスクが高いため、使用前に整理を促す。",
+      "action": {
+        "user": "announce"
+      },
+      "statement": "キッチンアイランドが散乱しています。手の安定性や視力が低下していると、密集した物体の操作時に誤って鋭利な物体に触れる危険がありますので、作業スペースを確保してください。"
+    },
+    "Semantic_state_RiskScore_Persona_03": {
+      "risk_prediction_id": 4,
+      "state_instance_id": 1,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "related_objects_02": "knife",
+      "related_objects_02_id": "N/A",
+      "risk_judge": "潜在重大",
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "元の「潜在重大」評価を維持する。Knowledge Reviewerの指摘により、ナイフのcuts_stabsスコア（1.00）が最高リスクであることを確認。Persona Reviewerの指摘を総合すると、車椅子からの操作による誤接触リスクの増大や、ナイフを落とした際の回避困難性により、重篤な切創事故につながるリスクが非常に高いため、「潜在重大」が適切である。",
+      "priority": 5,
+      "task": "キッチンアイランド上のコーヒー機器周辺に密集している把持可能な容器や小物（pot_0など）を移動させ、作業空間を確保する。誤って他の機器に接触し、事故を誘発するリスクを低減する。（ナイフはP0で対応済み）",
+      "action": {
+        "pot_0": "tidy_up",
+        "containers": "tidy_up"
+      }
+    },
+    "Semantic_state_RiskScore_Persona_04": {
+      "risk_prediction_id": 4,
+      "state_instance_id": 1,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "related_objects_02": null,
+      "related_objects_02_id": null,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "前回の評価「潜在重大」を維持します。この密集地帯にはcuts_stabsスコア1.0のナイフが含まれており、重篤な切創リスクを抱えています。身体障害を持つユーザーは手の細かい動きや正確な操作が難しいため、他の機器を操作する際のナイフへの偶発的な接触による重篤な傷害リスクが、健常者よりも高まると判断します。即時性はないため「潜在重大」としますが、重篤性は非常に高いです。",
+      "priority": 4,
+      "task": "キッチンアイランド上のコーヒーマシン周辺の密集地帯から、ナイフを把持し、ユーザーの誤接触による切創リスクを防ぐため、安全な場所に移動させる。",
+      "action": {
+        "knife": "tidy_up"
+      }
+    },
+    "Semantic_state_RiskScore_Persona_05": {
+      "risk_prediction_id": 4,
+      "state_instance_id": 1,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "updated_judge_02": "潜在重大",
+      "updated_reason_02": "フィードバック02の内容を考慮したが、評価は「潜在重大」を維持する。ユーザーが86歳かつ認知障害を持つため、ナイフによる重篤な切創リスクに加え、密集地帯の電源タップによる感電リスクも高まっている。即時的な危険ではないものの、条件が揃った際に重大な事故につながる可能性が高いため、「潜在重大」が妥当である。",
+      "priority": 4,
+      "task": "キッチンアイランド上の密集地帯からポット（pot_0）を移動させ、電化製品やナイフ周辺の作業スペースを確保し、切創や感電リスクを軽減する。",
+      "action": {
+        "pot_0": "tidy_up"
+      }
+    },
+    "Semantic_state_Stickler": {
+      "risk_prediction_id": 4,
+      "state_instance_id": 1,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "ナイフによる切り傷リスクに加え、電源タップ（power strip/cables）が液体（Instance 7）と近接している可能性があり、感電やショートによる火災という重大な潜在リスクがあるため、「潜在重大」を維持します。",
+      "priority": 2,
+      "task": "キッチンアイランド上にある電源タップとケーブルを、液体が検出されているエリアから遠ざけ、乾燥した安全な場所に移動させる。",
+      "action": {
+        "power strip/cables": "tidy_up"
+      }
+    },
+    "Semantic_state_Persona_01": {
+      "risk_prediction_id": 4,
+      "state_instance_id": 1,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "risk_judge": "潜在重大",
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "ナイフを含む密集は、他の物を操作する際に誤って接触し、重篤な切創を負う潜在的な重大事故リスクがあります。フィードバックもこの点を支持しており、「潜在重大」の判断を維持します。",
+      "priority": 2,
+      "task": "コーヒーマシン、グラインダー、電源タップなどが密集し、作業スペースが危険な状態にあるため、ユーザーに整理を促す。特に大型機器はロボットによる移動が困難であるため、通知のみ行う。",
+      "action": {
+        "user": "announce"
+      },
+      "statement": "キッチンアイランドの上に、コーヒーマシンやグラインダーなど多くの物が密集しており、危険です。作業をする前に、整理をしてください。"
+    },
+    "Semantic_state_Persona_02": {
+      "risk_prediction_id": 4,
+      "state_instance_id": 1,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "フィードバックを受けても、評価を更新しない。ナイフが含まれる散乱（cluttered）は、67歳のユーザーが誤操作や手の震えなどにより触れた場合、重篤な切創につながる（潜在重大）。高齢者は回復が遅れるため、このリスクは高く評価されるべきであるというフィードバックに基づき、評価を維持する。",
+      "priority": 4,
+      "task": "ナイフ（ID 6で対応済み）以外のコーヒー機器や電源タップなど、把持が困難で密集している物体エリアについて、ユーザーに注意を促し、作業時の接触や転倒のリスクを軽減する。",
+      "action": {
+        "user": "announce"
+      },
+      "statement": "キッチンアイランドの周りに多くの物が密集しています。電気製品や刃物（ナイフは既に移動させました）の周辺で作業する際は、誤って接触し怪我をしないよう十分注意してください。"
+    },
+    "Semantic_state_Persona_03": {
+      "risk_prediction_id": 4,
+      "state_instance_id": 1,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "区分は潜在重大を維持する。フィードバックを踏まえ、キッチンアイランド上の密集地帯に鋭利なナイフが含まれているため、重篤な切り傷の潜在リスクがある。車椅子利用者は手を伸ばして他のオブジェクトを操作する際、動作が不安定になりやすく、誤ってナイフに接触し、怪我を負うリスクが健常者よりも顕著に増加すると判断されるため、潜在重大と評価する。",
+      "priority": 3,
+      "task": "キッチンアイランド上（Kitchen_Island_0）のコーヒー機器類やその他の密集した物体（電源タップ、容器など）を把持し、作業スペースを確保し、操作時の偶発的な怪我のリスクを減らすために整理する。",
+      "action": {
+        "coffee machine": "push",
+        "container": "tidy_up"
+      }
+    },
+    "Semantic_state_Persona_04": {
+      "risk_prediction_id": 4,
+      "state_instance_id": 1,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "他のエージェントからのフィードバックに基づき、リスク評価は潜在重大を維持します。キッチンアイランド上の密集地帯には鋭利なナイフや電源コードが含まれており、身体障害を持つ高齢ユーザーが作業中に誤ってナイフに接触し切創を負うリスク、または電源コードに引っかかり転倒するリスクが高いです。高齢者にとって切り傷は治癒が遅れやすく、転倒は骨折に直結するため、これらのリスクが増幅される点を強調し、潜在重大と評価します。",
+      "priority": 4,
+      "task": "キッチンアイランド上のコーヒー機器周りの散乱やコードの危険性について、ユーザーに注意を促し、整理を推奨する。",
+      "action": {
+        "user": "announce"
+      },
+      "statement": "キッチンアイランドのコーヒーメーカー周りが散乱しており、電源コードに引っかかったり、物にぶつかったりして転倒や怪我をする危険がありますので、ご注意ください。"
+    },
+    "Semantic_state_Persona_05": {
+      "risk_prediction_id": 4,
+      "state_instance_id": 1,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "フィードバックを受け、評価の更新は行わない。「潜在重大」を維持する。86歳の認知障害（cognitive_disability: 1）を持つユーザーは、高齢による視力や反応速度の低下と認知障害による注意散漫により、ナイフとの接触（切創）や、電源タップへの液体こぼし（感電/ショート）といった重大な事故リスクが健常者より格段に高まる。すぐに事故が起こるわけではないが、作業時にリスクが顕在化するため、潜在重大は適切である。",
+      "priority": 4,
+      "task": "キッチンアイランド上のコーヒーマシン、電源タップ周辺にある小型の散乱物（容器、布など）を掴み、整理されたエリアへ移動させる。作業時の切創・感電リスク軽減が目的。",
+      "action": {
+        "small containers": "tidy_up",
+        "power strip cable": "push"
+      }
+    },
+    "observations": [
+      {
+        "observation_id": "obs_20251227_042752_34a215e3",
+        "timestamp": "2025-12-27T04:27:54",
+        "robot_pose": {
+          "x": 5.836614347067711,
+          "y": 0.31344280720154893,
+          "yaw": -2.8125765723875635
+        },
+        "nearest_landmark": "Kitchen_Island_0",
+        "rgb_path": "obs_20251227_042752_34a215e3/rgb.jpg",
+        "depth_path": "obs_20251227_042752_34a215e3/depth.png",
+        "detected_states": [
+          {
+            "category": "stacked",
+            "score": 0.85,
+            "bbox_2d": [
+              268,
+              34,
+              518,
+              256
+            ],
+            "reason": "Dishes and cups are stacked on the drying rack."
+          },
+          {
+            "category": "stacked",
+            "score": 0.75,
+            "bbox_2d": [
+              485,
+              256,
+              542,
+              310
+            ],
+            "reason": "Plates are stacked on the countertop next to the sink."
+          },
+          {
+            "category": "wet",
+            "score": 0.9,
+            "bbox_2d": [
+              536,
+              486,
+              617,
+              666
+            ],
+            "reason": "A puddle of liquid is visible on the wooden table surface."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.6,
+            "bbox_2d": [
+              508,
+              21,
+              561,
+              147
+            ],
+            "reason": "Various cleaning bottles and a sponge are placed near the sink, contributing to clutter on the countertop."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.7,
+            "bbox_2d": [
+              448,
+              392,
+              533,
+              498
+            ],
+            "reason": "Coffee machines and a paper/note are placed on the edge of the table, creating a cluttered area."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "Kitchen_Island_0",
+          "matched_room": "Kitchen",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.7,
+            "bbox_2d": [
+              448,
+              392,
+              533,
+              498
+            ],
+            "reason": "Coffee machines and a paper/note are placed on the edge of the table, creating a cluttered area."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_042903_4363a429",
+        "timestamp": "2025-12-27T04:29:05",
+        "robot_pose": {
+          "x": 4.613150222585367,
+          "y": -0.3800493145356305,
+          "yaw": 2.9676221427274614
+        },
+        "nearest_landmark": "Kitchen_Island_0",
+        "rgb_path": "obs_20251227_042903_4363a429/rgb.jpg",
+        "depth_path": "obs_20251227_042903_4363a429/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.7,
+            "bbox_2d": [
+              276,
+              503,
+              617,
+              805
+            ],
+            "reason": "Multiple objects (coffee maker, dispenser, milk frother, and a cloth/mat) are placed close together on the counter surface."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.6,
+            "bbox_2d": [
+              642,
+              537,
+              886,
+              1000
+            ],
+            "reason": "A knife is placed on a cutting board on the wooden counter, contributing to the general clutter of the workspace."
+          },
+          {
+            "category": "about to fall",
+            "score": 0.55,
+            "bbox_2d": [
+              680,
+              537,
+              849,
+              747
+            ],
+            "reason": "A knife is placed on a cutting board with its handle resting on the board and the blade extending over the edge of the counter, making it susceptible to being knocked off or falling."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "Kitchen_Island_0",
+          "matched_room": "Kitchen",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.7,
+            "bbox_2d": [
+              276,
+              503,
+              617,
+              805
+            ],
+            "reason": "Multiple objects (coffee maker, dispenser, milk frother, and a cloth/mat) are placed close together on the counter surface."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_042926_368f4aab",
+        "timestamp": "2025-12-27T04:29:28",
+        "robot_pose": {
+          "x": 4.613150222585367,
+          "y": -0.3800493145356305,
+          "yaw": 2.9676221427274614
+        },
+        "nearest_landmark": "Kitchen_Island_0",
+        "rgb_path": "obs_20251227_042926_368f4aab/rgb.jpg",
+        "depth_path": "obs_20251227_042926_368f4aab/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              275,
+              506,
+              695,
+              988
+            ],
+            "reason": "Multiple objects (coffee maker, milk frother, grinder, knife, cutting board, cloth) are placed on the counter surface, making it cluttered."
+          },
+          {
+            "category": "about to fall",
+            "score": 0.55,
+            "bbox_2d": [
+              642,
+              569,
+              878,
+              849
+            ],
+            "reason": "A large knife is placed on a cutting board with its handle near the edge of the counter, posing a slight risk of being knocked off or falling if the counter is bumped."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "Kitchen_Island_0",
+          "matched_room": "Kitchen",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              275,
+              506,
+              695,
+              988
+            ],
+            "reason": "Multiple objects (coffee maker, milk frother, grinder, knife, cutting board, cloth) are placed on the counter surface, making it cluttered."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_042955_c6210061",
+        "timestamp": "2025-12-27T04:29:57",
+        "robot_pose": {
+          "x": 4.048032253505838,
+          "y": -0.6033763155361407,
+          "yaw": 1.7567311648984767
+        },
+        "nearest_landmark": "kitchen_table_top_0",
+        "rgb_path": "obs_20251227_042955_c6210061/rgb.jpg",
+        "depth_path": "obs_20251227_042955_c6210061/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              231,
+              185,
+              508,
+              501
+            ],
+            "reason": "Multiple objects (coffee machines, containers, power strip/cables) are grouped together on a limited surface area (the countertop)."
+          },
+          {
+            "category": "about to fall",
+            "score": 0.7,
+            "bbox_2d": [
+              642,
+              647,
+              970,
+              805
+            ],
+            "reason": "A knife is placed on the edge of the table with a significant portion of the blade hanging over the edge, making it unstable and likely to fall."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "Kitchen_Island_0",
+          "matched_room": "Kitchen",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              231,
+              185,
+              508,
+              501
+            ],
+            "reason": "Multiple objects (coffee machines, containers, power strip/cables) are grouped together on a limited surface area (the countertop)."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_043013_0201ff2a",
+        "timestamp": "2025-12-27T04:30:15",
+        "robot_pose": {
+          "x": 4.0603092422919325,
+          "y": -0.5541438195555881,
+          "yaw": 1.5079070507150785
+        },
+        "nearest_landmark": "kitchen_table_top_0",
+        "rgb_path": "obs_20251227_043013_0201ff2a/rgb.jpg",
+        "depth_path": "obs_20251227_043013_0201ff2a/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              342,
+              0,
+              617,
+              340
+            ],
+            "reason": "Multiple objects (coffee machine, milk dispenser, frother) are clustered together on a small area of the counter/table, indicating a cluttered state."
+          },
+          {
+            "category": "wet",
+            "score": 0.6,
+            "bbox_2d": [
+              478,
+              229,
+              588,
+              450
+            ],
+            "reason": "There appears to be a damp or wet area on the paper towel/mat under the coffee machine/dispenser, suggesting liquid spillage."
+          },
+          {
+            "category": "about to fall",
+            "score": 0.75,
+            "bbox_2d": [
+              642,
+              463,
+              1000,
+              618
+            ],
+            "reason": "A knife is placed on a cutting board with a significant portion of its blade hanging over the edge of the table, making it precariously positioned and likely to fall if disturbed."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "Kitchen_Island_0",
+          "matched_room": "Kitchen",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              342,
+              0,
+              617,
+              340
+            ],
+            "reason": "Multiple objects (coffee machine, milk dispenser, frother) are clustered together on a small area of the counter/table, indicating a cluttered state."
+          }
+        }
+      }
+    ],
+    "reason_history": [
+      "Coffee machines and a paper/note are placed on the edge of the table, creating a cluttered area.",
+      "Multiple objects (coffee maker, dispenser, milk frother, and a cloth/mat) are placed close together on the counter surface.",
+      "Multiple objects (coffee maker, milk frother, grinder, knife, cutting board, cloth) are placed on the counter surface, making it cluttered.",
+      "Multiple objects (coffee machines, containers, power strip/cables) are grouped together on a limited surface area (the countertop).",
+      "Multiple objects (coffee machine, milk dispenser, frother) are clustered together on a small area of the counter/table, indicating a cluttered state."
+    ],
+    "VLM": {
+      "risk_prediction_id": 4,
+      "state_instance_id": 0,
+      "state_category": "about to fall",
+      "related_room": "Kitchen",
+      "related_landmarks": "作業台またはテーブル",
+      "related_objects_01": "包丁",
+      "related_objects_01_id": 0,
+      "related_objects_02": "",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "作業台またはテーブルの端に包丁がむき出しの状態で放置されており、落下や接触による重篤な切り傷のリスクが極めて高いため、直ちに安全な場所へ移動させる必要がある。",
+      "priority": 0,
+      "task": "緊急重大なリスクを持つ包丁を安全に把持し、作業台の端から離れた、落下や接触の危険がない安全な場所（例えば、作業台の中央や専用の収納スペース）へ移動させる。",
+      "action": {
+        "包丁": "tidy_up"
+      }
+    }
+  },
+  "1": {
+    "risk_prediction_id": 1,
+    "Semantic_state": {
+      "risk_prediction_id": 1,
+      "state_instance_id": 2,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "stove",
+      "related_objects_01_id": 0,
+      "related_objects_02": "hot pot",
+      "related_objects_02_id": 0,
+      "risk_judge": "潜在重大",
+      "risk_reason": "IHクックトップ（stove_0）周辺に鍋（hot pot_0）や布巾などの複数の物が密集している。reason_historyより、布巾などの可燃物も含まれている可能性が高く、もしコンロが使用された場合、引火による火災や、接触による熱湯こぼれ/火傷につながる潜在的に重大な事故リスクがある。すぐには発生しないが、使用時にリスクが顕在化する。",
+      "priority": 3,
+      "task": "IHクックトップ周辺に可燃物や鍋が密集しており、火災や熱傷の潜在的なリスクがある。布巾など把持が難しい物体も含まれるため、ユーザーに注意喚起を行い、整理を促す。",
+      "action": {
+        "user": "announce"
+      },
+      "statement": "コンロ周辺に鍋や布巾などの物が近接しています。火災や熱湯による火傷のリスクがありますので、使用前に周囲の物を離してください。"
+    },
+    "Semantic_state_RiskScore": {
+      "risk_prediction_id": 1,
+      "state_instance_id": 2,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "stove",
+      "related_objects_01_id": "stove_0",
+      "related_objects_02": "hot pot",
+      "related_objects_02_id": "hot pot_0",
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "前回の判断（潜在重大）を維持します。フィードバックで指摘された通り、関連オブジェクトである stove_0 は火災リスクおよび熱傷リスクの発生頻度率がシーン内で最高値（1.0）であり、このリスクが周囲の散乱物へと強く伝播しています。IHクックトップ周辺の散乱状態は、火災や熱傷といった重大な事故に繋がる可能性が非常に高いため、潜在重大の評価は妥当です。",
+      "priority": 2,
+      "task": "IHクックトップ周辺に鍋（hot pot_0）などの物が密集しており、使用時の火災や熱傷の潜在リスクが高いため、ユーザーに片付けを促す。",
+      "action": {
+        "user": "announce"
+      },
+      "statement": "IHコンロの周囲が散らかっています。使用中に火災や熱傷につながる恐れがあるため、調理前に片付けを行ってください。"
+    },
+    "Semantic_state_RiskScore_Persona_01": {
+      "risk_prediction_id": 1,
+      "state_instance_id": 2,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "stove",
+      "related_objects_01_id": 0,
+      "related_objects_02": "hot pot",
+      "related_objects_02_id": 0,
+      "updated_judge_02": "緊急重大",
+      "updated_reason_02": "フィードバック2（ペルソナ情報）に基づき、リスクカテゴリは変更せず緊急重大を維持する。火災や熱傷はペルソナに関わらず重大であり、ユーザーの過去の不注意傾向は、操作時の偶発的な引火・熱傷事故のリスクを増幅させるため、極めて高いリスクレベルと即時対応の必要性を維持する。",
+      "priority": 2,
+      "task": "IHクックトップ（stove_0）周辺に密集している布巾などの可燃物や、鍋（hot pot_0）を熱源から離れた安全なカウンターエリアに移動させ、火災・熱傷リスクを排除する。",
+      "action": {
+        "hot pot_0": "tidy_up",
+        "dish towel": "tidy_up"
+      }
+    },
+    "Semantic_state_RiskScore_Persona_02": {
+      "risk_prediction_id": 1,
+      "state_instance_id": 2,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "stove",
+      "related_objects_01_id": 0,
+      "related_objects_02": "hot pot",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "初期評価の「潜在重大」という判断は維持するが、理由を定量データとペルソナ情報に基づいて強化する。IHクックトップ周辺に鍋や布巾などが密集しており、stove_0は火災(1.0)および熱傷(1.0)リスクが最大値であり、可燃物が近接しているため極めて危険である。hot pot_0による重度の身体内部傷害リスク(organ_disorder=1.0)も併発。67歳の高齢者は反応速度が遅く、緊急対応が遅れることで熱傷が重症化しやすいため、潜在的に重大な事故リスクとして評価する。",
+      "priority": 3,
+      "task": "IHクックトップ周辺に可燃物や鍋が密集しており、火災・熱傷のリスクが極めて高いため、コンロ使用前に周囲を整理するようユーザーに強く警告する。",
+      "action": {
+        "user": "announce"
+      },
+      "statement": "IHクックトップの周りに物が密集しており、火災や熱傷のリスクが非常に高いです。特に布巾などの可燃物がないか確認し、調理を始める前に必ず周辺を片付けてください。"
+    },
+    "Semantic_state_RiskScore_Persona_03": {
+      "risk_prediction_id": 1,
+      "state_instance_id": 2,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "stove",
+      "related_objects_01_id": 0,
+      "related_objects_02": "hot pot",
+      "related_objects_02_id": 0,
+      "risk_judge": "潜在重大",
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "元の「潜在重大」評価を維持する。Knowledge Reviewerの指摘により、stove_0のfire/burns_skinスコア（1.00）が最高リスクであることを確認。Persona Reviewerの指摘である、車椅子ユーザーは熱湯こぼれ/火傷が発生した場合の回避行動が困難であり、傷害の重篤化リスクが非常に高いという点を総合的に考慮しても、事故の即時性はないため、「潜在重大」の分類が適切である。",
+      "priority": 3,
+      "task": "IHクックトップ周辺にある可燃物（dish towelなど）や、把持可能な食器（cup_2, cup_4など）を把持し、熱源から離れた安全な場所へ移動させる。火災および熱傷の潜在リスクを軽減する。",
+      "action": {
+        "dish towel": "tidy_up",
+        "cup_2": "tidy_up"
+      }
+    },
+    "Semantic_state_RiskScore_Persona_04": {
+      "risk_prediction_id": 1,
+      "state_instance_id": 2,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "stove",
+      "related_objects_01_id": 0,
+      "related_objects_02": "hot pot",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "前回の評価「潜在重大」を維持します。stove_0は火災および熱傷リスクスコアが1.0であり、この密集状態は使用開始時の危険性が極めて高いです。また、81歳の高齢ユーザーは、火災や熱湯こぼれといった緊急事態への対応が遅れやすく、重篤な傷害を負う可能性が増します。この複合的な重篤性を理由に組み込み、評価の根拠を強化します。",
+      "priority": 3,
+      "task": "IHクックトップ（stove_0）に近接している鍋（hot pot_0）を把持し、火災や熱傷リスクを軽減するため、周囲の安全なカウンタートップへ移動させる。",
+      "action": {
+        "hot pot": "tidy_up"
+      }
+    },
+    "Semantic_state_RiskScore_Persona_05": {
+      "risk_prediction_id": 1,
+      "state_instance_id": 2,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "stove",
+      "related_objects_01_id": 0,
+      "related_objects_02": "hot pot",
+      "related_objects_02_id": 0,
+      "updated_judge_02": "緊急重大",
+      "updated_reason_02": "フィードバック02の内容を反映し、評価を「緊急重大」に更新する。IHクックトップ周辺の密集状態は火災・熱傷リスクが極めて高い（stove_0のリスクスコア1.0）。さらに、ユーザーが86歳で認知障害を持ち、過去にコンロの消し忘れによる小火の履歴があるという決定的なペルソナ情報により、事故の発生確率と即時性が著しく高まっているため、直ちに対応が必要な状態であると判断する。",
+      "priority": 2,
+      "task": "火災・熱傷リスクが極めて高いIHクックトップ（stove_0）周辺から、布巾（dish towel_0）や鍋（hot pot_0）を掴み、火元から離れた安全な場所へ移動させる。",
+      "action": {
+        "hot pot_0": "tidy_up",
+        "dish towel_0": "tidy_up"
+      }
+    },
+    "Semantic_state_Stickler": {
+      "risk_prediction_id": 1,
+      "state_instance_id": 2,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "stove",
+      "related_objects_01_id": 0,
+      "related_objects_02": "hot pot",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "IH周りの密集物により、熱い鍋（hot pot_0）を扱う際に操作を誤り、熱湯こぼれによる重度の火傷を負う潜在的なリスクが依然として重大であるため、「潜在重大」を維持します。",
+      "priority": 5,
+      "task": "IHコンロ（stove_0）の周囲にある布巾や水フィルターなどの小型の物体を把持し、熱湯こぼれのリスクを低減するため、作業スペースを確保する。",
+      "action": {
+        "pitcher": "tidy_up",
+        "dish towel": "tidy_up"
+      }
+    },
+    "Semantic_state_Persona_01": {
+      "risk_prediction_id": 1,
+      "state_instance_id": 2,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "stove",
+      "related_objects_01_id": 0,
+      "related_objects_02": "hot pot",
+      "related_objects_02_id": 0,
+      "risk_judge": "潜在重大",
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "火災や熱傷のリスクは年齢に関わらず重大です。フィードバックもこの点を支持しており、コンロ使用という特定の条件が満たされた場合に重大な事故が起こりうるため、「潜在重大」の判断を維持します。",
+      "priority": 3,
+      "task": "IHクックトップ周辺に鍋や布巾（可燃物）が密集しており、火災や熱傷の潜在リスクがあるため、ユーザーにこれらの物体の除去を促す。布巾は把持が困難であり、鍋は熱源の近くにあり危険なため、ロボットは直接介入しない。",
+      "action": {
+        "user": "announce"
+      },
+      "statement": "IHクックトップの周りに、鍋や布巾が置かれています。火災や熱傷につながる可能性があるため、調理前に片付けてください。"
+    },
+    "Semantic_state_Persona_02": {
+      "risk_prediction_id": 1,
+      "state_instance_id": 2,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "stove",
+      "related_objects_01_id": 0,
+      "related_objects_02": "hot pot",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "フィードバックを受けても、評価を更新しない。IHクックトップ周辺の散乱は、火災や熱湯こぼれ/火傷という重大なリスク（潜在重大）を伴う。特に67歳のユーザーは、熱傷の重篤化や反応速度の低下リスクがあるため、フィードバックで指摘された通り、この評価は適切であると判断し維持する。",
+      "priority": 3,
+      "task": "IHクックトップ（stove_0）周辺に密集している鍋（hot pot_0）や布巾などの可燃性物体を、熱源から離れた安全なカウンター上または収納場所に移動させる。",
+      "action": {
+        "hot pot": "tidy_up",
+        "dish towel": "tidy_up"
+      }
+    },
+    "Semantic_state_Persona_03": {
+      "risk_prediction_id": 1,
+      "state_instance_id": 2,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "stove",
+      "related_objects_01_id": 0,
+      "related_objects_02": "hot pot",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "区分は潜在重大を維持する。フィードバックの通り、IHクックトップ周辺の散乱は火災や熱傷の潜在的リスクを伴う。これに加え、ユーザーが車椅子を使用している場合、熱湯や火災が発生した際に素早く回避行動や避難をすることが困難になり、熱傷や二次災害の深刻度が健常者よりも高まるため、潜在重大と評価する。",
+      "priority": 2,
+      "task": "IHクックトップ（stove_0）周辺にある可燃性の布巾や鍋（hot pot_0）を把持し、火災および接触による熱傷リスクを軽減するため、コンロから離れた安全なカウンターエリアへ移動させる。",
+      "action": {
+        "hot pot": "tidy_up",
+        "dish towel": "tidy_up"
+      }
+    },
+    "Semantic_state_Persona_04": {
+      "risk_prediction_id": 1,
+      "state_instance_id": 2,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "stove",
+      "related_objects_01_id": 0,
+      "related_objects_02": "hot pot",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "他のエージェントからのフィードバックに基づき、リスク評価は潜在重大を維持します。IHクックトップ周辺の密集は、火災や熱湯こぼれのリスクを伴いますが、特に81歳の高齢ユーザーの場合、反応速度の低下や身体障害により、緊急回避や対処が遅れる可能性が高く、熱傷や火災による被害が重篤化しやすいです。このため、元の判断の通り潜在重大として、重篤度増加のリスクを理由に含めて評価します。",
+      "priority": 3,
+      "task": "IHクックトップの近くにある布巾（dish towel_0）が引火や熱湯こぼれのリスクを高めるため、布巾を把持し、火気から離れた安全な場所に移動させる。",
+      "action": {
+        "dish towel_0": "tidy_up"
+      }
+    },
+    "Semantic_state_Persona_05": {
+      "risk_prediction_id": 1,
+      "state_instance_id": 2,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "stove",
+      "related_objects_01_id": 0,
+      "related_objects_02": "hot pot",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "フィードバックを受け、評価を「潜在重大」から「緊急重大」に更新する。ユーザーは86歳の認知障害を持つ高齢者であり、過去にコンロでの火災事故履歴があるというペルソナ情報を最優先に考慮する。IHクックトップ周辺に可燃物を含む散乱がある状態は、認知障害によるコンロの誤操作や消し忘れ、熱源と可燃物との接触により、即座に大火災につながる可能性が極めて高いため、緊急対応が必要である。",
+      "priority": 2,
+      "task": "IHクックトップ（stove_0）周辺に密集している布巾や鍋（hot pot_0）を掴み、熱源から離れた安全なカウンターエリアに移動させる。火災及び熱傷リスクの緊急回避が目的。",
+      "action": {
+        "dish towel": "tidy_up",
+        "hot pot": "tidy_up"
+      }
+    },
+    "observations": [
+      {
+        "observation_id": "obs_20251227_043122_186377bf",
+        "timestamp": "2025-12-27T04:31:24",
+        "robot_pose": {
+          "x": 4.629939335951612,
+          "y": -0.8451110172679774,
+          "yaw": -2.1312014431233193
+        },
+        "nearest_landmark": "kitchen_table_top_0",
+        "rgb_path": "obs_20251227_043122_186377bf/rgb.jpg",
+        "depth_path": "obs_20251227_043122_186377bf/depth.png",
+        "detected_states": [
+          {
+            "category": "stacked",
+            "score": 0.95,
+            "bbox_2d": [
+              770,
+              377,
+              884,
+              588
+            ],
+            "reason": "Multiple white plates and bowls are clearly stacked on top of each other on the counter."
+          },
+          {
+            "category": "stacked",
+            "score": 0.9,
+            "bbox_2d": [
+              867,
+              263,
+              999,
+              403
+            ],
+            "reason": "A small stack of white plates is visible in the foreground."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.8,
+            "bbox_2d": [
+              438,
+              0,
+              778,
+              155
+            ],
+            "reason": "The area around the sink is cluttered with various cleaning bottles, sponges, and a dish rack."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.75,
+            "bbox_2d": [
+              40,
+              300,
+              684,
+              518
+            ],
+            "reason": "The white wire rack is cluttered with various mugs, cups, and tumblers."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "kitchen_table_top_0",
+          "matched_room": "Kitchen",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.75,
+            "bbox_2d": [
+              40,
+              300,
+              684,
+              518
+            ],
+            "reason": "The white wire rack is cluttered with various mugs, cups, and tumblers."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_043202_a371e222",
+        "timestamp": "2025-12-27T04:32:04",
+        "robot_pose": {
+          "x": 4.262796373000068,
+          "y": -0.8577623353945465,
+          "yaw": -2.3626475724280014
+        },
+        "nearest_landmark": "kitchen_table_top_0",
+        "rgb_path": "obs_20251227_043202_a371e222/rgb.jpg",
+        "depth_path": "obs_20251227_043202_a371e222/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              78,
+              0,
+              700,
+              210
+            ],
+            "reason": "The metal dish rack is cluttered with various kitchen items, including mugs, tumblers, and dishes."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.75,
+            "bbox_2d": [
+              467,
+              300,
+              617,
+              500
+            ],
+            "reason": "The countertop area around the induction cooktop is cluttered with a pot, water filter pitcher, and another pitcher."
+          },
+          {
+            "category": "stacked",
+            "score": 0.95,
+            "bbox_2d": [
+              700,
+              0,
+              968,
+              300
+            ],
+            "reason": "Two white bowls are clearly stacked on top of each other on the countertop."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "kitchen_table_top_0",
+          "matched_room": "Kitchen",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.75,
+            "bbox_2d": [
+              467,
+              300,
+              617,
+              500
+            ],
+            "reason": "The countertop area around the induction cooktop is cluttered with a pot, water filter pitcher, and another pitcher."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_043224_c98c6349",
+        "timestamp": "2025-12-27T04:32:26",
+        "robot_pose": {
+          "x": 4.4084824920207275,
+          "y": -0.7117893225397651,
+          "yaw": -2.3465905433096537
+        },
+        "nearest_landmark": "kitchen_table_top_0",
+        "rgb_path": "obs_20251227_043224_c98c6349/rgb.jpg",
+        "depth_path": "obs_20251227_043224_c98c6349/depth.png",
+        "detected_states": [
+          {
+            "category": "stacked",
+            "score": 0.9,
+            "bbox_2d": [
+              28,
+              0,
+              651,
+              251
+            ],
+            "reason": "Mugs and cups are stacked on top of each other in the drying rack."
+          },
+          {
+            "category": "stacked",
+            "score": 0.95,
+            "bbox_2d": [
+              677,
+              0,
+              839,
+              188
+            ],
+            "reason": "Plates are stacked on top of each other on the countertop."
+          },
+          {
+            "category": "stacked",
+            "score": 0.85,
+            "bbox_2d": [
+              680,
+              211,
+              835,
+              345
+            ],
+            "reason": "Bowls are stacked on top of each other on the countertop."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.7,
+            "bbox_2d": [
+              642,
+              322,
+              889,
+              697
+            ],
+            "reason": "The countertop surface has multiple objects (bowls, cloth, pot, water filter, pitcher) placed on it, indicating a cluttered state."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "kitchen_table_top_0",
+          "matched_room": "Kitchen",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.7,
+            "bbox_2d": [
+              642,
+              322,
+              889,
+              697
+            ],
+            "reason": "The countertop surface has multiple objects (bowls, cloth, pot, water filter, pitcher) placed on it, indicating a cluttered state."
+          }
+        }
+      }
+    ],
+    "reason_history": [
+      "The white wire rack is cluttered with various mugs, cups, and tumblers.",
+      "The countertop area around the induction cooktop is cluttered with a pot, water filter pitcher, and another pitcher.",
+      "The countertop surface has multiple objects (bowls, cloth, pot, water filter, pitcher) placed on it, indicating a cluttered state."
+    ],
+    "VLM": {
+      "risk_prediction_id": 1,
+      "state_instance_id": 0,
+      "state_category": "stacked",
+      "related_room": "Kitchen",
+      "related_landmarks": "",
+      "related_objects_01": "皿",
+      "related_objects_01_id": 0,
+      "related_objects_02": "鍋",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "IHヒーター上に調理後の鍋が残されており、誤操作による再加熱や接触による熱傷・火災の潜在的リスクがある。また、カウンター上に不安定に積み重ねられた皿があり、落下・破損による怪我のリスクがある。",
+      "priority": 0,
+      "task": "カウンター上の不安定な皿を掴んで安全な場所に移動させ、落下・破損のリスクを解消する（tidy_up）。同時に、IHヒーター上の鍋の存在と潜在的な熱源リスクについてユーザーに音声で警告し、管理を促す（announce）。",
+      "action": {
+        "皿": "tidy_up",
+        "鍋": "announce",
+        "statement": "IHヒーターの上に調理後の鍋が置かれています。熱傷や誤操作にご注意ください。また、カウンターの皿が不安定ですので、落下防止のため、安全な場所に移動させます。"
+      }
+    }
+  },
+  "7": {
+    "risk_prediction_id": 7,
+    "Semantic_state": {
+      "risk_prediction_id": 7,
+      "state_instance_id": 5,
+      "state_category": "wet",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "risk_judge": "潜在軽微",
+      "risk_reason": "木製テーブル表面に液体の水たまり（puddle of liquid）が視認される。これは主にテーブルの損傷や、水たまり付近の物が滑るリスクはあるものの、床面での転倒事故には繋がらず、影響度が限定的であるため、潜在軽微と評価する。",
+      "priority": 4,
+      "task": "キッチンアイランド表面の水たまりを布巾で拭き取り、テーブルの損傷防止と、物が滑るリスクを軽減する。",
+      "action": {
+        "surface": "wipe"
+      }
+    },
+    "Semantic_state_RiskScore": {
+      "risk_prediction_id": 7,
+      "state_instance_id": 5,
+      "state_category": "wet",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "前回の判断（潜在軽微）を維持します。フィードバックで確認された通り、濡れ状態がカウンター上（Kitchen_Island_0）に限定されており、床面での転倒リスク（重大事故リスク）がないため、影響は軽微な物の滑りやテーブルの損傷などに限定されます。潜在軽微の評価が妥当です。",
+      "priority": 4,
+      "task": "キッチンアイランド上に見られる液体の水たまりを拭き取り、物の滑りやテーブル損傷のリスクを解消する。",
+      "action": {
+        "Kitchen_Island_0": "wipe"
+      }
+    },
+    "Semantic_state_RiskScore_Persona_01": {
+      "risk_prediction_id": 7,
+      "state_instance_id": 5,
+      "state_category": "wet",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "updated_judge_02": "潜在軽微",
+      "updated_reason_02": "フィードバック2（ペルソナ情報）に基づき、リスクカテゴリは変更せず潜在軽微を維持する。現在の水濡れはテーブル上であり軽微だが、もし液体が床に到達した場合、ユーザーの過去のつまずき事故の履歴から転倒リスクが急増し、潜在重大なリスクに変化する可能性がある。現状のリスクは、電気製品への影響とテーブルの損傷に限定されるため、潜在軽微の評価を維持する。",
+      "priority": 3,
+      "task": "キッチンアイランド上の水たまりを拭き取り、周辺の電気製品への液体侵入や感電リスクを軽減する。",
+      "action": {
+        "wet area": "wipe"
+      }
+    },
+    "Semantic_state_RiskScore_Persona_02": {
+      "risk_prediction_id": 7,
+      "state_instance_id": 5,
+      "state_category": "wet",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "初期評価の「潜在軽微」は、ペルソナ情報（過去の事故履歴）を考慮すると過小評価であったため、「潜在重大」に更新する。木製テーブル表面に液体の水たまりが確認されるが、67歳のユーザーは過去に濡れたキッチン床で転倒事故を起こした履歴があるため、この水たまりが床面に広がることは、重大な転倒・骨折事故のトリガーとなる潜在的なリスクとなる。さらに、周囲に密集する電化製品への水濡れによるショートや感電リスクも考慮し、潜在重大と判断する。",
+      "priority": 2,
+      "task": "キッチンアイランド上の水たまりは、床への波及による転倒・骨折のリスクや、周囲の電化製品へのショートリスクがある。周囲が密集しており、ロボットによる拭き取りは二次的なリスクを伴うため、ユーザーに注意喚起を行う。",
+      "action": {
+        "user": "announce"
+      },
+      "statement": "キッチンアイランドに水たまりがあります。床に広がると転倒の原因となり、過去の事故履歴からも特に危険です。また、近くの電化製品の故障につながる可能性もあるため、すぐに拭き取ってください。"
+    },
+    "Semantic_state_RiskScore_Persona_03": {
+      "risk_prediction_id": 7,
+      "state_instance_id": 5,
+      "state_category": "wet",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "related_objects_02": "N/A",
+      "related_objects_02_id": "N/A",
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "元の「潜在軽微」評価を維持する。濡れがカウンター上に限定されており、床面での転倒リスクは発生しないため、車椅子ユーザーの移動に影響を与える重大事故にはつながらない。影響度が限定的であり、「潜在軽微」を維持する。",
+      "priority": 2,
+      "task": "キッチンアイランド上にある液体の水たまりを拭き取り、滑りやテーブル損傷のリスクを解消する。床面での転倒リスクはないが、早急に対応する。",
+      "action": {
+        "liquid_puddle": "wipe"
+      }
+    },
+    "Semantic_state_RiskScore_Persona_04": {
+      "risk_prediction_id": 7,
+      "state_instance_id": 5,
+      "state_category": "wet",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "related_objects_02": null,
+      "related_objects_02_id": null,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "前回の評価「潜在軽微」を「潜在重大」に更新します。液体の水たまりはテーブル上にあるため直接的な転倒リスクはありませんが、過去に転倒事故歴があり身体障害を持つユーザーがこれを拭き取る清掃動作を行う際、不安定な体勢となり転倒リスクが誘発される可能性が高いです。また、濡れが床面に広がるリスクも無視できません。このユーザーにとって最重要リスクである転倒を間接的に誘発する可能性が高いため、潜在的な重大リスクと判断します。",
+      "priority": 2,
+      "task": "高齢ユーザーが清掃動作を行うことによる転倒リスクの誘発を防ぐため、キッチンアイランド上の液体の水たまりを布巾で拭き取る。",
+      "action": {
+        "liquid puddle": "wipe"
+      }
+    },
+    "Semantic_state_RiskScore_Persona_05": {
+      "risk_prediction_id": 7,
+      "state_instance_id": 5,
+      "state_category": "wet",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "updated_judge_02": "潜在重大",
+      "updated_reason_02": "フィードバック02の内容を反映し、評価を「潜在重大」に更新する。テーブル上の濡れ自体は軽微だが、ユーザーが86歳かつ認知障害を持つため、濡れが放置され、結果として床面に液体が広がる（リスク伝播）可能性が高い。高齢者にとって床面転倒は骨折など重大な結果を招く最も避けたい事故であり、この伝播リスクを考慮し、「潜在軽微」では過小評価であるため、「潜在重大」に引き上げる。",
+      "priority": 5,
+      "task": "キッチンアイランド（Kitchen_Island_0）表面にある水たまりを拭き取る。これにより、液体が床に伝播して高齢者が転倒するリスクを予防する。",
+      "action": {
+        "Kitchen_Island_0": "wipe"
+      }
+    },
+    "Semantic_state_Stickler": {
+      "risk_prediction_id": 7,
+      "state_instance_id": 5,
+      "state_category": "wet",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "テーブル上の水たまりが、同じランドマーク上の電源タップに近接している可能性があり、感電やショートによる火災という重大な潜在リスクがあるため、「潜在重大」に格上げします。",
+      "priority": 3,
+      "task": "キッチンアイランド上にある水たまり（puddle of liquid）を布巾で拭き取り、感電・滑り・火災の複合リスクを低減させる。",
+      "action": {
+        "liquid puddle": "wipe"
+      }
+    },
+    "Semantic_state_Persona_01": {
+      "risk_prediction_id": 7,
+      "state_instance_id": 5,
+      "state_category": "wet",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "risk_judge": "潜在軽微",
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "カウンター上の水たまりは、床への転倒リスクに直結しません。フィードバックも同様の評価であり、主にテーブルの軽微な損傷や、周囲の物が滑ることによる軽微な事故に限定されるため、「潜在軽微」の判断を維持します。",
+      "priority": 4,
+      "task": "キッチンアイランドのカウンター表面にある水たまりを、布巾を使って拭き取る。テーブルの損傷防止と、軽微な滑りリスクの除去を目的とする。（前提として、高優先度のナイフとマグカップは既に除去されているものとする）",
+      "action": {
+        "Kitchen_Island_0": "wipe"
+      }
+    },
+    "Semantic_state_Persona_02": {
+      "risk_prediction_id": 7,
+      "state_instance_id": 5,
+      "state_category": "wet",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "フィードバックを受け、評価を潜在軽微から潜在重大に更新する。前回の評価ではテーブル上の水濡れは影響が限定的としたが、67歳のユーザーは過去に濡れた床で転倒した事故履歴があり、水濡れリスク全般に対して極めて脆弱である。テーブル上の水たまりを拭き取る作業中に水が床にこぼれると、このユーザーにとって最も危険な「濡れた床での転倒」リスクを間接的に誘発する可能性が非常に高いため、潜在重大なリスクとして再評価する。",
+      "priority": 2,
+      "task": "キッチンアイランド上の水たまり（puddle of liquid）を布巾で拭き取り、水が床に飛散して転倒事故を誘発する潜在的なリスクを排除する。",
+      "action": {
+        "surface": "wipe"
+      }
+    },
+    "Semantic_state_Persona_03": {
+      "risk_prediction_id": 7,
+      "state_instance_id": 5,
+      "state_category": "wet",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "区分は潜在軽微を維持する。この濡れはテーブル上であり、床への直接的な影響はないため、重大性は低い。フィードバックを踏まえ、車椅子から手を伸ばして作業する際に、濡れた表面で他の物を滑らせて落とし、その結果として床面に障害物が発生し、移動の妨げとなる間接的なリスクが存在する。しかし、即時性や重大性が低いため、潜在軽微と評価する。",
+      "priority": 4,
+      "task": "キッチンアイランド（Kitchen_Island_0）の表面にある液体の水たまりを拭き取り、他の物体が滑り落ちる間接的なリスクを排除する。",
+      "action": {
+        "liquid": "wipe"
+      }
+    },
+    "Semantic_state_Persona_04": {
+      "risk_prediction_id": 7,
+      "state_instance_id": 5,
+      "state_category": "wet",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "他のエージェントからのフィードバックに基づき、リスク評価を潜在軽微から潜在重大に更新します。木製テーブル上の水たまりが、テーブルの端から床に滴り落ちる可能性があり、そのわずかな床の濡れも、身体障害と転倒履歴を持つ81歳のユーザーにとっては、転倒（骨折リスク）を引き起こす潜在的な重大リスクとなります。したがって、床面転倒への波及効果を考慮し、潜在重大と評価します。",
+      "priority": 2,
+      "task": "キッチンアイランド上に見られる液体の水たまりが床に滴り、高齢ユーザーの転倒を招くことを防ぐため、水たまりを布巾で拭き取る。",
+      "action": {
+        "Kitchen_Island_0_wet_surface": "wipe"
+      }
+    },
+    "Semantic_state_Persona_05": {
+      "risk_prediction_id": 7,
+      "state_instance_id": 5,
+      "state_category": "wet",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen_Island_0",
+      "related_objects_01": "pot",
+      "related_objects_01_id": 0,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "フィードバックを受け、評価を「潜在軽微」から「潜在重大」に更新する。テーブル上の濡れ自体は即時の転倒リスクではないものの、86歳の認知障害を持つユーザーが濡れた部分を放置し、隣接する電化製品（コーヒーマシン、電源タップ - ID 4に関連）に触れて感電やショートを引き起こしたり、滑りによりナイフ（ID 6に関連）など他の高リスク物体に衝突したりする二次的な重大事故のリスクを増幅させるため、潜在重大と評価を見直す。",
+      "priority": 3,
+      "task": "キッチンアイランド上にある水たまりを布巾で拭き取る。濡れによる感電リスクや滑りによる二次事故のリスク軽減が目的。",
+      "action": {
+        "wet area": "wipe"
+      }
+    },
+    "observations": [
+      {
+        "observation_id": "obs_20251227_042651_90f7ed19",
+        "timestamp": "2025-12-27T04:26:53",
+        "robot_pose": {
+          "x": 5.793276814799641,
+          "y": -0.13694568821340125,
+          "yaw": 2.3749846090570887
+        },
+        "nearest_landmark": "Kitchen_Island_0",
+        "rgb_path": "obs_20251227_042651_90f7ed19/rgb.jpg",
+        "depth_path": "obs_20251227_042651_90f7ed19/depth.png",
+        "detected_states": [
+          {
+            "category": "wet",
+            "score": 0.9,
+            "bbox_2d": [
+              485,
+              345,
+              650,
+              570
+            ],
+            "reason": "There is a visible dark patch of liquid on the wooden table surface, indicating the surface is wet."
+          },
+          {
+            "category": "about to fall",
+            "score": 0.8,
+            "bbox_2d": [
+              488,
+              448,
+              638,
+              569
+            ],
+            "reason": "The mug is lying on its side, which is an unstable position, and it is near the edge of the table, making it likely to fall if the table is bumped."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.7,
+            "bbox_2d": [
+              493,
+              34,
+              542,
+              377
+            ],
+            "reason": "Multiple objects (coffee makers, dispensers, paper, and a pen) are piled up/placed close together on the table surface near the wall."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "Kitchen_Island_0",
+          "matched_room": "Kitchen",
+          "matched_category": "wet",
+          "matched_detected_state": {
+            "category": "wet",
+            "score": 0.9,
+            "bbox_2d": [
+              485,
+              345,
+              650,
+              570
+            ],
+            "reason": "There is a visible dark patch of liquid on the wooden table surface, indicating the surface is wet."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_042725_f65ba2fb",
+        "timestamp": "2025-12-27T04:27:27",
+        "robot_pose": {
+          "x": 5.884625251468738,
+          "y": 0.1316528128691541,
+          "yaw": 2.851047731306095
+        },
+        "nearest_landmark": "Kitchen_Island_0",
+        "rgb_path": "obs_20251227_042725_f65ba2fb/rgb.jpg",
+        "depth_path": "obs_20251227_042725_f65ba2fb/depth.png",
+        "detected_states": [
+          {
+            "category": "about to fall",
+            "score": 0.85,
+            "bbox_2d": [
+              479,
+              574,
+              711,
+              700
+            ],
+            "reason": "The mug is lying on its side on the table, which is an unstable position and it could roll or fall off the edge if the table is bumped."
+          },
+          {
+            "category": "wet",
+            "score": 0.5,
+            "bbox_2d": [
+              499,
+              310,
+              513,
+              400
+            ],
+            "reason": "There are visible dark patches/streaks on the wooden table surface, particularly in the middle, which appear to be liquid spills or wet areas."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.7,
+            "bbox_2d": [
+              485,
+              300,
+              508,
+              380
+            ],
+            "reason": "There are multiple objects (coffee makers, thermos, paper, pen) grouped together on the table surface, indicating a cluttered area."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "Kitchen_Island_0",
+          "matched_room": "Kitchen",
+          "matched_category": "wet",
+          "matched_detected_state": {
+            "category": "wet",
+            "score": 0.5,
+            "bbox_2d": [
+              499,
+              310,
+              513,
+              400
+            ],
+            "reason": "There are visible dark patches/streaks on the wooden table surface, particularly in the middle, which appear to be liquid spills or wet areas."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_042752_34a215e3",
+        "timestamp": "2025-12-27T04:27:54",
+        "robot_pose": {
+          "x": 5.836614347067711,
+          "y": 0.31344280720154893,
+          "yaw": -2.8125765723875635
+        },
+        "nearest_landmark": "Kitchen_Island_0",
+        "rgb_path": "obs_20251227_042752_34a215e3/rgb.jpg",
+        "depth_path": "obs_20251227_042752_34a215e3/depth.png",
+        "detected_states": [
+          {
+            "category": "stacked",
+            "score": 0.85,
+            "bbox_2d": [
+              268,
+              34,
+              518,
+              256
+            ],
+            "reason": "Dishes and cups are stacked on the drying rack."
+          },
+          {
+            "category": "stacked",
+            "score": 0.75,
+            "bbox_2d": [
+              485,
+              256,
+              542,
+              310
+            ],
+            "reason": "Plates are stacked on the countertop next to the sink."
+          },
+          {
+            "category": "wet",
+            "score": 0.9,
+            "bbox_2d": [
+              536,
+              486,
+              617,
+              666
+            ],
+            "reason": "A puddle of liquid is visible on the wooden table surface."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.6,
+            "bbox_2d": [
+              508,
+              21,
+              561,
+              147
+            ],
+            "reason": "Various cleaning bottles and a sponge are placed near the sink, contributing to clutter on the countertop."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.7,
+            "bbox_2d": [
+              448,
+              392,
+              533,
+              498
+            ],
+            "reason": "Coffee machines and a paper/note are placed on the edge of the table, creating a cluttered area."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "Kitchen_Island_0",
+          "matched_room": "Kitchen",
+          "matched_category": "wet",
+          "matched_detected_state": {
+            "category": "wet",
+            "score": 0.9,
+            "bbox_2d": [
+              536,
+              486,
+              617,
+              666
+            ],
+            "reason": "A puddle of liquid is visible on the wooden table surface."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_042806_b696a377",
+        "timestamp": "2025-12-27T04:28:08",
+        "robot_pose": {
+          "x": 5.836614347067712,
+          "y": 0.31344280720154893,
+          "yaw": -2.8125765723875635
+        },
+        "nearest_landmark": "Kitchen_Island_0",
+        "rgb_path": "obs_20251227_042806_b696a377/rgb.jpg",
+        "depth_path": "obs_20251227_042806_b696a377/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.9,
+            "bbox_2d": [
+              268,
+              78,
+              500,
+              316
+            ],
+            "reason": "The dish drying rack is cluttered with various cups, dishes, and utensils."
+          },
+          {
+            "category": "stacked",
+            "score": 0.8,
+            "bbox_2d": [
+              485,
+              140,
+              533,
+              300
+            ],
+            "reason": "Several white plates are stacked on top of each other next to the sink."
+          },
+          {
+            "category": "wet",
+            "score": 0.75,
+            "bbox_2d": [
+              573,
+              339,
+              664,
+              735
+            ],
+            "reason": "There are visible liquid spills or wet patches on the wooden table surface."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "Kitchen_Island_0",
+          "matched_room": "Kitchen",
+          "matched_category": "wet",
+          "matched_detected_state": {
+            "category": "wet",
+            "score": 0.75,
+            "bbox_2d": [
+              573,
+              339,
+              664,
+              735
+            ],
+            "reason": "There are visible liquid spills or wet patches on the wooden table surface."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_042841_38c5c71e",
+        "timestamp": "2025-12-27T04:28:43",
+        "robot_pose": {
+          "x": 5.342179861281659,
+          "y": -0.5524834316411735,
+          "yaw": 1.4905619564507375
+        },
+        "nearest_landmark": "refrigerator_0",
+        "rgb_path": "obs_20251227_042841_38c5c71e/rgb.jpg",
+        "depth_path": "obs_20251227_042841_38c5c71e/depth.png",
+        "detected_states": [
+          {
+            "category": "about to fall",
+            "score": 0.9,
+            "bbox_2d": [
+              550,
+              345,
+              617,
+              450
+            ],
+            "reason": "The mug is lying on its side on the table, indicating it has fallen or is in a highly unstable position, likely to roll or fall off the edge."
+          },
+          {
+            "category": "wet",
+            "score": 0.95,
+            "bbox_2d": [
+              560,
+              370,
+              610,
+              460
+            ],
+            "reason": "There is a clear puddle of liquid on the wooden table surface, indicating the surface is wet."
+          },
+          {
+            "category": "stacked",
+            "score": 0.8,
+            "bbox_2d": [
+              737,
+              867,
+              999,
+              999
+            ],
+            "reason": "There are objects (boxes/papers) stacked on the lower shelf of the white shelving unit."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "Kitchen_Island_0",
+          "matched_room": "Kitchen",
+          "matched_category": "wet",
+          "matched_detected_state": {
+            "category": "wet",
+            "score": 0.95,
+            "bbox_2d": [
+              560,
+              370,
+              610,
+              460
+            ],
+            "reason": "There is a clear puddle of liquid on the wooden table surface, indicating the surface is wet."
+          }
+        }
+      }
+    ],
+    "reason_history": [
+      "There is a visible dark patch of liquid on the wooden table surface, indicating the surface is wet.",
+      "There are visible dark patches/streaks on the wooden table surface, particularly in the middle, which appear to be liquid spills or wet areas.",
+      "A puddle of liquid is visible on the wooden table surface.",
+      "There are visible liquid spills or wet patches on the wooden table surface.",
+      "There is a clear puddle of liquid on the wooden table surface, indicating the surface is wet."
+    ],
+    "VLM": {
+      "risk_prediction_id": 7,
+      "state_instance_id": 0,
+      "state_category": "wet",
+      "related_room": "Kitchen",
+      "related_landmarks": "",
+      "related_objects_01": "liquid",
+      "related_objects_01_id": 0,
+      "related_objects_02": "knife",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "テーブル上に大量の液体がこぼれており、近くの電化製品（電気ポット、コーヒーメーカー）へのショート・感電・火災リスクが非常に高いため。また、液体の熱傷リスクや、放置された刃物による切り傷リスクも伴う。",
+      "priority": 0,
+      "task": "テーブル上にこぼれた大量の液体を直ちに拭き取り（ショート・火災・熱傷リスクの低減）、次に放置されている刃物を挟み込んで安全な場所へ移動させる（切り傷リスクの低減）。作業完了後、ユーザーへ状況を報告する。",
+      "action": {
+        "liquid_spill_on_table": "wipe",
+        "knife_on_table": "tidy_up",
+        "user": "announce",
+        "statement": "キッチンテーブル上の液体を拭き取りました。電化製品への影響を防ぐため、確認をお願いします。また、放置されていた刃物を安全な場所に移動させました。"
+      }
+    }
+  },
+  "0": {
+    "risk_prediction_id": 0,
+    "Semantic_state": {
+      "risk_prediction_id": 0,
+      "state_instance_id": 0,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "plate",
+      "related_objects_01_id": 0,
+      "related_objects_02": "cup",
+      "related_objects_02_id": 6,
+      "risk_judge": "潜在軽微",
+      "risk_reason": "シンク周りのカウンター上に、清掃用品や食器（例: plate_0, cup_6など）が散乱している状態。作業スペースを制限し、軽微な衝突による食器の破損リスクがあるが、重大な人身事故に直結する危険性は低いと判断される。",
+      "priority": 5,
+      "task": "シンク周りの散乱した物体の中から、把持しやすい皿（plate_0）を掴み、作業スペースを確保するために、一時的にカウンター上の邪魔にならない場所に移動させる。",
+      "action": {
+        "plate_0": "tidy_up"
+      }
+    },
+    "Semantic_state_RiskScore": {
+      "risk_prediction_id": 0,
+      "state_instance_id": 0,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "dish towel",
+      "related_objects_01_id": "dish towel_0",
+      "related_objects_02": "stove",
+      "related_objects_02_id": "stove_0",
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "前回の判断（潜在軽微）を変更し、潜在重大に更新します。フィードバックに基づき、散乱状態の評価に、清掃用品だけでなく関連オブジェクトである布製品（dish towel_0）が、熱源であるIHクックトップ（stove_0）の近くにあることを考慮しました。定量データによれば、この布巾は高い火災リスク（fire: 0.495）と熱傷リスク（burns_skin: 0.600）を伝播しており、コンロ使用時には引火による火災という重大な事故につながる可能性があるため、潜在重大と評価します。すぐに事故が起こるわけではないが、放置は許容できない重大な潜在リスクです。",
+      "priority": 1,
+      "task": "IHコンロ（stove_0）の近くにある布製品（dish towel_0）が火災の原因となる潜在的なリスクがあるため、ユーザーに緊急の注意喚起を行う。",
+      "action": {
+        "user": "announce"
+      },
+      "statement": "IHコンロのすぐ近くに布巾があります。火災・熱傷の重大なリスクがあるため、すぐに安全な場所に移動させてください。"
+    },
+    "Semantic_state_RiskScore_Persona_01": {
+      "risk_prediction_id": 0,
+      "state_instance_id": 0,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "plate",
+      "related_objects_01_id": 0,
+      "related_objects_02": "cup",
+      "related_objects_02_id": 6,
+      "updated_judge_02": "潜在重大",
+      "updated_reason_02": "フィードバック2（ペルソナ情報）に基づき、リスクカテゴリは変更せず潜在重大を維持する。ユーザーの過去の不注意傾向（つまずき事故）を考慮すると、散乱した環境下での作業中のミスによる危険物への接触リスクは依然として高く、重大な事故につながる可能性があるため、潜在重大の評価を維持する。",
+      "priority": 5,
+      "task": "シンク周りのカウンター上に散乱している清掃用品（ボトル、スポンジ）や食器（plate_0, cup_6など）を掴み、収納場所または食器乾燥ラックに移動させ、作業スペースを確保する。",
+      "action": {
+        "plate_0": "tidy_up",
+        "cup_6": "tidy_up",
+        "cleaning bottles": "tidy_up"
+      }
+    },
+    "Semantic_state_RiskScore_Persona_02": {
+      "risk_prediction_id": 0,
+      "state_instance_id": 0,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "plate",
+      "related_objects_01_id": 0,
+      "related_objects_02": "cup",
+      "related_objects_02_id": 6,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "初期評価の「潜在軽微」は、定量データ（汚染/中毒リスクの高さ）およびペルソナ情報（高齢者による重症化リスク）を考慮すると過小評価であったため、「潜在重大」に更新する。シンク周りの散乱物には、清掃用品と食器が混在しており、衛生・化学的な汚染・中毒リスク（contamination_poisoning ~0.95, toxic_suffocation ~0.99）が極めて高い。67歳の高齢者は免疫力が低下しているため、汚染された食器の使用は重篤な健康被害につながる可能性が高く、潜在重大と判断する。",
+      "priority": 7,
+      "task": "シンク周りのカウンター上に清掃用品と食器が混在しており、汚染・中毒のリスクが高いため、衛生的に整理するようユーザーに促す。",
+      "action": {
+        "user": "announce"
+      },
+      "statement": "シンク周りのカウンターが散乱し、清掃用品と食器が混ざっています。汚染による健康被害のリスクがありますので、清掃用品を食器から離れた場所に整理してください。"
+    },
+    "Semantic_state_RiskScore_Persona_03": {
+      "risk_prediction_id": 0,
+      "state_instance_id": 0,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "plate",
+      "related_objects_01_id": 0,
+      "related_objects_02": "cup",
+      "related_objects_02_id": 6,
+      "risk_judge": "潜在軽微",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "元の「潜在軽微」評価を「潜在重大」に更新する。Knowledge Reviewerの指摘にある通り、食器類は高い衛生リスク（contamination_poisoning/toxic_suffocation スコア 0.95～0.99）を伴い、散乱状態がこれを顕在化させる。さらにPersona Reviewerの指摘を考慮すると、車椅子利用者は作業スペースの制限や誤接触のリスクが増大し、衛生上の潜在重大な事故（食中毒や中毒）につながる可能性が高まるため、総合的に潜在重大と判断する。",
+      "priority": 6,
+      "task": "シンク周りのカウンター上に散乱している清掃ボトルやスポンジなどの清掃用品を把持し、整理して作業空間を確保する。衛生リスクおよび車椅子ユーザーの作業困難性を軽減する。",
+      "action": {
+        "cleaning bottles": "tidy_up",
+        "sponge": "tidy_up"
+      }
+    },
+    "Semantic_state_RiskScore_Persona_04": {
+      "risk_prediction_id": 0,
+      "state_instance_id": 0,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "plate",
+      "related_objects_01_id": 0,
+      "related_objects_02": "cup",
+      "related_objects_02_id": 6,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "前回の評価「潜在軽微」は、散乱による直接的な傷害リスクを過小評価していました。定量データに基づくと、この密集地帯にはstove_0やknife_0など、火災(1.0)や切創(1.0)の最高リスクスコアを持つ危険物が含まれています。さらに、ペルソナ情報（81歳、身体障害、転倒履歴）を考慮すると、清掃や作業時に不安定な姿勢を強いられ、バランスを崩して転倒を誘発する間接的な重大リスクも大幅に高まります。これらの要因を総合的に判断し、即時性は低いものの、日常的な使用に伴い重篤な事故に繋がりかねないため、「潜在重大」に更新します。",
+      "priority": 5,
+      "task": "シンク周りのカウンター上の清掃用品や食器の散乱状態は、危険物を含む複雑な密集状態であり、ロボットによる整理が困難でかえって不安定さを生じかねないため、ユーザーに対して安全上の注意を促す。",
+      "action": {
+        "user": "announce"
+      },
+      "statement": "シンク周りのカウンターが非常に散らかっており、作業中の転倒や接触事故のリスクを高めています。お怪我をされないよう、ご注意ください。"
+    },
+    "Semantic_state_RiskScore_Persona_05": {
+      "risk_prediction_id": 0,
+      "state_instance_id": 0,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "plate",
+      "related_objects_01_id": 0,
+      "related_objects_02": "cup",
+      "related_objects_02_id": 6,
+      "updated_judge_02": "潜在重大",
+      "updated_reason_02": "フィードバック02の内容を考慮したが、評価は「潜在重大」を維持する。ユーザーが86歳の高齢者で認知障害を持つため、清掃用品と食器が混在している状況は、誤飲や中毒のリスクを大幅に高める。このペルソナ情報とリスクスコア（0.95以上）の高さは、重大な健康被害につながる可能性を示唆しており、総合的に「潜在重大」として妥当であると判断する。",
+      "priority": 3,
+      "task": "シンク周りで清掃用品と混在している食器（plate_0, cup_6など）を掴み、誤飲・中毒リスクを減らすために安全な場所へ隔離する。",
+      "action": {
+        "plate_0": "tidy_up",
+        "cup_6": "tidy_up"
+      }
+    },
+    "Semantic_state_Stickler": {
+      "risk_prediction_id": 0,
+      "state_instance_id": 0,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "plate",
+      "related_objects_01_id": 0,
+      "related_objects_02": "cup",
+      "related_objects_02_id": 6,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "清掃ボトルがカウンターから落下・破損した場合の床面での転倒事故や、衛生上のリスク（化学物質の接触）を考慮し、「潜在重大」と判断しました。",
+      "priority": 4,
+      "task": "シンク周りに散乱している清掃ボトルを把持し、調理器具や食器から離れた安全なキャビネット内やカウンターの隅に移動させる。",
+      "action": {
+        "cleaning bottles": "tidy_up"
+      }
+    },
+    "Semantic_state_Persona_01": {
+      "risk_prediction_id": 0,
+      "state_instance_id": 0,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "plate",
+      "related_objects_01_id": 0,
+      "related_objects_02": "cup",
+      "related_objects_02_id": 6,
+      "risk_judge": "潜在軽微",
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "他のエージェントからのフィードバックに基づき、ユーザーは若年で健康であり、カウンター上の散乱によるリスクは主に作業効率の低下や食器の破損に留まります。重大な人身事故リスクは極めて低いため、「潜在軽微」の判断を維持します。",
+      "priority": 5,
+      "task": "シンク周りのカウンター上に清掃用品や食器が散乱している状態について、作業効率の低下を避けるため、ユーザーに整理を促す。",
+      "action": {
+        "user": "announce"
+      },
+      "statement": "シンク周りのカウンター上が散らかっています。作業をスムーズに行うために、清掃用品や食器の整理をお願いします。"
+    },
+    "Semantic_state_Persona_02": {
+      "risk_prediction_id": 0,
+      "state_instance_id": 0,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "plate",
+      "related_objects_01_id": 0,
+      "related_objects_02": "cup",
+      "related_objects_02_id": 6,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "フィードバックを受けても、評価を更新しない。シンク周りの散乱（cluttered）は、主に作業効率の低下や食器破損リスク（潜在軽微）に留まる。67歳のユーザーにとって、カウンター上の散乱は間接的なバランスの崩しに繋がる可能性はあるが、足元に散乱物がないため直接的な転倒リスクは低い。フィードバックはこの判断が妥当であるとしているため、潜在軽微を維持する。",
+      "priority": 5,
+      "task": "シンク周りのカウンター上に散乱している清掃用品や食器を把持し、作業スペースを確保するため、適切な場所へ移動させる。",
+      "action": {
+        "cleaning bottles": "tidy_up",
+        "sponge": "tidy_up",
+        "dishes": "tidy_up"
+      }
+    },
+    "Semantic_state_Persona_03": {
+      "risk_prediction_id": 0,
+      "state_instance_id": 0,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "plate",
+      "related_objects_01_id": 0,
+      "related_objects_02": "cup",
+      "related_objects_02_id": 6,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "区分は潜在軽微を維持する。フィードバックを踏まえ、カウンター上の散乱物（清掃用品、食器など）が作業スペースを狭め、不用意に物を落とすリスクがある点を強調する。もし落下物が床面に落ちた場合、ユーザーは身体障害（車椅子利用の可能性）を持つため、車椅子の移動を妨げ、過去の事故履歴（車椅子の引っかかり）と類似した軽度の事故につながる潜在的なリスクがある。しかし、若年層で認知障害がないため、即座の重大事故にはつながらないと判断し、潜在軽微に留める。",
+      "priority": 5,
+      "task": "シンク周りのカウンター上に散乱している清掃用品や食器（plate_0, cup_6など）を把持し、作業スペースを確保して落下リスクを軽減するために整理する。",
+      "action": {
+        "cleaning bottles": "tidy_up",
+        "dish": "tidy_up"
+      }
+    },
+    "Semantic_state_Persona_04": {
+      "risk_prediction_id": 0,
+      "state_instance_id": 0,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "plate",
+      "related_objects_01_id": 0,
+      "related_objects_02": "cup",
+      "related_objects_02_id": 6,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "他のエージェントからのフィードバックに基づき、リスク評価を潜在軽微から潜在重大に更新します。ユーザーは81歳で身体障害があり、過去に転倒履歴があるため、カウンター上の散乱物（清掃用品、食器など）が落下し、その破片や音に驚いてバランスを崩し転倒するリスクが極めて高いと判断されます。このユーザーにとって転倒は骨折などの重大事故に直結するため、落下物による転倒誘発リスクを重視し潜在重大と評価します。",
+      "priority": 5,
+      "task": "シンク周りの清掃用品や食器の散乱が高齢者の転倒誘発リスクとなるため、ユーザーに注意を促し、整理を推奨する。",
+      "action": {
+        "user": "announce"
+      },
+      "statement": "シンク周りのカウンター上に清掃用品や食器が散乱しており、物が落下して転倒する危険性があります。お手数ですが整理をお願いします。"
+    },
+    "Semantic_state_Persona_05": {
+      "risk_prediction_id": 0,
+      "state_instance_id": 0,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "plate",
+      "related_objects_01_id": 0,
+      "related_objects_02": "cup",
+      "related_objects_02_id": 6,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "フィードバックを受け、評価の更新は行わない。シンク周りの散乱は軽微なリスクに留まる。ただし、ユーザーが86歳で認知障害（cognitive_disability: 1）があるため、清掃用品（reason_history参照）の誤飲や誤使用につながる潜在的なリスクは健常者より高いが、即時的な重大事故リスクは低いため、総合的に「潜在軽微」を維持する。",
+      "priority": 5,
+      "task": "シンク周辺に散乱している清掃ボトルを把持し、ユーザーの手の届きにくい安全な場所（キャビネットなど）に移動させる。認知障害による清掃用品の誤飲・誤使用リスクの軽減が目的。",
+      "action": {
+        "cleaning bottles": "tidy_up"
+      }
+    },
+    "observations": [
+      {
+        "observation_id": "obs_20251227_042752_34a215e3",
+        "timestamp": "2025-12-27T04:27:54",
+        "robot_pose": {
+          "x": 5.836614347067711,
+          "y": 0.31344280720154893,
+          "yaw": -2.8125765723875635
+        },
+        "nearest_landmark": "Kitchen_Island_0",
+        "rgb_path": "obs_20251227_042752_34a215e3/rgb.jpg",
+        "depth_path": "obs_20251227_042752_34a215e3/depth.png",
+        "detected_states": [
+          {
+            "category": "stacked",
+            "score": 0.85,
+            "bbox_2d": [
+              268,
+              34,
+              518,
+              256
+            ],
+            "reason": "Dishes and cups are stacked on the drying rack."
+          },
+          {
+            "category": "stacked",
+            "score": 0.75,
+            "bbox_2d": [
+              485,
+              256,
+              542,
+              310
+            ],
+            "reason": "Plates are stacked on the countertop next to the sink."
+          },
+          {
+            "category": "wet",
+            "score": 0.9,
+            "bbox_2d": [
+              536,
+              486,
+              617,
+              666
+            ],
+            "reason": "A puddle of liquid is visible on the wooden table surface."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.6,
+            "bbox_2d": [
+              508,
+              21,
+              561,
+              147
+            ],
+            "reason": "Various cleaning bottles and a sponge are placed near the sink, contributing to clutter on the countertop."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.7,
+            "bbox_2d": [
+              448,
+              392,
+              533,
+              498
+            ],
+            "reason": "Coffee machines and a paper/note are placed on the edge of the table, creating a cluttered area."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "kitchen_table_top_0",
+          "matched_room": "Kitchen",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.6,
+            "bbox_2d": [
+              508,
+              21,
+              561,
+              147
+            ],
+            "reason": "Various cleaning bottles and a sponge are placed near the sink, contributing to clutter on the countertop."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_042806_b696a377",
+        "timestamp": "2025-12-27T04:28:08",
+        "robot_pose": {
+          "x": 5.836614347067712,
+          "y": 0.31344280720154893,
+          "yaw": -2.8125765723875635
+        },
+        "nearest_landmark": "Kitchen_Island_0",
+        "rgb_path": "obs_20251227_042806_b696a377/rgb.jpg",
+        "depth_path": "obs_20251227_042806_b696a377/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.9,
+            "bbox_2d": [
+              268,
+              78,
+              500,
+              316
+            ],
+            "reason": "The dish drying rack is cluttered with various cups, dishes, and utensils."
+          },
+          {
+            "category": "stacked",
+            "score": 0.8,
+            "bbox_2d": [
+              485,
+              140,
+              533,
+              300
+            ],
+            "reason": "Several white plates are stacked on top of each other next to the sink."
+          },
+          {
+            "category": "wet",
+            "score": 0.75,
+            "bbox_2d": [
+              573,
+              339,
+              664,
+              735
+            ],
+            "reason": "There are visible liquid spills or wet patches on the wooden table surface."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "kitchen_table_top_0",
+          "matched_room": "Kitchen",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.9,
+            "bbox_2d": [
+              268,
+              78,
+              500,
+              316
+            ],
+            "reason": "The dish drying rack is cluttered with various cups, dishes, and utensils."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_043054_8ce47229",
+        "timestamp": "2025-12-27T04:30:56",
+        "robot_pose": {
+          "x": 4.082826600591154,
+          "y": -0.7189611365092161,
+          "yaw": -1.4946666126530581
+        },
+        "nearest_landmark": "kitchen_table_top_0",
+        "rgb_path": "obs_20251227_043054_8ce47229/rgb.jpg",
+        "depth_path": "obs_20251227_043054_8ce47229/depth.png",
+        "detected_states": [
+          {
+            "category": "stacked",
+            "score": 0.9,
+            "bbox_2d": [
+              38,
+              342,
+              606,
+              590
+            ],
+            "reason": "Mugs and cups are stacked on the multi-tiered dish rack."
+          },
+          {
+            "category": "stacked",
+            "score": 0.95,
+            "bbox_2d": [
+              684,
+              173,
+              771,
+              388
+            ],
+            "reason": "Plates and bowls are stacked on top of each other on the counter."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.8,
+            "bbox_2d": [
+              434,
+              107,
+              605,
+              348
+            ],
+            "reason": "Various cleaning bottles and objects are piled up around the sink area."
+          },
+          {
+            "category": "about to fall",
+            "score": 0.45,
+            "bbox_2d": [
+              289,
+              278,
+              506,
+              359
+            ],
+            "reason": "A long, thin wooden stick/skewer is leaning precariously in the utensil holder and appears unstable."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "kitchen_table_top_0",
+          "matched_room": "Kitchen",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.8,
+            "bbox_2d": [
+              434,
+              107,
+              605,
+              348
+            ],
+            "reason": "Various cleaning bottles and objects are piled up around the sink area."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_043122_186377bf",
+        "timestamp": "2025-12-27T04:31:24",
+        "robot_pose": {
+          "x": 4.629939335951612,
+          "y": -0.8451110172679774,
+          "yaw": -2.1312014431233193
+        },
+        "nearest_landmark": "kitchen_table_top_0",
+        "rgb_path": "obs_20251227_043122_186377bf/rgb.jpg",
+        "depth_path": "obs_20251227_043122_186377bf/depth.png",
+        "detected_states": [
+          {
+            "category": "stacked",
+            "score": 0.95,
+            "bbox_2d": [
+              770,
+              377,
+              884,
+              588
+            ],
+            "reason": "Multiple white plates and bowls are clearly stacked on top of each other on the counter."
+          },
+          {
+            "category": "stacked",
+            "score": 0.9,
+            "bbox_2d": [
+              867,
+              263,
+              999,
+              403
+            ],
+            "reason": "A small stack of white plates is visible in the foreground."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.8,
+            "bbox_2d": [
+              438,
+              0,
+              778,
+              155
+            ],
+            "reason": "The area around the sink is cluttered with various cleaning bottles, sponges, and a dish rack."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.75,
+            "bbox_2d": [
+              40,
+              300,
+              684,
+              518
+            ],
+            "reason": "The white wire rack is cluttered with various mugs, cups, and tumblers."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "kitchen_table_top_0",
+          "matched_room": "Kitchen",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.8,
+            "bbox_2d": [
+              438,
+              0,
+              778,
+              155
+            ],
+            "reason": "The area around the sink is cluttered with various cleaning bottles, sponges, and a dish rack."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_043202_a371e222",
+        "timestamp": "2025-12-27T04:32:04",
+        "robot_pose": {
+          "x": 4.262796373000068,
+          "y": -0.8577623353945465,
+          "yaw": -2.3626475724280014
+        },
+        "nearest_landmark": "kitchen_table_top_0",
+        "rgb_path": "obs_20251227_043202_a371e222/rgb.jpg",
+        "depth_path": "obs_20251227_043202_a371e222/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              78,
+              0,
+              700,
+              210
+            ],
+            "reason": "The metal dish rack is cluttered with various kitchen items, including mugs, tumblers, and dishes."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.75,
+            "bbox_2d": [
+              467,
+              300,
+              617,
+              500
+            ],
+            "reason": "The countertop area around the induction cooktop is cluttered with a pot, water filter pitcher, and another pitcher."
+          },
+          {
+            "category": "stacked",
+            "score": 0.95,
+            "bbox_2d": [
+              700,
+              0,
+              968,
+              300
+            ],
+            "reason": "Two white bowls are clearly stacked on top of each other on the countertop."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "kitchen_table_top_0",
+          "matched_room": "Kitchen",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              78,
+              0,
+              700,
+              210
+            ],
+            "reason": "The metal dish rack is cluttered with various kitchen items, including mugs, tumblers, and dishes."
+          }
+        }
+      }
+    ],
+    "reason_history": [
+      "Various cleaning bottles and a sponge are placed near the sink, contributing to clutter on the countertop.",
+      "The dish drying rack is cluttered with various cups, dishes, and utensils.",
+      "Various cleaning bottles and objects are piled up around the sink area.",
+      "The area around the sink is cluttered with various cleaning bottles, sponges, and a dish rack.",
+      "The metal dish rack is cluttered with various kitchen items, including mugs, tumblers, and dishes."
+    ],
+    "VLM": {
+      "risk_prediction_id": 0,
+      "state_instance_id": 0,
+      "state_category": "on fire",
+      "related_room": "Kitchen",
+      "related_landmarks": "コンロ",
+      "related_objects_01": "タオル",
+      "related_objects_01_id": 0,
+      "related_objects_02": "コンロ",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "IH/電気コンロの上にタオルが広範囲に敷かれており、誤って電源が入った場合、タオルが発火し火災や熱傷を引き起こす極めて高いリスクがある。ロボットは柔らかい布を確実に把持・除去する制約があるため、ユーザーに直ちに警告する必要がある。",
+      "priority": 0,
+      "task": "コンロの上にタオルが置かれており、発火の危険性が極めて高いため、ユーザーに対して緊急の音声警告を行い、直ちにタオルを取り除くよう促す。",
+      "action": {
+        "object_name": "ユーザー",
+        "action_name": "announce",
+        "statement": "【緊急警告】キッチンコンロの上にタオルが置かれています。発火の危険性がありますので、すぐにコンロからタオルを取り除いてください。"
+      }
+    }
+  },
+  "2": {
+    "risk_prediction_id": 2,
+    "Semantic_state": {
+      "risk_prediction_id": 2,
+      "state_instance_id": 6,
+      "state_category": "stacked",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "plate",
+      "related_objects_01_id": 0,
+      "related_objects_02": "plate",
+      "related_objects_02_id": 1,
+      "risk_judge": "潜在軽微",
+      "risk_reason": "皿（plate_0, plate_1など）やボウルがカウンター上に積み重ねられている状態。落下による食器の破損や、破片による軽度の切創リスクはあるが、重大な人身事故に発展する可能性は低いため、潜在軽微とする。",
+      "priority": 6,
+      "task": "積み重ねられた食器は、不安定でロボットが把持を試みると崩壊させてしまうリスクが高いため、特に緊急性は低く、物理的な介入は行わない。",
+      "action": {
+        "dish_stack": "nothing"
+      }
+    },
+    "Semantic_state_RiskScore": {
+      "risk_prediction_id": 2,
+      "state_instance_id": 6,
+      "state_category": "stacked",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "plate",
+      "related_objects_01_id": "plate_0",
+      "related_objects_02": "plate",
+      "related_objects_02_id": "plate_1",
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "前回の判断（潜在軽微）を維持します。プレートの積み重ねは落下・破損時に切創リスク（cuts_stabs: 約0.7台）を伴いますが、フィードバックで確認された通り、重大な傷害リスク（severe_loss: 0.0）は低く、人身事故よりも食器の損害や軽度の切創に限定されるため、潜在軽微が妥当です。",
+      "priority": 6,
+      "task": "積み重ねられた皿は軽微なリスクに留まり、移動は複雑で破損リスクが高いため、他の重大・緊急タスクを優先し、対応しない。",
+      "action": {
+        "nothing": "nothing"
+      }
+    },
+    "Semantic_state_RiskScore_Persona_01": {
+      "risk_prediction_id": 2,
+      "state_instance_id": 6,
+      "state_category": "stacked",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "plate",
+      "related_objects_01_id": 0,
+      "related_objects_02": "plate",
+      "related_objects_02_id": 1,
+      "updated_judge_02": "潜在軽微",
+      "updated_reason_02": "フィードバック2（ペルソナ情報）に基づき、リスクカテゴリは変更せず潜在軽微を維持する。若年者であり、身体能力が高いため、食器の積み重ねによる切創リスクは重篤化しにくい。主に物的損害に限定されるため、評価を維持する。",
+      "priority": 6,
+      "task": "積み重ねられた皿やカップ（ID 3も含む）は、ロボットが把持すると崩れるリスクが高いため、ユーザーに対して口頭で不安定な食器の積み重ねによる破損・切創の潜在リスクについて通知し、整理を促す。",
+      "action": {
+        "user": "announce"
+      },
+      "statement": "キッチンカウンター上のお皿やカップが不安定に積み重ねられています。崩れて割れる危険がありますので、ご注意ください。"
+    },
+    "Semantic_state_RiskScore_Persona_02": {
+      "risk_prediction_id": 2,
+      "state_instance_id": 6,
+      "state_category": "stacked",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "plate",
+      "related_objects_01_id": 0,
+      "related_objects_02": "plate",
+      "related_objects_02_id": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "初期評価の「潜在軽微」は、定量データ（切創および汚染リスクの高さ）とペルソナ情報（高齢者の転倒・骨折リスク）を考慮すると過小評価であったため、「潜在重大」に更新する。皿やボウルが不安定に積み重ねられている状態は、落下・破損時に切創（cuts_stabs ~0.75）を引き起こすリスクがある。特に67歳の高齢者は、破片を避けようとした際にバランスを崩し、転倒・骨折という重大な二次災害に至る可能性が高いため、潜在重大と判断する。また、食器類に付随する汚染・中毒リスク（~0.99）も潜在的な重大リスクである。",
+      "priority": 5,
+      "task": "カウンター上の不安定な皿の積み重ねは、落下による切創や、破片回避時の転倒・骨折リスクがあるため、安全な場所への収納をユーザーに依頼する。",
+      "action": {
+        "user": "announce"
+      },
+      "statement": "カウンターに皿が不安定に高く積まれています。崩れて破片を避ける際に転倒すると危険ですので、安全な場所に収納してください。"
+    },
+    "Semantic_state_RiskScore_Persona_03": {
+      "risk_prediction_id": 2,
+      "state_instance_id": 6,
+      "state_category": "stacked",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "plate",
+      "related_objects_01_id": 0,
+      "related_objects_02": "plate",
+      "related_objects_02_id": 1,
+      "risk_judge": "潜在軽微",
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "元の「潜在軽微」評価を「潜在重大」に更新する。Knowledge Reviewerが指摘するように、積み重ねられた皿は落下・破損時に高い切創リスク（cuts_stabs スコア 0.72～0.78）を伴う。また、Persona Reviewerの指摘から、車椅子利用者は落下した破片を回避することが困難であり、重篤な切創事故に発展する潜在的なリスクが高いと判断し、潜在重大に修正する。",
+      "priority": 4,
+      "task": "キッチンカウンター上に不安定に積み重ねられた皿（plate_0など）を把持し、一枚ずつ安全な場所へ移動させ、積み重ねの状態を解消する。落下時の重篤な切創事故リスクを低減する。",
+      "action": {
+        "plate_0": "tidy_up",
+        "plate_1": "tidy_up"
+      }
+    },
+    "Semantic_state_RiskScore_Persona_04": {
+      "risk_prediction_id": 2,
+      "state_instance_id": 6,
+      "state_category": "stacked",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "plate",
+      "related_objects_01_id": 0,
+      "related_objects_02": "plate",
+      "related_objects_02_id": 1,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "前回の評価「潜在軽微」を維持します。積み重ねられたプレートの落下は、切創リスク（cuts_stabs約0.78）をもたらしますが、その絶対的な深刻度は限定的です。高齢者ユーザーのペルソナを考慮しても、この状態が床面に影響を及ぼして転倒リスクに直結する可能性は低いため、軽微なリスクに留まると判断します。",
+      "priority": 6,
+      "task": "カウンター上の皿の積み重ねは不安定で、ロボットが把持を試みると崩れるリスクが高く、食器の破損や破片の飛散につながるため、ユーザーに注意喚起を行う。",
+      "action": {
+        "user": "announce"
+      },
+      "statement": "お皿が何枚も積み重ねられており、不安定です。崩れて怪我をしないよう、お気をつけください。"
+    },
+    "Semantic_state_RiskScore_Persona_05": {
+      "risk_prediction_id": 2,
+      "state_instance_id": 6,
+      "state_category": "stacked",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "plate",
+      "related_objects_01_id": 0,
+      "related_objects_02": "plate",
+      "related_objects_02_id": 1,
+      "updated_judge_02": "潜在軽微",
+      "updated_reason_02": "フィードバック02の内容を考慮したが、評価は「潜在軽微」を維持する。ユーザーが86歳の高齢者であるため、落下・破損による切創は重篤化しやすいリスクを伴うことを認識しているが、積み重ね自体は即時的な危険ではなく、事故の重篤度も限定的であるため、総合的な判断として「潜在軽微」が妥当である。",
+      "priority": 6,
+      "task": "カウンター上に積み重ねられた皿を掴み、落下による破損・軽度の切創リスクを軽減するために、より安定した場所へ移動させる。",
+      "action": {
+        "plate_1": "tidy_up",
+        "plate_2": "tidy_up"
+      }
+    },
+    "Semantic_state_Stickler": {
+      "risk_prediction_id": 2,
+      "state_instance_id": 6,
+      "state_category": "stacked",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "plate",
+      "related_objects_01_id": 0,
+      "related_objects_02": "plate",
+      "related_objects_02_id": 1,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "カウンター上に積み上げられた食器は、落下による破片の軽度の切創事故リスクがあるため、「潜在軽微」を維持します。",
+      "priority": 6,
+      "task": "カウンター上に積み重ねられた皿（plate_0など）を把持し、シンク内または食器棚へ移動させる。",
+      "action": {
+        "plate": "tidy_up"
+      }
+    },
+    "Semantic_state_Persona_01": {
+      "risk_prediction_id": 2,
+      "state_instance_id": 6,
+      "state_category": "stacked",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "plate",
+      "related_objects_01_id": 0,
+      "related_objects_02": "plate",
+      "related_objects_02_id": 1,
+      "risk_judge": "潜在軽微",
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "カウンター上の食器の積み重ねは、落下・破損による軽微なリスクに留まります。フィードバックに基づき、若年者であるユーザーにとって重大な事故には繋がりにくいため、「潜在軽微」の評価を維持します。",
+      "priority": 6,
+      "task": "カウンター上に皿やボウルが積み重ねられており、破損リスクがあるため、ユーザーに収納を促す。",
+      "action": {
+        "user": "announce"
+      },
+      "statement": "カウンターに食器が積み重ねられています。落下して割れるリスクがあるため、片付けてください。"
+    },
+    "Semantic_state_Persona_02": {
+      "risk_prediction_id": 2,
+      "state_instance_id": 6,
+      "state_category": "stacked",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "plate",
+      "related_objects_01_id": 0,
+      "related_objects_02": "plate",
+      "related_objects_02_id": 1,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "フィードバックを受けても、評価を更新しない。食器の積み重ね（stacked）は落下・破損のリスクに限定され、人身事故は軽度の切創に留まる可能性が高い。67歳のユーザーであっても、カウンター上の食器の積み重ねは潜在軽微の範囲内であるというフィードバックに基づき、この評価を維持する。",
+      "priority": 6,
+      "task": "カウンター上に積み重ねられた皿やボウルを一枚ずつ把持し、不安定な積み重ね状態を解消して落下・破損リスクを軽減する。",
+      "action": {
+        "plate": "tidy_up",
+        "bowl": "tidy_up"
+      }
+    },
+    "Semantic_state_Persona_03": {
+      "risk_prediction_id": 2,
+      "state_instance_id": 6,
+      "state_category": "stacked",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "plate",
+      "related_objects_01_id": 0,
+      "related_objects_02": "plate",
+      "related_objects_02_id": 1,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "区分は潜在軽微を維持する。皿の積み重ねは落下による破損・軽度の切創リスクを伴う。フィードバックを踏まえ、万が一皿が割れた場合、車椅子利用者が自力で床面の破片を安全かつ完全に回収することが困難になり、移動時に破片を巻き込んだり、指を切ったりする間接的なリスクが高まるが、事故の即時性・重大性は低いため、潜在軽微と評価する。",
+      "priority": 6,
+      "task": "カウンター上に高く積み重ねられている皿（plate_0, plate_1など）を把持し、積み重ねを解除して安定した状態に戻すことで、落下・破損リスクを軽減する。",
+      "action": {
+        "plate": "tidy_up"
+      }
+    },
+    "Semantic_state_Persona_04": {
+      "risk_prediction_id": 2,
+      "state_instance_id": 6,
+      "state_category": "stacked",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "plate",
+      "related_objects_01_id": 0,
+      "related_objects_02": "plate",
+      "related_objects_02_id": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "他のエージェントからのフィードバックに基づき、リスク評価を潜在軽微から潜在重大に更新します。カウンター上に積み重ねられた食器が落下し破損した場合、その破片や大きな音によって、身体障害と転倒履歴を持つ81歳のユーザーがバランスを崩し転倒するリスクが非常に高いです。この転倒が骨折などの重大事故に直結するため、落下・破損をトリガーとする転倒誘発リスクを重視し、潜在重大と評価します。",
+      "priority": 6,
+      "task": "カウンター上に積み重ねられた皿やボウルが落下・破損し、転倒を誘発する潜在的な危険性があるため、ユーザーに注意を促す。",
+      "action": {
+        "user": "announce"
+      },
+      "statement": "カウンター上に積み重ねられたお皿やボウルは不安定で、落下・破損時に転倒を引き起こす危険があります。お早めに片付けてください。"
+    },
+    "Semantic_state_Persona_05": {
+      "risk_prediction_id": 2,
+      "state_instance_id": 6,
+      "state_category": "stacked",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "plate",
+      "related_objects_01_id": 0,
+      "related_objects_02": "plate",
+      "related_objects_02_id": 1,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "フィードバックを受け、評価の更新は行わない。食器の積み重ねは軽微なリスクに留まる。ただし、86歳の高齢者の場合、高い場所や不安定な積み重ねから食器を取ろうとしてバランスを崩し、転倒・骨折といった間接的な重大事故につながる可能性も考慮に入れるが、積み重ねそのもののリスクは限定的であるため、「潜在軽微」を維持する。",
+      "priority": 6,
+      "task": "カウンター上の皿の積み重ねが多い状態について、ユーザーに注意喚起を行う。ロボットによる把持は不安定な積み重ねを崩すリスクがあるため、物理的介入を避ける。",
+      "action": {
+        "user": "announce"
+      },
+      "statement": "カウンターに皿が重ねてあります。不安定ですので、取り扱いにはご注意ください。"
+    },
+    "observations": [
+      {
+        "observation_id": "obs_20251227_042752_34a215e3",
+        "timestamp": "2025-12-27T04:27:54",
+        "robot_pose": {
+          "x": 5.836614347067711,
+          "y": 0.31344280720154893,
+          "yaw": -2.8125765723875635
+        },
+        "nearest_landmark": "Kitchen_Island_0",
+        "rgb_path": "obs_20251227_042752_34a215e3/rgb.jpg",
+        "depth_path": "obs_20251227_042752_34a215e3/depth.png",
+        "detected_states": [
+          {
+            "category": "stacked",
+            "score": 0.85,
+            "bbox_2d": [
+              268,
+              34,
+              518,
+              256
+            ],
+            "reason": "Dishes and cups are stacked on the drying rack."
+          },
+          {
+            "category": "stacked",
+            "score": 0.75,
+            "bbox_2d": [
+              485,
+              256,
+              542,
+              310
+            ],
+            "reason": "Plates are stacked on the countertop next to the sink."
+          },
+          {
+            "category": "wet",
+            "score": 0.9,
+            "bbox_2d": [
+              536,
+              486,
+              617,
+              666
+            ],
+            "reason": "A puddle of liquid is visible on the wooden table surface."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.6,
+            "bbox_2d": [
+              508,
+              21,
+              561,
+              147
+            ],
+            "reason": "Various cleaning bottles and a sponge are placed near the sink, contributing to clutter on the countertop."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.7,
+            "bbox_2d": [
+              448,
+              392,
+              533,
+              498
+            ],
+            "reason": "Coffee machines and a paper/note are placed on the edge of the table, creating a cluttered area."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "kitchen_table_top_0",
+          "matched_room": "Kitchen",
+          "matched_category": "stacked",
+          "matched_detected_state": {
+            "category": "stacked",
+            "score": 0.75,
+            "bbox_2d": [
+              485,
+              256,
+              542,
+              310
+            ],
+            "reason": "Plates are stacked on the countertop next to the sink."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_042806_b696a377",
+        "timestamp": "2025-12-27T04:28:08",
+        "robot_pose": {
+          "x": 5.836614347067712,
+          "y": 0.31344280720154893,
+          "yaw": -2.8125765723875635
+        },
+        "nearest_landmark": "Kitchen_Island_0",
+        "rgb_path": "obs_20251227_042806_b696a377/rgb.jpg",
+        "depth_path": "obs_20251227_042806_b696a377/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.9,
+            "bbox_2d": [
+              268,
+              78,
+              500,
+              316
+            ],
+            "reason": "The dish drying rack is cluttered with various cups, dishes, and utensils."
+          },
+          {
+            "category": "stacked",
+            "score": 0.8,
+            "bbox_2d": [
+              485,
+              140,
+              533,
+              300
+            ],
+            "reason": "Several white plates are stacked on top of each other next to the sink."
+          },
+          {
+            "category": "wet",
+            "score": 0.75,
+            "bbox_2d": [
+              573,
+              339,
+              664,
+              735
+            ],
+            "reason": "There are visible liquid spills or wet patches on the wooden table surface."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "kitchen_table_top_0",
+          "matched_room": "Kitchen",
+          "matched_category": "stacked",
+          "matched_detected_state": {
+            "category": "stacked",
+            "score": 0.8,
+            "bbox_2d": [
+              485,
+              140,
+              533,
+              300
+            ],
+            "reason": "Several white plates are stacked on top of each other next to the sink."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_043054_8ce47229",
+        "timestamp": "2025-12-27T04:30:56",
+        "robot_pose": {
+          "x": 4.082826600591154,
+          "y": -0.7189611365092161,
+          "yaw": -1.4946666126530581
+        },
+        "nearest_landmark": "kitchen_table_top_0",
+        "rgb_path": "obs_20251227_043054_8ce47229/rgb.jpg",
+        "depth_path": "obs_20251227_043054_8ce47229/depth.png",
+        "detected_states": [
+          {
+            "category": "stacked",
+            "score": 0.9,
+            "bbox_2d": [
+              38,
+              342,
+              606,
+              590
+            ],
+            "reason": "Mugs and cups are stacked on the multi-tiered dish rack."
+          },
+          {
+            "category": "stacked",
+            "score": 0.95,
+            "bbox_2d": [
+              684,
+              173,
+              771,
+              388
+            ],
+            "reason": "Plates and bowls are stacked on top of each other on the counter."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.8,
+            "bbox_2d": [
+              434,
+              107,
+              605,
+              348
+            ],
+            "reason": "Various cleaning bottles and objects are piled up around the sink area."
+          },
+          {
+            "category": "about to fall",
+            "score": 0.45,
+            "bbox_2d": [
+              289,
+              278,
+              506,
+              359
+            ],
+            "reason": "A long, thin wooden stick/skewer is leaning precariously in the utensil holder and appears unstable."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "kitchen_table_top_0",
+          "matched_room": "Kitchen",
+          "matched_category": "stacked",
+          "matched_detected_state": {
+            "category": "stacked",
+            "score": 0.95,
+            "bbox_2d": [
+              684,
+              173,
+              771,
+              388
+            ],
+            "reason": "Plates and bowls are stacked on top of each other on the counter."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_043122_186377bf",
+        "timestamp": "2025-12-27T04:31:24",
+        "robot_pose": {
+          "x": 4.629939335951612,
+          "y": -0.8451110172679774,
+          "yaw": -2.1312014431233193
+        },
+        "nearest_landmark": "kitchen_table_top_0",
+        "rgb_path": "obs_20251227_043122_186377bf/rgb.jpg",
+        "depth_path": "obs_20251227_043122_186377bf/depth.png",
+        "detected_states": [
+          {
+            "category": "stacked",
+            "score": 0.95,
+            "bbox_2d": [
+              770,
+              377,
+              884,
+              588
+            ],
+            "reason": "Multiple white plates and bowls are clearly stacked on top of each other on the counter."
+          },
+          {
+            "category": "stacked",
+            "score": 0.9,
+            "bbox_2d": [
+              867,
+              263,
+              999,
+              403
+            ],
+            "reason": "A small stack of white plates is visible in the foreground."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.8,
+            "bbox_2d": [
+              438,
+              0,
+              778,
+              155
+            ],
+            "reason": "The area around the sink is cluttered with various cleaning bottles, sponges, and a dish rack."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.75,
+            "bbox_2d": [
+              40,
+              300,
+              684,
+              518
+            ],
+            "reason": "The white wire rack is cluttered with various mugs, cups, and tumblers."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "kitchen_table_top_0",
+          "matched_room": "Kitchen",
+          "matched_category": "stacked",
+          "matched_detected_state": {
+            "category": "stacked",
+            "score": 0.95,
+            "bbox_2d": [
+              770,
+              377,
+              884,
+              588
+            ],
+            "reason": "Multiple white plates and bowls are clearly stacked on top of each other on the counter."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_043202_a371e222",
+        "timestamp": "2025-12-27T04:32:04",
+        "robot_pose": {
+          "x": 4.262796373000068,
+          "y": -0.8577623353945465,
+          "yaw": -2.3626475724280014
+        },
+        "nearest_landmark": "kitchen_table_top_0",
+        "rgb_path": "obs_20251227_043202_a371e222/rgb.jpg",
+        "depth_path": "obs_20251227_043202_a371e222/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              78,
+              0,
+              700,
+              210
+            ],
+            "reason": "The metal dish rack is cluttered with various kitchen items, including mugs, tumblers, and dishes."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.75,
+            "bbox_2d": [
+              467,
+              300,
+              617,
+              500
+            ],
+            "reason": "The countertop area around the induction cooktop is cluttered with a pot, water filter pitcher, and another pitcher."
+          },
+          {
+            "category": "stacked",
+            "score": 0.95,
+            "bbox_2d": [
+              700,
+              0,
+              968,
+              300
+            ],
+            "reason": "Two white bowls are clearly stacked on top of each other on the countertop."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "kitchen_table_top_0",
+          "matched_room": "Kitchen",
+          "matched_category": "stacked",
+          "matched_detected_state": {
+            "category": "stacked",
+            "score": 0.95,
+            "bbox_2d": [
+              700,
+              0,
+              968,
+              300
+            ],
+            "reason": "Two white bowls are clearly stacked on top of each other on the countertop."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_043224_c98c6349",
+        "timestamp": "2025-12-27T04:32:26",
+        "robot_pose": {
+          "x": 4.4084824920207275,
+          "y": -0.7117893225397651,
+          "yaw": -2.3465905433096537
+        },
+        "nearest_landmark": "kitchen_table_top_0",
+        "rgb_path": "obs_20251227_043224_c98c6349/rgb.jpg",
+        "depth_path": "obs_20251227_043224_c98c6349/depth.png",
+        "detected_states": [
+          {
+            "category": "stacked",
+            "score": 0.9,
+            "bbox_2d": [
+              28,
+              0,
+              651,
+              251
+            ],
+            "reason": "Mugs and cups are stacked on top of each other in the drying rack."
+          },
+          {
+            "category": "stacked",
+            "score": 0.95,
+            "bbox_2d": [
+              677,
+              0,
+              839,
+              188
+            ],
+            "reason": "Plates are stacked on top of each other on the countertop."
+          },
+          {
+            "category": "stacked",
+            "score": 0.85,
+            "bbox_2d": [
+              680,
+              211,
+              835,
+              345
+            ],
+            "reason": "Bowls are stacked on top of each other on the countertop."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.7,
+            "bbox_2d": [
+              642,
+              322,
+              889,
+              697
+            ],
+            "reason": "The countertop surface has multiple objects (bowls, cloth, pot, water filter, pitcher) placed on it, indicating a cluttered state."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "kitchen_table_top_0",
+          "matched_room": "Kitchen",
+          "matched_category": "stacked",
+          "matched_detected_state": {
+            "category": "stacked",
+            "score": 0.85,
+            "bbox_2d": [
+              680,
+              211,
+              835,
+              345
+            ],
+            "reason": "Bowls are stacked on top of each other on the countertop."
+          }
+        }
+      }
+    ],
+    "reason_history": [
+      "Plates are stacked on the countertop next to the sink.",
+      "Several white plates are stacked on top of each other next to the sink.",
+      "Plates and bowls are stacked on top of each other on the counter.",
+      "Multiple white plates and bowls are clearly stacked on top of each other on the counter.",
+      "Two white bowls are clearly stacked on top of each other on the countertop.",
+      "Bowls are stacked on top of each other on the countertop."
+    ],
+    "VLM": {
+      "risk_prediction_id": 2,
+      "state_instance_id": 0,
+      "state_category": "cluttered",
+      "related_room": "Kitchen",
+      "related_landmarks": "",
+      "related_objects_01": "IHヒーター周辺の鍋と布巾",
+      "related_objects_01_id": 0,
+      "related_objects_02": "液体の跡、横倒しのマグカップ",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "IHヒーター上の鍋の放置による熱傷リスク、熱源付近の布巾の放置による発火リスク、およびカウンター上の液体やマグカップによる滑り・転倒リスクが複合的に存在する。特に熱源周りの危険は緊急性が高い。",
+      "priority": 0,
+      "task": "IHヒーター上の鍋と熱源近くの布巾について、熱傷・発火のリスクを警告する。また、カウンター上の液体の跡を拭き取り、横倒しのマグカップを片付けることで、滑り・転倒のリスクを物理的に軽減する。",
+      "action": {
+        "カウンター上の液体の跡": "wipe",
+        "IHヒーター上の鍋": "announce",
+        "横倒しのマグカップ": "tidy_up",
+        "statement": "IHヒーターの上に鍋が放置されています。もし加熱された場合、熱傷を負うリスクがあります。また、熱源の近くに布巾があり発火の危険性がありますので、すぐに移動させてください。"
+      }
+    }
+  },
+  "3": {
+    "risk_prediction_id": 3,
+    "Semantic_state": {
+      "risk_prediction_id": 3,
+      "state_instance_id": 7,
+      "state_category": "stacked",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "cup",
+      "related_objects_01_id": 0,
+      "related_objects_02": "cup",
+      "related_objects_02_id": 1,
+      "risk_judge": "潜在軽微",
+      "risk_reason": "食器乾燥ラックやカウンター上でマグカップや皿が重ねて置かれている状態（cup_0, cup_1など）。ID 6と同様に、落下・破損による軽微なリスクに限定される。",
+      "priority": 7,
+      "task": "積み重ねられたカップ類は、不安定でロボットが把持を試みると崩壊させてしまうリスクが高いため、特に緊急性は低く、物理的な介入は行わない。",
+      "action": {
+        "cup_stack": "nothing"
+      }
+    },
+    "Semantic_state_RiskScore": {
+      "risk_prediction_id": 3,
+      "state_instance_id": 7,
+      "state_category": "stacked",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "cup",
+      "related_objects_01_id": "cup_0",
+      "related_objects_02": "cup",
+      "related_objects_02_id": "cup_1",
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "前回の判断（潜在軽微）を維持します。フィードバックで示された通り、カップの積み重ねは切創リスク（cuts_stabs: 0.2未満）が非常に低く、他の重大な傷害リスクも伝播していません。万が一落下・破損しても、軽微な事故リスクに留まるため、潜在軽微と判断します。",
+      "priority": 7,
+      "task": "積み重ねられたカップは軽微なリスクに留まり、他の重大・緊急タスクを優先し、対応しない。",
+      "action": {
+        "nothing": "nothing"
+      }
+    },
+    "Semantic_state_RiskScore_Persona_02": {
+      "risk_prediction_id": 3,
+      "state_instance_id": 7,
+      "state_category": "stacked",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "cup",
+      "related_objects_01_id": 0,
+      "related_objects_02": "cup",
+      "related_objects_02_id": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "初期評価の「潜在軽微」は、ペルソナ情報（高齢者の転倒・骨折リスク）と伝播リスク（ガス関連）を考慮すると過小評価であったため、「潜在重大」に更新する。マグカップや皿が重ねて置かれている状態は不安定であり、落下・破損リスクに加え、67歳の高齢者が破片を避ける際に転倒し骨折する二次的リスクがある。また、周辺から伝播したガス漏れ・爆発リスク(gas_leak_burst ~0.95)が非常に高く、環境的な潜在的危険性も高い。",
+      "priority": 6,
+      "task": "食器乾燥ラック上のカップ類の積み重ねは不安定であり、落下時の二次的な転倒・骨折リスクがあるため、ユーザーに収納を促す。",
+      "action": {
+        "user": "announce"
+      },
+      "statement": "マグカップや食器が重ねて置かれており不安定です。落下して怪我をしたり、転倒したりするリスクがありますので、収納をお願いします。"
+    },
+    "Semantic_state_RiskScore_Persona_03": {
+      "risk_prediction_id": 3,
+      "state_instance_id": 7,
+      "state_category": "stacked",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "cup",
+      "related_objects_01_id": 0,
+      "related_objects_02": "cup",
+      "related_objects_02_id": 1,
+      "risk_judge": "潜在軽微",
+      "updated_01": 0,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "元の「潜在軽微」評価を維持する。カップ類は切創リスクが低いため重篤な傷害にはつながりにくく、影響度が限定的である。ただし、Knowledge Reviewerの指摘（accident_others スコア 0.95以上）やPersona Reviewerの指摘（車椅子による接触・振動で落下誘発リスク増大）から、事故発生頻度は高いことを考慮した上で、重篤性に基づき「潜在軽微」を維持する。",
+      "priority": 7,
+      "task": "食器乾燥ラック上の積み重ねられたカップ類（cup_0, cup_1など）を把持し、安定した場所に移動させる。軽微な落下リスクと散乱状態を解消する。",
+      "action": {
+        "cup_0": "tidy_up",
+        "cup_1": "tidy_up"
+      }
+    },
+    "Semantic_state_RiskScore_Persona_04": {
+      "risk_prediction_id": 3,
+      "state_instance_id": 7,
+      "state_category": "stacked",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "cup",
+      "related_objects_01_id": 0,
+      "related_objects_02": "cup",
+      "related_objects_02_id": 1,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "前回の評価「潜在軽微」を維持します。カップの積み重ねによる切創リスク（cuts_stabs約0.16）は低いです。ペルソナ情報を含めても、床面への重大な影響がなく、ユーザーにとって最も警戒すべき転倒リスクに直結しないため、軽微なリスクに留まると判断します。",
+      "priority": 7,
+      "task": "食器乾燥ラック上のカップの積み重ねは、ロボットによる介入で破損させるリスクが高いため、ユーザーに対して整理の必要性を通知する。",
+      "action": {
+        "user": "announce"
+      },
+      "statement": "食器乾燥ラックの上のカップが積み重なっています。整理をおすすめします。"
+    },
+    "Semantic_state_RiskScore_Persona_05": {
+      "risk_prediction_id": 3,
+      "state_instance_id": 7,
+      "state_category": "stacked",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "cup",
+      "related_objects_01_id": 0,
+      "related_objects_02": "cup",
+      "related_objects_02_id": 1,
+      "updated_judge_02": "潜在軽微",
+      "updated_reason_02": "フィードバック02の内容を考慮したが、評価は「潜在軽微」を維持する。高齢者ユーザーであることを認識しているが、マグカップの破片による切創リスクは皿と比較して低く、重大な事故には繋がりにくいと判断する。",
+      "priority": 7,
+      "task": "積み重ねられたカップ（cup_0, cup_1など）を掴み、安定性を向上させるために別の場所に移動させる。",
+      "action": {
+        "cup_0": "tidy_up",
+        "cup_1": "tidy_up"
+      }
+    },
+    "Semantic_state_Stickler": {
+      "risk_prediction_id": 3,
+      "state_instance_id": 7,
+      "state_category": "stacked",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "cup",
+      "related_objects_01_id": 0,
+      "related_objects_02": "cup",
+      "related_objects_02_id": 1,
+      "risk_judge": "潜在軽微",
+      "risk_reason": "食器乾燥ラックやカウンター上でマグカップや皿が重ねて置かれている状態（cup_0, cup_1など）。ID 6と同様に、落下・破損による軽微なリスクに限定される。",
+      "updated_01": 0,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "scene_state_graphから極端な不安定さは見られないため、落下・破損による軽度の切創リスクに限定され、「潜在軽微」を維持することが適切です。",
+      "priority": 7,
+      "task": "食器乾燥ラックやカウンター上で積み重ねられているカップ/マグカップ（cup_0など）を把持し、整理する。",
+      "action": {
+        "cup": "tidy_up"
+      }
+    },
+    "Semantic_state_Persona_01": {
+      "risk_prediction_id": 3,
+      "state_instance_id": 7,
+      "state_category": "stacked",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "cup",
+      "related_objects_01_id": 0,
+      "related_objects_02": "cup",
+      "related_objects_02_id": 1,
+      "risk_judge": "潜在軽微",
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "ID 2と同様、食器の積み重ねによるリスクは軽微であり、「潜在軽微」の評価を維持します。フィードバックにおいても、ペルソナ情報がリスクを増幅させる要素はないと確認されています。",
+      "priority": 7,
+      "task": "食器乾燥ラックやカウンター上でマグカップや皿が重ねて置かれている状態について、落下・破損リスクがあるため、ユーザーに収納を促す。",
+      "action": {
+        "user": "announce"
+      },
+      "statement": "食器乾燥ラックでカップや皿が重ねられています。バランスを崩して落ちる可能性があるため、整理してください。"
+    },
+    "Semantic_state_Persona_02": {
+      "risk_prediction_id": 3,
+      "state_instance_id": 7,
+      "state_category": "stacked",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "cup",
+      "related_objects_01_id": 0,
+      "related_objects_02": "cup",
+      "related_objects_02_id": 1,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "フィードバックを受けても、評価を更新しない。ID 6と同様、食器の重ね置きによるリスクは軽微であり、67歳のユーザーにとって重大な影響を及ぼす可能性は低い。フィードバックも妥当性を認めているため、潜在軽微を維持する。",
+      "priority": 7,
+      "task": "食器乾燥ラックやカウンター上で重ねて置かれているマグカップや皿を把持し、不安定な積み重ね状態を解消する。",
+      "action": {
+        "cup": "tidy_up",
+        "mug": "tidy_up"
+      }
+    },
+    "Semantic_state_Persona_03": {
+      "risk_prediction_id": 3,
+      "state_instance_id": 7,
+      "state_category": "stacked",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "cup",
+      "related_objects_01_id": 0,
+      "related_objects_02": "cup",
+      "related_objects_02_id": 1,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "区分は潜在軽微を維持する。ID 6と同様に、食器の積み重ねによるリスクは限定的であり、車椅子使用の事実によってリスクの区分を変更するほどの深刻性はない。落下破損時の破片除去の困難さは存在するものの、即時性・重大性が低いため、潜在軽微とする。",
+      "priority": 7,
+      "task": "食器乾燥ラックやカウンター上で重ねて置かれているマグカップや皿を把持し、安定した配置に直すことで落下・破損リスクを軽減する。",
+      "action": {
+        "cup": "tidy_up"
+      }
+    },
+    "Semantic_state_Persona_04": {
+      "risk_prediction_id": 3,
+      "state_instance_id": 7,
+      "state_category": "stacked",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "cup",
+      "related_objects_01_id": 0,
+      "related_objects_02": "cup",
+      "related_objects_02_id": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "他のエージェントからのフィードバックに基づき、リスク評価を潜在軽微から潜在重大に更新します。ID 6と同様に、マグカップや皿が重ねて置かれている状態からの落下・破損は、身体障害を持つ高齢ユーザーの転倒を誘発し、骨折などの重大事故に繋がる潜在的な危険性があるため、転倒リスクを考慮して潜在重大と評価します。",
+      "priority": 7,
+      "task": "食器乾燥ラックやカウンター上で重ねて置かれているマグカップや皿が、落下・破損により転倒を誘発する潜在的な危険性があるため、ユーザーに注意を促す。",
+      "action": {
+        "user": "announce"
+      },
+      "statement": "食器乾燥ラックやカウンター上の重ねられたカップや皿は不安定です。落下によって怪我や転倒を招く可能性がありますので、ご注意ください。"
+    },
+    "Semantic_state_Persona_05": {
+      "risk_prediction_id": 3,
+      "state_instance_id": 7,
+      "state_category": "stacked",
+      "related_room": "Kitchen",
+      "related_landmarks": "kitchen_table_top_0",
+      "related_objects_01": "cup",
+      "related_objects_01_id": 0,
+      "related_objects_02": "cup",
+      "related_objects_02_id": 1,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "ID 2と同様、評価の更新は行わない。食器の積み重ねによるリスクは軽微であり、高齢者特有の間接的な転倒リスクの可能性は考慮に入れるが、総合的なリスク度合いは「潜在軽微」を維持する。",
+      "priority": 7,
+      "task": "食器乾燥ラック上のカップの積み重ねについて、ユーザーに注意喚起を行う。物理的介入による破損リスクを避ける。",
+      "action": {
+        "user": "announce"
+      },
+      "statement": "食器乾燥ラックにカップが重なっています。落下にご注意ください。"
+    },
+    "observations": [
+      {
+        "observation_id": "obs_20251227_043054_8ce47229",
+        "timestamp": "2025-12-27T04:30:56",
+        "robot_pose": {
+          "x": 4.082826600591154,
+          "y": -0.7189611365092161,
+          "yaw": -1.4946666126530581
+        },
+        "nearest_landmark": "kitchen_table_top_0",
+        "rgb_path": "obs_20251227_043054_8ce47229/rgb.jpg",
+        "depth_path": "obs_20251227_043054_8ce47229/depth.png",
+        "detected_states": [
+          {
+            "category": "stacked",
+            "score": 0.9,
+            "bbox_2d": [
+              38,
+              342,
+              606,
+              590
+            ],
+            "reason": "Mugs and cups are stacked on the multi-tiered dish rack."
+          },
+          {
+            "category": "stacked",
+            "score": 0.95,
+            "bbox_2d": [
+              684,
+              173,
+              771,
+              388
+            ],
+            "reason": "Plates and bowls are stacked on top of each other on the counter."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.8,
+            "bbox_2d": [
+              434,
+              107,
+              605,
+              348
+            ],
+            "reason": "Various cleaning bottles and objects are piled up around the sink area."
+          },
+          {
+            "category": "about to fall",
+            "score": 0.45,
+            "bbox_2d": [
+              289,
+              278,
+              506,
+              359
+            ],
+            "reason": "A long, thin wooden stick/skewer is leaning precariously in the utensil holder and appears unstable."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "kitchen_table_top_0",
+          "matched_room": "Kitchen",
+          "matched_category": "stacked",
+          "matched_detected_state": {
+            "category": "stacked",
+            "score": 0.9,
+            "bbox_2d": [
+              38,
+              342,
+              606,
+              590
+            ],
+            "reason": "Mugs and cups are stacked on the multi-tiered dish rack."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_043122_186377bf",
+        "timestamp": "2025-12-27T04:31:24",
+        "robot_pose": {
+          "x": 4.629939335951612,
+          "y": -0.8451110172679774,
+          "yaw": -2.1312014431233193
+        },
+        "nearest_landmark": "kitchen_table_top_0",
+        "rgb_path": "obs_20251227_043122_186377bf/rgb.jpg",
+        "depth_path": "obs_20251227_043122_186377bf/depth.png",
+        "detected_states": [
+          {
+            "category": "stacked",
+            "score": 0.95,
+            "bbox_2d": [
+              770,
+              377,
+              884,
+              588
+            ],
+            "reason": "Multiple white plates and bowls are clearly stacked on top of each other on the counter."
+          },
+          {
+            "category": "stacked",
+            "score": 0.9,
+            "bbox_2d": [
+              867,
+              263,
+              999,
+              403
+            ],
+            "reason": "A small stack of white plates is visible in the foreground."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.8,
+            "bbox_2d": [
+              438,
+              0,
+              778,
+              155
+            ],
+            "reason": "The area around the sink is cluttered with various cleaning bottles, sponges, and a dish rack."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.75,
+            "bbox_2d": [
+              40,
+              300,
+              684,
+              518
+            ],
+            "reason": "The white wire rack is cluttered with various mugs, cups, and tumblers."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "kitchen_table_top_0",
+          "matched_room": "Kitchen",
+          "matched_category": "stacked",
+          "matched_detected_state": {
+            "category": "stacked",
+            "score": 0.9,
+            "bbox_2d": [
+              867,
+              263,
+              999,
+              403
+            ],
+            "reason": "A small stack of white plates is visible in the foreground."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_043224_c98c6349",
+        "timestamp": "2025-12-27T04:32:26",
+        "robot_pose": {
+          "x": 4.4084824920207275,
+          "y": -0.7117893225397651,
+          "yaw": -2.3465905433096537
+        },
+        "nearest_landmark": "kitchen_table_top_0",
+        "rgb_path": "obs_20251227_043224_c98c6349/rgb.jpg",
+        "depth_path": "obs_20251227_043224_c98c6349/depth.png",
+        "detected_states": [
+          {
+            "category": "stacked",
+            "score": 0.9,
+            "bbox_2d": [
+              28,
+              0,
+              651,
+              251
+            ],
+            "reason": "Mugs and cups are stacked on top of each other in the drying rack."
+          },
+          {
+            "category": "stacked",
+            "score": 0.95,
+            "bbox_2d": [
+              677,
+              0,
+              839,
+              188
+            ],
+            "reason": "Plates are stacked on top of each other on the countertop."
+          },
+          {
+            "category": "stacked",
+            "score": 0.85,
+            "bbox_2d": [
+              680,
+              211,
+              835,
+              345
+            ],
+            "reason": "Bowls are stacked on top of each other on the countertop."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.7,
+            "bbox_2d": [
+              642,
+              322,
+              889,
+              697
+            ],
+            "reason": "The countertop surface has multiple objects (bowls, cloth, pot, water filter, pitcher) placed on it, indicating a cluttered state."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "kitchen_table_top_0",
+          "matched_room": "Kitchen",
+          "matched_category": "stacked",
+          "matched_detected_state": {
+            "category": "stacked",
+            "score": 0.95,
+            "bbox_2d": [
+              677,
+              0,
+              839,
+              188
+            ],
+            "reason": "Plates are stacked on top of each other on the countertop."
+          }
+        }
+      }
+    ],
+    "reason_history": [
+      "Mugs and cups are stacked on the multi-tiered dish rack.",
+      "A small stack of white plates is visible in the foreground.",
+      "Plates are stacked on top of each other on the countertop."
+    ],
+    "VLM": {
+      "risk_prediction_id": 3,
+      "state_instance_id": 0,
+      "state_category": "その他",
+      "related_room": "Kitchen",
+      "related_landmarks": "Kitchen Counter",
+      "related_objects_01": "布（ふきん）",
+      "related_objects_01_id": 0,
+      "related_objects_02": "",
+      "related_objects_02_id": 0,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "IHクッキングヒーターの加熱部または操作パネル付近に布（ふきん）が置かれている。もしヒーターが誤操作などにより起動した場合、布が焦げ付いたり発火したりするリスクがあり、火災につながる可能性がある。ロボットの制約（柔らかい布の把持不可）により物理的な除去が困難なため、ユーザーへの緊急警告が必要である。",
+      "priority": 0,
+      "task": "IHヒーター周辺の火災リスクを排除するため、ユーザーに布を直ちに除去するよう警告する。",
+      "action": {
+        "布（ふきん）": "announce",
+        "statement": "警告: IHクッキングヒーターの加熱部付近に布が残されています。誤って加熱された場合、火災の原因となります。直ちに布を取り除いてください。"
+      }
+    }
+  }
+}
