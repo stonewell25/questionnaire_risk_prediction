@@ -789,8 +789,8 @@
       ],
       // タスク計画JSONファイルのパス
       TASK_PLANNING_FILES: [
-        './Kitchen_task_planning_20251229_161805.json',
-        './LivingLab_task_planning_20251229_162003.json'
+        './evaluation_dataset_task_Kitchen.json',
+        './evaluation_dataset_task_LivingLab.json'
       ],
       // 画像のベースパス（相対パスで指定、または絶対パス）
       IMAGE_BASE_PATHS: {
@@ -947,41 +947,52 @@
           'LivingLab': {}
         };
         
+        // ★修正: 辞書形式のJSONに対応
         if (kitchenTaskResponse.ok) {
           try {
             const kitchenTaskData = await kitchenTaskResponse.json();
+            // データが配列かオブジェクトかで処理を分ける（念のため両対応）
             if (kitchenTaskData.task_planning && Array.isArray(kitchenTaskData.task_planning)) {
-              kitchenTaskData.task_planning.forEach(task => {
+               // 配列形式の場合
+               kitchenTaskData.task_planning.forEach(task => {
                 const predictionId = task.risk_prediction_id.toString();
                 taskPlanningData['Kitchen'][predictionId] = task;
               });
+            } else {
+              // オブジェクト形式の場合（今回のケース）
+              for (const [key, value] of Object.entries(kitchenTaskData)) {
+                // keyは "0", "1" などのID
+                taskPlanningData['Kitchen'][key] = value;
+              }
             }
           } catch (e) {
             console.warn('Kitchenタスク計画データの読み込みに失敗:', e);
           }
-        } else {
-          console.warn('Kitchenタスク計画JSONファイルが見つかりません:', CONFIG.TASK_PLANNING_FILES[0]);
         }
         
         if (livinglabTaskResponse.ok) {
           try {
             const livinglabTaskData = await livinglabTaskResponse.json();
+            // データが配列かオブジェクトかで処理を分ける
             if (livinglabTaskData.task_planning && Array.isArray(livinglabTaskData.task_planning)) {
-              livinglabTaskData.task_planning.forEach(task => {
+               livinglabTaskData.task_planning.forEach(task => {
                 const predictionId = task.risk_prediction_id.toString();
                 taskPlanningData['LivingLab'][predictionId] = task;
               });
+            } else {
+              // オブジェクト形式の場合（今回のケース）
+              for (const [key, value] of Object.entries(livinglabTaskData)) {
+                taskPlanningData['LivingLab'][key] = value;
+              }
             }
           } catch (e) {
             console.warn('LivingLabタスク計画データの読み込みに失敗:', e);
           }
-        } else {
-          console.warn('LivingLabタスク計画JSONファイルが見つかりません:', CONFIG.TASK_PLANNING_FILES[1]);
         }
         
         console.log('タスク計画データ:', taskPlanningData);
         
-        // データを統合（キーが重複しない前提、または接頭辞を付ける）
+        // データを統合（リスクデータの処理はそのまま）
         riskData = {};
         imagePaths = {};
         imageBasePaths = {};
@@ -990,51 +1001,38 @@
         for (const [key, value] of Object.entries(kitchenData)) {
           riskData[key] = value;
           imageBasePaths[key] = 'Kitchen';
-          // observations配列からrgb_pathを抽出
           if (value.observations && Array.isArray(value.observations)) {
             const excludedPaths = CONFIG.EXCLUDED_IMAGE_PATHS[key] || [];
             imagePaths[key] = value.observations
               .map(obs => obs.rgb_path)
-              .filter(path => path && !excludedPaths.includes(path)); // null/undefinedと除外リストを除外
+              .filter(path => path && !excludedPaths.includes(path));
           } else {
             imagePaths[key] = [];
           }
         }
         
-        // LivingLabデータを統合（キーが重複する場合は接頭辞を付ける）
+        // LivingLabデータを統合
         const maxKitchenKey = Math.max(...Object.keys(kitchenData).map(k => parseInt(k) || 0));
         for (const [key, value] of Object.entries(livinglabData)) {
           const newKey = (parseInt(key) + maxKitchenKey + 1).toString();
           riskData[newKey] = value;
           imageBasePaths[newKey] = 'LivingLab';
-          // observations配列からrgb_pathを抽出
           if (value.observations && Array.isArray(value.observations)) {
-            // 元のキーで除外リストを確認（LivingLabデータの場合も元のキーで指定されている可能性がある）
             const excludedPaths = CONFIG.EXCLUDED_IMAGE_PATHS[key] || [];
             imagePaths[newKey] = value.observations
               .map(obs => obs.rgb_path)
-              .filter(path => path && !excludedPaths.includes(path)); // null/undefinedと除外リストを除外
+              .filter(path => path && !excludedPaths.includes(path));
           } else {
             imagePaths[newKey] = [];
           }
         }
         
         allImageIds = Object.keys(riskData).sort((a, b) => parseInt(a) - parseInt(b));
-        // グループ分けが無効の場合は、全画像IDを使用
         imageIds = allImageIds;
-        
-        // 画像パス一覧をコンソールに出力
-        console.log('=== 画像パス一覧 ===');
-        for (const [imageId, paths] of Object.entries(imagePaths)) {
-          const basePath = imageBasePaths[imageId];
-          console.log(`画像ID ${imageId} (${basePath}):`, paths);
-        }
-        console.log('==================');
         
         document.getElementById('loading').classList.add('hidden');
         document.getElementById('phase-intro').classList.remove('hidden');
         
-        // グループ分けの説明を表示
         if (CONFIG.ENABLE_GROUPING && allImageIds.length > 0) {
           const totalGroups = Math.ceil(allImageIds.length / CONFIG.GROUP_SIZE);
           const groupingInfoCard = document.getElementById('grouping-info-card');
@@ -1049,19 +1047,11 @@
             `;
           }
         }
-        
-        console.log(`データ読み込み完了: ${allImageIds.length}件の画像、各画像に${AGENT_KEYS.length}件のエージェント`);
       } catch (error) {
         console.error('データ読み込みエラー:', error);
         document.getElementById('loading').innerHTML = `
           <p style="color: #d93025;">エラー: データを読み込めませんでした</p>
           <p style="font-size: 12px; margin-top: 8px;">${error.message}</p>
-          <p style="font-size: 12px; margin-top: 8px;">確認事項:</p>
-          <ul style="font-size: 12px; margin-left: 20px; text-align: left; display: inline-block;">
-            <li>JSONファイルが正しい場所にありますか？</li>
-            <li>サーバーが正しく起動していますか？</li>
-            <li>ブラウザのコンソール（F12）で詳細なエラーを確認してください</li>
-          </ul>
         `;
       }
     }
@@ -1638,24 +1628,17 @@
         predictionId = (parseInt(imageId) - maxKitchenKey - 1).toString();
       }
       
-      const taskPlan = taskPlanningData[basePath][predictionId];
-      if (!taskPlan) {
+      const taskPlanEntry = taskPlanningData[basePath][predictionId];
+      if (!taskPlanEntry) {
         currentTaskPlanningIndex++;
         loadCurrentTaskPlanning();
         return;
       }
       
-      // 表示するエージェントを取得（リスク評価と同じエージェント）
+      // 表示するエージェントを取得
       const agentsToDisplay = getAgentsToDisplay(imageId);
       
-      // グループ情報を表示
-      let groupInfo = '';
-      if (CONFIG.ENABLE_GROUPING && surveyData.assignedGroup !== null) {
-        const totalGroups = Math.ceil(allImageIds.length / CONFIG.GROUP_SIZE);
-        groupInfo = `<p style="font-size: 12px; opacity: 0.8; margin-top: 4px;">グループ${surveyData.assignedGroup + 1}/${totalGroups}（全${allImageIds.length}枚中${taskPlanningImageIds.length}枚を評価）</p>`;
-      }
-      
-      // 画像パスを取得
+      // 画像表示用のHTML生成（省略なし）
       const paths = imagePaths[imageId] || [];
       const firstImagePath = paths.length > 0 ? paths[0] : null;
       const imageSrc = firstImagePath 
@@ -1663,7 +1646,13 @@
         : `https://via.placeholder.com/600x400?text=Image+${imageId}`;
       const imageLabel = `${basePath} - 画像 ${imageId}${paths.length > 1 ? ` (${paths.length}枚の画像から1枚目を表示)` : ''}`;
       
-      // HTMLを生成
+      // グループ情報
+      let groupInfo = '';
+      if (CONFIG.ENABLE_GROUPING && surveyData.assignedGroup !== null) {
+        const totalGroups = Math.ceil(allImageIds.length / CONFIG.GROUP_SIZE);
+        groupInfo = `<p style="font-size: 12px; opacity: 0.8; margin-top: 4px;">グループ${surveyData.assignedGroup + 1}/${totalGroups}（全${allImageIds.length}枚中${taskPlanningImageIds.length}枚を評価）</p>`;
+      }
+
       let html = `
         <div class="section-header">
           <h2>画像 ${imageId} のタスク計画評価</h2>
@@ -1674,20 +1663,25 @@
         <div class="image-section">
           <img src="${imageSrc}" alt="画像 ${imageId}" onerror="this.src='https://via.placeholder.com/600x400?text=Image+${imageId}'">
           <div class="image-label">${imageLabel}</div>
-          ${paths.length > 1 ? `<div style="font-size: 12px; color: #5f6368; margin-top: 4px;">この画像IDには${paths.length}枚の画像があります（1枚目を表示）</div>` : ''}
         </div>
       `;
 
-      // 各エージェントごとのタスク計画評価カードを生成
+      // ★修正: 各エージェントごとに、そのエージェントが生成したタスクを表示
       for (const agentKey of agentsToDisplay) {
+        // リスク評価データ
         const agentData = imageData[agentKey];
         if (!agentData) continue;
-
-        // リスク理由と判断を取得
         const reason = agentData.updated_reason_01 || agentData.risk_reason;
         const judge = agentData.updated_judge_01 || agentData.risk_judge;
-
         if (!reason) continue;
+
+        // タスク計画データ（エージェントごとのタスクを取得）
+        // taskPlanEntryの中に、agentKey（例: "Semantic_state"）に対応するオブジェクトがあるか確認
+        const agentTaskData = taskPlanEntry[agentKey];
+        
+        // タスクデータがない場合はスキップ（またはリスク評価のみ表示）
+        // ここではタスク評価なので、タスクがないと評価できないためスキップ
+        if (!agentTaskData || !agentTaskData.task) continue;
 
         const displayName = AGENT_DISPLAY_NAMES[agentKey] || agentKey;
         const badgeClass = getBadgeClass(judge);
@@ -1698,14 +1692,14 @@
               <span class="agent-badge">${displayName}</span>
               <span class="risk-badge ${badgeClass}">${getRiskLabel(judge)}</span>
             </div>
-            <div class="agent-reason">${reason}</div>
+            <div class="agent-reason"><strong>リスク理由:</strong><br>${reason}</div>
             
-            <div style="background: #f8f9fa; padding: 16px; border-radius: 8px; margin-top: 16px;">
-              <p style="font-weight: 500; margin-bottom: 8px;"><strong>タスク計画:</strong></p>
-              <p style="margin-bottom: 12px; color: #5f6368;">${taskPlan.task || ''}</p>
-              ${taskPlan.action ? `
-                <p style="font-weight: 500; margin-bottom: 8px;"><strong>アクション:</strong></p>
-                <pre style="background: white; padding: 12px; border-radius: 4px; overflow-x: auto; font-size: 13px; white-space: pre-wrap; margin-bottom: 0;">${JSON.stringify(taskPlan.action, null, 2)}</pre>
+            <div style="background: #e8f0fe; padding: 16px; border-radius: 8px; margin-top: 16px; margin-bottom: 20px; border-left: 4px solid #1967d2;">
+              <p style="font-weight: 500; margin-bottom: 8px; color: #1967d2;">📝 提案されたタスク計画:</p>
+              <p style="margin-bottom: 12px; color: #202124; font-weight: 500;">${agentTaskData.task}</p>
+              ${agentTaskData.action ? `
+                <p style="font-size: 12px; margin-bottom: 4px; color: #5f6368;">アクション詳細:</p>
+                <pre style="background: rgba(255,255,255,0.7); padding: 8px; border-radius: 4px; overflow-x: auto; font-size: 11px; white-space: pre-wrap; margin-bottom: 0;">${JSON.stringify(agentTaskData.action, null, 2)}</pre>
               ` : ''}
             </div>
             
@@ -1729,7 +1723,7 @@
               <div class="rating-label">
                 2. タスク計画の実行可能性<span class="required">*</span>
               </div>
-              <p style="font-size: 12px; color: #5f6368; margin-bottom: 8px;">このタスク計画は、実際に実行可能ですか？</p>
+              <p style="font-size: 12px; color: #5f6368; margin-bottom: 8px;">このタスク計画は、実際に実行可能ですか？（ロボットやユーザーにとって）</p>
               <div class="rating-options">
                 ${[5, 4, 3, 2, 1].map(value => `
                   <div class="rating-option">
@@ -1752,11 +1746,7 @@
       `;
       
       container.innerHTML = html;
-      
-      // 既存の回答を復元
       restoreTaskPlanningResponses(imageId);
-      
-      // スクロールを一番上に
       window.scrollTo(0, 0);
     }
     
