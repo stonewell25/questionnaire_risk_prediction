@@ -1,0 +1,63 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        379,\n        741,\n        467,\n        965\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.85,\n        \"reason\": \"Several cardboard boxes are piled up on the top of the divider/cabinet, indicating a cluttered surface.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        370,\n        144,\n        418,\n        342\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.7,\n        \"reason\": \"A small fan and other miscellaneous objects are placed on the window sill, making the surface cluttered.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        739,\n        499,\n        1000,\n        589\n      ],\n      \"analysis\": {\n        \"category\": \"on fire\",\n        \"score\": 0.95,\n        \"reason\": \"The electric heater is turned on, and its heating element is glowing brightly, which is considered 'on fire' in the context of being actively turned on and producing heat/light, like a candle.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        472,\n        606,\n        695,\n        867\n      ],\n      \"analysis\": {\n        \"category\": \"stacked\",\n        \"score\": 0.8,\n        \"reason\": \"Potted plants are clearly stacked on the tiers of a wire shelving unit.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          379,
+          741,
+          467,
+          965
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.85,
+          "reason": "Several cardboard boxes are piled up on the top of the divider/cabinet, indicating a cluttered surface."
+        }
+      },
+      {
+        "bbox_2d": [
+          370,
+          144,
+          418,
+          342
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.7,
+          "reason": "A small fan and other miscellaneous objects are placed on the window sill, making the surface cluttered."
+        }
+      },
+      {
+        "bbox_2d": [
+          739,
+          499,
+          1000,
+          589
+        ],
+        "analysis": {
+          "category": "on fire",
+          "score": 0.95,
+          "reason": "The electric heater is turned on, and its heating element is glowing brightly, which is considered 'on fire' in the context of being actively turned on and producing heat/light, like a candle."
+        }
+      },
+      {
+        "bbox_2d": [
+          472,
+          606,
+          695,
+          867
+        ],
+        "analysis": {
+          "category": "stacked",
+          "score": 0.8,
+          "reason": "Potted plants are clearly stacked on the tiers of a wire shelving unit."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T00:54:32",
+  "timestamp_ros": "1766764472.1886115"
+}

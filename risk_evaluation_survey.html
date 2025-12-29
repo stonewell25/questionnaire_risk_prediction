@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>リスク予測評価アンケート</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: #f0ebf8;
+      min-height: 100vh;
+      color: #202124;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 24px 16px;
+    }
+
+    /* ヘッダーカード */
+    .header-card {
+      background: #fff;
+      border-radius: 8px;
+      border-top: 10px solid #673ab7;
+      padding: 24px;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+
+    .header-card h1 {
+      font-size: 32px;
+      font-weight: 400;
+      color: #202124;
+      margin-bottom: 8px;
+    }
+
+    .header-card p {
+      color: #5f6368;
+      font-size: 14px;
+    }
+
+    .required-note {
+      color: #d93025;
+      font-size: 14px;
+      margin-top: 16px;
+    }
+
+    /* 質問カード */
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      border-left: 4px solid transparent;
+    }
+
+    .card:focus-within {
+      border-left-color: #673ab7;
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 400;
+      color: #202124;
+      margin-bottom: 16px;
+    }
+
+    .card-title .required {
+      color: #d93025;
+      margin-left: 4px;
+    }
+
+    /* セクションヘッダー */
+    .section-header {
+      background: linear-gradient(135deg, #673ab7, #9c27b0);
+      color: white;
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin: 24px 0 12px 0;
+    }
+
+    .section-header h2 {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .section-header p {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    /* 画像セクション */
+    .image-section {
+      background: #fff;
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .image-section img {
+      max-width: 100%;
+      max-height: 400px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+
+    .image-label {
+      background: #673ab7;
+      color: white;
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 16px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    /* テキスト入力 */
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      padding: 8px 0;
+      border: none;
+      border-bottom: 1px solid #dadce0;
+      font-size: 16px;
+      font-family: inherit;
+      background: transparent;
+      transition: border-color 0.2s;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus {
+      outline: none;
+      border-bottom: 2px solid #673ab7;
+    }
+
+    input[type="text"]::placeholder,
+    input[type="email"]::placeholder {
+      color: #80868b;
+    }
+
+    /* エージェント評価カード */
+    .agent-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+
+    .agent-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .agent-badge {
+      background: #673ab7;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 16px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .risk-badge {
+      padding: 4px 12px;
+      border-radius: 16px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .risk-badge.critical { background: #fce8e6; color: #c5221f; }
+    .risk-badge.major { background: #fef7e0; color: #e37400; }
+    .risk-badge.minor { background: #e8f0fe; color: #1967d2; }
+    .risk-badge.none { background: #e6f4ea; color: #137333; }
+
+    .agent-reason {
+      background: #f8f9fa;
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      color: #3c4043;
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    /* ラジオボタン（5段階評価） */
+    .rating-group {
+      margin-bottom: 20px;
+    }
+
+    .rating-label {
+      font-size: 14px;
+      color: #202124;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .rating-label .required {
+      color: #d93025;
+    }
+
+    .rating-options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .rating-option {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .rating-option:hover {
+      background: #f8f9fa;
+    }
+
+    .rating-option input[type="radio"] {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #5f6368;
+      border-radius: 50%;
+      cursor: pointer;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .rating-option input[type="radio"]:checked {
+      border-color: #673ab7;
+    }
+
+    .rating-option input[type="radio"]:checked::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px;
+      height: 10px;
+      background: #673ab7;
+      border-radius: 50%;
+    }
+
+    .rating-option label {
+      font-size: 14px;
+      color: #202124;
+      cursor: pointer;
+    }
+
+    /* 未回答エラー表示 */
+    .rating-group.error {
+      background: #fce8e6;
+      border-radius: 8px;
+      padding: 12px;
+      margin: -12px;
+      margin-bottom: 8px;
+      animation: shake 0.5s ease;
+    }
+
+    .rating-group.error .rating-label {
+      color: #c5221f;
+    }
+
+    .error-message {
+      color: #c5221f;
+      font-size: 12px;
+      margin-top: 8px;
+      display: none;
+    }
+
+    .rating-group.error .error-message {
+      display: block;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      75% { transform: translateX(5px); }
+    }
+
+    /* ヘルプセクション */
+    .help-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      color: #673ab7;
+      cursor: pointer;
+      margin-left: 8px;
+      text-decoration: none;
+      user-select: none;
+    }
+
+    .help-toggle:hover {
+      text-decoration: underline;
+    }
+
+    .help-toggle::before {
+      content: 'ℹ️';
+      font-size: 14px;
+    }
+
+    .help-content {
+      display: none;
+      margin-top: 8px;
+      padding: 12px;
+      background: #f8f9fa;
+      border-left: 3px solid #673ab7;
+      border-radius: 4px;
+      font-size: 12px;
+      color: #5f6368;
+    }
+
+    .help-content.show {
+      display: block;
+    }
+
+    .help-content ul {
+      margin: 8px 0 0 16px;
+      padding: 0;
+    }
+
+    .help-content li {
+      margin-bottom: 4px;
+    }
+
+    /* 未回答カウント表示 */
+    .unanswered-alert {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #c5221f;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      z-index: 1000;
+      font-size: 14px;
+      display: none;
+    }
+
+    .unanswered-alert.show {
+      display: block;
+      animation: slideUp 0.3s ease;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateX(-50%) translateY(100%); opacity: 0; }
+      to { transform: translateX(-50%) translateY(0); opacity: 1; }
+    }
+
+    /* プログレスバー */
+    .progress-container {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #f0ebf8;
+      padding: 8px 0;
+    }
+
+    .progress-bar {
+      height: 4px;
+      background: #dadce0;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: #673ab7;
+      transition: width 0.3s ease;
+    }
+
+    .progress-text {
+      text-align: center;
+      font-size: 12px;
+      color: #5f6368;
+      margin-top: 4px;
+    }
+
+    /* ボタン */
+    .btn-group {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid #dadce0;
+    }
+
+    .btn {
+      padding: 10px 24px;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: #673ab7;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #5e35b1;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #673ab7;
+    }
+
+    .btn-secondary:hover {
+      background: #f3e5f5;
+    }
+
+    /* 完了画面 */
+    .complete-card {
+      background: #fff;
+      border-radius: 8px;
+      border-top: 10px solid #673ab7;
+      padding: 48px 24px;
+      text-align: center;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+
+    .complete-icon {
+      font-size: 64px;
+      margin-bottom: 16px;
+    }
+
+    .complete-card h2 {
+      font-size: 24px;
+      font-weight: 400;
+      color: #202124;
+      margin-bottom: 8px;
+    }
+
+    .complete-card p {
+      color: #5f6368;
+      margin-bottom: 24px;
+    }
+
+    .download-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* 非表示 */
+    .hidden {
+      display: none !important;
+    }
+
+    /* ローディング */
+    .loading {
+      text-align: center;
+      padding: 48px;
+      color: #5f6368;
+    }
+
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid #dadce0;
+      border-top-color: #673ab7;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 16px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- プログレスバー -->
+    <div class="progress-container hidden" id="progress-container">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+      </div>
+      <div class="progress-text" id="progress-text">0 / 0</div>
+    </div>
+
+    <!-- ローディング -->
+    <div id="loading" class="loading">
+      <div class="loading-spinner"></div>
+      <p>データを読み込んでいます...</p>
+    </div>
+
+    <!-- Intro: 説明ページ -->
+    <div id="phase-intro" class="hidden">
+      <div class="header-card">
+        <h1>リスク予測評価アンケートについて</h1>
+        <p style="margin-top: 8px;">
+          これは、<strong>LLM（大規模言語モデル）が生成した「家庭内事故リスクの説明」</strong>について、<br>
+          <strong>あなたの主観的な評価</strong>をお聞きするアンケートです。
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">このアンケートで行うこと</div>
+        <p style="font-size: 14px; color: #5f6368; margin-bottom: 8px;">
+          ・画像を1枚ずつ見ながら、<strong>複数のAIエージェント</strong>が生成した「リスクの説明文」を読みます。<br>
+          ・それぞれの説明について、<strong>直感的納得感</strong>と<strong>根拠の妥当性・多角性</strong>の2つを、5段階で評価していただきます。
+        </p>
+        <p style="font-size: 13px; color: #5f6368; margin-top: 8px;">
+          ※ 説明文の中には「フィードバックを受けて〜」「前回の評価を維持する」など、<br>
+          エージェント同士が連携して議論した履歴がそのまま残っている表現がありますが、<br>
+          <strong>そうした履歴の細かい事情は気にせず</strong>、<strong>最終的な文章全体を読んだときの印象</strong>で評価してください。
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">評価のしかた（2つの評価軸）</div>
+        <p style="font-size: 14px; color: #5f6368; margin-bottom: 8px;">
+          <strong>1. 直感的納得感（Intuitive Persuasiveness）</strong><br>
+          質問：「システムが下したリスクカテゴリ（緊急重大〜安全）は、あなたの直感と一致していますか？」
+        </p>
+        <p style="font-size: 13px; color: #5f6368; margin-bottom: 8px;">
+          目的：最終的な「判定結果」の正しさを測る。
+        </p>
+        <ul style="font-size: 13px; color: #5f6368; margin-left: 16px; margin-bottom: 16px;">
+          <li><strong>5 - 非常に納得できる（自分の感覚と同じ）</strong>：自分が判断するときも、ほぼ同じカテゴリに分類する</li>
+          <li><strong>4 - 概ね納得できる</strong>：だいたい同意できるが、少し気になる点がある</li>
+          <li><strong>3 - どちらともいえない</strong>：良いとも悪いとも判断しづらい</li>
+          <li><strong>2 - あまり納得できない</strong>：自分の感覚とは少し違う</li>
+          <li><strong>1 - 全く納得できない（的外れ）</strong>：自分の感覚とは全く違う／危険の捉え方がズレている</li>
+        </ul>
+
+        <p style="font-size: 14px; color: #5f6368; margin-bottom: 8px;">
+          <strong>2. 根拠の妥当性・多角性（Reasoning Balance / Logic）</strong><br>
+          質問：「そのリスクと判断した『理由』の内容は、過不足なく適切ですか？」
+        </p>
+        <p style="font-size: 13px; color: #5f6368; margin-bottom: 8px;">
+          目的：推論プロセスの「質」を測る。「考えすぎ（過剰）」と「根拠不足（過小）」を同じスケールで評価できます。
+        </p>
+        <ul style="font-size: 13px; color: #5f6368; margin-left: 16px;">
+          <li><strong>5 - 過剰に反応しすぎている</strong>：非常に低い確率の連鎖を懸念しすぎている</li>
+          <li><strong>4 - やや考えすぎである</strong>：論理は通っているが、そこまで心配しなくても良い内容を含む</li>
+          <li><strong>3 - 適切かつ多角的である</strong>：様々な情報がバランスよく考慮されている</li>
+          <li><strong>2 - 根拠が不足している</strong>：直感的だが、なぜそうなるかの説明が足りない</li>
+          <li><strong>1 - 根拠が不適切・無関係</strong>：全く関係ないことに言及している</li>
+        </ul>
+        <p style="font-size: 13px; color: #5f6368; margin-top: 8px;">
+          ※ 文章が長いからといって「よく考えている」と評価する必要はありません。<br>
+          <strong>長さではなく、「結論と理由が自分の感覚に合っているか？」「根拠が適切か？」という観点</strong>で、気楽に答えてください。
+        </p>
+      </div>
+
+      <div class="card" id="grouping-info-card" style="display: none;">
+        <div class="card-title">画像のグループ分けについて</div>
+        <p style="font-size: 14px; color: #5f6368; margin-bottom: 8px;" id="grouping-info-text">
+          <!-- 動的に生成 -->
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">所要時間とお願い</div>
+        <p style="font-size: 14px; color: #5f6368; margin-bottom: 8px;">
+          ・画像枚数とエージェント数が多いため、<strong>ある程度まとまった時間（30分〜1時間程度）</strong>が必要になります。<br>
+          ・途中で疲れてきたら、<strong>無理をせず休憩しながら</strong>回答してください。<br>
+          ・すべての質問に完全に答えなくても構いませんが、<strong>できる範囲で丁寧に評価していただけると、とても助かります。</strong>
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">お楽しみ要素：おみくじ＆景品</div>
+        <p style="font-size: 14px; color: #5f6368; margin-bottom: 8px;">
+          全ての画像の評価が終わると、<strong>最後に「おみくじ」</strong>を引けます。<br>
+          今年の運勢を占って、ちょっとだけ気分転換してもらえると嬉しいです。
+        </p>
+        <p style="font-size: 13px; color: #5f6368;">
+          おみくじの結果に応じて、<strong>年明けにささやかな景品</strong>（お菓子や記念品など）をお渡しする予定です。<br>
+          結果はアンケートの集計と一緒に確認しますので、お楽しみに！\n
+        </p>
+      </div>
+
+      <div class="btn-group" style="border-top: none; padding-top: 0;">
+        <div></div>
+        <button class="btn btn-primary" onclick="goToAgentExplanation()">説明を読んだので次へ</button>      </div>
+    </div>
+
+    <div id="phase-agent-explanation" class="hidden">
+      <div class="header-card">
+        <h1>AIエージェントとは？</h1>
+        <p>このアンケートに登場する「評価者たち」についてご説明します。</p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">🤖 単なる「AI」と「AIエージェント」の違い</div>
+        <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 16px;">
+          <div style="font-size: 40px;">💬</div>
+          <div>
+            <strong>普通のチャットAI</strong><br>
+            <span style="font-size: 13px; color: #5f6368;">聞かれたことに答えるだけ。性格や立場は特にありません。</span>
+          </div>
+        </div>
+        <div style="text-align: center; font-size: 20px; color: #dadce0; margin: 8px 0;">⬇️ 進化 ⬇️</div>
+        <div style="display: flex; gap: 20px; align-items: center; margin-top: 16px;">
+          <div style="font-size: 40px;">🕵️</div>
+          <div>
+            <strong>AIエージェント（今回の評価者）</strong><br>
+            <span style="font-size: 13px; color: #5f6368;"><strong>「性格」「役割」「専門知識」</strong>を持っています。<br>
+            「もし私が心配性の親だったら？」「もし私が厳格な安全管理者だったら？」という立場になりきって、リスクを考えます。</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">なぜ複数のエージェントを比較するの？</div>
+        <p style="font-size: 14px; color: #5f6368; margin-bottom: 12px;">
+          リスクの感じ方は人それぞれです。<br>
+          例えば、<strong>「包丁が置いてある」</strong>という状況に対して：
+        </p>
+        <div style="background: #f8f9fa; padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 12px;">
+              <span class="agent-badge">Agent A (普通)</span> <span style="font-size: 14px;">「料理中なら普通のことだね。リスクなし。」</span>
+            </li>
+            <li style="margin-bottom: 12px;">
+              <span class="agent-badge" style="background: #e37400;">Agent H (厳格)</span> <span style="font-size: 14px;">「地震で落下して足に刺さる可能性がある。<strong>潜在的リスク</strong>だ！」</span>
+            </li>
+            <li>
+              <span class="agent-badge" style="background: #c5221f;">Agent C (心配性)</span> <span style="font-size: 14px;">「子供が手を伸ばすかもしれない！<strong>緊急のリスク</strong>だ！」</span>
+            </li>
+          </ul>
+        </div>
+        <p style="font-size: 14px; color: #5f6368;">
+          このように、<strong>AIの性格（アルゴリズム）によってリスク判断が変わります。</strong><br>
+          どのAIの判断が「人間（あなた）の感覚」に一番近いか、あるいは「役に立つか」を教えてください。
+        </p>
+      </div>
+
+      <div class="btn-group" style="border-top: none; padding-top: 0;">
+        <button class="btn btn-secondary" onclick="backToIntro()">戻る</button>
+        <button class="btn btn-primary" onclick="goToNamePhase()">理解しました</button>
+      </div>
+    </div>
+    
+    <!-- Phase 0: 参加者情報 -->
+    <div id="phase-name" class="hidden">
+      <div class="header-card">
+        <h1>リスク予測評価アンケート</h1>
+        <p>家庭内事故リスク予測システムの評価にご協力ください。<br>
+        各画像について、複数のAIエージェントによるリスク評価を読み、<strong>直感的納得感</strong>と<strong>根拠の妥当性・多角性</strong>を5段階で評価してください。</p>
+        <p class="required-note">* は必須項目です</p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">お名前<span class="required">*</span></div>
+        <input type="text" id="participant-name" placeholder="回答を入力" required>
+      </div>
+
+      <div class="card">
+        <div class="card-title">メールアドレス</div>
+        <input type="email" id="participant-email" placeholder="回答を入力（任意）">
+      </div>
+
+      <div class="btn-group" style="border-top: none; padding-top: 0;">
+        <div></div>
+        <button class="btn btn-primary" onclick="startSurvey()">次へ</button>
+      </div>
+    </div>
+
+    <!-- Phase 1: Validity評価 -->
+    <div id="phase-validity" class="hidden">
+      <!-- 動的に生成 -->
+    </div>
+
+    <!-- Phase 2: 完了 -->
+    <div id="phase-complete" class="hidden">
+      <div class="complete-card">
+        <div class="complete-icon">✅</div>
+        <h2>回答を送信しました</h2>
+        <p>ご協力ありがとうございました！</p>
+        <div class="download-buttons" style="margin-bottom: 24px;">
+          <button class="btn btn-primary" onclick="downloadCSV()">CSVでダウンロード</button>
+          <button class="btn btn-secondary" onclick="downloadJSON()">JSONでダウンロード</button>
+          <button class="btn btn-secondary" onclick="downloadImagePaths()">画像パス一覧をダウンロード</button>
+        </div>
+
+        <div style="margin-top: 8px; margin-bottom: 24px;">
+          <p style="color: #5f6368; margin-bottom: 8px;">
+            ここまでお付き合いいただいたお礼に、<strong>今年の運勢を占う「おみくじ」</strong>をご用意しました。
+          </p>
+          <button class="btn btn-primary" onclick="drawOmikuji()">おみくじを引く</button>
+          <p id="omikuji-result" style="margin-top: 16px; font-size: 16px; color: #202124;"></p>
+          <p id="omikuji-note" style="margin-top: 8px; font-size: 13px; color: #5f6368; display: none;">
+            おみくじの結果に応じて、<strong>年明けにささやかな景品</strong>（お菓子や記念品など）をお渡しする予定です。<br>
+            結果は研究者側で集計し、後日ご連絡いたします。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ============================================
+    // 設定
+    // ============================================
+    
+    // ============================================
+    // 評価モード設定（ここを変更してモードを切り替え）
+    // ============================================
+    const CONFIG = {
+      // 評価モード: 'ablation' | 'random' | 'all'
+      // 'ablation': アブレーション評価（4-5種類のエージェントのみ、推奨）
+      //              → 回答時間が1/3に短縮、研究の核心に集中
+      // 'random': ランダムサンプリング（1画像につき3-4つのエージェント）
+      //           → 回答者ごとに異なる組み合わせ、全エージェントの統計取得可能
+      // 'all': 全エージェント表示（14種類すべて）
+      //        → 少数の専門家向け、回答負担が大きい
+      EVALUATION_MODE: 'all',
+      
+      // アブレーション評価用のエージェント（研究の核心）
+      ABLATION_AGENTS: [
+        'Semantic_state',                    // Agent A: 基準点（LLMのみ）
+        'Semantic_state_RiskScore',          // Agent B: 提案手法（統合型）
+        'Semantic_state_RiskScore_Persona_01', // Agent C: パーソナライズの有効性
+        'Semantic_state_Stickler',           // Agent H: 比較対象アルゴリズム
+        'VLM'                                 // Agent N: 既存手法との比較
+      ],
+      
+      // ランダムサンプリング時のエージェント数
+      RANDOM_AGENT_COUNT: 4,
+      
+      // 熟慮度を簡略化するか（true: 同意度のみ、false: 両方評価）
+      // 熟士論文では「同意度＋熟慮度」の2軸で評価するため false に設定
+      SIMPLIFY_THOUGHT: false,
+      
+      // 画像グループ分け設定
+      ENABLE_GROUPING: false,  // グループ分けを有効化するか
+      GROUP_SIZE: 3,          // グループあたりの画像数
+      
+      // JSONファイルのパス
+      JSON_FILES: [
+        './evaluation_dataset_Kitchen.json',
+        './evaluation_dataset_LivingLab.json'
+      ],
+      // 画像のベースパス（相対パスで指定、または絶対パス）
+      IMAGE_BASE_PATHS: {
+        'Kitchen': './Kitchen/002_Observations/',
+        'LivingLab': './Livinglab/002_Observations/'
+      },
+      
+      // 特定のIDで除外する画像パス
+      EXCLUDED_IMAGE_PATHS: {
+        '0': [
+          'obs_20251227_042752_34a215e3/rgb.jpg',
+          'obs_20251227_042806_b696a377/rgb.jpg'
+        ],
+        '2': [
+          'obs_20251227_042752_34a215e3/rgb.jpg',
+          'obs_20251227_043054_8ce47229/rgb.jpg',
+          'obs_20251227_042806_b696a377/rgb.jpg'
+        ],
+        '3': [
+          'obs_20251227_043054_8ce47229/rgb.jpg'
+        ],
+        '4': [
+          'obs_20251227_042752_34a215e3/rgb.jpg'
+        ],
+        '5': [
+          'obs_20251227_042926_368f4aab/rgb.jpg',
+          'obs_20251227_043013_0201ff2a/rgb.jpg'
+        ],
+        '6': [
+          'obs_20251227_042001_765b0f6a/rgb.jpg'
+        ],
+        '7': [
+          'obs_20251227_042651_90f7ed19/rgb.jpg'
+        ]
+      }
+    };
+    
+    // 対象のエージェントキー（すべてのエージェント）
+    const AGENT_KEYS = [
+      'Semantic_state',
+      'Semantic_state_RiskScore',
+      'Semantic_state_RiskScore_Persona_01',
+      'Semantic_state_RiskScore_Persona_02',
+      'Semantic_state_RiskScore_Persona_03',
+      'Semantic_state_RiskScore_Persona_04',
+      'Semantic_state_RiskScore_Persona_05',
+      'Semantic_state_Stickler',
+      'Semantic_state_Persona_01',
+      'Semantic_state_Persona_02',
+      'Semantic_state_Persona_03',
+      'Semantic_state_Persona_04',
+      'Semantic_state_Persona_05',
+      'VLM'
+    ];
+
+    // 匿名化されたエージェント名
+    const AGENT_DISPLAY_NAMES = {
+      'Semantic_state': 'Agent A',
+      'Semantic_state_RiskScore': 'Agent B',
+      'Semantic_state_RiskScore_Persona_01': 'Agent C',
+      'Semantic_state_RiskScore_Persona_02': 'Agent D',
+      'Semantic_state_RiskScore_Persona_03': 'Agent E',
+      'Semantic_state_RiskScore_Persona_04': 'Agent F',
+      'Semantic_state_RiskScore_Persona_05': 'Agent G',
+      'Semantic_state_Stickler': 'Agent H',
+      'Semantic_state_Persona_01': 'Agent I',
+      'Semantic_state_Persona_02': 'Agent J',
+      'Semantic_state_Persona_03': 'Agent K',
+      'Semantic_state_Persona_04': 'Agent L',
+      'Semantic_state_Persona_05': 'Agent M',
+      'VLM': 'Agent N'
+    };
+
+    // 5段階評価の選択肢
+    // 1. 直感的納得感（Intuitive Persuasiveness）
+    const AGREE_CHOICES = [
+      { value: 5, label: '非常に納得できる（自分の感覚と同じ）' },
+      { value: 4, label: '概ね納得できる' },
+      { value: 3, label: 'どちらともいえない' },
+      { value: 2, label: 'あまり納得できない' },
+      { value: 1, label: '全く納得できない（的外れ）' }
+    ];
+
+    // 2. 根拠の妥当性・多角性（Reasoning Balance / Logic）
+    const THOUGHT_CHOICES = [
+      { value: 5, label: '過剰に反応しすぎている（非常に低い確率のリスクを懸念しすぎている）' },
+      { value: 4, label: 'やや考えすぎである（論理は通っているが、そこまで心配しなくても良い内容を含む）' },
+      { value: 3, label: '適切かつ多角的である（様々な情報がバランスよく考慮されている）' },
+      { value: 2, label: '根拠が不足している（直感的だが、なぜそうなるかの説明が足りない）' },
+      { value: 1, label: '根拠が不適切・無関係（全く関係ないことに言及している）' }
+    ];
+
+    // おみくじの結果候補
+    const OMIKUJI_RESULTS = [
+      { title: '大吉', message: '最高の一年になりそうです！新しい挑戦にもぜひ前向きに。' },
+      { title: '中吉', message: '穏やかに良いことが積み重なる一年になりそうです。コツコツ型が吉。' },
+      { title: '小吉', message: '大きな波はないものの、努力次第でしっかり報われる一年です。' },
+      { title: '吉',   message: '日常の中の小さな幸せに気づけると、運気がじわじわ上がっていきます。' },
+      { title: '末吉', message: '無理をしすぎず、体調と気分を大事にできると、良い方向に転がっていきます。' },
+      { title: '凶（レア）', message: 'ネタ枠の「凶」です。慎重さと休息を意識すれば、むしろ良い一年になるかも？' }
+    ];
+
+    // ============================================
+    // データ
+    // ============================================
+    
+    let riskData = null;
+    let surveyData = {
+      participant: { name: '', email: '', startTime: null, endTime: null },
+      assignedGroup: null,  // 割り当てられたグループ番号（0始まり）
+      validityResults: []
+    };
+    let currentImageIndex = 0;
+    let imageIds = [];  // フィルタリング後の画像IDリスト（グループ分け後）
+    let allImageIds = [];  // 全画像IDリスト（グループ分け前）
+    let imagePaths = {};  // 各番号に対する画像パス群 { "0": ["path1", "path2", ...], ... }
+    let imageBasePaths = {};  // 各番号のベースパス { "0": "Kitchen" or "LivingLab", ... }
+    let skipValidationClickCount = 0;  // クリック回数カウンター（隠しコマンド用）
+    let skipValidationEnabled = false;  // バリデーションスキップフラグ（隠しコマンド用）
+
+    // ============================================
+    // 初期化
+    // ============================================
+    
+    async function init() {
+      try {
+        // 2つのJSONファイルを並列で読み込む
+        const [kitchenResponse, livinglabResponse] = await Promise.all([
+          fetch(CONFIG.JSON_FILES[0]),
+          fetch(CONFIG.JSON_FILES[1])
+        ]);
+        
+        if (!kitchenResponse.ok || !livinglabResponse.ok) {
+          throw new Error(`HTTP error! Kitchen: ${kitchenResponse.status}, LivingLab: ${livinglabResponse.status}`);
+        }
+        
+        const kitchenData = await kitchenResponse.json();
+        const livinglabData = await livinglabResponse.json();
+        
+        // データを統合（キーが重複しない前提、または接頭辞を付ける）
+        riskData = {};
+        imagePaths = {};
+        imageBasePaths = {};
+        
+        // Kitchenデータを統合
+        for (const [key, value] of Object.entries(kitchenData)) {
+          riskData[key] = value;
+          imageBasePaths[key] = 'Kitchen';
+          // observations配列からrgb_pathを抽出
+          if (value.observations && Array.isArray(value.observations)) {
+            const excludedPaths = CONFIG.EXCLUDED_IMAGE_PATHS[key] || [];
+            imagePaths[key] = value.observations
+              .map(obs => obs.rgb_path)
+              .filter(path => path && !excludedPaths.includes(path)); // null/undefinedと除外リストを除外
+          } else {
+            imagePaths[key] = [];
+          }
+        }
+        
+        // LivingLabデータを統合（キーが重複する場合は接頭辞を付ける）
+        const maxKitchenKey = Math.max(...Object.keys(kitchenData).map(k => parseInt(k) || 0));
+        for (const [key, value] of Object.entries(livinglabData)) {
+          const newKey = (parseInt(key) + maxKitchenKey + 1).toString();
+          riskData[newKey] = value;
+          imageBasePaths[newKey] = 'LivingLab';
+          // observations配列からrgb_pathを抽出
+          if (value.observations && Array.isArray(value.observations)) {
+            // 元のキーで除外リストを確認（LivingLabデータの場合も元のキーで指定されている可能性がある）
+            const excludedPaths = CONFIG.EXCLUDED_IMAGE_PATHS[key] || [];
+            imagePaths[newKey] = value.observations
+              .map(obs => obs.rgb_path)
+              .filter(path => path && !excludedPaths.includes(path)); // null/undefinedと除外リストを除外
+          } else {
+            imagePaths[newKey] = [];
+          }
+        }
+        
+        allImageIds = Object.keys(riskData).sort((a, b) => parseInt(a) - parseInt(b));
+        // グループ分けが無効の場合は、全画像IDを使用
+        imageIds = allImageIds;
+        
+        // 画像パス一覧をコンソールに出力
+        console.log('=== 画像パス一覧 ===');
+        for (const [imageId, paths] of Object.entries(imagePaths)) {
+          const basePath = imageBasePaths[imageId];
+          console.log(`画像ID ${imageId} (${basePath}):`, paths);
+        }
+        console.log('==================');
+        
+        document.getElementById('loading').classList.add('hidden');
+        document.getElementById('phase-intro').classList.remove('hidden');
+        
+        // グループ分けの説明を表示
+        if (CONFIG.ENABLE_GROUPING && allImageIds.length > 0) {
+          const totalGroups = Math.ceil(allImageIds.length / CONFIG.GROUP_SIZE);
+          const groupingInfoCard = document.getElementById('grouping-info-card');
+          const groupingInfoText = document.getElementById('grouping-info-text');
+          if (groupingInfoCard && groupingInfoText) {
+            groupingInfoCard.style.display = 'block';
+            groupingInfoText.innerHTML = `
+              ・全${allImageIds.length}枚の画像を${CONFIG.GROUP_SIZE}枚ずつ${totalGroups}グループに分けています。<br>
+              ・お名前を入力すると、自動的にいずれかのグループが割り当てられます。<br>
+              ・あなたには<strong>グループのうち1つ（${CONFIG.GROUP_SIZE}枚の画像）</strong>のみを評価していただきます。<br>
+              ・これにより、1人あたりの評価負担を軽減しています。
+            `;
+          }
+        }
+        
+        console.log(`データ読み込み完了: ${allImageIds.length}件の画像、各画像に${AGENT_KEYS.length}件のエージェント`);
+      } catch (error) {
+        console.error('データ読み込みエラー:', error);
+        document.getElementById('loading').innerHTML = `
+          <p style="color: #d93025;">エラー: データを読み込めませんでした</p>
+          <p style="font-size: 12px; margin-top: 8px;">${error.message}</p>
+          <p style="font-size: 12px; margin-top: 8px;">確認事項:</p>
+          <ul style="font-size: 12px; margin-left: 20px; text-align: left; display: inline-block;">
+            <li>JSONファイルが正しい場所にありますか？</li>
+            <li>サーバーが正しく起動していますか？</li>
+            <li>ブラウザのコンソール（F12）で詳細なエラーを確認してください</li>
+          </ul>
+        `;
+      }
+    }
+
+    // ============================================
+    // 調査開始
+    // ============================================
+
+    // 説明ページへ進む（Intro画面のボタンから呼ばれる）
+    function goToAgentExplanation() {
+      document.getElementById('phase-intro').classList.add('hidden');
+      document.getElementById('phase-agent-explanation').classList.remove('hidden');
+      window.scrollTo(0, 0);
+    }
+
+    // 説明ページからIntroへ戻る
+    function backToIntro() {
+      document.getElementById('phase-agent-explanation').classList.add('hidden');
+      document.getElementById('phase-intro').classList.remove('hidden');
+    }
+
+    // 名前入力画面へ進む（AgentExplanation画面のボタンから呼ばれる）
+    // ※既存の関数を書き換えるのではなく、既存の goToNamePhase はそのまま利用します。
+    //   ただし、phase-intro を隠す処理だけでなく phase-agent-explanation を隠す処理も必要になります。
+    
+    /* 既存の goToNamePhase 関数を以下のように修正してください 
+       （既存のものを上書きしてください）
+    */
+    function goToNamePhase() {
+      // 1. 最初の説明画面を隠す
+      document.getElementById('phase-intro').classList.add('hidden');
+      
+      // 2. 【ここが重要】「AIエージェントとは？」画面も隠す
+      const agentExpl = document.getElementById('phase-agent-explanation');
+      if (agentExpl) {
+        agentExpl.classList.add('hidden');
+      }
+      
+      // 3. 名前入力画面を表示する
+      document.getElementById('phase-name').classList.remove('hidden');
+      
+      // 4. 画面の一番上までスクロール
+      window.scrollTo(0, 0);
+    }
+    
+    // function goToNamePhase() {
+    //   document.getElementById('phase-intro').classList.add('hidden');
+    //   document.getElementById('phase-name').classList.remove('hidden');
+    // }
+    
+    function startSurvey() {
+      const name = document.getElementById('participant-name').value.trim();
+      if (!name) {
+        alert('お名前を入力してください');
+        return;
+      }
+
+      surveyData.participant.name = name;
+      surveyData.participant.email = document.getElementById('participant-email').value.trim();
+      surveyData.participant.startTime = new Date().toISOString();
+
+      // グループ分けの処理
+      if (CONFIG.ENABLE_GROUPING && allImageIds.length > 0) {
+        const groups = createImageGroups(allImageIds, CONFIG.GROUP_SIZE);
+        const groupNumber = assignGroupToParticipant(name, groups.length);
+        surveyData.assignedGroup = groupNumber;
+        imageIds = groups[groupNumber] || [];
+        console.log(`グループ分け: 全${allImageIds.length}枚を${groups.length}グループに分割、グループ${groupNumber + 1}（${imageIds.length}枚）を割り当て`);
+      } else {
+        // グループ分けが無効、または画像がない場合は全画像を使用
+        imageIds = allImageIds;
+        surveyData.assignedGroup = null;
+      }
+
+      document.getElementById('phase-name').classList.add('hidden');
+      document.getElementById('progress-container').classList.remove('hidden');
+      document.getElementById('phase-validity').classList.remove('hidden');
+
+      loadCurrentImage();
+    }
+
+    // ============================================
+    // エージェント選択ロジック
+    // ============================================
+    
+    /**
+     * 表示するエージェントを選択する
+     */
+    function getAgentsToDisplay(imageId) {
+      const imageData = riskData[imageId];
+      
+      // 利用可能なエージェントをフィルタリング
+      const availableAgents = AGENT_KEYS.filter(key => {
+        const agentData = imageData[key];
+        if (!agentData) return false;
+        const reason = agentData.updated_reason_01 || agentData.risk_reason;
+        return !!reason;
+      });
+
+      switch (CONFIG.EVALUATION_MODE) {
+        case 'ablation':
+          // アブレーション評価：指定されたエージェントのみ
+          return availableAgents.filter(key => CONFIG.ABLATION_AGENTS.includes(key));
+        
+        case 'random':
+          // ランダムサンプリング：参加者IDベースでランダムに選択（再現可能）
+          const participantId = surveyData.participant.name || 'default';
+          const seed = hashString(participantId + imageId);
+          const shuffled = shuffleArray([...availableAgents], seed);
+          return shuffled.slice(0, CONFIG.RANDOM_AGENT_COUNT);
+        
+        case 'all':
+        default:
+          // 全エージェント表示
+          return availableAgents;
+      }
+    }
+
+    /**
+     * 文字列をハッシュ化（同じ参加者・同じ画像で同じ結果を返す）
+     */
+    function hashString(str) {
+      let hash = 0;
+      for (let i = 0; i < str.length; i++) {
+        const char = str.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash = hash & hash; // Convert to 32bit integer
+      }
+      return Math.abs(hash);
+    }
+
+    /**
+     * シード付きシャッフル（再現可能なランダム）
+     */
+    function shuffleArray(array, seed) {
+      const shuffled = [...array];
+      let random = seed;
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        random = (random * 9301 + 49297) % 233280;
+        const j = Math.floor((random / 233280) * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled;
+    }
+
+    // ============================================
+    // 画像グループ分けロジック
+    // ============================================
+    
+    /**
+     * 画像IDをグループに分割する
+     * @param {string[]} imageIds - 画像IDの配列
+     * @param {number} groupSize - グループあたりの画像数
+     * @returns {string[][]} グループの配列
+     */
+    function createImageGroups(imageIds, groupSize) {
+      if (groupSize <= 0 || groupSize >= imageIds.length) {
+        // グループサイズが無効、または画像数以下の場合は、全画像を1つのグループに
+        return [imageIds];
+      }
+      
+      const groups = [];
+      for (let i = 0; i < imageIds.length; i += groupSize) {
+        groups.push(imageIds.slice(i, i + groupSize));
+      }
+      return groups;
+    }
+
+    /**
+     * 参加者にグループを割り当てる（順番方式）
+     * @param {string} participantName - 参加者名
+     * @param {number} totalGroups - グループ総数
+     * @returns {number} 割り当てられたグループ番号（0始まり）
+     */
+    function assignGroupToParticipant(participantName, totalGroups) {
+      if (totalGroups <= 0) return 0;
+      // 名前をハッシュ化してグループ番号を決定（順番方式）
+      const hash = hashString(participantName);
+      return hash % totalGroups;
+    }
+
+    // ============================================
+    // 画像読み込み
+    // ============================================
+    
+    function loadCurrentImage() {
+      if (currentImageIndex >= imageIds.length) {
+        finishSurvey();
+        return;
+      }
+
+      const imageId = imageIds[currentImageIndex];
+      const imageData = riskData[imageId];
+      const container = document.getElementById('phase-validity');
+
+      // プログレス更新
+      const progress = ((currentImageIndex) / imageIds.length) * 100;
+      document.getElementById('progress-fill').style.width = `${progress}%`;
+      let progressText = `${currentImageIndex + 1} / ${imageIds.length}`;
+      if (CONFIG.ENABLE_GROUPING && surveyData.assignedGroup !== null) {
+        const totalGroups = Math.ceil(allImageIds.length / CONFIG.GROUP_SIZE);
+        progressText = `グループ${surveyData.assignedGroup + 1}: ${progressText}`;
+      }
+      document.getElementById('progress-text').textContent = progressText;
+
+      // 表示するエージェントを取得
+      const agentsToDisplay = getAgentsToDisplay(imageId);
+      
+      // モード情報を表示
+      let modeInfo = '';
+      if (CONFIG.EVALUATION_MODE === 'ablation') {
+        modeInfo = `<p style="font-size: 12px; opacity: 0.8; margin-top: 4px;">アブレーション評価モード: ${agentsToDisplay.length}件のエージェントを表示</p>`;
+      } else if (CONFIG.EVALUATION_MODE === 'random') {
+        modeInfo = `<p style="font-size: 12px; opacity: 0.8; margin-top: 4px;">ランダムサンプリングモード: ${agentsToDisplay.length}件のエージェントを表示</p>`;
+      }
+
+      // グループ情報を表示
+      let groupInfo = '';
+      if (CONFIG.ENABLE_GROUPING && surveyData.assignedGroup !== null) {
+        const totalGroups = Math.ceil(allImageIds.length / CONFIG.GROUP_SIZE);
+        groupInfo = `<p style="font-size: 12px; opacity: 0.8; margin-top: 4px;">グループ${surveyData.assignedGroup + 1}/${totalGroups}（全${allImageIds.length}枚中${imageIds.length}枚を評価）</p>`;
+      }
+
+      // 画像パスを取得（最初の画像パスを使用）
+      const paths = imagePaths[imageId] || [];
+      const basePath = imageBasePaths[imageId] || 'Kitchen';
+      const firstImagePath = paths.length > 0 ? paths[0] : null;
+      const imageSrc = firstImagePath 
+        ? `${CONFIG.IMAGE_BASE_PATHS[basePath]}${firstImagePath}`
+        : `https://via.placeholder.com/600x400?text=Image+${imageId}`;
+      const imageLabel = `${basePath} - 画像 ${imageId}${paths.length > 1 ? ` (${paths.length}枚の画像から1枚目を表示)` : ''}`;
+
+      // HTMLを生成
+      let html = `
+        <div class="section-header">
+          <h2>画像 ${imageId} の評価</h2>
+          <p>${currentImageIndex + 1} / ${imageIds.length} 枚目</p>
+          ${groupInfo}
+          ${modeInfo}
+        </div>
+
+        <div class="image-section">
+          <img src="${imageSrc}" alt="画像 ${imageId}" onerror="this.src='https://via.placeholder.com/600x400?text=Image+${imageId}'">
+          <div class="image-label">${imageLabel}</div>
+          ${paths.length > 1 ? `<div style="font-size: 12px; color: #5f6368; margin-top: 4px;">この画像IDには${paths.length}枚の画像があります（1枚目を表示）</div>` : ''}
+        </div>
+      `;
+
+      // 選択されたエージェントのみの評価カードを生成
+      for (const agentKey of agentsToDisplay) {
+        const agentData = imageData[agentKey];
+        if (!agentData) continue;
+
+        // リスク理由を取得（updated_reason_01があればそちらを優先）
+        const reason = agentData.updated_reason_01 || agentData.risk_reason;
+        const judge = agentData.updated_judge_01 || agentData.risk_judge;
+
+        if (!reason) continue;
+
+        const displayName = AGENT_DISPLAY_NAMES[agentKey] || agentKey;
+        const badgeClass = getBadgeClass(judge);
+
+        html += `
+          <div class="agent-card">
+            <div class="agent-header">
+              <span class="agent-badge">${displayName}</span>
+              <span class="risk-badge ${badgeClass}">${getRiskLabel(judge)}</span>
+            </div>
+            <div class="agent-reason">${reason}</div>
+            
+            <div class="rating-group" id="agree-group-${imageId}-${agentKey}">
+              <div class="rating-label">
+                1. 直感的納得感<span class="required">*</span>
+                <span class="help-toggle" onclick="toggleHelp('agree-help-${imageId}-${agentKey}')">評価基準について詳しく見る</span>
+              </div>
+              <div class="help-content" id="agree-help-${imageId}-${agentKey}">
+                <strong>質問：</strong>システムが下したリスクカテゴリ（緊急重大〜安全）は、あなたの直感と一致していますか？<br>
+                <strong>目的：</strong>最終的な「判定結果」の正しさを測る。<br><br>
+                <strong>評価基準：</strong>
+                <ul>
+                  <li><strong>5 - 非常に納得できる（自分の感覚と同じ）</strong>：自分が判断するときも、ほぼ同じカテゴリに分類する</li>
+                  <li><strong>4 - 概ね納得できる</strong>：だいたい同意できるが、少し気になる点がある</li>
+                  <li><strong>3 - どちらともいえない</strong>：良いとも悪いとも判断しづらい</li>
+                  <li><strong>2 - あまり納得できない</strong>：自分の感覚とは少し違う</li>
+                  <li><strong>1 - 全く納得できない（的外れ）</strong>：自分の感覚とは全く違う／危険の捉え方がズレている</li>
+                </ul>
+              </div>
+              <p style="font-size: 12px; color: #5f6368; margin-bottom: 8px;">システムが下したリスクカテゴリは、あなたの直感と一致していますか？</p>
+              <div class="rating-options">
+                ${AGREE_CHOICES.map(choice => `
+                  <div class="rating-option">
+                    <input type="radio" name="agree-${imageId}-${agentKey}" id="agree-${imageId}-${agentKey}-${choice.value}" value="${choice.value}" required onchange="clearError(this)">
+                    <label for="agree-${imageId}-${agentKey}-${choice.value}">${choice.label}</label>
+                  </div>
+                `).join('')}
+              </div>
+              <div class="error-message">この質問に回答してください</div>
+            </div>
+
+            ${CONFIG.SIMPLIFY_THOUGHT ? '' : `
+            <div class="rating-group" id="thought-group-${imageId}-${agentKey}">
+              <div class="rating-label">
+                2. 根拠の妥当性・多角性<span class="required">*</span>
+                <span class="help-toggle" onclick="toggleHelp('thought-help-${imageId}-${agentKey}')">評価基準について詳しく見る</span>
+              </div>
+              <div class="help-content" id="thought-help-${imageId}-${agentKey}">
+                <strong>質問：</strong>そのリスクと判断した「理由」の内容は、過不足なく適切ですか？<br>
+                <strong>目的：</strong>推論プロセスの「質」を測る。「考えすぎ（過剰）」と「根拠不足（過小）」を同じスケールで評価できます。<br><br>
+                <strong>評価基準：</strong>
+                <ul>
+                  <li><strong>5 - 過剰に反応しすぎている</strong>：非常に低い確率のリスクを懸念しすぎている</li>
+                  <li><strong>4 - やや考えすぎである</strong>：論理は通っているが、そこまで心配しなくても良い内容を含む</li>
+                  <li><strong>3 - 適切かつ多角的である</strong>：様々な情報がバランスよく考慮されている</li>
+                  <li><strong>2 - 根拠が不足している</strong>：直感的だが、なぜそうなるかの説明が足りない</li>
+                  <li><strong>1 - 根拠が不適切・無関係</strong>：全く関係ないことに言及している</li>
+                </ul>
+              </div>
+              <p style="font-size: 12px; color: #5f6368; margin-bottom: 8px;">そのリスクと判断した「理由」の内容は、過不足なく適切ですか？</p>
+              <div class="rating-options">
+                ${THOUGHT_CHOICES.map(choice => `
+                  <div class="rating-option">
+                    <input type="radio" name="thought-${imageId}-${agentKey}" id="thought-${imageId}-${agentKey}-${choice.value}" value="${choice.value}" required onchange="clearError(this)">
+                    <label for="thought-${imageId}-${agentKey}-${choice.value}">${choice.label}</label>
+                  </div>
+                `).join('')}
+              </div>
+              <div class="error-message">この質問に回答してください</div>
+            </div>
+            `}
+          </div>
+        `;
+      }
+
+      html += `
+        <div class="btn-group">
+          <button class="btn btn-secondary" onclick="prevImage()" ${currentImageIndex === 0 ? 'disabled style="opacity:0.5"' : ''}>戻る</button>
+          <button class="btn btn-primary" onclick="nextImage()">
+            ${currentImageIndex === imageIds.length - 1 ? '送信' : '次へ'}
+          </button>
+        </div>
+      `;
+
+      container.innerHTML = html;
+      window.scrollTo(0, 0);
+      
+      // クリックカウンターをリセット
+      skipValidationClickCount = 0;
+      skipValidationEnabled = false;
+      
+      // 隠しコマンド: ページの空いている場所を5回以上クリックでバリデーションスキップ
+      const containerElement = document.getElementById('phase-validity');
+      if (containerElement) {
+        // 既存のイベントリスナーを削除（重複防止）
+        const newContainerElement = containerElement.cloneNode(true);
+        containerElement.parentNode.replaceChild(newContainerElement, containerElement);
+        
+        newContainerElement.addEventListener('click', function(e) {
+          // フォーム要素（input, button, labelなど）以外のクリックのみカウント
+          const isFormElement = e.target.tagName === 'INPUT' || 
+                               e.target.tagName === 'BUTTON' || 
+                               e.target.tagName === 'LABEL' ||
+                               e.target.closest('.rating-option') ||
+                               e.target.closest('.btn') ||
+                               e.target.closest('.help-toggle') ||
+                               e.target.closest('.help-content');
+          
+          if (!isFormElement) {
+            skipValidationClickCount++;
+            if (skipValidationClickCount >= 5 && !skipValidationEnabled) {
+              skipValidationEnabled = true;
+              console.log('隠しコマンド有効化: バリデーションをスキップして進めます');
+              // 視覚的なフィードバック
+              newContainerElement.style.border = '3px solid #673ab7';
+              newContainerElement.style.transition = 'border 0.3s';
+              setTimeout(() => {
+                newContainerElement.style.border = '';
+              }, 1000);
+            }
+          }
+        });
+      }
+    }
+
+    // ============================================
+    // ナビゲーション
+    // ============================================
+    
+    function nextImage() {
+      // 隠しコマンドが有効な場合はバリデーションをスキップ
+      if (skipValidationEnabled) {
+        // バリデーションなしで保存
+        saveCurrentResponses(false);
+      } else {
+        // 通常通りバリデーションありで保存
+        if (!saveCurrentResponses()) {
+          return;
+        }
+      }
+
+      currentImageIndex++;
+      loadCurrentImage();
+    }
+
+    function prevImage() {
+      if (currentImageIndex > 0) {
+        saveCurrentResponses(false); // バリデーションなしで保存
+        currentImageIndex--;
+        loadCurrentImage();
+        restoreResponses();
+      }
+    }
+
+    function saveCurrentResponses(validate = true) {
+      const imageId = imageIds[currentImageIndex];
+      const imageData = riskData[imageId];
+      const assessments = {};
+      const unanswered = [];
+
+      // 表示されているエージェントのみをチェック
+      const agentsToDisplay = getAgentsToDisplay(imageId);
+
+      // まず全てのエラー表示をクリア
+      document.querySelectorAll('.rating-group.error').forEach(el => el.classList.remove('error'));
+
+      for (const agentKey of agentsToDisplay) {
+        const agentData = imageData[agentKey];
+        if (!agentData) continue;
+
+        const reason = agentData.updated_reason_01 || agentData.risk_reason;
+        if (!reason) continue;
+
+        const agreeInput = document.querySelector(`input[name="agree-${imageId}-${agentKey}"]:checked`);
+        const thoughtInput = CONFIG.SIMPLIFY_THOUGHT ? null : document.querySelector(`input[name="thought-${imageId}-${agentKey}"]:checked`);
+
+        if (validate) {
+          if (!agreeInput) {
+            unanswered.push({ type: 'agree', agentKey, displayName: AGENT_DISPLAY_NAMES[agentKey] });
+          }
+          if (!CONFIG.SIMPLIFY_THOUGHT && !thoughtInput) {
+            unanswered.push({ type: 'thought', agentKey, displayName: AGENT_DISPLAY_NAMES[agentKey] });
+          }
+        }
+
+        assessments[agentKey] = {
+          displayName: AGENT_DISPLAY_NAMES[agentKey] || agentKey,
+          judge: agentData.updated_judge_01 || agentData.risk_judge,
+          agreeRating: agreeInput ? parseInt(agreeInput.value) : null,
+          thoughtRating: thoughtInput ? parseInt(thoughtInput.value) : null
+        };
+      }
+
+      // 未回答がある場合
+      if (validate && unanswered.length > 0) {
+        // エラー表示
+        unanswered.forEach(item => {
+          const groupId = `${item.type}-group-${imageId}-${item.agentKey}`;
+          const group = document.getElementById(groupId);
+          if (group) {
+            group.classList.add('error');
+          }
+        });
+
+        // 最初の未回答にスクロール
+        const firstError = unanswered[0];
+        const firstGroupId = `${firstError.type}-group-${imageId}-${firstError.agentKey}`;
+        const firstGroup = document.getElementById(firstGroupId);
+        if (firstGroup) {
+          firstGroup.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // アラート表示
+        showUnansweredAlert(unanswered.length);
+        return false;
+      }
+
+      // 既存のデータを更新または追加
+      const existingIndex = surveyData.validityResults.findIndex(r => r.imageId === imageId);
+      const resultData = { imageId, room: 'Kitchen', assessments };
+      
+      if (existingIndex >= 0) {
+        surveyData.validityResults[existingIndex] = resultData;
+      } else {
+        surveyData.validityResults.push(resultData);
+      }
+
+      return true;
+    }
+
+    function restoreResponses() {
+      const imageId = imageIds[currentImageIndex];
+      const existingResult = surveyData.validityResults.find(r => r.imageId === imageId);
+      
+      if (existingResult) {
+        for (const [agentKey, assessment] of Object.entries(existingResult.assessments)) {
+          if (assessment.agreeRating) {
+            const agreeInput = document.getElementById(`agree-${imageId}-${agentKey}-${assessment.agreeRating}`);
+            if (agreeInput) agreeInput.checked = true;
+          }
+          if (assessment.thoughtRating) {
+            const thoughtInput = document.getElementById(`thought-${imageId}-${agentKey}-${assessment.thoughtRating}`);
+            if (thoughtInput) thoughtInput.checked = true;
+          }
+        }
+      }
+    }
+
+    // ============================================
+    // 完了
+    // ============================================
+    
+    function finishSurvey() {
+      surveyData.participant.endTime = new Date().toISOString();
+      
+      document.getElementById('progress-container').classList.add('hidden');
+      document.getElementById('phase-validity').classList.add('hidden');
+      document.getElementById('phase-complete').classList.remove('hidden');
+    }
+
+    // ============================================
+    // ダウンロード
+    // ============================================
+    
+    function downloadJSON() {
+      const dataStr = JSON.stringify(surveyData, null, 2);
+      const blob = new Blob([dataStr], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `risk_evaluation_${surveyData.participant.name}_${new Date().toISOString().slice(0,10)}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function downloadImagePaths() {
+      // すべての番号に対する画像パス群をまとめる
+      const imagePathsSummary = {};
+      for (const imageId of allImageIds) {
+        const paths = imagePaths[imageId] || [];
+        const basePath = imageBasePaths[imageId] || 'Kitchen';
+        const fullPaths = paths.map(path => `${CONFIG.IMAGE_BASE_PATHS[basePath]}${path}`);
+        imagePathsSummary[imageId] = {
+          base_path: basePath,
+          image_count: paths.length,
+          paths: paths,
+          full_paths: fullPaths
+        };
+      }
+      
+      const dataStr = JSON.stringify(imagePathsSummary, null, 2);
+      const blob = new Blob([dataStr], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `image_paths_summary_${new Date().toISOString().slice(0,10)}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function downloadCSV() {
+      let csv = '\uFEFF'; // BOM for Excel
+      csv += '参加者名,' + surveyData.participant.name + '\n';
+      csv += '開始時刻,' + surveyData.participant.startTime + '\n';
+      csv += '終了時刻,' + surveyData.participant.endTime + '\n';
+      if (CONFIG.ENABLE_GROUPING && surveyData.assignedGroup !== null) {
+        const totalGroups = Math.ceil(allImageIds.length / CONFIG.GROUP_SIZE);
+        csv += '割り当てグループ,グループ' + (surveyData.assignedGroup + 1) + '/' + totalGroups + '\n';
+        csv += '評価画像数,' + imageIds.length + '枚（全' + allImageIds.length + '枚中）\n';
+      }
+      csv += '\n';
+      
+      // サマリー形式
+      csv += '=== 評価サマリー ===\n\n';
+      
+      // ヘッダー
+      csv += '画像ID,';
+      for (const agentKey of AGENT_KEYS) {
+        csv += `${agentKey}_同意度,${agentKey}_熟慮度,`;
+      }
+      csv += '\n';
+      
+      // データ
+      for (const result of surveyData.validityResults) {
+        csv += result.imageId + ',';
+        for (const agentKey of AGENT_KEYS) {
+          const assessment = result.assessments[agentKey];
+          if (assessment) {
+            csv += `${assessment.agreeRating || ''},${assessment.thoughtRating || ''},`;
+          } else {
+            csv += ',,';
+          }
+        }
+        csv += '\n';
+      }
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `risk_evaluation_${surveyData.participant.name}_${new Date().toISOString().slice(0,10)}.csv`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    // ============================================
+    // ユーティリティ
+    // ============================================
+    
+    function getBadgeClass(judge) {
+      if (judge.includes('緊急重大')) return 'critical';
+      if (judge.includes('潜在重大')) return 'major';
+      if (judge.includes('潜在軽微')) return 'minor';
+      if (judge.includes('心配なし') || judge.includes('リスクなし')) return 'none';
+      return 'minor';
+    }
+
+    // リスクラベルを分かりやすい日本語に変換
+    function getRiskLabel(judge) {
+      if (judge.includes('緊急重大')) {
+        return '重大なリスクがすぐに起こる';
+      }
+      if (judge.includes('潜在重大')) {
+        return '条件が揃うと大きなリスク';
+      }
+      if (judge.includes('潜在軽微')) {
+        return '小さめのリスク';
+      }
+      if (judge.includes('心配なし') || judge.includes('リスクなし')) {
+        return 'ほぼ心配なし';
+      }
+      // その他のラベルは元の文字列をそのまま返す
+      return judge;
+    }
+
+    // ヘルプの表示/非表示を切り替え
+    function toggleHelp(helpId) {
+      const helpContent = document.getElementById(helpId);
+      if (helpContent) {
+        helpContent.classList.toggle('show');
+      }
+    }
+
+    // エラークリア
+    function clearError(input) {
+      const group = input.closest('.rating-group');
+      if (group) {
+        group.classList.remove('error');
+      }
+      hideUnansweredAlert();
+    }
+
+    // 未回答アラート表示
+    function showUnansweredAlert(count) {
+      let alert = document.getElementById('unanswered-alert');
+      if (!alert) {
+        alert = document.createElement('div');
+        alert.id = 'unanswered-alert';
+        alert.className = 'unanswered-alert';
+        document.body.appendChild(alert);
+      }
+      alert.textContent = `⚠️ ${count}件の未回答があります`;
+      alert.classList.add('show');
+
+      // 5秒後に自動で消える
+      setTimeout(() => {
+        hideUnansweredAlert();
+      }, 5000);
+    }
+
+    // 未回答アラート非表示
+    function hideUnansweredAlert() {
+      const alert = document.getElementById('unanswered-alert');
+      if (alert) {
+        alert.classList.remove('show');
+      }
+    }
+
+    // おみくじを引く
+    function drawOmikuji() {
+      const resultEl = document.getElementById('omikuji-result');
+      const noteEl = document.getElementById('omikuji-note');
+      if (!resultEl) return;
+
+      const idx = Math.floor(Math.random() * OMIKUJI_RESULTS.length);
+      const res = OMIKUJI_RESULTS[idx];
+      resultEl.textContent = `【${res.title}】${res.message}`;
+      if (noteEl) {
+        noteEl.style.display = 'block';
+      }
+    }
+
+    // 初期化
+    window.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>

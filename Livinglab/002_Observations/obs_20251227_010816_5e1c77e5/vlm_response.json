@@ -1,0 +1,50 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        438,\n        228,\n        508,\n        300\n      ],\n      \"analysis\": {\n        \"category\": \"ajar\",\n        \"score\": 0.85,\n        \"reason\": \"The cabinet door under the sink is ajar, revealing the contents inside.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        485,\n        185,\n        589,\n        229\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.6,\n        \"reason\": \"The metal shelf area to the left of the sink appears to have various items piled or stored in a disorganized manner.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        424,\n        300,\n        508,\n        375\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.7,\n        \"reason\": \"The open compartment under the sink contains multiple bottles and objects, indicating a cluttered storage area.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          438,
+          228,
+          508,
+          300
+        ],
+        "analysis": {
+          "category": "ajar",
+          "score": 0.85,
+          "reason": "The cabinet door under the sink is ajar, revealing the contents inside."
+        }
+      },
+      {
+        "bbox_2d": [
+          485,
+          185,
+          589,
+          229
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.6,
+          "reason": "The metal shelf area to the left of the sink appears to have various items piled or stored in a disorganized manner."
+        }
+      },
+      {
+        "bbox_2d": [
+          424,
+          300,
+          508,
+          375
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.7,
+          "reason": "The open compartment under the sink contains multiple bottles and objects, indicating a cluttered storage area."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T01:08:23",
+  "timestamp_ros": "1766765303.306259"
+}

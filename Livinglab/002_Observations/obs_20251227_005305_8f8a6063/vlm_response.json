@@ -1,0 +1,50 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        299,\n        383,\n        453,\n        588\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.85,\n        \"reason\": \"Cardboard boxes and miscellaneous items are piled up on the top of the partition wall.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        577,\n        423,\n        965,\n        508\n      ],\n      \"analysis\": {\n        \"category\": \"on fire\",\n        \"score\": 0.9,\n        \"reason\": \"The space heater is turned on, and its heating element is glowing red, which is considered 'on fire' in this context (an object turned on fire, not burning).\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        471,\n        576,\n        642,\n        647\n      ],\n      \"analysis\": {\n        \"category\": \"stacked\",\n        \"score\": 0.8,\n        \"reason\": \"A small shelf unit with potted plants is placed on top of the toilet tank, stacking objects above the toilet.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          299,
+          383,
+          453,
+          588
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.85,
+          "reason": "Cardboard boxes and miscellaneous items are piled up on the top of the partition wall."
+        }
+      },
+      {
+        "bbox_2d": [
+          577,
+          423,
+          965,
+          508
+        ],
+        "analysis": {
+          "category": "on fire",
+          "score": 0.9,
+          "reason": "The space heater is turned on, and its heating element is glowing red, which is considered 'on fire' in this context (an object turned on fire, not burning)."
+        }
+      },
+      {
+        "bbox_2d": [
+          471,
+          576,
+          642,
+          647
+        ],
+        "analysis": {
+          "category": "stacked",
+          "score": 0.8,
+          "reason": "A small shelf unit with potted plants is placed on top of the toilet tank, stacking objects above the toilet."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T00:53:13",
+  "timestamp_ros": "1766764393.5943093"
+}

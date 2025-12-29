@@ -1,0 +1,50 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        542,\n        561,\n        999,\n        648\n      ],\n      \"analysis\": {\n        \"category\": \"on fire\",\n        \"score\": 0.85,\n        \"reason\": \"The space heater is turned on, showing an internal glow that represents being 'on fire' according to the definition (object is turned on fire, not burning).\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        574,\n        399,\n        999,\n        588\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.7,\n        \"reason\": \"A shirt is draped over the chair, and part of the shirt is hanging down to the floor, which constitutes objects piled up on a surface (the chair).\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        297,\n        53,\n        684,\n        485\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.65,\n        \"reason\": \"A large blanket/duvet is piled up on the bed, covering it in a messy, non-flat manner.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          542,
+          561,
+          999,
+          648
+        ],
+        "analysis": {
+          "category": "on fire",
+          "score": 0.85,
+          "reason": "The space heater is turned on, showing an internal glow that represents being 'on fire' according to the definition (object is turned on fire, not burning)."
+        }
+      },
+      {
+        "bbox_2d": [
+          574,
+          399,
+          999,
+          588
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.7,
+          "reason": "A shirt is draped over the chair, and part of the shirt is hanging down to the floor, which constitutes objects piled up on a surface (the chair)."
+        }
+      },
+      {
+        "bbox_2d": [
+          297,
+          53,
+          684,
+          485
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.65,
+          "reason": "A large blanket/duvet is piled up on the bed, covering it in a messy, non-flat manner."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T00:55:35",
+  "timestamp_ros": "1766764535.9744074"
+}

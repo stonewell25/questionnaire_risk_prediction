@@ -1,0 +1,50 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        479,\n        574,\n        711,\n        700\n      ],\n      \"analysis\": {\n        \"category\": \"about to fall\",\n        \"score\": 0.85,\n        \"reason\": \"The mug is lying on its side on the table, which is an unstable position and it could roll or fall off the edge if the table is bumped.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        499,\n        310,\n        513,\n        400\n      ],\n      \"analysis\": {\n        \"category\": \"wet\",\n        \"score\": 0.5,\n        \"reason\": \"There are visible dark patches/streaks on the wooden table surface, particularly in the middle, which appear to be liquid spills or wet areas.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        485,\n        300,\n        508,\n        380\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.7,\n        \"reason\": \"There are multiple objects (coffee makers, thermos, paper, pen) grouped together on the table surface, indicating a cluttered area.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          479,
+          574,
+          711,
+          700
+        ],
+        "analysis": {
+          "category": "about to fall",
+          "score": 0.85,
+          "reason": "The mug is lying on its side on the table, which is an unstable position and it could roll or fall off the edge if the table is bumped."
+        }
+      },
+      {
+        "bbox_2d": [
+          499,
+          310,
+          513,
+          400
+        ],
+        "analysis": {
+          "category": "wet",
+          "score": 0.5,
+          "reason": "There are visible dark patches/streaks on the wooden table surface, particularly in the middle, which appear to be liquid spills or wet areas."
+        }
+      },
+      {
+        "bbox_2d": [
+          485,
+          300,
+          508,
+          380
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.7,
+          "reason": "There are multiple objects (coffee makers, thermos, paper, pen) grouped together on the table surface, indicating a cluttered area."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T04:27:33",
+  "timestamp_ros": "1766777253.7969766"
+}

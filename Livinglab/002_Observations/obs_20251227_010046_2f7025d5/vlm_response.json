@@ -1,0 +1,50 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        617,\n        140,\n        742,\n        688\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.85,\n        \"reason\": \"The desk surface is cluttered with various objects like a laptop, books, crumpled paper, scissors, and a tape measure.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        620,\n        140,\n        742,\n        377\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.8,\n        \"reason\": \"The left side of the desk has crumpled paper, an open book, and other papers, indicating a cluttered state.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        579,\n        286,\n        646,\n        344\n      ],\n      \"analysis\": {\n        \"category\": \"stacked\",\n        \"score\": 0.9,\n        \"reason\": \"Two books/binders are stacked vertically against the wall on the desk.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          617,
+          140,
+          742,
+          688
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.85,
+          "reason": "The desk surface is cluttered with various objects like a laptop, books, crumpled paper, scissors, and a tape measure."
+        }
+      },
+      {
+        "bbox_2d": [
+          620,
+          140,
+          742,
+          377
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.8,
+          "reason": "The left side of the desk has crumpled paper, an open book, and other papers, indicating a cluttered state."
+        }
+      },
+      {
+        "bbox_2d": [
+          579,
+          286,
+          646,
+          344
+        ],
+        "analysis": {
+          "category": "stacked",
+          "score": 0.9,
+          "reason": "Two books/binders are stacked vertically against the wall on the desk."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T01:00:54",
+  "timestamp_ros": "1766764854.8325233"
+}

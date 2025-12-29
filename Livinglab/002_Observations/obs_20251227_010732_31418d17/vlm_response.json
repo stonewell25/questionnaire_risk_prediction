@@ -1,0 +1,50 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        235,\n        14,\n        479,\n        342\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.75,\n        \"reason\": \"The counter area has several objects (boxes, monitors, papers) piled up, indicating a cluttered surface.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        642,\n        493,\n        695,\n        588\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.6,\n        \"reason\": \"Cables are piled up on the floor near the table legs and lamp base.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        476,\n        14,\n        644,\n        185\n      ],\n      \"analysis\": {\n        \"category\": \"ajar\",\n        \"score\": 0.8,\n        \"reason\": \"A lower cabinet door or drawer on the left is ajar (open).\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          235,
+          14,
+          479,
+          342
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.75,
+          "reason": "The counter area has several objects (boxes, monitors, papers) piled up, indicating a cluttered surface."
+        }
+      },
+      {
+        "bbox_2d": [
+          642,
+          493,
+          695,
+          588
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.6,
+          "reason": "Cables are piled up on the floor near the table legs and lamp base."
+        }
+      },
+      {
+        "bbox_2d": [
+          476,
+          14,
+          644,
+          185
+        ],
+        "analysis": {
+          "category": "ajar",
+          "score": 0.8,
+          "reason": "A lower cabinet door or drawer on the left is ajar (open)."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T01:07:40",
+  "timestamp_ros": "1766765260.314838"
+}

@@ -1,0 +1,76 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        286,\n        146,\n        363,\n        284\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.75,\n        \"reason\": \"A small fan and other objects are piled up on the window ledge.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        299,\n        783,\n        345,\n        960\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.8,\n        \"reason\": \"Several cardboard boxes are piled up on the top of the divider wall.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        762,\n        597,\n        1000,\n        1000\n      ],\n      \"analysis\": {\n        \"category\": \"wet\",\n        \"score\": 0.3,\n        \"reason\": \"The tiled floor area around the toilet appears to be a wet area, although no clear liquid is visible, the context suggests this area is prone to being wet.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        780,\n        584,\n        1000,\n        642\n      ],\n      \"analysis\": {\n        \"category\": \"on fire\",\n        \"score\": 0.95,\n        \"reason\": \"An electric heater is turned on, showing glowing heating elements, which fits the definition of 'on fire' for a non-burning object that is actively generating heat/light.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        485,\n        729,\n        683,\n        790\n      ],\n      \"analysis\": {\n        \"category\": \"stacked\",\n        \"score\": 0.9,\n        \"reason\": \"Potted plants are stacked on a multi-tiered wire shelf.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          286,
+          146,
+          363,
+          284
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.75,
+          "reason": "A small fan and other objects are piled up on the window ledge."
+        }
+      },
+      {
+        "bbox_2d": [
+          299,
+          783,
+          345,
+          960
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.8,
+          "reason": "Several cardboard boxes are piled up on the top of the divider wall."
+        }
+      },
+      {
+        "bbox_2d": [
+          762,
+          597,
+          1000,
+          1000
+        ],
+        "analysis": {
+          "category": "wet",
+          "score": 0.3,
+          "reason": "The tiled floor area around the toilet appears to be a wet area, although no clear liquid is visible, the context suggests this area is prone to being wet."
+        }
+      },
+      {
+        "bbox_2d": [
+          780,
+          584,
+          1000,
+          642
+        ],
+        "analysis": {
+          "category": "on fire",
+          "score": 0.95,
+          "reason": "An electric heater is turned on, showing glowing heating elements, which fits the definition of 'on fire' for a non-burning object that is actively generating heat/light."
+        }
+      },
+      {
+        "bbox_2d": [
+          485,
+          729,
+          683,
+          790
+        ],
+        "analysis": {
+          "category": "stacked",
+          "score": 0.9,
+          "reason": "Potted plants are stacked on a multi-tiered wire shelf."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T00:54:03",
+  "timestamp_ros": "1766764443.542506"
+}

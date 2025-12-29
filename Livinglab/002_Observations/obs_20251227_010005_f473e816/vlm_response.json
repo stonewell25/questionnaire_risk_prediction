@@ -1,0 +1,63 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        629,\n        188,\n        832,\n        681\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.85,\n        \"reason\": \"The desk surface is cluttered with various objects including crumpled paper, books, a laptop, scissors, and a plant.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        646,\n        191,\n        718,\n        342\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.9,\n        \"reason\": \"A pile of crumpled paper is lying on the desk surface, contributing to the clutter.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        632,\n        259,\n        696,\n        383\n      ],\n      \"analysis\": {\n        \"category\": \"about to fall\",\n        \"score\": 0.6,\n        \"reason\": \"Two books are leaning against the wall at an angle, appearing unstable and likely to fall over.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        632,\n        259,\n        696,\n        383\n      ],\n      \"analysis\": {\n        \"category\": \"stacked\",\n        \"score\": 0.65,\n        \"reason\": \"Two books are stacked/leaning on each other against the wall.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          629,
+          188,
+          832,
+          681
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.85,
+          "reason": "The desk surface is cluttered with various objects including crumpled paper, books, a laptop, scissors, and a plant."
+        }
+      },
+      {
+        "bbox_2d": [
+          646,
+          191,
+          718,
+          342
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.9,
+          "reason": "A pile of crumpled paper is lying on the desk surface, contributing to the clutter."
+        }
+      },
+      {
+        "bbox_2d": [
+          632,
+          259,
+          696,
+          383
+        ],
+        "analysis": {
+          "category": "about to fall",
+          "score": 0.6,
+          "reason": "Two books are leaning against the wall at an angle, appearing unstable and likely to fall over."
+        }
+      },
+      {
+        "bbox_2d": [
+          632,
+          259,
+          696,
+          383
+        ],
+        "analysis": {
+          "category": "stacked",
+          "score": 0.65,
+          "reason": "Two books are stacked/leaning on each other against the wall."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T01:00:13",
+  "timestamp_ros": "1766764813.39728"
+}

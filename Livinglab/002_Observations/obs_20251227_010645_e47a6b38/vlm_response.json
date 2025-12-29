@@ -1,0 +1,50 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        820,\n        550,\n        980,\n        999\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.85,\n        \"reason\": \"Cables and wires are piled up on the floor near the vacuum cleaner and floor lamp, creating a cluttered area.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        462,\n        430,\n        500,\n        560\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.75,\n        \"reason\": \"A small potted plant and a remote control are placed on the table, contributing to a minor cluttered state on the surface.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        805,\n        550,\n        910,\n        640\n      ],\n      \"analysis\": {\n        \"category\": \"about to fall\",\n        \"score\": 0.6,\n        \"reason\": \"The mug is positioned very close to the edge of the table, making it unstable and likely to fall if slightly bumped.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          820,
+          550,
+          980,
+          999
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.85,
+          "reason": "Cables and wires are piled up on the floor near the vacuum cleaner and floor lamp, creating a cluttered area."
+        }
+      },
+      {
+        "bbox_2d": [
+          462,
+          430,
+          500,
+          560
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.75,
+          "reason": "A small potted plant and a remote control are placed on the table, contributing to a minor cluttered state on the surface."
+        }
+      },
+      {
+        "bbox_2d": [
+          805,
+          550,
+          910,
+          640
+        ],
+        "analysis": {
+          "category": "about to fall",
+          "score": 0.6,
+          "reason": "The mug is positioned very close to the edge of the table, making it unstable and likely to fall if slightly bumped."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T01:06:53",
+  "timestamp_ros": "1766765213.9847157"
+}

@@ -1,0 +1,4911 @@
+{
+  "0": {
+    "risk_prediction_id": 0,
+    "Semantic_state": {
+      "risk_prediction_id": 0,
+      "state_instance_id": 5,
+      "state_category": "on fire",
+      "related_room": "Bedroom",
+      "related_landmarks_01": "chair_0",
+      "related_objects_01": "infrared heater",
+      "related_objects_01_id": "infrared heater_0",
+      "related_objects_02": "shirt",
+      "related_objects_02_id": "shirt_0",
+      "risk_judge": "緊急重大",
+      "risk_reason": "電気ヒーター（infrared heater_0）が作動中（'on fire'状態）であり、近く（約0.7m）には可燃性の衣服（shirt_0）が放置されている。ヒーターは熱傷や火災の原因となり得る高温物体であり、可燃物が近接しているため、すぐに重大な事故（火災）に繋がる可能性が高い。直ちに対応が必要な状態である。"
+    },
+    "Semantic_state_RiskScore": {
+      "risk_prediction_id": 0,
+      "state_instance_id": 5,
+      "state_category": "on fire",
+      "related_room": "Bedroom",
+      "related_landmarks_01": "chair_0",
+      "related_objects_01": "infrared heater",
+      "related_objects_01_id": "infrared heater_0",
+      "related_objects_02": "shirt",
+      "related_objects_02_id": "shirt_0",
+      "risk_judge": "緊急重大",
+      "risk_reason": "電気ヒーター（infrared heater_0）が作動中（'on fire'状態）であり、近くには可燃性の衣服（shirt_0）が放置されている。ヒーターは熱傷や火災の原因となり得る高温物体であり、可燃物が近接しているため、すぐに重大な事故（火災）に繋がる可能性が高い。直ちに対応が必要な状態である。",
+      "updated_01": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "評価は変更しない（緊急重大）。他のエージェントからのフィードバック（定量データ）を参照すると、ヒーター単体で熱傷リスク (burns_skin) が 0.933、火災リスク (fire) が 0.764 と極めて高い発生頻度率を示しており、これはすぐに重大な事故に繋がる可能性が高いという判断（緊急重大）を強く裏付けるものである。特に、Instance 0の衣服と組み合わさることで、火災/熱傷の組み合わせリスクが最大化しており、直ちに対処が必要である。"
+    },
+    "Semantic_state_RiskScore_Persona_01": {
+      "risk_prediction_id": 0,
+      "state_instance_id": 5,
+      "state_category": "on fire",
+      "related_room": "Bedroom",
+      "related_landmarks_01": "chair_0",
+      "related_objects_01": "infrared heater",
+      "related_objects_01_id": "infrared heater_0",
+      "related_objects_02": "shirt",
+      "related_objects_02_id": "shirt_0",
+      "risk_judge": "緊急重大",
+      "risk_reason": "電気ヒーター（infrared heater_0）が作動中（'on fire'状態）であり、近くには可燃性の衣服（shirt_0）が放置されている。ヒーターは熱傷や火災の原因となり得る高温物体であり、可燃物が近接しているため、すぐに重大な事故（火災）に繋がる可能性が高い。直ちに対応が必要な状態である。",
+      "updated_01": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "定量的な根拠として、ヒーター（infrared heater_0）の burns_skin (0.934) と衣服（shirt_0）の burns_skin (1.0) および fire (0.615) のスコアがシーン内で極めて高いことを確認したが、最初の判断が緊急重大であったため、変更しない。火災リスクは発生頻度、重大性ともに高いため、この判断を維持する。",
+      "updated_02": 0,
+      "updated_judge_02": "緊急重大",
+      "updated_reason_02": "ユーザーが24歳の健常者であるというペルソナ情報を考慮しても、電気ヒーターの稼働と可燃物（衣服）の近接による火災・熱傷リスクは、生命に関わる重大な事故に直結するため、リスクレベルを軽減することはできない。最初の判断と、定量データに基づく判断（updated_01）を総合し、緊急重大の判断を維持する。"
+    },
+    "Semantic_state_RiskScore_Persona_02": {
+      "risk_prediction_id": 0,
+      "state_instance_id": 5,
+      "state_category": "on fire",
+      "related_room": "Bedroom",
+      "related_landmarks_01": "chair_0",
+      "related_objects_01": "infrared heater",
+      "related_objects_01_id": "infrared heater_0",
+      "related_objects_02": "shirt",
+      "related_objects_02_id": "shirt_0",
+      "risk_judge": "緊急重大",
+      "risk_reason": "電気ヒーター（infrared heater_0）が作動中（'on fire'状態）であり、近く（約0.7m）には可燃性の衣服（shirt_0）が放置されている。ヒーターは熱傷や火災の原因となり得る高温物体であり、可燃物が近接しているため、すぐに重大な事故（火災）に繋がる可能性が高い。直ちに対応が必要な状態である。",
+      "updated_01": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "定量的リスクスコア（burns_skin: 0.933, fire: 0.764）を参照した結果、このヒーターは熱傷・火災リスクが極めて高く、緊急重大であるという当初の判断は裏付けられました。判断を維持します。",
+      "updated_02": 0,
+      "updated_judge_02": "緊急重大",
+      "updated_reason_02": "ユーザーが67歳の高齢者であることを考慮すると、火災発生時の認知遅延や避難行動の遅れが致命的な結果につながる可能性が高く、リスクの緊急性、重大性がさらに高まります。判断は緊急重大を維持します。"
+    },
+    "Semantic_state_RiskScore_Persona_03": {
+      "risk_prediction_id": 0,
+      "state_instance_id": 5,
+      "state_category": "on fire",
+      "related_room": "Bedroom",
+      "related_landmarks_01": "chair_0",
+      "related_objects_01": "infrared heater",
+      "related_objects_01_id": "infrared heater_0",
+      "related_objects_02": "shirt",
+      "related_objects_02_id": "shirt_0",
+      "risk_judge": "緊急重大",
+      "risk_reason": "電気ヒーター（infrared heater_0）が作動中（'on fire'状態）であり、近く（約0.7m）には可燃性の衣服（shirt_0）が放置されている。ヒーターは熱傷や火災の原因となり得る高温物体であり、可燃物が近接しているため、すぐに重大な事故（火災）に繋がる可能性が高い。直ちに対応が必要な状態である。",
+      "updated_01": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "判断は維持する。元の評価通り、赤外線ヒーター（infrared heater_0）が稼働し（on fire）、可燃物である衣服（shirt_0）が近接しているため、火災・熱傷リスクが極めて高い（定量データ burns_skin: 1.000）。このリスクは、ヒーターの高温により衣服が発火する、またはヒーターに触れて熱傷を負う可能性を指している。さらに、ユーザーが車椅子利用の可能性がある身体障害を持つことを考慮すると、火災発生時の緊急避難が大幅に困難となり、リスクの深刻度が最大であり、緊急重大として即座の是正が必要である。"
+    },
+    "Semantic_state_RiskScore_Persona_04": {
+      "risk_prediction_id": 0,
+      "state_instance_id": 5,
+      "state_category": "on fire",
+      "related_room": "Bedroom",
+      "related_landmarks_01": "chair_0",
+      "related_objects_01": "infrared heater",
+      "related_objects_01_id": "infrared heater_0",
+      "related_objects_02": "shirt",
+      "related_objects_02_id": "shirt_0",
+      "risk_judge": "緊急重大",
+      "risk_reason": "電気ヒーター（infrared heater_0）が作動中（'on fire'状態）であり、近くには可燃性の衣服（shirt_0）が放置されている。ヒーターは熱傷や火災の原因となり得る高温物体であり、可燃物が近接しているため、すぐに重大な事故（火災）に繋がる可能性が高い。直ちに対応が必要な状態である。",
+      "updated_01": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "定量データ（shirt_0のburns_skin 1.000、fire 0.615）により火災・熱傷リスクが極めて高いことを確認したため、元の「緊急重大」の判断を変更しない。さらに、ユーザーは81歳で身体障害があるため、火災発生時の迅速な避難が極めて困難であり、このリスクは最優先で対処すべき緊急性が高い状態である。"
+    },
+    "Semantic_state_RiskScore_Persona_05": {
+      "risk_prediction_id": 0,
+      "state_instance_id": 5,
+      "state_category": "on fire",
+      "related_room": "Bedroom",
+      "related_landmarks_01": "chair_0",
+      "related_objects_01": "infrared heater",
+      "related_objects_01_id": "infrared heater_0",
+      "related_objects_02": "shirt",
+      "related_objects_02_id": "shirt_0",
+      "risk_judge": "緊急重大",
+      "risk_reason": "電気ヒーター（infrared heater_0）が作動中（'on fire'状態）であり、近くには可燃性の衣服（shirt_0）が放置されている。これは熱傷や火災の原因となる高温物体と可燃物の近接であり、すぐに重大な事故（火災）に繋がる可能性が高い。定量的なリスクスコア（propagated_risk_score.burns_skinが0.9以上、fire=0.764）によっても裏付けられている。",
+      "updated_01": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "定量的なリスクスコア（propagated_risk_score.burns_skinが0.9以上、fire=0.764）により、火災および深刻な熱傷リスクが極めて高いことが裏付けられたため、評価を維持する。直ちに対応が必要な状態である。",
+      "updated_02": 0,
+      "updated_judge_02": "緊急重大",
+      "updated_reason_02": "前回の評価を維持する。86歳で認知障害を持つユーザーは、熱源の危険性を認識できず、火災発生時の対応・避難が極めて困難である。過去の火災履歴も考慮すると、この状態は即座に介入が必要な最高レベルの緊急事態である。"
+    },
+    "Semantic_state_Stickler": {
+      "risk_prediction_id": 0,
+      "state_instance_id": 5,
+      "state_category": "on fire",
+      "related_room": "Bedroom",
+      "related_landmarks_01": "chair_0",
+      "related_objects_01": "infrared heater",
+      "related_objects_01_id": "infrared heater_0",
+      "related_objects_02": "shirt",
+      "related_objects_02_id": "shirt_0",
+      "risk_judge": "緊急重大",
+      "risk_reason": "電気ヒーター（infrared heater_0）が作動中（'on fire'状態）であり、近く（約0.7m）には可燃性の衣服（shirt_0）が放置されている。ヒーターは熱傷や火災の原因となり得る高温物体であり、可燃物が近接しているため、すぐに重大な事故（火災）に繋がる可能性が高い。直ちに対応が必要な状態である。",
+      "updated_01": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "他のエージェントからのフィードバックを受けても、判断を変更しない。0.7mという距離は、稼働中の電気ヒーターと可燃物の間にあっては非常に危険な近接状態であり、火災という重大事故の発生リスクが高いと判断される。ヒーターの具体的な安全機能の情報がないため、安全を優先し、『すぐに重大な事故が起こる可能性があり、すぐに対応する必要がある』状態として『緊急重大』を維持する。"
+    },
+    "Semantic_state_Persona_01": {
+      "risk_prediction_id": 0,
+      "state_instance_id": 5,
+      "state_category": "on fire",
+      "related_room": "Bedroom",
+      "related_landmarks_01": "chair_0",
+      "related_objects_01": "infrared heater",
+      "related_objects_01_id": "infrared heater_0",
+      "related_objects_02": "shirt",
+      "related_objects_02_id": "shirt_0",
+      "risk_judge": "緊急重大",
+      "risk_reason": "電気ヒーター（infrared heater_0）が作動中（'on fire'状態）であり、近く（約0.7m）には可燃性の衣服（shirt_0）が放置されている。ヒーターは熱傷や火災の原因となり得る高温物体であり、可燃物が近接しているため、すぐに重大な事故（火災）に繋がる可能性が高い。直ちに対応が必要な状態である。",
+      "updated_01": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "他のエージェントからのフィードバック（火災リスクはペルソナに関係なく生命の危険に直結するため最高リスク維持が妥当）を考慮し、判断を更新しない。電気ヒーター（infrared heater_0）が作動中（'on fire'状態）で、可燃性の衣服（shirt_0）が近接している（scene_state_graphを参照）ため、火災リスクが極めて高い状態であり、直ちに対応が必要な「緊急重大」という評価を維持する。これは、現在の状態で近いうちに重大な事故が発生する可能性が高いという判断基準に合致している。"
+    },
+    "Semantic_state_Persona_02": {
+      "risk_prediction_id": 0,
+      "state_instance_id": 5,
+      "state_category": "on fire",
+      "related_room": "Bedroom",
+      "related_landmarks_01": "chair_0",
+      "related_objects_01": "infrared heater",
+      "related_objects_01_id": "infrared heater_0",
+      "related_objects_02": "shirt",
+      "related_objects_02_id": "shirt_0",
+      "risk_judge": "緊急重大",
+      "risk_reason": "電気ヒーター（infrared heater_0）が作動中（'on fire'状態）であり、近く（約0.7m）には可燃性の衣服（shirt_0）が放置されている。ヒーターは熱傷や火災の原因となり得る高温物体であり、可燃物が近接しているため、すぐに重大な事故（火災）に繋がる可能性が高い。直ちに対応が必要な状態である。",
+      "updated_01": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "元の判断「緊急重大」を維持する。電気ヒーターの稼働と可燃物（衣服）の近接は、火災という極めて重大な事故につながるため、最優先で対処すべきである。また、ユーザーが67歳の高齢者であり、緊急時に迅速に対応したり避難したりする能力が低下している可能性を考慮すると、この火災リスクは特に重大であり、直ちに対応が必要である。"
+    },
+    "Semantic_state_Persona_03": {
+      "risk_prediction_id": 0,
+      "state_instance_id": 5,
+      "state_category": "on fire",
+      "related_room": "Bedroom",
+      "related_landmarks_01": "chair_0",
+      "related_objects_01": "infrared heater",
+      "related_objects_01_id": "infrared heater_0",
+      "related_objects_02": "shirt",
+      "related_objects_02_id": "shirt_0",
+      "risk_judge": "緊急重大",
+      "risk_reason": "電気ヒーター（infrared heater_0）が作動中（'on fire'状態）であり、近く（約0.7m）には可燃性の衣服（shirt_0）が放置されている。ヒーターは熱傷や火災の原因となり得る高温物体であり、可燃物が近接しているため、すぐに重大な事故（火災）に繋がる可能性が高い。直ちに対応が必要な状態である。",
+      "updated_01": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "フィードバックに基づき、身体障害のあるユーザーにとって火災発生時の緊急避難が極めて困難になるという点を考慮しても、初期の評価である「緊急重大」は妥当であるため、判断を変更しない。電気ヒーターと可燃物の近接は火災リスクが非常に高く、即座の対応が必要な状態である。"
+    },
+    "Semantic_state_Persona_04": {
+      "risk_prediction_id": 0,
+      "state_instance_id": 5,
+      "state_category": "on fire",
+      "related_room": "Bedroom",
+      "related_landmarks_01": "chair_0",
+      "related_objects_01": "infrared heater",
+      "related_objects_01_id": "infrared heater_0",
+      "related_objects_02": "shirt",
+      "related_objects_02_id": "shirt_0",
+      "risk_judge": "緊急重大",
+      "risk_reason": "電気ヒーター（infrared heater_0）が作動中（'on fire'状態）であり、近く（約0.7m）には可燃性の衣服（shirt_0）が放置されている。ヒーターは熱傷や火災の原因となり得る高温物体であり、可燃物が近接しているため、すぐに重大な事故（火災）に繋がる可能性が高い。直ちに対応が必要な状態である。",
+      "updated_01": 1,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "前回の評価（緊急重大）を維持する。ユーザーは81歳で身体障害があるため、ヒーターが引き起こす火災は、避難行動の遅延により生命に関わる重大な結果を招く可能性が極めて高い。火災発生は即座に生命の危機に直結するため、最高度の緊急性を適用し、直ちに対応が必要である。"
+    },
+    "Semantic_state_Persona_05": {
+      "risk_prediction_id": 0,
+      "state_instance_id": 5,
+      "state_category": "on fire",
+      "related_room": "Bedroom",
+      "related_landmarks_01": "chair_0",
+      "related_objects_01": "infrared heater",
+      "related_objects_01_id": "infrared heater_0",
+      "related_objects_02": "shirt",
+      "related_objects_02_id": "shirt_0",
+      "risk_judge": "緊急重大",
+      "risk_reason": "電気ヒーター（infrared heater_0）が作動中（'on fire'状態）であり、近くには可燃性の衣服（shirt_0）が放置されている。ヒーターは熱傷や火災の原因となり得る高温物体であり、可燃物が近接しているため、すぐに重大な事故（火災）に繋がる可能性が高い。直ちに対応が必要な状態である。",
+      "updated_01": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "「緊急重大」の判断を維持する。フィードバックで示された通り、ユーザーは86歳の高齢で認知障害があり、過去に火災事故の履歴があるため、作動中のヒーターと可燃物の近接は極めて危険である。認知障害によりヒーターの消し忘れや衣服の誤った移動が起こるリスクが高く、即座に火災という重大な事故に繋がりうるため、優先度最高の緊急重大として評価を維持する。"
+    },
+    "observations": [
+      {
+        "observation_id": "obs_20251227_005328_ccaf6afe",
+        "timestamp": "2025-12-27T00:53:30",
+        "robot_pose": {
+          "x": 0.2973200612323659,
+          "y": -0.6668785049248923,
+          "yaw": -0.38534488715785775
+        },
+        "nearest_landmark": "bed_6",
+        "rgb_path": "obs_20251227_005328_ccaf6afe/rgb.jpg",
+        "depth_path": "obs_20251227_005328_ccaf6afe/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.5,
+            "bbox_2d": [
+              379,
+              2,
+              617,
+              1000
+            ],
+            "reason": "The overall scene appears somewhat cluttered due to the combination of a bed, a chair with clothes on it, a heater, and miscellaneous boxes/items in the background, suggesting an unorganized space."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.7,
+            "bbox_2d": [
+              374,
+              690,
+              500,
+              999
+            ],
+            "reason": "Various cardboard boxes and other items are piled up on the partition wall in the background, indicating a cluttered surface."
+          },
+          {
+            "category": "on fire",
+            "score": 0.95,
+            "bbox_2d": [
+              770,
+              606,
+              999,
+              982
+            ],
+            "reason": "The electric space heater is turned on, as evidenced by the visible glowing element, which fits the definition of 'on fire' for a device that is actively generating heat/light."
+          },
+          {
+            "category": "stacked",
+            "score": 0.8,
+            "bbox_2d": [
+              485,
+              723,
+              658,
+              820
+            ],
+            "reason": "Small potted plants are stacked on a tiered metal shelf next to the toilet."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "chair_0",
+          "matched_room": "Bedroom",
+          "matched_category": "on fire",
+          "matched_detected_state": {
+            "category": "on fire",
+            "score": 0.95,
+            "bbox_2d": [
+              770,
+              606,
+              999,
+              982
+            ],
+            "reason": "The electric space heater is turned on, as evidenced by the visible glowing element, which fits the definition of 'on fire' for a device that is actively generating heat/light."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_005422_0f02abb8",
+        "timestamp": "2025-12-27T00:54:24",
+        "robot_pose": {
+          "x": 0.05818442917316083,
+          "y": -1.3361767349496978,
+          "yaw": -0.1351162353382356
+        },
+        "nearest_landmark": "chair_0",
+        "rgb_path": "obs_20251227_005422_0f02abb8/rgb.jpg",
+        "depth_path": "obs_20251227_005422_0f02abb8/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              379,
+              741,
+              467,
+              965
+            ],
+            "reason": "Several cardboard boxes are piled up on the top of the divider/cabinet, indicating a cluttered surface."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.7,
+            "bbox_2d": [
+              370,
+              144,
+              418,
+              342
+            ],
+            "reason": "A small fan and other miscellaneous objects are placed on the window sill, making the surface cluttered."
+          },
+          {
+            "category": "on fire",
+            "score": 0.95,
+            "bbox_2d": [
+              739,
+              499,
+              1000,
+              589
+            ],
+            "reason": "The electric heater is turned on, and its heating element is glowing brightly, which is considered 'on fire' in the context of being actively turned on and producing heat/light, like a candle."
+          },
+          {
+            "category": "stacked",
+            "score": 0.8,
+            "bbox_2d": [
+              472,
+              606,
+              695,
+              867
+            ],
+            "reason": "Potted plants are clearly stacked on the tiers of a wire shelving unit."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "chair_0",
+          "matched_room": "Bedroom",
+          "matched_category": "on fire",
+          "matched_detected_state": {
+            "category": "on fire",
+            "score": 0.95,
+            "bbox_2d": [
+              739,
+              499,
+              1000,
+              589
+            ],
+            "reason": "The electric heater is turned on, and its heating element is glowing brightly, which is considered 'on fire' in the context of being actively turned on and producing heat/light, like a candle."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_005528_14cb4618",
+        "timestamp": "2025-12-27T00:55:30",
+        "robot_pose": {
+          "x": 0.11673074349922974,
+          "y": -2.026511731216685,
+          "yaw": 0.31071848771330746
+        },
+        "nearest_landmark": "chair_0",
+        "rgb_path": "obs_20251227_005528_14cb4618/rgb.jpg",
+        "depth_path": "obs_20251227_005528_14cb4618/depth.png",
+        "detected_states": [
+          {
+            "category": "on fire",
+            "score": 0.85,
+            "bbox_2d": [
+              542,
+              561,
+              999,
+              648
+            ],
+            "reason": "The space heater is turned on, showing an internal glow that represents being 'on fire' according to the definition (object is turned on fire, not burning)."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.7,
+            "bbox_2d": [
+              574,
+              399,
+              999,
+              588
+            ],
+            "reason": "A shirt is draped over the chair, and part of the shirt is hanging down to the floor, which constitutes objects piled up on a surface (the chair)."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.65,
+            "bbox_2d": [
+              297,
+              53,
+              684,
+              485
+            ],
+            "reason": "A large blanket/duvet is piled up on the bed, covering it in a messy, non-flat manner."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "chair_0",
+          "matched_room": "Bedroom",
+          "matched_category": "on fire",
+          "matched_detected_state": {
+            "category": "on fire",
+            "score": 0.85,
+            "bbox_2d": [
+              542,
+              561,
+              999,
+              648
+            ],
+            "reason": "The space heater is turned on, showing an internal glow that represents being 'on fire' according to the definition (object is turned on fire, not burning)."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_005602_ea3456a0",
+        "timestamp": "2025-12-27T00:56:04",
+        "robot_pose": {
+          "x": 0.11673074349922974,
+          "y": -2.026511731216685,
+          "yaw": 0.31071848771330746
+        },
+        "nearest_landmark": "chair_0",
+        "rgb_path": "obs_20251227_005602_ea3456a0/rgb.jpg",
+        "depth_path": "obs_20251227_005602_ea3456a0/depth.png",
+        "detected_states": [
+          {
+            "category": "on fire",
+            "score": 0.9,
+            "bbox_2d": [
+              576,
+              588,
+              994,
+              667
+            ],
+            "reason": "The space heater is turned on, showing a visible orange glow indicating heat generation, which fits the definition of 'on fire' for objects that are turned on and produce fire/intense heat, but are not burning objects."
+          },
+          {
+            "category": "about to fall",
+            "score": 0.8,
+            "bbox_2d": [
+              629,
+              430,
+              995,
+              555
+            ],
+            "reason": "The blue shirt is draped over the chair, with a significant portion hanging down and nearly touching the floor, making it unstable and likely to fall off the chair completely."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.75,
+            "bbox_2d": [
+              290,
+              0,
+              506,
+              505
+            ],
+            "reason": "Various small objects and cables are piled up on the low partition wall/shelf area near the window blinds."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.6,
+            "bbox_2d": [
+              533,
+              2,
+              998,
+              479
+            ],
+            "reason": "The area under the bed/gurney is cluttered with various mechanical components, wires, and parts of the frame, which are piled up or arranged in a messy manner."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "chair_0",
+          "matched_room": "Bedroom",
+          "matched_category": "on fire",
+          "matched_detected_state": {
+            "category": "on fire",
+            "score": 0.9,
+            "bbox_2d": [
+              576,
+              588,
+              994,
+              667
+            ],
+            "reason": "The space heater is turned on, showing a visible orange glow indicating heat generation, which fits the definition of 'on fire' for objects that are turned on and produce fire/intense heat, but are not burning objects."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_005623_2f2e4508",
+        "timestamp": "2025-12-27T00:56:25",
+        "robot_pose": {
+          "x": -0.20881698376395502,
+          "y": -2.124074116480209,
+          "yaw": 0.32191122809729994
+        },
+        "nearest_landmark": "chair_0",
+        "rgb_path": "obs_20251227_005623_2f2e4508/rgb.jpg",
+        "depth_path": "obs_20251227_005623_2f2e4508/depth.png",
+        "detected_states": [
+          {
+            "category": "on fire",
+            "score": 0.9,
+            "bbox_2d": [
+              771,
+              584,
+              965,
+              646
+            ],
+            "reason": "The space heater is turned on, indicated by the glowing red heating element, which fits the definition of an object being 'turned on fire' (like a candle)."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.5,
+            "bbox_2d": [
+              290,
+              14,
+              455,
+              256
+            ],
+            "reason": "A small wooden shelf unit is present, and while not heavily piled, the presence of items (likely on the shelves, though obscured) and the general untidiness of the area around the bed suggests a mild state of clutter."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.6,
+            "bbox_2d": [
+              278,
+              143,
+              473,
+              848
+            ],
+            "reason": "The window sill/countertop is cluttered with various small objects and cables, particularly visible near the center and left."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "chair_0",
+          "matched_room": "Bedroom",
+          "matched_category": "on fire",
+          "matched_detected_state": {
+            "category": "on fire",
+            "score": 0.9,
+            "bbox_2d": [
+              771,
+              584,
+              965,
+              646
+            ],
+            "reason": "The space heater is turned on, indicated by the glowing red heating element, which fits the definition of an object being 'turned on fire' (like a candle)."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_005712_1fed3c00",
+        "timestamp": "2025-12-27T00:57:14",
+        "robot_pose": {
+          "x": -0.03766045895329578,
+          "y": -1.4300138940111502,
+          "yaw": -0.24531047220594748
+        },
+        "nearest_landmark": "chair_0",
+        "rgb_path": "obs_20251227_005712_1fed3c00/rgb.jpg",
+        "depth_path": "obs_20251227_005712_1fed3c00/depth.png",
+        "detected_states": [
+          {
+            "category": "on fire",
+            "score": 0.95,
+            "bbox_2d": [
+              786,
+              448,
+              999,
+              570
+            ],
+            "reason": "The space heater is turned on, and the heating element is glowing red, which constitutes being 'on fire' according to the definition (object is turned on fire, not burning)."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.8,
+            "bbox_2d": [
+              638,
+              333,
+              960,
+              448
+            ],
+            "reason": "A blue garment is draped over the yellow chair, indicating that the chair surface is cluttered with an object."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.75,
+            "bbox_2d": [
+              289,
+              729,
+              449,
+              999
+            ],
+            "reason": "Several cardboard boxes and other items are piled up on the partition wall/shelf in the background."
+          },
+          {
+            "category": "stacked",
+            "score": 0.9,
+            "bbox_2d": [
+              479,
+              756,
+              715,
+              861
+            ],
+            "reason": "Potted plants are stacked on the tiers of a wire shelving unit."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "chair_0",
+          "matched_room": "Bedroom",
+          "matched_category": "on fire",
+          "matched_detected_state": {
+            "category": "on fire",
+            "score": 0.95,
+            "bbox_2d": [
+              786,
+              448,
+              999,
+              570
+            ],
+            "reason": "The space heater is turned on, and the heating element is glowing red, which constitutes being 'on fire' according to the definition (object is turned on fire, not burning)."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_005729_8df35ff8",
+        "timestamp": "2025-12-27T00:57:31",
+        "robot_pose": {
+          "x": -0.03766045895329578,
+          "y": -1.4300138940111502,
+          "yaw": -0.24531047220594748
+        },
+        "nearest_landmark": "chair_0",
+        "rgb_path": "obs_20251227_005729_8df35ff8/rgb.jpg",
+        "depth_path": "obs_20251227_005729_8df35ff8/depth.png",
+        "detected_states": [
+          {
+            "category": "on fire",
+            "score": 0.9,
+            "bbox_2d": [
+              738,
+              448,
+              999,
+              606
+            ],
+            "reason": "The space heater is turned on, with its heating element glowing red, which constitutes the 'on fire' state as defined (an object turned on fire, not a burning object)."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.75,
+            "bbox_2d": [
+              470,
+              299,
+              761,
+              452
+            ],
+            "reason": "A shirt or piece of blue cloth is draped and piled up on the yellow chair, which constitutes clutter on the surface of the chair."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.65,
+            "bbox_2d": [
+              424,
+              882,
+              478,
+              999
+            ],
+            "reason": "Various small objects and boxes are piled up on the dark counter/shelf in the background."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "chair_0",
+          "matched_room": "Bedroom",
+          "matched_category": "on fire",
+          "matched_detected_state": {
+            "category": "on fire",
+            "score": 0.9,
+            "bbox_2d": [
+              738,
+              448,
+              999,
+              606
+            ],
+            "reason": "The space heater is turned on, with its heating element glowing red, which constitutes the 'on fire' state as defined (an object turned on fire, not a burning object)."
+          }
+        }
+      }
+    ],
+    "reason_history": [
+      "The electric space heater is turned on, as evidenced by the visible glowing element, which fits the definition of 'on fire' for a device that is actively generating heat/light.",
+      "The electric heater is turned on, and its heating element is glowing brightly, which is considered 'on fire' in the context of being actively turned on and producing heat/light, like a candle.",
+      "The space heater is turned on, showing an internal glow that represents being 'on fire' according to the definition (object is turned on fire, not burning).",
+      "The space heater is turned on, showing a visible orange glow indicating heat generation, which fits the definition of 'on fire' for objects that are turned on and produce fire/intense heat, but are not burning objects.",
+      "The space heater is turned on, indicated by the glowing red heating element, which fits the definition of an object being 'turned on fire' (like a candle).",
+      "The space heater is turned on, and the heating element is glowing red, which constitutes being 'on fire' according to the definition (object is turned on fire, not burning).",
+      "The space heater is turned on, with its heating element glowing red, which constitutes the 'on fire' state as defined (an object turned on fire, not a burning object)."
+    ],
+    "VLM": {
+      "room_name": "LivingLab",
+      "landmark_name": "",
+      "object_name": "電気ヒーター、衣類",
+      "risk_prediction_id": 0,
+      "risk_judge": "緊急重大",
+      "risk_reason": "動作中と推定される電気ヒーター（赤い光が確認できる）の非常に近くに、椅子にかけられた衣類（青いシャツ）の裾が垂れ下がって配置されている。これにより、衣類が加熱され、熱傷や発火による火災が発生する緊急性の高い重大なリスクがあるため、即座に対応が必要である。"
+    }
+  },
+  "1": {
+    "risk_prediction_id": 1,
+    "Semantic_state": {
+      "risk_prediction_id": 1,
+      "state_instance_id": 4,
+      "state_category": "about to fall",
+      "related_room": "Livingroom",
+      "related_landmarks_01": "chair_5",
+      "related_objects_01": "mug",
+      "related_objects_01_id": "N/A (Reason History based)",
+      "risk_judge": "緊急重大",
+      "risk_reason": "マグカップがテーブル/台（chair_5付近）の端に非常に近く配置されており（reason_history参照）、わずかな振動や接触で落下する危険性が高い（about to fall）。すぐに液体がこぼれたり、割れた破片で怪我をするリスクがあるため、即座の対応が必要である。"
+    },
+    "Semantic_state_RiskScore": {
+      "risk_prediction_id": 1,
+      "state_instance_id": 4,
+      "state_category": "about to fall",
+      "related_room": "Livingroom",
+      "related_landmarks_01": "chair_5",
+      "related_objects_01": "mug",
+      "related_objects_01_id": "N/A (Reason History based)",
+      "risk_judge": "緊急重大",
+      "risk_reason": "マグカップがテーブル/台（chair_5付近）の端に非常に近く配置されており（reason_history参照）、わずかな振動や接触で落下する危険性が高い（about to fall）。すぐに液体がこぼれたり、割れた破片で怪我をするリスクがあるため、即座の対応が必要である。",
+      "updated_01": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "評価は変更しない（緊急重大）。他のエージェントからのフィードバック（定量データ）を参照すると、マグカップの落下リスクに関する usage_safety スコアが 0.993 と極めて高く、この不安定な状態が直ちに事故（落下、破片による切創など）につながる発生頻度率が非常に高いことが確認された。この定量的な根拠に基づき、即座の対応が必要な緊急重大と判断を維持する。"
+    },
+    "Semantic_state_RiskScore_Persona_01": {
+      "risk_prediction_id": 1,
+      "state_instance_id": 4,
+      "state_category": "about to fall",
+      "related_room": "Livingroom",
+      "related_landmarks_01": "chair_5",
+      "related_objects_01": "mug",
+      "related_objects_01_id": "N/A (Reason History based)",
+      "risk_judge": "緊急重大",
+      "risk_reason": "マグカップがテーブル/台（chair_5付近）の端に非常に近く配置されており（reason_history参照）、わずかな振動や接触で落下する危険性が高い（about to fall）。すぐに液体がこぼれたり、割れた破片で怪我をするリスクがあるため、即座の対応が必要である。",
+      "updated_01": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "定量的な根拠として、関連オブジェクト（cup_0）の usage_safety スコアが 0.994 とシーン内で最も高い転倒・誤使用リスクの発生頻度率を示しており、落下リスクの高さが裏付けられた。最初の判断を変更する必要はないため、維持する。",
+      "updated_02": 0,
+      "updated_judge_02": "緊急重大",
+      "updated_reason_02": "若年健常者というペルソナ情報が示されたが、マグカップがテーブルの端にあり、熱湯や破片による熱傷・切創リスクは依然として高く、即時対応が必要な状態である。最初の判断と、定量データに基づく判断（updated_01）を総合し、緊急重大の判断を維持する。"
+    },
+    "Semantic_state_RiskScore_Persona_02": {
+      "risk_prediction_id": 1,
+      "state_instance_id": 4,
+      "state_category": "about to fall",
+      "related_room": "Livingroom",
+      "related_landmarks_01": "chair_5",
+      "related_objects_01": "mug",
+      "related_objects_01_id": "cup_0",
+      "risk_judge": "緊急重大",
+      "risk_reason": "マグカップがテーブル/台（chair_5付近）の端に非常に近く配置されており（reason_history参照）、わずかな振動や接触で落下する危険性が高い（about to fall）。すぐに液体がこぼれたり、割れた破片で怪我をするリスクがあるため、即座の対応が必要である。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "マグカップの落下リスク（usage_safety=0.993）は高いものの、事故の結果としての切創リスク（cuts_stabs=0.378）は最高レベルではないため、即時性よりも結果の重大性の相対的な度合いを考慮し、『緊急重大』から『潜在重大』に格下げします。",
+      "updated_02": 1,
+      "updated_judge_02": "緊急重大",
+      "updated_reason_02": "ユーザーが67歳の高齢者であり、過去に濡れたキッチンフロアで滑って転倒した事故履歴があるというペルソナ情報を考慮します。マグカップが落下し液体がこぼれた場合、すぐに二次的な滑り・転倒（骨折リスクの増大）が顕在化する可能性が高いです。即時性と結果の重大性の両方が高いため、『潜在重大』から『緊急重大』に再格上げし、直ちに対応が必要と判断します。"
+    },
+    "Semantic_state_RiskScore_Persona_03": {
+      "risk_prediction_id": 1,
+      "state_instance_id": 4,
+      "state_category": "about to fall",
+      "related_room": "Livingroom",
+      "related_landmarks_01": "chair_5",
+      "related_objects_01": "mug",
+      "related_objects_01_id": "N/A (Reason History based)",
+      "risk_judge": "緊急重大",
+      "risk_reason": "マグカップがテーブル/台（chair_5付近）の端に非常に近く配置されており（reason_history参照）、わずかな振動や接触で落下する危険性が高い（about to fall）。すぐに液体がこぼれたり、割れた破片で怪我をするリスクがあるため、即座の対応が必要である。",
+      "updated_01": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "判断は維持する。マグカップ（mug）が不安定な配置（about to fall）にあり、定量データ（usage_safety: 0.993）もこの極めて高い落下リスクを裏付けているため、すぐに事故が発生する可能性が高い。特に、車椅子利用者にとって、落下による破片の散乱は車椅子の移動を阻害し、タイヤのパンクや、破片を避けようとした際の負傷（過去の手首の捻挫類似リスク）につながるため、直ちに対応すべき緊急重大リスクである。"
+    },
+    "Semantic_state_RiskScore_Persona_04": {
+      "risk_prediction_id": 1,
+      "state_instance_id": 4,
+      "state_category": "about to fall",
+      "related_room": "Livingroom",
+      "related_landmarks_01": "chair_5",
+      "related_objects_01": "mug",
+      "related_objects_01_id": "N/A (Reason History based)",
+      "risk_judge": "緊急重大",
+      "risk_reason": "マグカップがテーブル/台（chair_5付近）の端に非常に近く配置されており（about to fall）、わずかな振動や接触で落下する危険性が高い。すぐに液体がこぼれたり、割れた破片で怪我をするリスクがあるため、即座の対応が必要である。",
+      "updated_01": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "定量データ（cup_0のusage_safety 0.994）が転倒リスクの極めて高さを裏付けているため、元の「緊急重大」の判断を変更しない。特に、ユーザーは81歳で身体障害があり、過去に転倒事故の履歴があるため、マグカップの落下により床が濡れた場合、即座に重篤な転倒・骨折事故に繋がる可能性が極めて高く、緊急性の高い対応が必要である。"
+    },
+    "Semantic_state_RiskScore_Persona_05": {
+      "risk_prediction_id": 1,
+      "state_instance_id": 4,
+      "state_category": "about to fall",
+      "related_room": "Livingroom",
+      "related_landmarks_01": "chair_5",
+      "related_objects_01": "mug",
+      "related_objects_01_id": "N/A (Reason History based)",
+      "risk_judge": "緊急重大",
+      "risk_reason": "マグカップがテーブル/台（chair_5付近）の端に非常に近く配置されており、わずかな振動や接触で落下する危険性が高い（about to fall）。すぐに液体がこぼれたり、割れた破片で怪我をするリスクがある。",
+      "updated_01": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "定量的なリスクスコア（propagated_risk_score.usage_safety=0.994）が極めて高く、落下・こぼれリスクが非常に高いことが裏付けられた。また、落下時に破片によるcuts_stabs (0.378) のリスクも潜在するため、評価を維持する。",
+      "updated_02": 0,
+      "updated_judge_02": "緊急重大",
+      "updated_reason_02": "前回の評価を維持する。86歳の高齢者にとって、マグカップの落下は液体や破片による転倒の引き金となり、骨折という重大な二次災害に直結する。すぐに事故が発生する可能性が高いため、ペルソナを踏まえても緊急重大の評価を維持する。"
+    },
+    "Semantic_state_Stickler": {
+      "risk_prediction_id": 1,
+      "state_instance_id": 4,
+      "state_category": "about to fall",
+      "related_room": "Livingroom",
+      "related_landmarks_01": "chair_5",
+      "related_objects_01": "mug",
+      "related_objects_01_id": "N/A (Reason History based)",
+      "risk_judge": "緊急重大",
+      "risk_reason": "マグカップがテーブル/台（chair_5付近）の端に非常に近く配置されており（reason_history参照）、わずかな振動や接触で落下する危険性が高い（about to fall）。すぐに液体がこぼれたり、割れた破片で怪我をするリスクがあるため、即座の対応が必要である。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "他のエージェントからのフィードバックを受け、判断を『潜在重大』に変更する。マグカップが端にあり、落下リスクが非常に高い点（緊急性）は認めるが、落下による被害（破片による切創、液体のこぼれ、熱傷の可能性）は、転倒による骨折や火災などの深刻な事故と比較して被害の程度が限定的である。しかし、もし発生すれば物が破損し、怪我に繋がる可能性があり、『潜在軽微』よりもリスクが高いため、『潜在重大』と評価を修正する。これは、放置されたり、特定の条件（熱い液体、子供やペットの存在）が満たされた場合に重大事故につながりうる状態である。"
+    },
+    "Semantic_state_Persona_01": {
+      "risk_prediction_id": 1,
+      "state_instance_id": 4,
+      "state_category": "about to fall",
+      "related_room": "Livingroom",
+      "related_landmarks_01": "chair_5",
+      "related_objects_01": "mug",
+      "related_objects_01_id": "N/A (Reason History based)",
+      "risk_judge": "緊急重大",
+      "risk_reason": "マグカップがテーブル/台（chair_5付近）の端に非常に近く配置されており（reason_history参照）、わずかな振動や接触で落下する危険性が高い（about to fall）。すぐに液体がこぼれたり、割れた破片で怪我をするリスクがあるため、即座の対応が必要である。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "他のエージェントからのフィードバック（24歳健常者であるため緊急重大ではないが、落下可能性は高い）を考慮し、判断を「潜在重大」に更新する。マグカップが不安定な配置（about to fall）にあり、落下可能性は高いものの、ユーザーが若年で健常者であることを考慮すると、落下による破片や熱い液体の飛散が直ちに致命的な結果につながる可能性は低い。しかし、放置された場合、特定の条件（例：人がぶつかる、乾燥した後の床の滑りなど）が満たされた場合に、割れた破片による切創や、床濡れからの二次的な転倒リスクという重大な事故に繋がりうるため、「潜在重大」として評価することが適切である。"
+    },
+    "Semantic_state_Persona_02": {
+      "risk_prediction_id": 1,
+      "state_instance_id": 4,
+      "state_category": "about to fall",
+      "related_room": "Livingroom",
+      "related_landmarks_01": "chair_5",
+      "related_objects_01": "mug",
+      "related_objects_01_id": "N/A (Reason History based)",
+      "risk_judge": "緊急重大",
+      "risk_reason": "マグカップがテーブル/台（chair_5付近）の端に非常に近く配置されており（reason_history参照）、わずかな振動や接触で落下する危険性が高い（about to fall）。すぐに液体がこぼれたり、割れた破片で怪我をするリスクがあるため、即座の対応が必要である。",
+      "updated_01": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "元の判断「緊急重大」を維持する。マグカップの落下リスクは非常に高く、すぐに液体がこぼれたり、破片で怪我をする可能性がある。ユーザーは67歳の高齢者であり、過去に濡れた床で転倒した履歴があるため、液体のこぼれは滑りやすさを増し、重大な転倒事故（骨折リスク増大）を誘発する可能性が非常に高まる。よって、即座の対応が必要な緊急重大な状態である。"
+    },
+    "Semantic_state_Persona_03": {
+      "risk_prediction_id": 1,
+      "state_instance_id": 4,
+      "state_category": "about to fall",
+      "related_room": "Livingroom",
+      "related_landmarks_01": "chair_5",
+      "related_objects_01": "mug",
+      "related_objects_01_id": "N/A (Reason History based)",
+      "risk_judge": "緊急重大",
+      "risk_reason": "マグカップがテーブル/台（chair_5付近）の端に非常に近く配置されており（reason_history参照）、わずかな振動や接触で落下する危険性が高い（about to fall）。すぐに液体がこぼれたり、割れた破片で怪我をするリスクがあるため、即座の対応が必要である。",
+      "updated_01": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "フィードバックによると、このリスクは主に落下物による怪我や滑りリスクであり、若年で認知障害がないためペルソナによる増幅は限定的である。しかし、即座に落下する危険性がある不安定な物体であるため、初期の評価通り「緊急重大」の判断を維持する。"
+    },
+    "Semantic_state_Persona_04": {
+      "risk_prediction_id": 1,
+      "state_instance_id": 4,
+      "state_category": "about to fall",
+      "related_room": "Livingroom",
+      "related_landmarks_01": "chair_5",
+      "related_objects_01": "mug",
+      "related_objects_01_id": "N/A (Related object based on reason history)",
+      "risk_judge": "緊急重大",
+      "risk_reason": "マグカップがテーブル/台（chair_5付近）の端に非常に近く配置されており（reason_history参照）、わずかな振動や接触で落下する危険性が高い（about to fall）。すぐに液体がこぼれたり、割れた破片で怪我をするリスクがあるため、即座の対応が必要である。",
+      "updated_01": 1,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "前回の評価（緊急重大）を維持する。マグカップの落下により中身の液体が床面に拡散した場合、過去に転倒事故を経験している81歳で身体障害のあるユーザーにとって、滑りによる転倒事故、およびそれに続く骨折の可能性が極めて高くなる。転倒リスクを直接引き起こすため、即座の対応が必要な緊急重大と判断する。"
+    },
+    "Semantic_state_Persona_05": {
+      "risk_prediction_id": 1,
+      "state_instance_id": 4,
+      "state_category": "about to fall",
+      "related_room": "Livingroom",
+      "related_landmarks_01": "chair_5",
+      "related_objects_01": "mug",
+      "related_objects_01_id": "N/A (Reason History based)",
+      "risk_judge": "緊急重大",
+      "risk_reason": "マグカップがテーブル/台（chair_5付近）の端に非常に近く配置されており（reason_history参照）、わずかな振動や接触で落下する危険性が高い（about to fall）。すぐに液体がこぼれたり、割れた破片で怪我をするリスクがあるため、即座の対応が必要である。",
+      "updated_01": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "「緊急重大」の判断を維持する。フィードバックの指摘に基づき、理由に高齢者ペルソナの影響を追加する。86歳の高齢者にとって、マグカップの落下による液体や破片の散乱は、バランスを崩して転倒し、大腿骨骨折などの重大な怪我に繋がる可能性が高い。認知障害により危険回避が遅れるリスクも加わり、即座の対応が必要な状態であるため、評価を維持する。"
+    },
+    "observations": [
+      {
+        "observation_id": "obs_20251227_010620_bf674b97",
+        "timestamp": "2025-12-27T01:06:22",
+        "robot_pose": {
+          "x": -1.3648088162890109,
+          "y": -5.9496610564655015,
+          "yaw": -0.818655921794235
+        },
+        "nearest_landmark": "chair_5",
+        "rgb_path": "obs_20251227_010620_bf674b97/rgb.jpg",
+        "depth_path": "obs_20251227_010620_bf674b97/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.7,
+            "bbox_2d": [
+              286,
+              188,
+              424,
+              322
+            ],
+            "reason": "A cardboard box and some papers are piled up on a low partition/shelf, indicating a cluttered surface."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.65,
+            "bbox_2d": [
+              784,
+              739,
+              965,
+              965
+            ],
+            "reason": "Cables and an extension cord are lying on the floor near the base of the floor lamp, creating clutter."
+          },
+          {
+            "category": "about to fall",
+            "score": 0.55,
+            "bbox_2d": [
+              805,
+              295,
+              999,
+              485
+            ],
+            "reason": "A mug is placed very close to the edge of the table, appearing unstable and likely to fall if bumped."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "chair_5",
+          "matched_room": "Livingroom",
+          "matched_category": "about to fall",
+          "matched_detected_state": {
+            "category": "about to fall",
+            "score": 0.55,
+            "bbox_2d": [
+              805,
+              295,
+              999,
+              485
+            ],
+            "reason": "A mug is placed very close to the edge of the table, appearing unstable and likely to fall if bumped."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_010645_e47a6b38",
+        "timestamp": "2025-12-27T01:06:47",
+        "robot_pose": {
+          "x": -0.6916597367213968,
+          "y": -5.612830243016454,
+          "yaw": -1.580320663088885
+        },
+        "nearest_landmark": "chair_5",
+        "rgb_path": "obs_20251227_010645_e47a6b38/rgb.jpg",
+        "depth_path": "obs_20251227_010645_e47a6b38/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              820,
+              550,
+              980,
+              999
+            ],
+            "reason": "Cables and wires are piled up on the floor near the vacuum cleaner and floor lamp, creating a cluttered area."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.75,
+            "bbox_2d": [
+              462,
+              430,
+              500,
+              560
+            ],
+            "reason": "A small potted plant and a remote control are placed on the table, contributing to a minor cluttered state on the surface."
+          },
+          {
+            "category": "about to fall",
+            "score": 0.6,
+            "bbox_2d": [
+              805,
+              550,
+              910,
+              640
+            ],
+            "reason": "The mug is positioned very close to the edge of the table, making it unstable and likely to fall if slightly bumped."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "chair_5",
+          "matched_room": "Livingroom",
+          "matched_category": "about to fall",
+          "matched_detected_state": {
+            "category": "about to fall",
+            "score": 0.6,
+            "bbox_2d": [
+              805,
+              550,
+              910,
+              640
+            ],
+            "reason": "The mug is positioned very close to the edge of the table, making it unstable and likely to fall if slightly bumped."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_010703_3240368f",
+        "timestamp": "2025-12-27T01:07:05",
+        "robot_pose": {
+          "x": -0.6916597367213968,
+          "y": -5.612830243016454,
+          "yaw": -1.580320663088885
+        },
+        "nearest_landmark": "chair_5",
+        "rgb_path": "obs_20251227_010703_3240368f/rgb.jpg",
+        "depth_path": "obs_20251227_010703_3240368f/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.9,
+            "bbox_2d": [
+              786,
+              550,
+              960,
+              960
+            ],
+            "reason": "Cables and the vacuum cleaner hose are piled up on the floor, indicating a cluttered state."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.7,
+            "bbox_2d": [
+              470,
+              408,
+              529,
+              579
+            ],
+            "reason": "A small potted plant and a remote control are placed on the table, indicating a minor cluttered state on the surface."
+          },
+          {
+            "category": "about to fall",
+            "score": 0.8,
+            "bbox_2d": [
+              778,
+              559,
+              891,
+              642
+            ],
+            "reason": "A mug is positioned very close to the edge of the table, appearing unstable and likely to fall if slightly nudged."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "chair_5",
+          "matched_room": "Livingroom",
+          "matched_category": "about to fall",
+          "matched_detected_state": {
+            "category": "about to fall",
+            "score": 0.8,
+            "bbox_2d": [
+              778,
+              559,
+              891,
+              642
+            ],
+            "reason": "A mug is positioned very close to the edge of the table, appearing unstable and likely to fall if slightly nudged."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_010831_9ba66ec7",
+        "timestamp": "2025-12-27T01:08:33",
+        "robot_pose": {
+          "x": -1.5522732399633181,
+          "y": -6.303326255675327,
+          "yaw": -0.38796414419012004
+        },
+        "nearest_landmark": "chair_5",
+        "rgb_path": "obs_20251227_010831_9ba66ec7/rgb.jpg",
+        "depth_path": "obs_20251227_010831_9ba66ec7/depth.png",
+        "detected_states": [
+          {
+            "category": "about to fall",
+            "score": 0.5,
+            "bbox_2d": [
+              820,
+              342,
+              999,
+              430
+            ],
+            "reason": "The mug is positioned very close to the edge of the table, making it unstable and likely to fall if slightly bumped."
+          },
+          {
+            "category": "ajar",
+            "score": 0.9,
+            "bbox_2d": [
+              289,
+              183,
+              485,
+              480
+            ],
+            "reason": "A drawer or cabinet door on the white storage unit is visibly ajar (partially open)."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.6,
+            "bbox_2d": [
+              259,
+              297,
+              339,
+              478
+            ],
+            "reason": "The counter surface behind the sink area has various items (boxes, possibly papers) piled up, indicating clutter."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "chair_5",
+          "matched_room": "Livingroom",
+          "matched_category": "about to fall",
+          "matched_detected_state": {
+            "category": "about to fall",
+            "score": 0.5,
+            "bbox_2d": [
+              820,
+              342,
+              999,
+              430
+            ],
+            "reason": "The mug is positioned very close to the edge of the table, making it unstable and likely to fall if slightly bumped."
+          }
+        }
+      }
+    ],
+    "reason_history": [
+      "A mug is placed very close to the edge of the table, appearing unstable and likely to fall if bumped.",
+      "The mug is positioned very close to the edge of the table, making it unstable and likely to fall if slightly bumped.",
+      "A mug is positioned very close to the edge of the table, appearing unstable and likely to fall if slightly nudged.",
+      "The mug is positioned very close to the edge of the table, making it unstable and likely to fall if slightly bumped."
+    ],
+    "VLM": {
+      "room_name": "LivingLab",
+      "landmark_name": "",
+      "object_name": "ケーブル, 掃除機",
+      "risk_prediction_id": 1,
+      "risk_judge": "緊急重大",
+      "risk_reason": "床面に多数の電源ケーブルが露出した状態で散乱しており、さらに小型掃除機（または類似機器）も人が歩く動線上に放置されているため、人が歩行する際につまずき転倒する緊急性が高く重大なリスクがある。"
+    }
+  },
+  "2": {
+    "risk_prediction_id": 2,
+    "Semantic_state": {
+      "risk_prediction_id": 2,
+      "state_instance_id": 3,
+      "state_category": "cluttered",
+      "related_room": "Livingroom",
+      "related_landmarks_01": "tv_11",
+      "related_objects_01": "cable",
+      "related_objects_01_id": "cable_0",
+      "related_objects_02": "vacuum cleaner",
+      "related_objects_02_id": "vacuum cleaner_0",
+      "risk_judge": "緊急重大",
+      "risk_reason": "床に複数のケーブル、電源タップ、掃除機などが散乱し、絡まっている（cluttered）。これはユーザーがすぐにつまずき、転倒するリスクを直接引き起こすため、転倒リスクが高い散乱物として緊急性が高い重大なリスクと判断する。また、ケーブルの絡まりはショートの潜在的なリスクも持つ。"
+    },
+    "Semantic_state_RiskScore": {
+      "risk_prediction_id": 2,
+      "state_instance_id": 3,
+      "state_category": "cluttered",
+      "related_room": "Livingroom",
+      "related_landmarks_01": "tv_11",
+      "related_objects_01": "cable",
+      "related_objects_01_id": "cable_0",
+      "related_objects_02": "vacuum cleaner",
+      "related_objects_02_id": "vacuum cleaner_0",
+      "risk_judge": "緊急重大",
+      "risk_reason": "床に複数のケーブル、電源タップ、掃除機などが散乱し、絡まっている（cluttered）。これはユーザーがすぐにつまずき、転倒するリスクを直接引き起こすため、転倒リスクが高い散乱物として緊急性が高い重大なリスクと判断する。また、ケーブルの絡まりはショートの潜在的なリスクも持つ。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "フィードバックを受けて評価を「緊急重大」から「潜在重大」へ更新する。床のケーブルと掃除機の散乱は定性的に転倒リスクを高めるが、他のエージェントからの定量データに基づき、この状態が持つ火災リスクや他の事故リスクの発生頻度率が、Instance 5や4のような緊急性の高い状態と比較して相対的に低いことが分かった。転倒事故は重大な結果をもたらしうるが、発生頻度率の相対的な低さ（すぐに起こる可能性の低さ）を考慮し、「すぐに起こるわけではないが、もし起きた場合は重大な事故になりうる」潜在重大と再評価する。"
+    },
+    "Semantic_state_RiskScore_Persona_01": {
+      "risk_prediction_id": 2,
+      "state_instance_id": 3,
+      "state_category": "cluttered",
+      "related_room": "Livingroom",
+      "related_landmarks_01": "tv_11",
+      "related_objects_01": "cable",
+      "related_objects_01_id": "cable_0",
+      "related_objects_02": "vacuum cleaner",
+      "related_objects_02_id": "vacuum cleaner_0",
+      "risk_judge": "緊急重大",
+      "risk_reason": "床に複数のケーブル、電源タップ、掃除機などが散乱し、絡まっている（cluttered）。これはユーザーがすぐにつまずき、転倒するリスクを直接引き起こすため、転倒リスクが高い散乱物として緊急性が高い重大なリスクと判断する。また、ケーブルの絡まりはショートの潜在的なリスクも持つ。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "床面のケーブル散乱による転倒リスクについて、定量的な伝播リスクスコア（impact_surface）が極めて低いというフィードバックを受けたため、評価を潜在重大に変更する。転倒リスクの発生頻度率は低いが、ケーブルの絡まりによるショートや製品故障（fire/product_failure）の潜在的な重大リスクを考慮し、潜在重大とする。",
+      "updated_02": 1,
+      "updated_judge_02": "緊急重大",
+      "updated_reason_02": "ユーザーのペルソナ情報として「過去に充電ケーブルにつまずいて転倒した」という事故履歴が示された。現在の状態（床面のケーブル散乱）はこの脆弱なパターンと完全に一致しており、このユーザーにとって転倒事故の再発リスクは極めて高いと判断される。定量スコアの低さや若年健常者であることを上回り、最初の判断通り緊急重大に戻す。これは、放置すればすぐに事故が起こる可能性が高い状態と見なすためである。"
+    },
+    "Semantic_state_RiskScore_Persona_02": {
+      "risk_prediction_id": 2,
+      "state_instance_id": 3,
+      "state_category": "cluttered",
+      "related_room": "Livingroom",
+      "related_landmarks_01": "tv_11",
+      "related_objects_01": "cable",
+      "related_objects_01_id": "cable_0",
+      "related_objects_02": "vacuum cleaner",
+      "related_objects_02_id": "vacuum cleaner_0",
+      "risk_judge": "緊急重大",
+      "risk_reason": "床に複数のケーブル、電源タップ、掃除機などが散乱し、絡まっている（cluttered）。これはユーザーがすぐにつまずき、転倒するリスクを直接引き起こすため、転倒リスクが高い散乱物として緊急性が高い重大なリスクと判断する。また、ケーブルの絡まりはショートの潜在的なリスクも持つ。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "定量リスクスコアを参照した結果、転倒・衝突を示すimpact_surfaceスコアがcable_0で0.0、vacuum cleaner_0で0.0007と極めて低く、統計的に重大な事故につながりにくいことが示唆されました。視覚的な危険度のみによる判断を修正し、『緊急重大』から『潜在軽微』に格下げします。",
+      "updated_02": 1,
+      "updated_judge_02": "緊急重大",
+      "updated_reason_02": "ユーザーが67歳の高齢者であり、過去に転倒事故の履歴があるというペルソナ情報を最優先で考慮します。床上のケーブルや掃除機は、このユーザーにとって最も回避すべき転倒リスク源であり、骨折などの重大事故に直結する可能性が高く、即座の対応が必要です。定量スコアが低いという統計的根拠よりも、ユーザー固有の脆弱性を重視し、『緊急重大』に再格上げします。"
+    },
+    "Semantic_state_RiskScore_Persona_03": {
+      "risk_prediction_id": 2,
+      "state_instance_id": 3,
+      "state_category": "cluttered",
+      "related_room": "Livingroom",
+      "related_landmarks_01": "tv_11",
+      "related_objects_01": "cable",
+      "related_objects_01_id": "cable_0",
+      "related_objects_02": "vacuum cleaner",
+      "related_objects_02_id": "vacuum cleaner_0",
+      "risk_judge": "緊急重大",
+      "risk_reason": "床に複数のケーブル、電源タップ、掃除機などが散乱し、絡まっている（cluttered）。これはユーザーがすぐにつまずき、転倒するリスクを直接引き起こすため、転倒リスクが高い散乱物として緊急性が高い重大なリスクと判断する。また、ケーブルの絡まりはショートの潜在的なリスクも持つ。",
+      "updated_01": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "判断は維持する。床に散乱し絡まっているケーブルや掃除機（cluttered）は、車椅子利用者の移動にとって極めて危険である。車椅子の車輪に絡まり、スタックして動けなくなるリスクが非常に高く、ユーザーは過去に挟まり事故で負傷した履歴があるため、スタック時に無理な動作で負傷（手首の捻挫など）を再発する可能性が高い。定量的な転倒スコアは低いというフィードバックもあったが、ペルソナ固有のスタック・負傷リスクが緊急性を持つため、緊急重大リスクとして評価する。"
+    },
+    "Semantic_state_RiskScore_Persona_04": {
+      "risk_prediction_id": 2,
+      "state_instance_id": 3,
+      "state_category": "cluttered",
+      "related_room": "Livingroom",
+      "related_landmarks_01": "tv_11",
+      "related_objects_01": "cable",
+      "related_objects_01_id": "cable_0",
+      "related_objects_02": "vacuum cleaner",
+      "related_objects_02_id": "vacuum cleaner_0",
+      "risk_judge": "緊急重大",
+      "risk_reason": "床に複数のケーブル、電源タップ、掃除機などが散乱し、絡まっている（cluttered）。これはユーザーがすぐにつまずき、転倒するリスクを直接引き起こすため、転倒リスクが高い散乱物として緊急性が高い重大なリスクと判断する。また、ケーブルの絡まりはショートの潜在的なリスクも持つ。",
+      "updated_01": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "フィードバック1では定量スコアの低さから「潜在重大」が提案されたが、ユーザーは81歳で身体障害があり、過去に転倒事故の履歴があるというペルソナ情報を最優先する。床の散乱物は、このユーザーにとって即座に重篤な転倒・骨折事故に直結する可能性が極めて高いため、元の「緊急重大」の判断を維持する。"
+    },
+    "Semantic_state_RiskScore_Persona_05": {
+      "risk_prediction_id": 2,
+      "state_instance_id": 3,
+      "state_category": "cluttered",
+      "related_room": "Livingroom",
+      "related_landmarks_01": "tv_11",
+      "related_objects_01": "cable",
+      "related_objects_01_id": "cable_0",
+      "related_objects_02": "vacuum cleaner",
+      "related_objects_02_id": "vacuum cleaner_0",
+      "risk_judge": "緊急重大",
+      "risk_reason": "床に複数のケーブル、電源タップ、掃除機などが散乱し、絡まっている（cluttered）。これはユーザーがすぐにつまずき、転倒するリスクを直接引き起こすため、緊急性が高い重大なリスクと判断する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "定量的なリスクスコアを参照すると、ケーブルや掃除機単体の propagated_risk_score.impact_surface の発生頻度率は相対的に低いため、『緊急重大』ではなく、放置された場合に重大事故（転倒による怪我）につながる『潜在重大』に格下げする。",
+      "updated_02": 1,
+      "updated_judge_02": "緊急重大",
+      "updated_reason_02": "前回のフィードバックで定量スコアに基づき『潜在重大』に格下げしたが、86歳の高齢者にとって床面の散乱は**つまずきによる転倒（骨折）リスク**が極めて高く、生命予後に関わる重大事故に直結する。このペルソナ要素（高齢者の転倒リスクの深刻さ）を優先し、直ちに対応が必要な『緊急重大』に再格上げする。"
+    },
+    "Semantic_state_Stickler": {
+      "risk_prediction_id": 2,
+      "state_instance_id": 3,
+      "state_category": "cluttered",
+      "related_room": "Livingroom",
+      "related_landmarks_01": "tv_11",
+      "related_objects_01": "cable",
+      "related_objects_01_id": "cable_0",
+      "related_objects_02": "vacuum cleaner",
+      "related_objects_02_id": "vacuum cleaner_0",
+      "risk_judge": "緊急重大",
+      "risk_reason": "床に複数のケーブル、電源タップ、掃除機などが散乱し、絡まっている（cluttered）。これはユーザーがすぐにつまずき、転倒するリスクを直接引き起こすため、転倒リスクが高い散乱物として緊急性が高い重大なリスクと判断する。また、ケーブルの絡まりはショートの潜在的なリスクも持つ。",
+      "updated_01": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "他のエージェントからのフィードバックを受けても、判断を変更しない。ケーブルや掃除機が床に散乱し絡まっている状況は、リビングルームという移動が発生する空間において、ユーザーが足を引っ掛け転倒するリスクを直接的に引き起こす。転倒は重傷（骨折など）につながる可能性が極めて高く、この種の危険な散乱物は「すぐに重大な事故が起こる可能性があり、すぐに対応する必要がある」状態として『緊急重大』を維持する。通行路かどうかにかかわらず、床に散乱したケーブルは常に高い転倒リスクを伴う。"
+    },
+    "Semantic_state_Persona_01": {
+      "risk_prediction_id": 2,
+      "state_instance_id": 3,
+      "state_category": "cluttered",
+      "related_room": "Livingroom",
+      "related_landmarks_01": "tv_11",
+      "related_objects_01": "cable",
+      "related_objects_01_id": "cable_0",
+      "related_objects_02": "vacuum cleaner",
+      "related_objects_02_id": "vacuum cleaner_0",
+      "risk_judge": "緊急重大",
+      "risk_reason": "床に複数のケーブル、電源タップ、掃除機などが散乱し、絡まっている（cluttered）。これはユーザーがすぐにつまずき、転倒するリスクを直接引き起こすため、転倒リスクが高い散乱物として緊急性が高い重大なリスクと判断する。また、ケーブルの絡まりはショートの潜在的なリスクも持つ。",
+      "updated_01": 1,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "他のエージェントからのフィードバック（ユーザーの過去の事故履歴を参照し、リスクを強化すべき）を考慮し、判断は「緊急重大」を維持するが、理由を強化する。床にケーブルや電源タップ、掃除機が散乱している状態（cluttered）は、すぐに転倒事故を引き起こすリスクが高い。特に、ユーザーが過去に充電ケーブルにつまずいて転倒した事故履歴を持つという情報に基づいて、この類いのリスクに対する脆弱性が非常に高いと判断し、最優先で対処が必要な「緊急重大」と評価する。これは、転倒リスクが高い散乱物であり、すぐに対応する必要がある状態という基準に合致する。"
+    },
+    "Semantic_state_Persona_02": {
+      "risk_prediction_id": 2,
+      "state_instance_id": 3,
+      "state_category": "cluttered",
+      "related_room": "Livingroom",
+      "related_landmarks_01": "tv_11",
+      "related_objects_01": "cable",
+      "related_objects_01_id": "cable_0",
+      "related_objects_02": "vacuum cleaner",
+      "related_objects_02_id": "vacuum cleaner_0",
+      "risk_judge": "緊急重大",
+      "risk_reason": "床に複数のケーブル、電源タップ、掃除機などが散乱し、絡まっている（cluttered）。これはユーザーがすぐにつまずき、転倒するリスクを直接引き起こすため、転倒リスクが高い散乱物として緊急性が高い重大なリスクと判断する。また、ケーブルの絡まりはショートの潜在的なリスクも持つ。",
+      "updated_01": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "元の判断「緊急重大」を維持する。床に散乱したケーブルや掃除機は、つまずき・転倒のリスクを直接引き起こす。ユーザーは67歳の高齢者であり、過去に転倒事故の履歴があるため、この床面の散乱は骨折などの重大な結果につながる可能性が極めて高く、直ちに取り除く必要がある緊急重大な状態である。これはこのユーザーにとって最も危険なリスクの一つである。"
+    },
+    "Semantic_state_Persona_03": {
+      "risk_prediction_id": 2,
+      "state_instance_id": 3,
+      "state_category": "cluttered",
+      "related_room": "Livingroom",
+      "related_landmarks_01": "tv_11",
+      "related_objects_01": "cable",
+      "related_objects_01_id": "cable_0",
+      "related_objects_02": "vacuum cleaner",
+      "related_objects_02_id": "vacuum cleaner_0",
+      "risk_judge": "緊急重大",
+      "risk_reason": "床に複数のケーブル、電源タップ、掃除機などが散乱し、絡まっている（cluttered）。これはユーザーがすぐにつまずき、転倒するリスクを直接引き起こすため、転倒リスクが高い散乱物として緊急性が高い重大なリスクと判断する。また、ケーブルの絡まりはショートの潜在的なリスクも持つ。",
+      "updated_01": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "初期の評価「緊急重大」を維持する。フィードバックで指摘されたように、この状態は身体障害を持つ車椅子ユーザーにとって、車輪が引っかかり、移動が妨げられたり、車椅子から落下したりする直接的かつ緊急な障害物となる。過去に車椅子が挟まる事故を経験しているため、類似のリスクパターンとして緊急性が極めて高く、直ちに対応が必要である。"
+    },
+    "Semantic_state_Persona_04": {
+      "risk_prediction_id": 2,
+      "state_instance_id": 3,
+      "state_category": "cluttered",
+      "related_room": "Livingroom",
+      "related_landmarks_01": "tv_11",
+      "related_objects_01": "cable",
+      "related_objects_01_id": "cable_0",
+      "related_objects_02": "vacuum cleaner",
+      "related_objects_02_id": "vacuum cleaner_0",
+      "risk_judge": "緊急重大",
+      "risk_reason": "床に複数のケーブル、電源タップ、掃除機などが散乱し、絡まっている（cluttered）。これはユーザーがすぐにつまずき、転倒するリスクを直接引き起こすため、転倒リスクが高い散乱物として緊急性が高い重大なリスクと判断する。また、ケーブルの絡まりはショートの潜在的なリスクも持つ。",
+      "updated_01": 1,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "前回の評価（緊急重大）を維持する。床に散乱したケーブルや電源タップは、81歳で身体障害があり、過去に転倒事故履歴のあるユーザーにとって、つまずき、バランスを崩す直接的な原因であり、骨折などの重大事故に即座に繋がる可能性が高い。このペルソナにとって最も危険な転倒リスクであるため、最高度の緊急性を維持する。"
+    },
+    "Semantic_state_Persona_05": {
+      "risk_prediction_id": 2,
+      "state_instance_id": 3,
+      "state_category": "cluttered",
+      "related_room": "Livingroom",
+      "related_landmarks_01": "tv_11",
+      "related_objects_01": "cable",
+      "related_objects_01_id": "cable_0",
+      "related_objects_02": "vacuum cleaner",
+      "related_objects_02_id": "vacuum cleaner_0",
+      "risk_judge": "緊急重大",
+      "risk_reason": "床に複数のケーブル、電源タップ、掃除機などが散乱し、絡まっている（cluttered）。これはユーザーがすぐにつまずき、転倒するリスクを直接引き起こすため、転倒リスクが高い散乱物として緊急性が高い重大なリスクと判断する。また、ケーブルの絡まりはショートの潜在的なリスクも持つ。",
+      "updated_01": 0,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "「緊急重大」の判断を維持する。フィードバックの指摘に基づき、理由に高齢者ペルソナの影響を追加する。86歳の高齢者にとって、床面の散乱物による転倒は骨折など重篤な結果に繋がりやすく、最優先で対処すべきリスクである。認知障害を持つユーザーは危険回避が困難であり、この状態は直ちに重大な事故を引き起こす可能性が極めて高いため、評価を維持する。"
+    },
+    "observations": [
+      {
+        "observation_id": "obs_20251227_010434_c104a944",
+        "timestamp": "2025-12-27T01:04:36",
+        "robot_pose": {
+          "x": -2.362557590893898,
+          "y": -5.276934846091367,
+          "yaw": -1.5811007821843737
+        },
+        "nearest_landmark": "sofa_7",
+        "rgb_path": "obs_20251227_010434_c104a944/rgb.jpg",
+        "depth_path": "obs_20251227_010434_c104a944/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.9,
+            "bbox_2d": [
+              690,
+              286,
+              999,
+              747
+            ],
+            "reason": "The floor is cluttered with various cables, power strips, and a vacuum cleaner."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              733,
+              642,
+              999,
+              999
+            ],
+            "reason": "The area behind and around the TV stand is cluttered with numerous tangled cables and wires."
+          },
+          {
+            "category": "about to fall",
+            "score": 0.35,
+            "bbox_2d": [
+              299,
+              664,
+              896,
+              902
+            ],
+            "reason": "The large TV screen is mounted on a stand and appears top-heavy, suggesting a slight instability, though it is designed to stand."
+          },
+          {
+            "category": "stacked",
+            "score": 0.9,
+            "bbox_2d": [
+              790,
+              673,
+              877,
+              901
+            ],
+            "reason": "The TV stand consists of multiple shelves stacked vertically."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "tv_11",
+          "matched_room": "Livingroom",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.9,
+            "bbox_2d": [
+              690,
+              286,
+              999,
+              747
+            ],
+            "reason": "The floor is cluttered with various cables, power strips, and a vacuum cleaner."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_010512_bee909d2",
+        "timestamp": "2025-12-27T01:05:14",
+        "robot_pose": {
+          "x": -2.6871842919140185,
+          "y": -5.995504832074497,
+          "yaw": -1.2316500829895487
+        },
+        "nearest_landmark": "sofa_7",
+        "rgb_path": "obs_20251227_010512_bee909d2/rgb.jpg",
+        "depth_path": "obs_20251227_010512_bee909d2/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.9,
+            "bbox_2d": [
+              783,
+              345,
+              1000,
+              820
+            ],
+            "reason": "Multiple power cables and extension cords are piled up and tangled on the floor."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.75,
+            "bbox_2d": [
+              538,
+              33,
+              617,
+              185
+            ],
+            "reason": "A small potted plant and a remote control are placed on the table surface."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "tv_11",
+          "matched_room": "Livingroom",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.9,
+            "bbox_2d": [
+              783,
+              345,
+              1000,
+              820
+            ],
+            "reason": "Multiple power cables and extension cords are piled up and tangled on the floor."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_010544_a506bef6",
+        "timestamp": "2025-12-27T01:05:46",
+        "robot_pose": {
+          "x": -1.5678520532869238,
+          "y": -5.831998999316526,
+          "yaw": -1.7784164765121486
+        },
+        "nearest_landmark": "chair_5",
+        "rgb_path": "obs_20251227_010544_a506bef6/rgb.jpg",
+        "depth_path": "obs_20251227_010544_a506bef6/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.9,
+            "bbox_2d": [
+              778,
+              138,
+              1000,
+              805
+            ],
+            "reason": "Numerous cables, power strips, and a small appliance are scattered and tangled on the floor."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              684,
+              786,
+              1000,
+              1000
+            ],
+            "reason": "A cluster of cables and electronic devices are piled up behind and beneath the TV stand."
+          },
+          {
+            "category": "stacked",
+            "score": 0.9,
+            "bbox_2d": [
+              690,
+              830,
+              770,
+              999
+            ],
+            "reason": "The TV stand consists of multiple shelves stacked vertically on top of each other."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "tv_11",
+          "matched_room": "Livingroom",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.9,
+            "bbox_2d": [
+              778,
+              138,
+              1000,
+              805
+            ],
+            "reason": "Numerous cables, power strips, and a small appliance are scattered and tangled on the floor."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_010645_e47a6b38",
+        "timestamp": "2025-12-27T01:06:47",
+        "robot_pose": {
+          "x": -0.6916597367213968,
+          "y": -5.612830243016454,
+          "yaw": -1.580320663088885
+        },
+        "nearest_landmark": "chair_5",
+        "rgb_path": "obs_20251227_010645_e47a6b38/rgb.jpg",
+        "depth_path": "obs_20251227_010645_e47a6b38/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              820,
+              550,
+              980,
+              999
+            ],
+            "reason": "Cables and wires are piled up on the floor near the vacuum cleaner and floor lamp, creating a cluttered area."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.75,
+            "bbox_2d": [
+              462,
+              430,
+              500,
+              560
+            ],
+            "reason": "A small potted plant and a remote control are placed on the table, contributing to a minor cluttered state on the surface."
+          },
+          {
+            "category": "about to fall",
+            "score": 0.6,
+            "bbox_2d": [
+              805,
+              550,
+              910,
+              640
+            ],
+            "reason": "The mug is positioned very close to the edge of the table, making it unstable and likely to fall if slightly bumped."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "tv_11",
+          "matched_room": "Livingroom",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              820,
+              550,
+              980,
+              999
+            ],
+            "reason": "Cables and wires are piled up on the floor near the vacuum cleaner and floor lamp, creating a cluttered area."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_010703_3240368f",
+        "timestamp": "2025-12-27T01:07:05",
+        "robot_pose": {
+          "x": -0.6916597367213968,
+          "y": -5.612830243016454,
+          "yaw": -1.580320663088885
+        },
+        "nearest_landmark": "chair_5",
+        "rgb_path": "obs_20251227_010703_3240368f/rgb.jpg",
+        "depth_path": "obs_20251227_010703_3240368f/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.9,
+            "bbox_2d": [
+              786,
+              550,
+              960,
+              960
+            ],
+            "reason": "Cables and the vacuum cleaner hose are piled up on the floor, indicating a cluttered state."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.7,
+            "bbox_2d": [
+              470,
+              408,
+              529,
+              579
+            ],
+            "reason": "A small potted plant and a remote control are placed on the table, indicating a minor cluttered state on the surface."
+          },
+          {
+            "category": "about to fall",
+            "score": 0.8,
+            "bbox_2d": [
+              778,
+              559,
+              891,
+              642
+            ],
+            "reason": "A mug is positioned very close to the edge of the table, appearing unstable and likely to fall if slightly nudged."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "tv_11",
+          "matched_room": "Livingroom",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.9,
+            "bbox_2d": [
+              786,
+              550,
+              960,
+              960
+            ],
+            "reason": "Cables and the vacuum cleaner hose are piled up on the floor, indicating a cluttered state."
+          }
+        }
+      }
+    ],
+    "reason_history": [
+      "The floor is cluttered with various cables, power strips, and a vacuum cleaner.",
+      "Multiple power cables and extension cords are piled up and tangled on the floor.",
+      "Numerous cables, power strips, and a small appliance are scattered and tangled on the floor.",
+      "Cables and wires are piled up on the floor near the vacuum cleaner and floor lamp, creating a cluttered area.",
+      "Cables and the vacuum cleaner hose are piled up on the floor, indicating a cluttered state."
+    ],
+    "VLM": {
+      "room_name": "LivingLab",
+      "landmark_name": "",
+      "object_name": "",
+      "risk_prediction_id": 2,
+      "risk_judge": "緊急重大",
+      "risk_reason": "床の広範囲にわたり、掃除機本体、ホース、及び多数の電源ケーブルや延長コードが散乱している。これは歩行者がすぐにつまずき、転倒する直接的な原因となり、重大な怪我（骨折など）につながる可能性が非常に高い状態であるため、緊急に対応が必要である。"
+    }
+  },
+  "3": {
+    "risk_prediction_id": 3,
+    "Semantic_state": {
+      "risk_prediction_id": 3,
+      "state_instance_id": 7,
+      "state_category": "ajar",
+      "related_room": "Bathroom",
+      "related_landmarks_01": "sink_13",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "シンク下のキャビネットドアが半開き（ajar）になっている。通行時に体がぶつかるリスクはあるが、場所が洗面所であり、ドア自体が軽微な接触事故に留まる可能性が高いため、ユーザーが少し困る程度の軽微な事故リスクと評価する。"
+    },
+    "Semantic_state_RiskScore": {
+      "risk_prediction_id": 3,
+      "state_instance_id": 7,
+      "state_category": "ajar",
+      "related_room": "Bathroom",
+      "related_landmarks_01": "sink_13",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "シンク下のキャビネットドアが半開き（ajar）になっている。通行時に体がぶつかるリスクはあるが、場所が洗面所であり、ドア自体が軽微な接触事故に留まる可能性が高いため、ユーザーが少し困る程度の軽微な事故リスクと評価する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "フィードバックを受けて評価を「潜在軽微」から「潜在重大」へ更新する。シンク下の扉が開いている状態は、単なる軽微な接触リスクだけでなく、転倒リスク（usage_safety: 0.442）も伴う。特に、関連するランドマーク（sink_13）には切創リスク (cuts_stabs) が 0.714 と高く伝播しており、開いた扉につまずいて転倒した場合、周囲の鋭利な物体等により重度の切創を負う潜在的な危険性が高いため、もし起きた場合は重大事故になりうる潜在重大と判断する。"
+    },
+    "Semantic_state_RiskScore_Persona_01": {
+      "risk_prediction_id": 3,
+      "state_instance_id": 7,
+      "state_category": "ajar",
+      "related_room": "Bathroom",
+      "related_landmarks_01": "sink_13",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "シンク下のキャビネットドアが半開き（ajar）になっている。通行時に体がぶつかるリスクはあるが、場所が洗面所であり、ドア自体が軽微な接触事故に留まる可能性が高いため、ユーザーが少し困る程度の軽微な事故リスクと評価する。",
+      "updated_01": 0,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "ドア開閉による衝突リスク（impact surface 0.012）は低いが、ランドマーク sink_13 が持つ高い固有リスク（cuts_stabs 0.714、contamination_poisoning 0.636）に言及する。ドアが開いていることで内部の危険物へのアクセスリスクがわずかに高まるが、状態自体は軽微な接触事故リスクに留まるため、最初の判断を維持する。",
+      "updated_02": 0,
+      "updated_judge_02": "潜在軽微",
+      "updated_reason_02": "若年健常者であるため、開いているキャビネットドアへの衝突を容易に回避できる。重篤な怪我に繋がる可能性は非常に低く、ペルソナ情報に基づいてもリスクが増幅しないため、軽微なリスクとして最初の判断を維持する。"
+    },
+    "Semantic_state_RiskScore_Persona_02": {
+      "risk_prediction_id": 3,
+      "state_instance_id": 7,
+      "state_category": "ajar",
+      "related_room": "Bathroom",
+      "related_landmarks_01": "sink_13",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "シンク下のキャビネットドアが半開き（ajar）になっている。通行時に体がぶつかるリスクはあるが、場所が洗面所であり、ドア自体が軽微な接触事故に留まる可能性が高いため、ユーザーが少し困る程度の軽微な事故リスクと評価する。",
+      "updated_01": 0,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "シンク（sink_13）周辺のキャビネットドアの半開き状態は、軽微な接触事故リスクに留まるという判断を維持します。シンク自体は cuts_stabs=0.714 と高いリスクを持つものの、ドアの開閉動作が直接的な切創リスクを引き起こすわけではないため、潜在軽微とします。",
+      "updated_02": 1,
+      "updated_judge_02": "潜在重大",
+      "updated_reason_02": "ユーザーが67歳の高齢者で転倒事故の履歴があるため、動線上の半開きのドアに足を引っ掛けて転倒した場合、骨折や頭部外傷などの重篤な怪我につながる潜在的なリスクが顕在化します。結果の重大性を鑑みて、『潜在軽微』から『潜在重大』に格上げします。"
+    },
+    "Semantic_state_RiskScore_Persona_03": {
+      "risk_prediction_id": 3,
+      "state_instance_id": 7,
+      "state_category": "ajar",
+      "related_room": "Bathroom",
+      "related_landmarks_01": "sink_13",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "シンク下のキャビネットドアが半開き（ajar）になっている。通行時に体がぶつかるリスクはあるが、場所が洗面所であり、ドア自体が軽微な接触事故に留まる可能性が高いため、ユーザーが少し困る程度の軽微な事故リスクと評価する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "評価を「潜在軽微」から「潜在重大」に更新する。元の評価では物理的な接触を軽微と見なしたが、定量データではシンク周辺の cuts_stabs（切創リスク）が 0.714 と相対的に高い。また、車椅子利用者は通路の障害物に対する脆弱性が高く、半開きのドア（ajar）の角に衝突したり、ドアと壁の間に車椅子が挟まる（過去の事故履歴類似）リスクがある。衝突による打撲や、スタック時の手首の負傷リスクを考慮すると、軽微では済まされない潜在的重大リスクと判断する。"
+    },
+    "Semantic_state_RiskScore_Persona_04": {
+      "risk_prediction_id": 3,
+      "state_instance_id": 7,
+      "state_category": "ajar",
+      "related_room": "Bathroom",
+      "related_landmarks_01": "sink_13",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "シンク下のキャビネットドアが半開き（ajar）になっている。通行時に体がぶつかるリスクはあるが、場所が洗面所であり、ドア自体が軽微な接触事故に留まる可能性が高いため、ユーザーが少し困る程度の軽微な事故リスクと評価する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "元の評価を「潜在軽微」から「潜在重大」に更新する。ユーザーは81歳、身体障害があり、過去に浴室での転倒履歴があるため、浴室内のajar状態（移動の障害）は、軽微なリスクではない。開いたドアにつまずいてバランスを崩し、ランドマーク sink_13 が持つ高い cuts_stabs (0.714) のリスクと複合することで、重大な切創や頭部強打に繋がる潜在的な危険性があるため、放置できない重大リスクと判断する。"
+    },
+    "Semantic_state_RiskScore_Persona_05": {
+      "risk_prediction_id": 3,
+      "state_instance_id": 7,
+      "state_category": "ajar",
+      "related_room": "Bathroom",
+      "related_landmarks_01": "sink_13",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "シンク下のキャビネットドアが半開き（ajar）になっている。通行時に体がぶつかるリスクはあるが、軽微な接触事故に留まる可能性が高く、ユーザーが少し困る程度の軽微な事故リスクと評価する。",
+      "updated_01": 0,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "シンク下のドア半開きは、接触による軽微な事故リスクに留まる。ランドマークの propagated_risk_score.usage_safety (0.443) も中程度であり、評価を維持する。",
+      "updated_02": 1,
+      "updated_judge_02": "潜在重大",
+      "updated_reason_02": "前回のフィードバックで『潜在軽微』と判断したが、86歳で認知障害を持つユーザーは、開いたドアに注意が向かず衝突し、バランスを崩して転倒・骨折するリスクが高まる。このペルソナ特有の転倒リスクの増幅を考慮し、もし起きた場合は重大な事故になりうる『潜在重大』に格上げする。"
+    },
+    "Semantic_state_Stickler": {
+      "risk_prediction_id": 3,
+      "state_instance_id": 7,
+      "state_category": "ajar",
+      "related_room": "Bathroom",
+      "related_landmarks_01": "sink_13",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "シンク下のキャビネットドアが半開き（ajar）になっている。通行時に体がぶつかるリスクはあるが、場所が洗面所であり、ドア自体が軽微な接触事故に留まる可能性が高いため、ユーザーが少し困る程度の軽微な事故リスクと評価する。",
+      "updated_01": 0,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "他のエージェントからのフィードバックを受けても、判断を変更しない。半開きのドアが洗面所という狭い空間にあるが、ドアにぶつかったとしても、重傷（骨折など）につながる可能性は低い。主に軽微な接触事故や不便さにとどまるため、『潜在軽微』という評価を維持する。"
+    },
+    "Semantic_state_Persona_01": {
+      "risk_prediction_id": 3,
+      "state_instance_id": 7,
+      "state_category": "ajar",
+      "related_room": "Bathroom",
+      "related_landmarks_01": "sink_13",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "シンク下のキャビネットドアが半開き（ajar）になっている。通行時に体がぶつかるリスクはあるが、場所が洗面所であり、ドア自体が軽微な接触事故に留まる可能性が高いため、ユーザーが少し困る程度の軽微な事故リスクと評価する。",
+      "updated_01": 0,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "他のエージェントからのフィードバック（評価は妥当）と前回の評価は一致している。キャビネットドアの半開き（ajar）による接触リスクは存在するが、24歳の若年健常者にとって重大な怪我に繋がる可能性は低いため、日常生活への大きな影響はない「潜在軽微」という評価を維持する。"
+    },
+    "Semantic_state_Persona_02": {
+      "risk_prediction_id": 3,
+      "state_instance_id": 7,
+      "state_category": "ajar",
+      "related_room": "Bathroom",
+      "related_landmarks_01": "sink_13",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "シンク下のキャビネットドアが半開き（ajar）になっている。通行時に体がぶつかるリスクはあるが、場所が洗面所であり、ドア自体が軽微な接触事故に留まる可能性が高いため、ユーザーが少し困る程度の軽微な事故リスクと評価する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "他のエージェントのフィードバックを受け、評価を「潜在軽微」から「潜在重大」へ更新する。シンク下のキャビネットドアが半開き（ajar）になっている状態は、67歳の高齢者が通行時に衝突し、バランスを崩して転倒する潜在的なリスクがある。洗面所（Bathroom）という場所柄、水濡れによる滑りやすさが加わると転倒リスクが高まり、高齢者にとって転倒は重大な骨折につながる可能性があるため、特定の条件が満たされた場合に起こりうる重大事故として評価を見直した。"
+    },
+    "Semantic_state_Persona_03": {
+      "risk_prediction_id": 3,
+      "state_instance_id": 7,
+      "state_category": "ajar",
+      "related_room": "Bathroom",
+      "related_landmarks_01": "sink_13",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "シンク下のキャビネットドアが半開き（ajar）になっている。通行時に体がぶつかるリスクはあるが、場所が洗面所であり、ドア自体が軽微な接触事故に留まる可能性が高いため、ユーザーが少し困る程度の軽微な事故リスクと評価する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "フィードバックに基づき、評価を「潜在重大」に更新する。前回の「潜在軽微」は、健常者を前提とした過小評価であった。ユーザーが身体障害を持ち車椅子を使用している場合、洗面所のような狭い通路でドアが半開き（ajar）になっていると、車椅子が衝突したり、ドアに挟まれて移動が完全に妨げられるなど、日常生活に重大な影響を及ぼす事故につながる可能性があるため、潜在重大と判断する。"
+    },
+    "Semantic_state_Persona_04": {
+      "risk_prediction_id": 3,
+      "state_instance_id": 7,
+      "state_category": "ajar",
+      "related_room": "Bathroom",
+      "related_landmarks_01": "sink_13",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "シンク下のキャビネットドアが半開き（ajar）になっている。通行時に体がぶつかるリスクはあるが、場所が洗面所であり、ドア自体が軽微な接触事故に留まる可能性が高いため、ユーザーが少し困る程度の軽微な事故リスクと評価する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "評価を「潜在軽微」から「潜在重大」に更新する。ユーザーは81歳で身体障害があり、過去に『浴室での転倒事故』の履歴がある。当該キャビネットドア（Instance 7）はバスルーム内にあり、半開きの状態は移動中に接触してバランスを崩し、転倒を誘発する可能性が高い。特に過去に事故があった場所でのリスクは重視すべきであり、軽微な接触でも高齢者にとっては骨折につながるため、潜在重大と評価する。"
+    },
+    "Semantic_state_Persona_05": {
+      "risk_prediction_id": 3,
+      "state_instance_id": 7,
+      "state_category": "ajar",
+      "related_room": "Bathroom",
+      "related_landmarks_01": "sink_13",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "シンク下のキャビネットドアが半開き（ajar）になっている。通行時に体がぶつかるリスクはあるが、場所が洗面所であり、ドア自体が軽微な接触事故に留まる可能性が高いため、ユーザーが少し困る程度の軽微な事故リスクと評価する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "フィードバックに基づき、評価を「潜在軽微」から「潜在重大」に更新する。元の判断では軽微な接触事故に留まるとしたが、86歳の高齢者（認知障害あり）にとって、半開きのキャビネットドアは低い位置にある障害物であり、わずかな接触でもバランスを崩し転倒するリスクが高い。転倒は骨折など重大な怪我に繋がるため、特定の条件（通行時、不注意）が満たされた場合に起こりうる重大事故として「潜在重大」と判断する。"
+    },
+    "observations": [
+      {
+        "observation_id": "obs_20251227_010932_db273de0",
+        "timestamp": "2025-12-27T01:09:34",
+        "robot_pose": {
+          "x": 0.7195187120077982,
+          "y": -6.001092577131631,
+          "yaw": 0.04404006175600979
+        },
+        "nearest_landmark": "chair_1",
+        "rgb_path": "obs_20251227_010932_db273de0/rgb.jpg",
+        "depth_path": "obs_20251227_010932_db273de0/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.75,
+            "bbox_2d": [
+              389,
+              153,
+              433,
+              344
+            ],
+            "reason": "Various small objects and miscellaneous items are piled up on the counter surface to the left of the sink unit."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.8,
+            "bbox_2d": [
+              383,
+              790,
+              436,
+              999
+            ],
+            "reason": "Various boxes and loose objects (like gloves) are piled up on the counter surface to the right of the sink unit."
+          },
+          {
+            "category": "ajar",
+            "score": 0.95,
+            "bbox_2d": [
+              617,
+              345,
+              987,
+              485
+            ],
+            "reason": "The drawer/cabinet door on the left side of the sink unit is partially open (ajar)."
+          },
+          {
+            "category": "ajar",
+            "score": 0.95,
+            "bbox_2d": [
+              617,
+              525,
+              987,
+              632
+            ],
+            "reason": "The cabinet door on the right side of the sink unit is fully open (ajar)."
+          },
+          {
+            "category": "stacked",
+            "score": 0.85,
+            "bbox_2d": [
+              484,
+              807,
+              551,
+              930
+            ],
+            "reason": "Cardboard boxes are stacked on top of each other on the counter surface to the right."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": false,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "sink_13",
+          "matched_room": "Bathroom",
+          "matched_category": "ajar",
+          "matched_detected_state": {
+            "category": "ajar",
+            "score": 0.95,
+            "bbox_2d": [
+              617,
+              345,
+              987,
+              485
+            ],
+            "reason": "The drawer/cabinet door on the left side of the sink unit is partially open (ajar)."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_010954_cfa616b3",
+        "timestamp": "2025-12-27T01:09:56",
+        "robot_pose": {
+          "x": 1.147344864519778,
+          "y": -5.831275276313989,
+          "yaw": -0.19315541663642982
+        },
+        "nearest_landmark": "chair_3",
+        "rgb_path": "obs_20251227_010954_cfa616b3/rgb.jpg",
+        "depth_path": "obs_20251227_010954_cfa616b3/depth.png",
+        "detected_states": [
+          {
+            "category": "stacked",
+            "score": 0.9,
+            "bbox_2d": [
+              318,
+              715,
+              438,
+              857
+            ],
+            "reason": "Cardboard boxes are stacked on top of each other on the counter."
+          },
+          {
+            "category": "ajar",
+            "score": 0.95,
+            "bbox_2d": [
+              430,
+              187,
+              648,
+              576
+            ],
+            "reason": "The cabinet door under the sink is ajar (open)."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              673,
+              463,
+              999,
+              576
+            ],
+            "reason": "The inside of the open cabinet is cluttered with various items and materials."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.75,
+            "bbox_2d": [
+              383,
+              747,
+              440,
+              854
+            ],
+            "reason": "The counter surface is cluttered with various objects including boxes and gloves."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": false,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "sink_13",
+          "matched_room": "Bathroom",
+          "matched_category": "ajar",
+          "matched_detected_state": {
+            "category": "ajar",
+            "score": 0.95,
+            "bbox_2d": [
+              430,
+              187,
+              648,
+              576
+            ],
+            "reason": "The cabinet door under the sink is ajar (open)."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_011110_12e598d1",
+        "timestamp": "2025-12-27T01:11:12",
+        "robot_pose": {
+          "x": 1.5750897813713847,
+          "y": -4.929835577130548,
+          "yaw": -0.7787546568555096
+        },
+        "nearest_landmark": "chair_3",
+        "rgb_path": "obs_20251227_011110_12e598d1/rgb.jpg",
+        "depth_path": "obs_20251227_011110_12e598d1/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.75,
+            "bbox_2d": [
+              383,
+              281,
+              456,
+              606
+            ],
+            "reason": "The counter surface behind the sink area has multiple items, including monitors and boxes, piled up, indicating a cluttered state."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.7,
+            "bbox_2d": [
+              403,
+              606,
+              462,
+              690
+            ],
+            "reason": "There are boxes and other miscellaneous objects piled on the counter surface to the right of the monitors, contributing to clutter."
+          },
+          {
+            "category": "ajar",
+            "score": 0.9,
+            "bbox_2d": [
+              642,
+              316,
+              999,
+              399
+            ],
+            "reason": "The lower left cabinet door of the sink vanity is partially open (ajar)."
+          },
+          {
+            "category": "ajar",
+            "score": 0.95,
+            "bbox_2d": [
+              642,
+              561,
+              999,
+              660
+            ],
+            "reason": "The lower right cabinet door of the sink vanity is fully open (ajar)."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": false,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "sink_13",
+          "matched_room": "Bathroom",
+          "matched_category": "ajar",
+          "matched_detected_state": {
+            "category": "ajar",
+            "score": 0.9,
+            "bbox_2d": [
+              642,
+              316,
+              999,
+              399
+            ],
+            "reason": "The lower left cabinet door of the sink vanity is partially open (ajar)."
+          }
+        }
+      }
+    ],
+    "reason_history": [
+      "The drawer/cabinet door on the left side of the sink unit is partially open (ajar).",
+      "The cabinet door under the sink is ajar (open).",
+      "The lower left cabinet door of the sink vanity is partially open (ajar)."
+    ],
+    "VLM": {
+      "room_name": "LivingLab",
+      "landmark_name": "洗面台",
+      "object_name": "収納扉",
+      "risk_prediction_id": 3,
+      "risk_judge": "緊急重大",
+      "risk_reason": "洗面台下の収納扉（右側）と引き出し（左側）が両方開いた状態になっている。洗面台のような狭いスペースにおいて、開いた扉は利用者が足や膝をぶつけたり、つまずいて転倒したりする直接的な原因となる。転倒リスクが高く、特に頭部を打つなどの重大な事故につながる可能性があるため、すぐに対応が必要である。"
+    }
+  },
+  "4": {
+    "risk_prediction_id": 4,
+    "Semantic_state": {
+      "risk_prediction_id": 4,
+      "state_instance_id": 8,
+      "state_category": "ajar",
+      "related_room": "Bathroom",
+      "related_landmarks_01": "sink_13",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "シンク下のキャビネットドアが全開（ajar）になっている。Instance 7と同様に、通行時にぶつかるリスクはあるが、軽微な接触事故に留まる可能性が高く、潜在的な軽微な事故リスクと評価する。"
+    },
+    "Semantic_state_RiskScore": {
+      "risk_prediction_id": 4,
+      "state_instance_id": 8,
+      "state_category": "ajar",
+      "related_room": "Bathroom",
+      "related_landmarks_01": "sink_13",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "シンク下のキャビネットドアが全開（ajar）になっている。Instance 7と同様に、通行時にぶつかるリスクはあるが、軽微な接触事故に留まる可能性が高く、潜在的な軽微な事故リスクと評価する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "フィードバックを受けて評価を「潜在軽微」から「潜在重大」へ更新する。Instance 7と同様に、扉の全開状態は転倒リスクを高める。ランドマーク sink_13 には、切創リスク (cuts_stabs: 0.714) に加え、汚染リスク (contamination_poisoning: 0.636) も高く伝播している。転倒により扉内部の衛生用品や化学薬品に接触した場合、重大な傷害や汚染につながる潜在的な危険性があるため、潜在重大と判断する。"
+    },
+    "Semantic_state_RiskScore_Persona_01": {
+      "risk_prediction_id": 4,
+      "state_instance_id": 8,
+      "state_category": "ajar",
+      "related_room": "Bathroom",
+      "related_landmarks_01": "sink_13",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "シンク下のキャビネットドアが全開（ajar）になっている。Instance 7と同様に、通行時にぶつかるリスクはあるが、軽微な接触事故に留まる可能性が高く、潜在的な軽微な事故リスクと評価する。",
+      "updated_01": 0,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "Instance 7と同様、ドア開閉による衝突リスクは低いが、ランドマーク sink_13 の高い固有リスク（cuts_stabs 0.714など）の影響を考慮する。状態としては軽微な接触事故リスクに留まるため、最初の判断を維持する。",
+      "updated_02": 0,
+      "updated_judge_02": "潜在軽微",
+      "updated_reason_02": "若年健常者であるため、全開のキャビネットドアへの衝突を容易に回避できる。ペルソナ情報に基づいてもリスクが増幅しないため、軽微なリスクとして最初の判断を維持する。"
+    },
+    "Semantic_state_RiskScore_Persona_02": {
+      "risk_prediction_id": 4,
+      "state_instance_id": 8,
+      "state_category": "ajar",
+      "related_room": "Bathroom",
+      "related_landmarks_01": "sink_13",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "シンク下のキャビネットドアが全開（ajar）になっている。Instance 7と同様に、通行時にぶつかるリスクはあるが、軽微な接触事故に留まる可能性が高く、潜在的な軽微な事故リスクと評価する。",
+      "updated_01": 0,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "Instance 7と同様に、キャビネットドアの全開状態による接触リスクは軽微な事故に留まるという判断を維持します。",
+      "updated_02": 1,
+      "updated_judge_02": "潜在重大",
+      "updated_reason_02": "Instance 7と同様、高齢者で転倒履歴があるユーザーにとって、動線上の全開のドアは重大な障害物であり、転倒による重篤な怪我につながる潜在重大リスクと判断し、『潜在軽微』から『潜在重大』に格上げします。"
+    },
+    "Semantic_state_RiskScore_Persona_03": {
+      "risk_prediction_id": 4,
+      "state_instance_id": 8,
+      "state_category": "ajar",
+      "related_room": "Bathroom",
+      "related_landmarks_01": "sink_13",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "シンク下のキャビネットドアが全開（ajar）になっている。Instance 7と同様に、通行時にぶつかるリスクはあるが、軽微な接触事故に留まる可能性が高く、潜在的な軽微な事故リスクと評価する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "評価を「潜在軽微」から「潜在重大」に更新する。Instance 7と同様に、キャビネットドアが全開（ajar）であるため、定量的な切創リスク（cuts_stabs: 0.714）と、車椅子での移動時の衝突・挟まりによる負傷リスク（過去の事故履歴類似）が高まる。特に、全開であるため通路を大きく塞いでおり、移動を阻害する可能性が高く、もし事故が起きた場合は重大な傷害につながりかねない潜在的重大リスクと判断する。"
+    },
+    "Semantic_state_RiskScore_Persona_04": {
+      "risk_prediction_id": 4,
+      "state_instance_id": 8,
+      "state_category": "ajar",
+      "related_room": "Bathroom",
+      "related_landmarks_01": "sink_13",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "シンク下のキャビネットドアが全開（ajar）になっている。Instance 7と同様に、通行時にぶつかるリスクはあるが、軽微な接触事故に留まる可能性が高く、潜在的な軽微な事故リスクと評価する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "元の評価を「潜在軽微」から「潜在重大」に更新する。Instance 7と同様に、この状態は浴室内の移動の障害であり、81歳、身体障害、浴室転倒歴を持つユーザーにとって、転倒・重篤な怪我に繋がるリスクが高い。全開状態は特に通行の妨げになりやすく、シンク周辺の高い切創リスク（cuts_stabs 0.714）との組み合わせから、潜在的な重大事故リスクと判断する。"
+    },
+    "Semantic_state_RiskScore_Persona_05": {
+      "risk_prediction_id": 4,
+      "state_instance_id": 8,
+      "state_category": "ajar",
+      "related_room": "Bathroom",
+      "related_landmarks_01": "sink_13",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "シンク下のキャビネットドアが全開（ajar）になっている。Instance 7と同様に、通行時にぶつかるリスクはあるが、軽微な接触事故に留まる可能性が高く、潜在的な軽微な事故リスクと評価する。",
+      "updated_01": 0,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "Instance 7と同様に、ドア半開きは接触による軽微な事故リスクに留まり、usage_safety (0.443) も中程度であるため、評価を維持する。",
+      "updated_02": 1,
+      "updated_judge_02": "潜在重大",
+      "updated_reason_02": "Instance 7と同様、86歳の認知障害を持つユーザーにとって、開いたドアへの衝突は転倒・骨折という重大な二次災害のリスクを増幅させる。このペルソナ固有の転倒リスクを考慮し、『潜在重大』に格上げする。"
+    },
+    "Semantic_state_Stickler": {
+      "risk_prediction_id": 4,
+      "state_instance_id": 8,
+      "state_category": "ajar",
+      "related_room": "Bathroom",
+      "related_landmarks_01": "sink_13",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "シンク下のキャビネットドアが全開（ajar）になっている。Instance 7と同様に、通行時にぶつかるリスクはあるが、軽微な接触事故に留まる可能性が高く、潜在的な軽微な事故リスクと評価する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "他のエージェントからのフィードバックを受け、Instance 7との差異を考慮し、判断を『潜在重大』に変更する。このドアは「完全にオープン」状態であり、洗面所という狭い空間において、通行を大きく妨げる。ユーザーが急いでいる際や夜間にぶつかり、体勢を崩して転倒した場合、骨折などの重大な事故につながる可能性がある。これは特定の条件が満たされた場合に重大事故になりうる状態であるため、『潜在重大』と評価を修正する。"
+    },
+    "Semantic_state_Persona_01": {
+      "risk_prediction_id": 4,
+      "state_instance_id": 8,
+      "state_category": "ajar",
+      "related_room": "Bathroom",
+      "related_landmarks_01": "sink_13",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "シンク下のキャビネットドアが全開（ajar）になっている。Instance 7と同様に、通行時にぶつかるリスクはあるが、軽微な接触事故に留まる可能性が高く、潜在的な軽微な事故リスクと評価する。",
+      "updated_01": 0,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "他のエージェントからのフィードバック（評価は妥当）と前回の評価は一致している。キャビネットドアの全開（ajar）による接触リスクは存在するが、24歳の若年健常者にとって重大な怪我に繋がる可能性は低いため、日常生活への大きな影響はない「潜在軽微」という評価を維持する。"
+    },
+    "Semantic_state_Persona_02": {
+      "risk_prediction_id": 4,
+      "state_instance_id": 8,
+      "state_category": "ajar",
+      "related_room": "Bathroom",
+      "related_landmarks_01": "sink_13",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "シンク下のキャビネットドアが全開（ajar）になっている。Instance 7と同様に、通行時にぶつかるリスクはあるが、軽微な接触事故に留まる可能性が高く、潜在的な軽微な事故リスクと評価する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "他のエージェントのフィードバックを受け、評価を「潜在軽微」から「潜在重大」へ更新する。Instance 7と同様の理由で、シンク下のキャビネットドアが全開（ajar）になっている状態は、67歳の高齢者にとって衝突による転倒リスクを高める。高齢者の転倒リスク、特に洗面所での転倒が重大な結果につながる可能性を考慮し、特定の条件が満たされた場合に起こりうる重大事故として評価を見直した。"
+    },
+    "Semantic_state_Persona_03": {
+      "risk_prediction_id": 4,
+      "state_instance_id": 8,
+      "state_category": "ajar",
+      "related_room": "Bathroom",
+      "related_landmarks_01": "sink_13",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "シンク下のキャビネットドアが全開（ajar）になっている。Instance 7と同様に、通行時にぶつかるリスクはあるが、軽微な接触事故に留まる可能性が高く、潜在的な軽微な事故リスクと評価する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "フィードバックに基づき、評価を「潜在重大」に更新する。Instance 7と同様に、身体障害（車椅子使用）を持つユーザーにとって、キャビネットドアが全開（ajar）の状態は、移動時に挟まり事故や衝突事故を引き起こし、移動の自由を奪う重大な障害物となる。軽微なリスクでは済まされない可能性が高いため、潜在重大と判断する。"
+    },
+    "Semantic_state_Persona_04": {
+      "risk_prediction_id": 4,
+      "state_instance_id": 8,
+      "state_category": "ajar",
+      "related_room": "Bathroom",
+      "related_landmarks_01": "sink_13",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "シンク下のキャビネットドアが全開（ajar）になっている。Instance 7と同様に、通行時にぶつかるリスクはあるが、軽微な接触事故に留まる可能性が高く、潜在的な軽微な事故リスクと評価する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "評価を「潜在軽微」から「潜在重大」に更新する。Instance 7と同様に、当該キャビネットドア（Instance 8）はバスルーム内にあり、全開の状態は通行路を狭め、移動中に接触してバランスを崩す可能性が非常に高い。高齢、身体障害、転倒履歴というペルソナ情報を考慮すると、転倒・骨折につながるリスクが高いため、潜在重大と評価する。"
+    },
+    "Semantic_state_Persona_05": {
+      "risk_prediction_id": 4,
+      "state_instance_id": 8,
+      "state_category": "ajar",
+      "related_room": "Bathroom",
+      "related_landmarks_01": "sink_13",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "シンク下のキャビネットドアが全開（ajar）になっている。Instance 7と同様に、通行時にぶつかるリスクはあるが、軽微な接触事故に留まる可能性が高く、潜在的な軽微な事故リスクと評価する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "フィードバックに基づき、評価を「潜在軽微」から「潜在重大」に更新する。Instance 7と同様、全開のキャビネットドアは通行の妨げとなり、86歳の認知障害を持つ高齢者にとって、衝突やそれに伴う転倒（重傷化のリスクが高い）を引き起こす潜在的な重大リスクとなるため、「潜在重大」と判断する。"
+    },
+    "observations": [
+      {
+        "observation_id": "obs_20251227_010932_db273de0",
+        "timestamp": "2025-12-27T01:09:34",
+        "robot_pose": {
+          "x": 0.7195187120077982,
+          "y": -6.001092577131631,
+          "yaw": 0.04404006175600979
+        },
+        "nearest_landmark": "chair_1",
+        "rgb_path": "obs_20251227_010932_db273de0/rgb.jpg",
+        "depth_path": "obs_20251227_010932_db273de0/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.75,
+            "bbox_2d": [
+              389,
+              153,
+              433,
+              344
+            ],
+            "reason": "Various small objects and miscellaneous items are piled up on the counter surface to the left of the sink unit."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.8,
+            "bbox_2d": [
+              383,
+              790,
+              436,
+              999
+            ],
+            "reason": "Various boxes and loose objects (like gloves) are piled up on the counter surface to the right of the sink unit."
+          },
+          {
+            "category": "ajar",
+            "score": 0.95,
+            "bbox_2d": [
+              617,
+              345,
+              987,
+              485
+            ],
+            "reason": "The drawer/cabinet door on the left side of the sink unit is partially open (ajar)."
+          },
+          {
+            "category": "ajar",
+            "score": 0.95,
+            "bbox_2d": [
+              617,
+              525,
+              987,
+              632
+            ],
+            "reason": "The cabinet door on the right side of the sink unit is fully open (ajar)."
+          },
+          {
+            "category": "stacked",
+            "score": 0.85,
+            "bbox_2d": [
+              484,
+              807,
+              551,
+              930
+            ],
+            "reason": "Cardboard boxes are stacked on top of each other on the counter surface to the right."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": false,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "sink_13",
+          "matched_room": "Bathroom",
+          "matched_category": "ajar",
+          "matched_detected_state": {
+            "category": "ajar",
+            "score": 0.95,
+            "bbox_2d": [
+              617,
+              525,
+              987,
+              632
+            ],
+            "reason": "The cabinet door on the right side of the sink unit is fully open (ajar)."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_011044_450c862d",
+        "timestamp": "2025-12-27T01:10:47",
+        "robot_pose": {
+          "x": 1.4673292168756369,
+          "y": -4.780806648336974,
+          "yaw": -0.892239720782704
+        },
+        "nearest_landmark": "chair_3",
+        "rgb_path": "obs_20251227_011044_450c862d/rgb.jpg",
+        "depth_path": "obs_20251227_011044_450c862d/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              268,
+              281,
+              433,
+              632
+            ],
+            "reason": "The counter surface behind the sink area is cluttered with monitors, boxes, and other miscellaneous items."
+          },
+          {
+            "category": "ajar",
+            "score": 0.95,
+            "bbox_2d": [
+              484,
+              179,
+              963,
+              597
+            ],
+            "reason": "The cabinet doors and a drawer beneath the sink are open (ajar)."
+          },
+          {
+            "category": "ajar",
+            "score": 0.9,
+            "bbox_2d": [
+              484,
+              467,
+              963,
+              597
+            ],
+            "reason": "The cabinet door on the right side of the sink unit is open (ajar)."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": false,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "sink_13",
+          "matched_room": "Bathroom",
+          "matched_category": "ajar",
+          "matched_detected_state": {
+            "category": "ajar",
+            "score": 0.9,
+            "bbox_2d": [
+              484,
+              467,
+              963,
+              597
+            ],
+            "reason": "The cabinet door on the right side of the sink unit is open (ajar)."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_011110_12e598d1",
+        "timestamp": "2025-12-27T01:11:12",
+        "robot_pose": {
+          "x": 1.5750897813713847,
+          "y": -4.929835577130548,
+          "yaw": -0.7787546568555096
+        },
+        "nearest_landmark": "chair_3",
+        "rgb_path": "obs_20251227_011110_12e598d1/rgb.jpg",
+        "depth_path": "obs_20251227_011110_12e598d1/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.75,
+            "bbox_2d": [
+              383,
+              281,
+              456,
+              606
+            ],
+            "reason": "The counter surface behind the sink area has multiple items, including monitors and boxes, piled up, indicating a cluttered state."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.7,
+            "bbox_2d": [
+              403,
+              606,
+              462,
+              690
+            ],
+            "reason": "There are boxes and other miscellaneous objects piled on the counter surface to the right of the monitors, contributing to clutter."
+          },
+          {
+            "category": "ajar",
+            "score": 0.9,
+            "bbox_2d": [
+              642,
+              316,
+              999,
+              399
+            ],
+            "reason": "The lower left cabinet door of the sink vanity is partially open (ajar)."
+          },
+          {
+            "category": "ajar",
+            "score": 0.95,
+            "bbox_2d": [
+              642,
+              561,
+              999,
+              660
+            ],
+            "reason": "The lower right cabinet door of the sink vanity is fully open (ajar)."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": false,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "sink_13",
+          "matched_room": "Bathroom",
+          "matched_category": "ajar",
+          "matched_detected_state": {
+            "category": "ajar",
+            "score": 0.95,
+            "bbox_2d": [
+              642,
+              561,
+              999,
+              660
+            ],
+            "reason": "The lower right cabinet door of the sink vanity is fully open (ajar)."
+          }
+        }
+      }
+    ],
+    "reason_history": [
+      "The cabinet door on the right side of the sink unit is fully open (ajar).",
+      "The cabinet door on the right side of the sink unit is open (ajar).",
+      "The lower right cabinet door of the sink vanity is fully open (ajar)."
+    ],
+    "VLM": {
+      "room_name": "LivingLab",
+      "landmark_name": "",
+      "object_name": "",
+      "risk_prediction_id": 4,
+      "risk_judge": "潜在重大",
+      "risk_reason": "洗面台下部の収納扉および引き出しが開いた状態であり、使用者が体をぶつけたり、膝や足をつまずかせたりするリスクがある。さらに、床には紙袋（または梱包材）や三脚といった障害物が存在しており、移動の際につまずき転倒につながる潜在的な重大事故リスクがあるため。"
+    }
+  },
+  "5": {
+    "risk_prediction_id": 5,
+    "Semantic_state": {
+      "risk_prediction_id": 5,
+      "state_instance_id": 0,
+      "state_category": "cluttered",
+      "related_room": "Bedroom",
+      "related_landmarks_01": "chair_0",
+      "related_objects_01": "shirt",
+      "related_objects_01_id": "shirt_0",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "椅子の上に衣服が置かれている（cluttered）。これは見た目の散らかりや椅子の利用妨げになるが、直接的な転倒や重大な物的損害のリスクは低い。ヒーターとは一定の距離があり、この状態単体では軽微と判断する。"
+    },
+    "Semantic_state_RiskScore": {
+      "risk_prediction_id": 5,
+      "state_instance_id": 0,
+      "state_category": "cluttered",
+      "related_room": "Bedroom",
+      "related_landmarks_01": "chair_0",
+      "related_objects_01": "shirt",
+      "related_objects_01_id": "shirt_0",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "椅子の上に衣服が置かれている（cluttered）。これは見た目の散らかりや椅子の利用妨げになるが、直接的な転倒や重大な物的損害のリスクは低い。ヒーターとは一定の距離があり、この状態単体では軽微と判断する。",
+      "updated_01": 1,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "フィードバックを受けて評価を「潜在軽微」から「緊急重大」へ更新する。この状態は、作動中のヒーター（Instance 5）と組み合わさることで重大なリスクとなる。衣服（shirt_0）はヒーターの熱によって熱傷リスク (burns_skin) が 1.0 と最上位レベルに達しており、火災リスク (fire) も 0.615 と高い。この散乱状態は、熱源の近くに可燃物を放置している状態であり、火災や熱傷がすぐに発生する可能性が極めて高いため、緊急重大と判断する。"
+    },
+    "Semantic_state_RiskScore_Persona_01": {
+      "risk_prediction_id": 5,
+      "state_instance_id": 0,
+      "state_category": "cluttered",
+      "related_room": "Bedroom",
+      "related_landmarks_01": "chair_0",
+      "related_objects_01": "shirt",
+      "related_objects_01_id": "shirt_0",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "椅子の上に衣服が置かれている（cluttered）。これは見た目の散らかりや椅子の利用妨げになるが、直接的な転倒や重大な物的損害のリスクは低い。ヒーターとは一定の距離があり、この状態単体では軽微と判断する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "衣服（shirt_0）がヒーターに近接しているため、環境から burns_skin (1.0) および fire (0.615) といった極めて高い熱傷・火災リスクの伝播を受けているというフィードバックを考慮し、評価を潜在重大に変更する。単なる散らかりではなく、潜在的に重大な火災リスクを内包する物体が放置されている状態と見なす。",
+      "updated_02": 1,
+      "updated_judge_02": "潜在軽微",
+      "updated_reason_02": "衣服が椅子に置かれているというこの状態自体は、若年健常者にとって直接的な転倒リスクや身体的傷害リスクは低い。Instance 5でヒーターと衣服の近接による火災リスクは既に最高レベルで評価済みであるため、この『散らかり』状態単体での事故リスク評価としては、見た目の不便さや利用の妨げに留まる軽微なリスクに戻す。ペルソナ情報もこの判断を支持する。"
+    },
+    "Semantic_state_RiskScore_Persona_02": {
+      "risk_prediction_id": 5,
+      "state_instance_id": 0,
+      "state_category": "cluttered",
+      "related_room": "Bedroom",
+      "related_landmarks_01": "chair_0",
+      "related_objects_01": "shirt",
+      "related_objects_01_id": "shirt_0",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "椅子の上に衣服が置かれている（cluttered）。これは見た目の散らかりや椅子の利用妨げになるが、直接的な転倒や重大な物的損害のリスクは低い。ヒーターとは一定の距離があり、この状態単体では軽微と判断する。",
+      "updated_01": 1,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "この『cluttered』状態は、Instance 5（on fire）で検出された作動中のヒーターと近接している衣服（shirt_0）に関する状態です。衣服は伝播リスクスコア burns_skin=1.0, fire=0.615 を持ち、ヒーターの熱源と組み合わせることで火災・熱傷という重大事故がすぐに起こりえます。空間的なリスク伝播を考慮し、『潜在軽微』から『緊急重大』に格上げします。",
+      "updated_02": 0,
+      "updated_judge_02": "緊急重大",
+      "updated_reason_02": "F1で既に緊急重大と評価されており、67歳の高齢者ペルソナにより火災・熱傷リスクの緊急性はさらに高まります。判断を維持します。"
+    },
+    "Semantic_state_RiskScore_Persona_03": {
+      "risk_prediction_id": 5,
+      "state_instance_id": 0,
+      "state_category": "cluttered",
+      "related_room": "Bedroom",
+      "related_landmarks_01": "chair_0",
+      "related_objects_01": "shirt",
+      "related_objects_01_id": "shirt_0",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "椅子の上に衣服が置かれている（cluttered）。これは見た目の散らかりや椅子の利用妨げになるが、直接的な転倒や重大な物的損害のリスクは低い。ヒーターとは一定の距離があり、この状態単体では軽微と判断する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "評価を「潜在軽微」から「潜在重大」に更新する。元の評価では単なる散らかりと判断したが、定量データに基づくと、この衣服（shirt_0）は隣接する緊急重大リスク源（ヒーター）の影響を強く受け、熱傷（burns_skin: 1.000）と衝突（impact_surface: 1.000）の伝播リスクスコアが非常に高くなっている。これは、すぐに火災が起きるわけではないが、ヒーターとの距離や配置によって、火災や熱傷、あるいは椅子利用時の衝突による負傷といった重大な事故に繋がりうる潜在的な発生頻度率が高い状態であるため、潜在重大リスクと評価する。"
+    },
+    "Semantic_state_RiskScore_Persona_04": {
+      "risk_prediction_id": 5,
+      "state_instance_id": 0,
+      "state_category": "cluttered",
+      "related_room": "Bedroom",
+      "related_landmarks_01": "chair_0",
+      "related_objects_01": "shirt",
+      "related_objects_01_id": "shirt_0",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "椅子の上に衣服が置かれている（cluttered）。これは見た目の散らかりや椅子の利用妨げになるが、直接的な転倒や重大な物的損害のリスクは低い。ヒーターとは一定の距離があり、この状態単体では軽微と判断する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "元の評価を「潜在軽微」から「潜在重大」に更新する。衣服の散らかり（cluttered）単体は軽微だが、この衣服（shirt_0）が作動中の電気ヒーター（infrared heater_0）に近接しており、落下や接触によって火災を引き起こす潜在的な原因である。shirt_0の伝播リスクスコア (burns_skin 1.000, fire 0.615) は極めて高い。81歳で身体障害があるユーザーは火災時の避難が困難であり、この火災リスクの連鎖原因を放置することは重大リスクであるため、「潜在重大」と評価する。"
+    },
+    "Semantic_state_RiskScore_Persona_05": {
+      "risk_prediction_id": 5,
+      "state_instance_id": 0,
+      "state_category": "cluttered",
+      "related_room": "Bedroom",
+      "related_landmarks_01": "chair_0",
+      "related_objects_01": "shirt",
+      "related_objects_01_id": "shirt_0",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "椅子の上に衣服が置かれている（cluttered）。これは見た目の散らかりや椅子の利用妨げになるが、直接的な転倒や重大な物的損害のリスクは低い。ヒーターとは一定の距離があり、この状態単体では軽微と判断する。",
+      "updated_01": 1,
+      "updated_judge_01": "緊急重大",
+      "updated_reason_01": "この衣服は単なる散乱物（cluttered）ではなく、作動中のヒーター（Instance 5）から伝播した極めて高い熱傷リスク (burns_skin=1.0) および火災リスク (fire=0.615) を内包している。単体の状態カテゴリよりも伝播リスクを優先し、直ちに取り除く必要があるため『緊急重大』に格上げする。",
+      "updated_02": 0,
+      "updated_judge_02": "緊急重大",
+      "updated_reason_02": "前回のフィードバックで『緊急重大』に格上げ済み。86歳の認知障害を持つユーザーは、熱源の近くにある可燃物という危険な状態を解消する行動がとれない可能性が高く、火災リスクが差し迫っているため、評価を維持する。"
+    },
+    "Semantic_state_Stickler": {
+      "risk_prediction_id": 5,
+      "state_instance_id": 0,
+      "state_category": "cluttered",
+      "related_room": "Bedroom",
+      "related_landmarks_01": "chair_0",
+      "related_objects_01": "shirt",
+      "related_objects_01_id": "shirt_0",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "椅子の上に衣服が置かれている（cluttered）。これは見た目の散らかりや椅子の利用妨げになるが、直接的な転倒や重大な物的損害のリスクは低い。ヒーターとは一定の距離があり、この状態単体では軽微と判断する。",
+      "updated_01": 0,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "このインスタンスはフィードバック対象ではないため、判断を変更しない。衣服が椅子にあることによるリスクは、主に見た目の散らかりが主であり、物理的な事故リスクは非常に低いため、『潜在軽微』を維持する。"
+    },
+    "Semantic_state_Persona_01": {
+      "risk_prediction_id": 5,
+      "state_instance_id": 0,
+      "state_category": "cluttered",
+      "related_room": "Bedroom",
+      "related_landmarks_01": "chair_0",
+      "related_objects_01": "shirt",
+      "related_objects_01_id": "shirt_0",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "椅子の上に衣服が置かれている（cluttered）。これは見た目の散らかりや椅子の利用妨げになるが、直接的な転倒や重大な物的損害のリスクは低い。ヒーターとは一定の距離があり、この状態単体では軽微と判断する。",
+      "updated_01": 0,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "他のエージェントからのフィードバック（評価は妥当）と前回の評価は一致している。椅子上の衣服の散乱（cluttered）は、床面のケーブル散乱のような転倒リスクとは異なり、若年健常者にとって直接的な重大事故リスクは非常に低い。見た目の散らかりという「潜在軽微」なリスクに留まるという評価を維持する。"
+    },
+    "Semantic_state_Persona_02": {
+      "risk_prediction_id": 5,
+      "state_instance_id": 0,
+      "state_category": "cluttered",
+      "related_room": "Bedroom",
+      "related_landmarks_01": "chair_0",
+      "related_objects_01": "shirt",
+      "related_objects_01_id": "shirt_0",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "椅子の上に衣服が置かれている（cluttered）。これは見た目の散らかりや椅子の利用妨げになるが、直接的な転倒や重大な物的損害のリスクは低い。ヒーターとは一定の距離があり、この状態単体では軽微と判断する。",
+      "updated_01": 0,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "元の判断「潜在軽微」を維持する。椅子の上に衣服がある状態は見た目の散らかりであり、67歳のユーザーであっても、床面の散乱物のような直接的な転倒リスクを伴わないため、この状態単体では重大な事故につながる可能性は低いと判断する。ただし、Instance 5（緊急重大）の火災リスクを構成する要素の一つであることは留意する必要があるが、本Instance 0単体での評価としては軽微で妥当である。"
+    },
+    "Semantic_state_Persona_03": {
+      "risk_prediction_id": 5,
+      "state_instance_id": 0,
+      "state_category": "cluttered",
+      "related_room": "Bedroom",
+      "related_landmarks_01": "chair_0",
+      "related_objects_01": "shirt",
+      "related_objects_01_id": "shirt_0",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "椅子の上に衣服が置かれている（cluttered）。これは見た目の散らかりや椅子の利用妨げになるが、直接的な転倒や重大な物的損害のリスクは低い。ヒーターとは一定の距離があり、この状態単体では軽微と判断する。",
+      "updated_01": 0,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "フィードバックでも評価は妥当とされており、椅子上の衣服は床面ではないため、車椅子移動への直接的な妨げや重大な事故リスクは低く、初期の評価「潜在軽微」を維持する。"
+    },
+    "Semantic_state_Persona_04": {
+      "risk_prediction_id": 5,
+      "state_instance_id": 0,
+      "state_category": "cluttered",
+      "related_room": "Bedroom",
+      "related_landmarks_01": "chair_0",
+      "related_objects_01": "shirt",
+      "related_objects_01_id": "shirt_0",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "椅子の上に衣服が置かれている（cluttered）。これは見た目の散らかりや椅子の利用妨げになるが、直接的な転倒や重大な物的損害のリスクは低い。ヒーターとは一定の距離があり、この状態単体では軽微と判断する。",
+      "updated_01": 0,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "前回の評価（潜在軽微）を維持する。椅子上の衣服の散乱は、直接的な転倒リスクや火災リスクに直結しないため、このペルソナ情報が適用されても、軽微なリスクに留まると判断する。"
+    },
+    "Semantic_state_Persona_05": {
+      "risk_prediction_id": 5,
+      "state_instance_id": 0,
+      "state_category": "cluttered",
+      "related_room": "Bedroom",
+      "related_landmarks_01": "chair_0",
+      "related_objects_01": "shirt",
+      "related_objects_01_id": "shirt_0",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "椅子の上に衣服が置かれている（cluttered）。これは見た目の散らかりや椅子の利用妨げになるが、直接的な転倒や重大な物的損害のリスクは低い。ヒーターとは一定の距離があり、この状態単体では軽微と判断する。",
+      "updated_01": 0,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "「潜在軽微」の判断を維持する。フィードバックの指摘通り、この状態単体では身体的な重大事故リスクは低い。ただし、この衣服は作動中のヒーター（Instance 5）と空間的に近接しているため、認知障害を持つユーザーが不用意に衣服を動かしてヒーターに接触させた場合、火災という重大リスク（緊急重大）に連鎖する可能性がある。この連関性を理解した上で、この『cluttered』状態そのものは軽微なリスクとして評価を維持する。"
+    },
+    "observations": [
+      {
+        "observation_id": "obs_20251227_005328_ccaf6afe",
+        "timestamp": "2025-12-27T00:53:30",
+        "robot_pose": {
+          "x": 0.2973200612323659,
+          "y": -0.6668785049248923,
+          "yaw": -0.38534488715785775
+        },
+        "nearest_landmark": "bed_6",
+        "rgb_path": "obs_20251227_005328_ccaf6afe/rgb.jpg",
+        "depth_path": "obs_20251227_005328_ccaf6afe/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.5,
+            "bbox_2d": [
+              379,
+              2,
+              617,
+              1000
+            ],
+            "reason": "The overall scene appears somewhat cluttered due to the combination of a bed, a chair with clothes on it, a heater, and miscellaneous boxes/items in the background, suggesting an unorganized space."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.7,
+            "bbox_2d": [
+              374,
+              690,
+              500,
+              999
+            ],
+            "reason": "Various cardboard boxes and other items are piled up on the partition wall in the background, indicating a cluttered surface."
+          },
+          {
+            "category": "on fire",
+            "score": 0.95,
+            "bbox_2d": [
+              770,
+              606,
+              999,
+              982
+            ],
+            "reason": "The electric space heater is turned on, as evidenced by the visible glowing element, which fits the definition of 'on fire' for a device that is actively generating heat/light."
+          },
+          {
+            "category": "stacked",
+            "score": 0.8,
+            "bbox_2d": [
+              485,
+              723,
+              658,
+              820
+            ],
+            "reason": "Small potted plants are stacked on a tiered metal shelf next to the toilet."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "chair_0",
+          "matched_room": "Bedroom",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.5,
+            "bbox_2d": [
+              379,
+              2,
+              617,
+              1000
+            ],
+            "reason": "The overall scene appears somewhat cluttered due to the combination of a bed, a chair with clothes on it, a heater, and miscellaneous boxes/items in the background, suggesting an unorganized space."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_005712_1fed3c00",
+        "timestamp": "2025-12-27T00:57:14",
+        "robot_pose": {
+          "x": -0.03766045895329578,
+          "y": -1.4300138940111502,
+          "yaw": -0.24531047220594748
+        },
+        "nearest_landmark": "chair_0",
+        "rgb_path": "obs_20251227_005712_1fed3c00/rgb.jpg",
+        "depth_path": "obs_20251227_005712_1fed3c00/depth.png",
+        "detected_states": [
+          {
+            "category": "on fire",
+            "score": 0.95,
+            "bbox_2d": [
+              786,
+              448,
+              999,
+              570
+            ],
+            "reason": "The space heater is turned on, and the heating element is glowing red, which constitutes being 'on fire' according to the definition (object is turned on fire, not burning)."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.8,
+            "bbox_2d": [
+              638,
+              333,
+              960,
+              448
+            ],
+            "reason": "A blue garment is draped over the yellow chair, indicating that the chair surface is cluttered with an object."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.75,
+            "bbox_2d": [
+              289,
+              729,
+              449,
+              999
+            ],
+            "reason": "Several cardboard boxes and other items are piled up on the partition wall/shelf in the background."
+          },
+          {
+            "category": "stacked",
+            "score": 0.9,
+            "bbox_2d": [
+              479,
+              756,
+              715,
+              861
+            ],
+            "reason": "Potted plants are stacked on the tiers of a wire shelving unit."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "chair_0",
+          "matched_room": "Bedroom",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.8,
+            "bbox_2d": [
+              638,
+              333,
+              960,
+              448
+            ],
+            "reason": "A blue garment is draped over the yellow chair, indicating that the chair surface is cluttered with an object."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_005729_8df35ff8",
+        "timestamp": "2025-12-27T00:57:31",
+        "robot_pose": {
+          "x": -0.03766045895329578,
+          "y": -1.4300138940111502,
+          "yaw": -0.24531047220594748
+        },
+        "nearest_landmark": "chair_0",
+        "rgb_path": "obs_20251227_005729_8df35ff8/rgb.jpg",
+        "depth_path": "obs_20251227_005729_8df35ff8/depth.png",
+        "detected_states": [
+          {
+            "category": "on fire",
+            "score": 0.9,
+            "bbox_2d": [
+              738,
+              448,
+              999,
+              606
+            ],
+            "reason": "The space heater is turned on, with its heating element glowing red, which constitutes the 'on fire' state as defined (an object turned on fire, not a burning object)."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.75,
+            "bbox_2d": [
+              470,
+              299,
+              761,
+              452
+            ],
+            "reason": "A shirt or piece of blue cloth is draped and piled up on the yellow chair, which constitutes clutter on the surface of the chair."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.65,
+            "bbox_2d": [
+              424,
+              882,
+              478,
+              999
+            ],
+            "reason": "Various small objects and boxes are piled up on the dark counter/shelf in the background."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "chair_0",
+          "matched_room": "Bedroom",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.75,
+            "bbox_2d": [
+              470,
+              299,
+              761,
+              452
+            ],
+            "reason": "A shirt or piece of blue cloth is draped and piled up on the yellow chair, which constitutes clutter on the surface of the chair."
+          }
+        }
+      }
+    ],
+    "reason_history": [
+      "The overall scene appears somewhat cluttered due to the combination of a bed, a chair with clothes on it, a heater, and miscellaneous boxes/items in the background, suggesting an unorganized space.",
+      "A blue garment is draped over the yellow chair, indicating that the chair surface is cluttered with an object.",
+      "A shirt or piece of blue cloth is draped and piled up on the yellow chair, which constitutes clutter on the surface of the chair."
+    ],
+    "VLM": {
+      "room_name": "LivingLab",
+      "landmark_name": "",
+      "object_name": "電気ヒーター, 衣類",
+      "risk_prediction_id": 5,
+      "risk_judge": "緊急重大",
+      "risk_reason": "稼働中の電気ヒーター（赤熱状態）のすぐ手前に椅子があり、椅子にかけられた衣類（可燃物）がヒーターに非常に近接している。衣類がヒーターに接触したり、放射熱によって発火したりする可能性が極めて高く、火災や重大な熱傷事故に直結するリスクがあるため、直ちに対応が必要である。"
+    }
+  },
+  "6": {
+    "risk_prediction_id": 6,
+    "Semantic_state": {
+      "risk_prediction_id": 6,
+      "state_instance_id": 1,
+      "state_category": "cluttered",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "デスク上に紙くずや loose documents が山積みで散乱している（cluttered）。作業環境の悪化や紛失のリスクはあるが、紙自体が重大な事故（転倒や大怪我）を引き起こす可能性は低く、軽微なリスクに留まる。"
+    },
+    "Semantic_state_RiskScore": {
+      "risk_prediction_id": 6,
+      "state_instance_id": 1,
+      "state_category": "cluttered",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "デスク上に紙くずや loose documents が山積みで散乱している（cluttered）。作業環境の悪化や紛失のリスクはあるが、紙自体が重大な事故（転倒や大怪我）を引き起こす可能性は低く、軽微なリスクに留まる。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "フィードバックを受けて評価を「潜在軽微」から「潜在重大」へ更新する。紙くずの散乱自体は軽微だが、周辺の物体（本）から伝播した中毒・窒息リスク (toxic_suffocation: 1.0, contamination_poisoning: 1.0) の発生頻度率が異常に高いことが定量データから判明した。この散乱状態は、ユーザーが作業中に目に見えない毒物や汚染源と偶発的に接触したり、誤飲・吸入したりするリスクを高める。もし事故が起きた場合、健康に重大な影響を及ぼしうるため、潜在重大と評価する。"
+    },
+    "Semantic_state_RiskScore_Persona_01": {
+      "risk_prediction_id": 6,
+      "state_instance_id": 1,
+      "state_category": "cluttered",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "デスク上に紙くずや loose documents が山積みで散乱している（cluttered）。作業環境の悪化や紛失のリスクはあるが、紙自体が重大な事故（転倒や大怪我）を引き起こす可能性は低く、軽微なリスクに留まる。",
+      "updated_01": 0,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "デスク上は他のオブジェクト（book_0, book_1）が contamination_poisoning=1.0, toxic_suffocation=1.0 と高い伝播リスクを受けていることが指摘されたが、この紙くずの散乱自体がこれらの高リスクを顕在化させる直接的な根拠はない。物理的な傷害リスクは低いため、軽微なリスクとして最初の判断を維持する。",
+      "updated_02": 0,
+      "updated_judge_02": "潜在軽微",
+      "updated_reason_02": "若年健常者にとって、デスク上の紙くずは物理的な傷害リスクは皆無である。作業効率の低下や心理的負担に留まるため、ペルソナ情報に基づいても軽微なリスクとして最初の判断を維持する。"
+    },
+    "Semantic_state_RiskScore_Persona_02": {
+      "risk_prediction_id": 6,
+      "state_instance_id": 1,
+      "state_category": "cluttered",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "デスク上に紙くずや loose documents が山積みで散乱している（cluttered）。作業環境の悪化や紛失のリスクはあるが、紙自体が重大な事故（転倒や大怪我）を引き起こす可能性は低く、軽微なリスクに留まる。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "この散乱状態の物体（紙、および周辺の本）は、化学的・毒性的な健康リスク（contamination_poisoning=1.0, toxic_suffocation=1.0）が最高レベルであり、物理的な事故リスクは低いものの、長期間放置された場合の健康への影響が重大です。事故の即時性は低いため、『潜在軽微』から『潜在重大』に格上げします。",
+      "updated_02": 0,
+      "updated_judge_02": "潜在重大",
+      "updated_reason_02": "ペルソナ情報ではこの散乱が転倒リスクに直結しないため『潜在軽微』への修正が示唆されましたが、定量スコアで示された健康リスク（1.0）の重大性を重視し、長期的な健康被害のリスクとして『潜在重大』の判断を維持します。"
+    },
+    "Semantic_state_RiskScore_Persona_03": {
+      "risk_prediction_id": 6,
+      "state_instance_id": 1,
+      "state_category": "cluttered",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "デスク上に紙くずや loose documents が山積みで散乱している（cluttered）。作業環境の悪化や紛失のリスクはあるが、紙自体が重大な事故（転倒や大怪我）を引き起こす可能性は低く、軽微なリスクに留まる。",
+      "updated_01": 0,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "判断は維持する。デスク上の紙くずの散乱（cluttered）は、物理的な事故リスク（転倒、怪我）や車椅子の移動阻害リスクが低いため、軽微なリスクに留まると評価する。他のオブジェクト（ハサミなど、Instance 7）の視認性を低下させ、間接的にリスクを高める可能性はあるが、この状態単体で重大事故につながる可能性は低い。"
+    },
+    "Semantic_state_RiskScore_Persona_04": {
+      "risk_prediction_id": 6,
+      "state_instance_id": 1,
+      "state_category": "cluttered",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "デスク上に紙くずや loose documents が山積みで散乱している（cluttered）。作業環境の悪化や紛失のリスクはあるが、紙自体が重大な事故（転倒や大怪我）を引き起こす可能性は低く、軽微なリスクに留まる。",
+      "updated_01": 0,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "紙くずの散乱は、高齢者・身体障害を持つユーザーの安全に直接的な影響を与える転倒や火災リスクに該当しないため、元の「潜在軽微」の判断を変更しない。"
+    },
+    "Semantic_state_RiskScore_Persona_05": {
+      "risk_prediction_id": 6,
+      "state_instance_id": 1,
+      "state_category": "cluttered",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "デスク上に紙くずや loose documents が山積みで散乱している（cluttered）。作業環境の悪化や紛失のリスクはあるが、紙自体が重大な事故（転倒や大怪我）を引き起こす可能性は低く、軽微なリスクに留まる。",
+      "updated_01": 0,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "デスク上の紙の散乱は、物理的な事故リスク（転倒や大怪我）が極めて低く、主に作業効率や見た目に関する問題に留まるため、評価を維持する。",
+      "updated_02": 0,
+      "updated_judge_02": "潜在軽微",
+      "updated_reason_02": "86歳の高齢者であっても、デスク上の紙くずの散乱は直接的な物理的傷害リスクに繋がりにくく、ペルソナによるリスク増幅は見られないため、評価を維持する。"
+    },
+    "Semantic_state_Stickler": {
+      "risk_prediction_id": 6,
+      "state_instance_id": 1,
+      "state_category": "cluttered",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "デスク上に紙くずや loose documents が山積みで散乱している（cluttered）。作業環境の悪化や紛失のリスクはあるが、紙自体が重大な事故（転倒や大怪我）を引き起こす可能性は低く、軽微なリスクに留まる。",
+      "updated_01": 0,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "このインスタンスはフィードバック対象ではないため、判断を変更しない。机上の紙の散乱は、物理的な事故リスクに繋がる可能性が極めて低く、『潜在軽微』を維持する。"
+    },
+    "Semantic_state_Persona_01": {
+      "risk_prediction_id": 6,
+      "state_instance_id": 1,
+      "state_category": "cluttered",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "デスク上に紙くずや loose documents が山積みで散乱している（cluttered）。作業環境の悪化や紛失のリスクはあるが、紙自体が重大な事故（転倒や大怪我）を引き起こす可能性は低く、軽微なリスクに留まる。",
+      "updated_01": 0,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "他のエージェントからのフィードバック（評価は妥当）と前回の評価は一致している。デスク上の紙くずの散乱（cluttered）は、作業効率の低下や心理的な負担につながるものの、軽傷や物的損害が限定的であるため、「潜在軽微」という評価を維持する。"
+    },
+    "Semantic_state_Persona_02": {
+      "risk_prediction_id": 6,
+      "state_instance_id": 1,
+      "state_category": "cluttered",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "デスク上に紙くずや loose documents が山積みで散乱している（cluttered）。作業環境の悪化や紛失のリスクはあるが、紙自体が重大な事故（転倒や大怪我）を引き起こす可能性は低く、軽微なリスクに留まる。",
+      "updated_01": 0,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "元の判断「潜在軽微」を維持する。デスク上の紙の散乱は、主に作業効率や心理的な問題に関わる。67歳のユーザーのペルソナ（高齢、転倒履歴）と照らし合わせても、これが直接的に身体的な重大事故につながるリスクは極めて低いため、軽微な事故リスクに留まると判断する。"
+    },
+    "Semantic_state_Persona_03": {
+      "risk_prediction_id": 6,
+      "state_instance_id": 1,
+      "state_category": "cluttered",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "デスク上に紙くずや loose documents が山積みで散乱している（cluttered）。作業環境の悪化や紛失のリスクはあるが、紙自体が重大な事故（転倒や大怪我）を引き起こす可能性は低く、軽微なリスクに留まる。",
+      "updated_01": 0,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "フィードバックでも評価は妥当とされており、机上の散乱物は車椅子使用者の移動リスクを大きく増幅させないため、初期の評価「潜在軽微」を維持する。"
+    },
+    "Semantic_state_Persona_04": {
+      "risk_prediction_id": 6,
+      "state_instance_id": 1,
+      "state_category": "cluttered",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "デスク上に紙くずや loose documents が山積みで散乱している（cluttered）。作業環境の悪化や紛失のリスクはあるが、紙自体が重大な事故（転倒や大怪我）を引き起こす可能性は低く、軽微なリスクに留まる。",
+      "updated_01": 0,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "前回の評価（潜在軽微）を維持する。机上の紙の散乱は、床面の散乱とは異なり転倒リスクに直結せず、物質的な危険性も低いため、ペルソナ情報が適用されても、軽微なリスクに留まると判断する。"
+    },
+    "Semantic_state_Persona_05": {
+      "risk_prediction_id": 6,
+      "state_instance_id": 1,
+      "state_category": "cluttered",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "デスク上に紙くずや loose documents が山積みで散乱している（cluttered）。作業環境の悪化や紛失のリスクはあるが、紙自体が重大な事故（転倒や大怪我）を引き起こす可能性は低く、軽微なリスクに留まる。",
+      "updated_01": 0,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "「潜在軽微」の判断を維持する。デスク上の紙くずの散乱は、86歳の認知障害を持つユーザーの身体的な重大事故に直結するリスクは低い。主に作業効率の低下や心理的な負担に留まるため、フィードバックの指摘も踏まえ、軽微なリスクとして評価を維持する。"
+    },
+    "observations": [
+      {
+        "observation_id": "obs_20251227_010022_59f48157",
+        "timestamp": "2025-12-27T01:00:24",
+        "robot_pose": {
+          "x": -2.5349691479948375,
+          "y": -1.6624815467652052,
+          "yaw": -2.888291524117051
+        },
+        "nearest_landmark": "chair_4",
+        "rgb_path": "obs_20251227_010022_59f48157/rgb.jpg",
+        "depth_path": "obs_20251227_010022_59f48157/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              638,
+              143,
+              727,
+              345
+            ],
+            "reason": "Crumpled paper and loose documents are piled up on the desk surface."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.75,
+            "bbox_2d": [
+              513,
+              143,
+              726,
+              808
+            ],
+            "reason": "Multiple unrelated objects (laptop, books, crumpled paper, open book, scissors, correction tape, plant) are scattered across the desk surface."
+          },
+          {
+            "category": "stacked",
+            "score": 0.9,
+            "bbox_2d": [
+              513,
+              289,
+              664,
+              383
+            ],
+            "reason": "Two books are stacked on top of each other, leaning against the wall."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "diningtable_9",
+          "matched_room": "Studyroom",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              638,
+              143,
+              727,
+              345
+            ],
+            "reason": "Crumpled paper and loose documents are piled up on the desk surface."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_010046_2f7025d5",
+        "timestamp": "2025-12-27T01:00:48",
+        "robot_pose": {
+          "x": -2.6263799717891776,
+          "y": -1.4450912814142889,
+          "yaw": -2.7101060285393936
+        },
+        "nearest_landmark": "chair_4",
+        "rgb_path": "obs_20251227_010046_2f7025d5/rgb.jpg",
+        "depth_path": "obs_20251227_010046_2f7025d5/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              617,
+              140,
+              742,
+              688
+            ],
+            "reason": "The desk surface is cluttered with various objects like a laptop, books, crumpled paper, scissors, and a tape measure."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.8,
+            "bbox_2d": [
+              620,
+              140,
+              742,
+              377
+            ],
+            "reason": "The left side of the desk has crumpled paper, an open book, and other papers, indicating a cluttered state."
+          },
+          {
+            "category": "stacked",
+            "score": 0.9,
+            "bbox_2d": [
+              579,
+              286,
+              646,
+              344
+            ],
+            "reason": "Two books/binders are stacked vertically against the wall on the desk."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "diningtable_9",
+          "matched_room": "Studyroom",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.8,
+            "bbox_2d": [
+              620,
+              140,
+              742,
+              377
+            ],
+            "reason": "The left side of the desk has crumpled paper, an open book, and other papers, indicating a cluttered state."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_010141_be14f606",
+        "timestamp": "2025-12-27T01:01:43",
+        "robot_pose": {
+          "x": -2.642218722196308,
+          "y": -2.631896923786944,
+          "yaw": 2.813203024910053
+        },
+        "nearest_landmark": "chair_4",
+        "rgb_path": "obs_20251227_010141_be14f606/rgb.jpg",
+        "depth_path": "obs_20251227_010141_be14f606/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              529,
+              159,
+              946,
+              896
+            ],
+            "reason": "The desk surface is cluttered with various objects including a laptop, books, crumpled paper, a plant, and scissors."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.9,
+            "bbox_2d": [
+              731,
+              159,
+              946,
+              450
+            ],
+            "reason": "A significant pile of crumpled and loose papers is spread out on the desk surface."
+          },
+          {
+            "category": "stacked",
+            "score": 0.75,
+            "bbox_2d": [
+              529,
+              159,
+              731,
+              289
+            ],
+            "reason": "Two books are stacked or leaning against each other on the desk."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "diningtable_9",
+          "matched_room": "Studyroom",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.9,
+            "bbox_2d": [
+              731,
+              159,
+              946,
+              450
+            ],
+            "reason": "A significant pile of crumpled and loose papers is spread out on the desk surface."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_010225_4f95f5a5",
+        "timestamp": "2025-12-27T01:02:27",
+        "robot_pose": {
+          "x": -2.6896505272210236,
+          "y": -2.5484496967071,
+          "yaw": 2.800962912299128
+        },
+        "nearest_landmark": "chair_4",
+        "rgb_path": "obs_20251227_010225_4f95f5a5/rgb.jpg",
+        "depth_path": "obs_20251227_010225_4f95f5a5/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.9,
+            "bbox_2d": [
+              739,
+              147,
+              999,
+              358
+            ],
+            "reason": "Crumpled papers are scattered on the desk surface, indicating a cluttered state."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.75,
+            "bbox_2d": [
+              690,
+              383,
+              970,
+              644
+            ],
+            "reason": "An open book and papers are spread out on the desk along with other items, contributing to the clutter."
+          },
+          {
+            "category": "stacked",
+            "score": 0.85,
+            "bbox_2d": [
+              542,
+              138,
+              749,
+              229
+            ],
+            "reason": "Two books are stacked on top of each other, leaning against the wall."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "diningtable_9",
+          "matched_room": "Studyroom",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.9,
+            "bbox_2d": [
+              739,
+              147,
+              999,
+              358
+            ],
+            "reason": "Crumpled papers are scattered on the desk surface, indicating a cluttered state."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_010242_c6acd5dc",
+        "timestamp": "2025-12-27T01:02:44",
+        "robot_pose": {
+          "x": -2.6896505272210236,
+          "y": -2.5484496967071,
+          "yaw": 2.800962912299128
+        },
+        "nearest_landmark": "chair_4",
+        "rgb_path": "obs_20251227_010242_c6acd5dc/rgb.jpg",
+        "depth_path": "obs_20251227_010242_c6acd5dc/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              256,
+              88,
+              902,
+              910
+            ],
+            "reason": "The table surface is cluttered with various objects including crumpled papers, books, a laptop, a potted plant, scissors, and a small white device."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.9,
+            "bbox_2d": [
+              730,
+              155,
+              900,
+              363
+            ],
+            "reason": "A significant amount of crumpled paper and loose sheets are piled up on the table, indicating clutter."
+          },
+          {
+            "category": "stacked",
+            "score": 0.8,
+            "bbox_2d": [
+              473,
+              88,
+              641,
+              250
+            ],
+            "reason": "Two books are stacked on top of each other against the wall."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "diningtable_9",
+          "matched_room": "Studyroom",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.9,
+            "bbox_2d": [
+              730,
+              155,
+              900,
+              363
+            ],
+            "reason": "A significant amount of crumpled paper and loose sheets are piled up on the table, indicating clutter."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_010301_7ae1a99c",
+        "timestamp": "2025-12-27T01:03:03",
+        "robot_pose": {
+          "x": -2.4816259090971498,
+          "y": -2.6205959979208995,
+          "yaw": 2.813354749988288
+        },
+        "nearest_landmark": "chair_4",
+        "rgb_path": "obs_20251227_010301_7ae1a99c/rgb.jpg",
+        "depth_path": "obs_20251227_010301_7ae1a99c/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.9,
+            "bbox_2d": [
+              644,
+              210,
+              849,
+              392
+            ],
+            "reason": "Crumpled papers are piled up on the desk surface, indicating a cluttered state."
+          },
+          {
+            "category": "stacked",
+            "score": 0.85,
+            "bbox_2d": [
+              629,
+              143,
+              700,
+              274
+            ],
+            "reason": "Two books are stacked next to each other, one leaning against the other."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.7,
+            "bbox_2d": [
+              680,
+              396,
+              778,
+              617
+            ],
+            "reason": "A laptop and an open book are placed on the desk, along with loose papers, contributing to a cluttered workspace."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "diningtable_9",
+          "matched_room": "Studyroom",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.9,
+            "bbox_2d": [
+              644,
+              210,
+              849,
+              392
+            ],
+            "reason": "Crumpled papers are piled up on the desk surface, indicating a cluttered state."
+          }
+        }
+      }
+    ],
+    "reason_history": [
+      "Crumpled paper and loose documents are piled up on the desk surface.",
+      "The left side of the desk has crumpled paper, an open book, and other papers, indicating a cluttered state.",
+      "A significant pile of crumpled and loose papers is spread out on the desk surface.",
+      "Crumpled papers are scattered on the desk surface, indicating a cluttered state.",
+      "A significant amount of crumpled paper and loose sheets are piled up on the table, indicating clutter.",
+      "Crumpled papers are piled up on the desk surface, indicating a cluttered state."
+    ],
+    "VLM": {
+      "room_name": "LivingLab",
+      "landmark_name": "",
+      "object_name": "ハサミ",
+      "risk_prediction_id": 6,
+      "risk_judge": "潜在重大",
+      "risk_reason": "デスクの端近くにハサミが刃先を開いた状態で放置されている。物を取ろうとした際などに不用意に手が触れると、切り傷を負う可能性があり、重大な事故につながりうる潜在的なリスクがある。"
+    }
+  },
+  "7": {
+    "risk_prediction_id": 7,
+    "Semantic_state": {
+      "risk_prediction_id": 7,
+      "state_instance_id": 2,
+      "state_category": "cluttered",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "related_objects_01": "scissor",
+      "related_objects_01_id": "scissor_0",
+      "related_objects_02": "laptop",
+      "related_objects_02_id": "laptop_0",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "デスク上が多様なオブジェクト（ラップトップ、本、ハサミなど）で散らかっている（cluttered）。ハサミ（scissor_0）が含まれるため、落下した場合の切創リスクは潜在的にあるが、すぐに落下するほど不安定な配置であるとの記述がないため、小さな物の落下や軽微な接触事故リスクに留まると判断する。"
+    },
+    "Semantic_state_RiskScore": {
+      "risk_prediction_id": 7,
+      "state_instance_id": 2,
+      "state_category": "cluttered",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "related_objects_01": "scissor",
+      "related_objects_01_id": "scissor_0",
+      "related_objects_02": "laptop",
+      "related_objects_02_id": "laptop_0",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "デスク上が多様なオブジェクト（ラップトップ、本、ハサミなど）で散らかっている（cluttered）。ハサミ（scissor_0）が含まれるため、落下した場合の切創リスクは潜在的にあるが、すぐに落下するほど不安定な配置であるとの記述がないため、小さな物の落下や軽微な接触事故リスクに留まると判断する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "フィードバックを受けて評価を「潜在軽微」から「潜在重大」へ更新する。散乱している物体の中にはハサミ（scissor_0）が含まれており、その切創リスク (cuts_stabs) のスコアが 0.520 と無視できないレベルである。また、Instance 1 と同様に周辺には中毒・汚染リスク (contamination_poisoning: 1.0) が伝播している。これらの物体が散乱していることにより、ハサミによる傷害や毒物への偶発的な接触のリスクが高まるため、特定の条件（例：作業中の不注意）が満たされた場合に重大な事故になりうる潜在重大と判断する。"
+    },
+    "Semantic_state_RiskScore_Persona_01": {
+      "risk_prediction_id": 7,
+      "state_instance_id": 2,
+      "state_category": "cluttered",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "related_objects_01": "scissor",
+      "related_objects_01_id": "scissor_0",
+      "related_objects_02": "laptop",
+      "related_objects_02_id": "laptop_0",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "デスク上が多様なオブジェクト（ラップトップ、本、ハサミなど）で散らかっている（cluttered）。ハサミ（scissor_0）が含まれるため、落下した場合の切創リスクは潜在的にあるが、すぐに落下するほど不安定な配置であるとの記述がないため、小さな物の落下や軽微な接触事故リスクに留まると判断する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "ラップトップ（laptop_0）が fire=0.760, accident_others=0.746 と高い火災・製品故障リスクの伝播を受けており、この散乱状態がラップトップの通気や放熱を妨げ、重大な火災事故リスクを顕在化させる可能性があるというフィードバックを考慮し、評価を潜在重大に変更する。切創リスクよりも火災リスクを重視する。",
+      "updated_02": 1,
+      "updated_judge_02": "潜在軽微",
+      "updated_reason_02": "机上の散らかり（ハサミを含む）は、若年健常者の日常的な作業環境として許容範囲内であり、すぐに火災が発生する緊急性が示されていない。ペルソナ情報に基づき、物理的な事故リスクは低いと判断し、軽微なリスクとして最初の判断に戻す。火災リスクは潜在的だが、散乱が直ちに事故を引き起こす蓋然性は低い。"
+    },
+    "Semantic_state_RiskScore_Persona_02": {
+      "risk_prediction_id": 7,
+      "state_instance_id": 2,
+      "state_category": "cluttered",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "related_objects_01": "scissor",
+      "related_objects_01_id": "scissor_0",
+      "related_objects_02": "laptop",
+      "related_objects_02_id": "laptop_0",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "デスク上が多様なオブジェクト（ラップトップ、本、ハサミなど）で散らかっている（cluttered）。ハサミ（scissor_0）が含まれるため、落下した場合の切創リスクは潜在的にあるが、すぐに落下するほど不安定な配置であるとの記述がないため、小さな物の落下や軽微な接触事故リスクに留まると判断する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "散乱物の中にハザード性の高い物体（ハサミ: cuts_stabs=0.520, ノートPC: fire=0.760）が含まれており、軽微な接触や排熱不良をトリガーとして、切創や火災といった重大な事故に繋がりかねません。『潜在軽微』から『潜在重大』に格上げします。",
+      "updated_02": 0,
+      "updated_judge_02": "潜在重大",
+      "updated_reason_02": "F1で既に潜在重大と評価されており、67歳の高齢者ペルソナ（反射速度の低下、治癒力の低下）を考慮すると、ハサミによる切創リスクやノートPCの火災リスクに対する脆弱性が高まるため、この判断を維持します。"
+    },
+    "Semantic_state_RiskScore_Persona_03": {
+      "risk_prediction_id": 7,
+      "state_instance_id": 2,
+      "state_category": "cluttered",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "related_objects_01": "scissor",
+      "related_objects_01_id": "scissor_0",
+      "related_objects_02": "laptop",
+      "related_objects_02_id": "laptop_0",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "デスク上が多様なオブジェクト（ラップトップ、本、ハサミなど）で散らかっている（cluttered）。ハサミ（scissor_0）が含まれるため、落下した場合の切創リスクは潜在的にあるが、すぐに落下するほど不安定な配置であるとの記述がないため、小さな物の落下や軽微な接触事故リスクに留まると判断する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "評価を「潜在軽微」から「潜在重大」に更新する。デスク上の散乱物にはハサミ（scissor_0）が含まれており、定量データは cuts_stabs (0.520) と切創リスクを示す。ハサミのような鋭利な危険物が床に落下した場合、車椅子利用者が安全に回収することは困難であり、切創を負うリスクや、車輪に絡まりスタックするリスク（過去の事故履歴類似）が生じる。事故が発生した場合にユーザーにとって重大な傷害につながる可能性があるため、潜在的重大リスクと評価する。"
+    },
+    "Semantic_state_RiskScore_Persona_04": {
+      "risk_prediction_id": 7,
+      "state_instance_id": 2,
+      "state_category": "cluttered",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "related_objects_01": "scissor",
+      "related_objects_01_id": "scissor_0",
+      "related_objects_02": "laptop",
+      "related_objects_02_id": "laptop_0",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "デスク上が多様なオブジェクト（ラップトップ、本、ハサミなど）で散らかっている（cluttered）。ハサミが含まれるため、落下した場合の切創リスクは潜在的にあるが、すぐに落下するほど不安定な配置であるとの記述がないため、小さな物の落下や軽微な接触事故リスクに留まると判断する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "元の評価を「潜在軽微」から「潜在重大」に更新する。デスク上の散乱にはハサミ（cuts_stabs 0.521）が含まれており、切創リスクがある。さらに、81歳で身体障害のあるユーザーが散乱物を拾おうと前かがみになった際にバランスを崩し、転倒し重篤な結果（骨折や強打）を招く二次的事故リスクが高い。したがって、単なる軽微な接触リスクではなく、特定の条件下で重大事故に繋がるリスクとして「潜在重大」と判断する。"
+    },
+    "Semantic_state_RiskScore_Persona_05": {
+      "risk_prediction_id": 7,
+      "state_instance_id": 2,
+      "state_category": "cluttered",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "related_objects_01": "scissor",
+      "related_objects_01_id": "scissor_0",
+      "related_objects_02": "laptop",
+      "related_objects_02_id": "laptop_0",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "デスク上が多様なオブジェクトで散らかっている。ハサミが含まれるが、すぐに落下するほど不安定な配置であるとの記述がないため、小さな物の落下や軽微な接触事故リスクに留まると判断する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "散乱物の中にハサミ（scissor_0）が含まれており、propagated_risk_score.cuts_stabs が 0.521 と中程度に高い。散乱状態では切創リスクが顕在化しやすいため、放置されれば重大な事故につながる可能性があるとして『潜在重大』に格上げする。",
+      "updated_02": 0,
+      "updated_judge_02": "潜在重大",
+      "updated_reason_02": "前回のフィードバックで『潜在重大』に格上げ済み。86歳の認知障害を持つユーザーにとって、ハサミのような鋭利な危険物のリスクは、不注意による接触や誤使用によりさらに高まるため、評価を維持する。"
+    },
+    "Semantic_state_Stickler": {
+      "risk_prediction_id": 7,
+      "state_instance_id": 2,
+      "state_category": "cluttered",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "related_objects_01": "scissor",
+      "related_objects_01_id": "scissor_0",
+      "related_objects_02": "laptop",
+      "related_objects_02_id": "laptop_0",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "デスク上が多様なオブジェクト（ラップトップ、本、ハサミなど）で散らかっている（cluttered）。ハサミ（scissor_0）が含まれるため、落下した場合の切創リスクは潜在的にあるが、すぐに落下するほど不安定な配置であるとの記述がないため、小さな物の落下や軽微な接触事故リスクに留まると判断する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "他のエージェントからのフィードバックを受け、ハサミ（scissor_0）という鋭利な物体が含まれている点を考慮し、『潜在重大』に判断を変更する。ハサミが床に落下し、ユーザーが誤って踏みつけたり、刺傷を負ったりする可能性は低いが、もし発生した場合は重大な切創につながりうる。これは「もし起きた場合はユーザーにとって重大な事故になりうる」という定義に合致するため、評価を修正する。"
+    },
+    "Semantic_state_Persona_01": {
+      "risk_prediction_id": 7,
+      "state_instance_id": 2,
+      "state_category": "cluttered",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "related_objects_01": "scissor",
+      "related_objects_01_id": "scissor_0",
+      "related_objects_02": "laptop",
+      "related_objects_02_id": "laptop_0",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "デスク上が多様なオブジェクト（ラップトップ、本、ハサミなど）で散らかっている（cluttered）。ハサミ（scissor_0）が含まれるため、落下した場合の切創リスクは潜在的にあるが、すぐに落下するほど不安定な配置であるとの記述がないため、小さな物の落下や軽微な接触事故リスクに留まると判断する。",
+      "updated_01": 0,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "他のエージェントからのフィードバック（評価は妥当）と前回の評価は一致している。ハサミがデスク上にある限り（不安定な配置ではないため）、重大な事故に繋がる可能性は低い。万が一小さな物の落下が発生しても軽傷で済むため、「潜在軽微」という評価を維持する。ただし、もしハサミが床に落ちていれば「潜在重大」に格上げされるべきである。"
+    },
+    "Semantic_state_Persona_02": {
+      "risk_prediction_id": 7,
+      "state_instance_id": 2,
+      "state_category": "cluttered",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "related_objects_01": "scissor",
+      "related_objects_01_id": "scissor_0",
+      "related_objects_02": "laptop",
+      "related_objects_02_id": "laptop_0",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "デスク上が多様なオブジェクト（ラップトップ、本、ハサミなど）で散らかっている（cluttered）。ハサミ（scissor_0）が含まれるため、落下した場合の切創リスクは潜在的にあるが、すぐに落下するほど不安定な配置であるとの記述がないため、小さな物の落下や軽微な接触事故リスクに留まると判断する。",
+      "updated_01": 0,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "元の判断「潜在軽微」を維持する。デスク上にハサミなどの物体が散乱している状態は、落下による切創リスクを潜在的に持つが、すぐに落下するほど不安定な状態ではない。67歳のユーザーのペルソナによってこのリスクが増幅される明確な要因はないため、軽微な事故リスクに留まると判断する。"
+    },
+    "Semantic_state_Persona_03": {
+      "risk_prediction_id": 7,
+      "state_instance_id": 2,
+      "state_category": "cluttered",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "related_objects_01": "scissor",
+      "related_objects_01_id": "scissor_0",
+      "related_objects_02": "laptop",
+      "related_objects_02_id": "laptop_0",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "デスク上が多様なオブジェクト（ラップトップ、本、ハサミなど）で散らかっている（cluttered）。ハサミ（scissor_0）が含まれるため、落下した場合の切創リスクは潜在的にあるが、すぐに落下するほど不安定な配置であるとの記述がないため、小さな物の落下や軽微な接触事故リスクに留まると判断する。",
+      "updated_01": 0,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "フィードバックでも評価は妥当とされており、机上のリスクであり、不安定さを示す情報がないため、重大な事故につながる可能性は低い。若年で認知障害がないことを踏まえ、初期の評価「潜在軽微」を維持する。"
+    },
+    "Semantic_state_Persona_04": {
+      "risk_prediction_id": 7,
+      "state_instance_id": 2,
+      "state_category": "cluttered",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "related_objects_01": "scissor",
+      "related_objects_01_id": "scissor_0",
+      "related_objects_02": "laptop",
+      "related_objects_02_id": "laptop_0 (Reference from reason history)",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "デスク上が多様なオブジェクト（ラップトップ、本、ハサミなど）で散らかっている（cluttered）。ハサミ（scissor_0）が含まれるため、落下した場合の切創リスクは潜在的にあるが、すぐに落下するほど不安定な配置であるとの記述がないため、小さな物の落下や軽微な接触事故リスクに留まると判断する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "評価（潜在軽微）を維持する。ハサミのような鋭利な物品が机上にあることは、高齢者（81歳）の視力低下や手の震えにより、誤操作や作業中に切創するリスクを高める。しかし、すぐに事故が起こる不安定さはないため、もし事故が起きても軽微な事故リスクに留まる（潜在軽微）と判断する。"
+    },
+    "Semantic_state_Persona_05": {
+      "risk_prediction_id": 7,
+      "state_instance_id": 2,
+      "state_category": "cluttered",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "related_objects_01": "scissor",
+      "related_objects_01_id": "scissor_0",
+      "related_objects_02": "laptop",
+      "related_objects_02_id": "laptop_0",
+      "risk_judge": "潜在軽微",
+      "risk_reason": "デスク上が多様なオブジェクト（ラップトップ、本、ハサミなど）で散らかっている（cluttered）。ハサミ（scissor_0）が含まれるため、落下した場合の切創リスクは潜在的にあるが、すぐに落下するほど不安定な配置であるとの記述がないため、小さな物の落下や軽微な接触事故リスクに留まると判断する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "フィードバックに基づき、評価を「潜在軽微」から「潜在重大」に更新する。元の判断ではハサミの存在を軽視したが、86歳の認知障害を持つ高齢者にとって、ハサミのような鋭利な物体が乱雑なデスク上に放置されている状態は、誤使用や不注意な操作、あるいは散乱物の中から取り出す際の接触により、予期せぬ外傷（切創）を引き起こす潜在的な重大リスクとなるため、「潜在重大」に格上げする。"
+    },
+    "observations": [
+      {
+        "observation_id": "obs_20251227_010022_59f48157",
+        "timestamp": "2025-12-27T01:00:24",
+        "robot_pose": {
+          "x": -2.5349691479948375,
+          "y": -1.6624815467652052,
+          "yaw": -2.888291524117051
+        },
+        "nearest_landmark": "chair_4",
+        "rgb_path": "obs_20251227_010022_59f48157/rgb.jpg",
+        "depth_path": "obs_20251227_010022_59f48157/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              638,
+              143,
+              727,
+              345
+            ],
+            "reason": "Crumpled paper and loose documents are piled up on the desk surface."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.75,
+            "bbox_2d": [
+              513,
+              143,
+              726,
+              808
+            ],
+            "reason": "Multiple unrelated objects (laptop, books, crumpled paper, open book, scissors, correction tape, plant) are scattered across the desk surface."
+          },
+          {
+            "category": "stacked",
+            "score": 0.9,
+            "bbox_2d": [
+              513,
+              289,
+              664,
+              383
+            ],
+            "reason": "Two books are stacked on top of each other, leaning against the wall."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "diningtable_9",
+          "matched_room": "Studyroom",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.75,
+            "bbox_2d": [
+              513,
+              143,
+              726,
+              808
+            ],
+            "reason": "Multiple unrelated objects (laptop, books, crumpled paper, open book, scissors, correction tape, plant) are scattered across the desk surface."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_010106_e278e919",
+        "timestamp": "2025-12-27T01:01:08",
+        "robot_pose": {
+          "x": -2.5892211892252455,
+          "y": -1.4207682142972895,
+          "yaw": -2.67415224594831
+        },
+        "nearest_landmark": "chair_4",
+        "rgb_path": "obs_20251227_010106_e278e919/rgb.jpg",
+        "depth_path": "obs_20251227_010106_e278e919/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              299,
+              138,
+              700,
+              753
+            ],
+            "reason": "The table surface is cluttered with various objects like a laptop, books, crumpled paper, an open book, scissors, and correction tape."
+          },
+          {
+            "category": "about to fall",
+            "score": 0.6,
+            "bbox_2d": [
+              595,
+              497,
+              642,
+              550
+            ],
+            "reason": "The scissors are positioned very close to the edge of the table, making them susceptible to being knocked off."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.8,
+            "bbox_2d": [
+              485,
+              307,
+              707,
+              580
+            ],
+            "reason": "The area around the open book and laptop shows several items (crumpled paper, open book, laptop) piled up on the table surface."
+          },
+          {
+            "category": "stacked",
+            "score": 0.9,
+            "bbox_2d": [
+              483,
+              286,
+              620,
+              353
+            ],
+            "reason": "Two books/notebooks are stacked vertically against the wall."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "diningtable_9",
+          "matched_room": "Studyroom",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              299,
+              138,
+              700,
+              753
+            ],
+            "reason": "The table surface is cluttered with various objects like a laptop, books, crumpled paper, an open book, scissors, and correction tape."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_010141_be14f606",
+        "timestamp": "2025-12-27T01:01:43",
+        "robot_pose": {
+          "x": -2.642218722196308,
+          "y": -2.631896923786944,
+          "yaw": 2.813203024910053
+        },
+        "nearest_landmark": "chair_4",
+        "rgb_path": "obs_20251227_010141_be14f606/rgb.jpg",
+        "depth_path": "obs_20251227_010141_be14f606/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              529,
+              159,
+              946,
+              896
+            ],
+            "reason": "The desk surface is cluttered with various objects including a laptop, books, crumpled paper, a plant, and scissors."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.9,
+            "bbox_2d": [
+              731,
+              159,
+              946,
+              450
+            ],
+            "reason": "A significant pile of crumpled and loose papers is spread out on the desk surface."
+          },
+          {
+            "category": "stacked",
+            "score": 0.75,
+            "bbox_2d": [
+              529,
+              159,
+              731,
+              289
+            ],
+            "reason": "Two books are stacked or leaning against each other on the desk."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "diningtable_9",
+          "matched_room": "Studyroom",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              529,
+              159,
+              946,
+              896
+            ],
+            "reason": "The desk surface is cluttered with various objects including a laptop, books, crumpled paper, a plant, and scissors."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_010207_e5edc8f5",
+        "timestamp": "2025-12-27T01:02:09",
+        "robot_pose": {
+          "x": -2.9070413895067064,
+          "y": -2.406853152608536,
+          "yaw": 2.4526555627740194
+        },
+        "nearest_landmark": "chair_4",
+        "rgb_path": "obs_20251227_010207_e5edc8f5/rgb.jpg",
+        "depth_path": "obs_20251227_010207_e5edc8f5/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.5,
+            "bbox_2d": [
+              286,
+              14,
+              994,
+              965
+            ],
+            "reason": "The table surface has multiple unrelated objects (laptop, book, plant, scissors, small white device) placed on it, indicating a mild state of clutter."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "diningtable_9",
+          "matched_room": "Studyroom",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.5,
+            "bbox_2d": [
+              286,
+              14,
+              994,
+              965
+            ],
+            "reason": "The table surface has multiple unrelated objects (laptop, book, plant, scissors, small white device) placed on it, indicating a mild state of clutter."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_010225_4f95f5a5",
+        "timestamp": "2025-12-27T01:02:27",
+        "robot_pose": {
+          "x": -2.6896505272210236,
+          "y": -2.5484496967071,
+          "yaw": 2.800962912299128
+        },
+        "nearest_landmark": "chair_4",
+        "rgb_path": "obs_20251227_010225_4f95f5a5/rgb.jpg",
+        "depth_path": "obs_20251227_010225_4f95f5a5/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.9,
+            "bbox_2d": [
+              739,
+              147,
+              999,
+              358
+            ],
+            "reason": "Crumpled papers are scattered on the desk surface, indicating a cluttered state."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.75,
+            "bbox_2d": [
+              690,
+              383,
+              970,
+              644
+            ],
+            "reason": "An open book and papers are spread out on the desk along with other items, contributing to the clutter."
+          },
+          {
+            "category": "stacked",
+            "score": 0.85,
+            "bbox_2d": [
+              542,
+              138,
+              749,
+              229
+            ],
+            "reason": "Two books are stacked on top of each other, leaning against the wall."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "diningtable_9",
+          "matched_room": "Studyroom",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.75,
+            "bbox_2d": [
+              690,
+              383,
+              970,
+              644
+            ],
+            "reason": "An open book and papers are spread out on the desk along with other items, contributing to the clutter."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_010242_c6acd5dc",
+        "timestamp": "2025-12-27T01:02:44",
+        "robot_pose": {
+          "x": -2.6896505272210236,
+          "y": -2.5484496967071,
+          "yaw": 2.800962912299128
+        },
+        "nearest_landmark": "chair_4",
+        "rgb_path": "obs_20251227_010242_c6acd5dc/rgb.jpg",
+        "depth_path": "obs_20251227_010242_c6acd5dc/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              256,
+              88,
+              902,
+              910
+            ],
+            "reason": "The table surface is cluttered with various objects including crumpled papers, books, a laptop, a potted plant, scissors, and a small white device."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.9,
+            "bbox_2d": [
+              730,
+              155,
+              900,
+              363
+            ],
+            "reason": "A significant amount of crumpled paper and loose sheets are piled up on the table, indicating clutter."
+          },
+          {
+            "category": "stacked",
+            "score": 0.8,
+            "bbox_2d": [
+              473,
+              88,
+              641,
+              250
+            ],
+            "reason": "Two books are stacked on top of each other against the wall."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "diningtable_9",
+          "matched_room": "Studyroom",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              256,
+              88,
+              902,
+              910
+            ],
+            "reason": "The table surface is cluttered with various objects including crumpled papers, books, a laptop, a potted plant, scissors, and a small white device."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_010301_7ae1a99c",
+        "timestamp": "2025-12-27T01:03:03",
+        "robot_pose": {
+          "x": -2.4816259090971498,
+          "y": -2.6205959979208995,
+          "yaw": 2.813354749988288
+        },
+        "nearest_landmark": "chair_4",
+        "rgb_path": "obs_20251227_010301_7ae1a99c/rgb.jpg",
+        "depth_path": "obs_20251227_010301_7ae1a99c/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.9,
+            "bbox_2d": [
+              644,
+              210,
+              849,
+              392
+            ],
+            "reason": "Crumpled papers are piled up on the desk surface, indicating a cluttered state."
+          },
+          {
+            "category": "stacked",
+            "score": 0.85,
+            "bbox_2d": [
+              629,
+              143,
+              700,
+              274
+            ],
+            "reason": "Two books are stacked next to each other, one leaning against the other."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.7,
+            "bbox_2d": [
+              680,
+              396,
+              778,
+              617
+            ],
+            "reason": "A laptop and an open book are placed on the desk, along with loose papers, contributing to a cluttered workspace."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "diningtable_9",
+          "matched_room": "Studyroom",
+          "matched_category": "cluttered",
+          "matched_detected_state": {
+            "category": "cluttered",
+            "score": 0.7,
+            "bbox_2d": [
+              680,
+              396,
+              778,
+              617
+            ],
+            "reason": "A laptop and an open book are placed on the desk, along with loose papers, contributing to a cluttered workspace."
+          }
+        }
+      }
+    ],
+    "reason_history": [
+      "Multiple unrelated objects (laptop, books, crumpled paper, open book, scissors, correction tape, plant) are scattered across the desk surface.",
+      "The table surface is cluttered with various objects like a laptop, books, crumpled paper, an open book, scissors, and correction tape.",
+      "The desk surface is cluttered with various objects including a laptop, books, crumpled paper, a plant, and scissors.",
+      "The table surface has multiple unrelated objects (laptop, book, plant, scissors, small white device) placed on it, indicating a mild state of clutter.",
+      "An open book and papers are spread out on the desk along with other items, contributing to the clutter.",
+      "The table surface is cluttered with various objects including crumpled papers, books, a laptop, a potted plant, scissors, and a small white device.",
+      "A laptop and an open book are placed on the desk, along with loose papers, contributing to a cluttered workspace."
+    ],
+    "VLM": {
+      "room_name": "LivingLab",
+      "landmark_name": "",
+      "object_name": "ハサミ",
+      "risk_prediction_id": 7,
+      "risk_judge": "潜在重大",
+      "risk_reason": "デスクの端近くにハサミ（鋭利な物体）が置かれている。これは、作業中に手が当たって落下したり、誤って触れて切り傷を負う潜在的なリスクがある。もしハサミが落下した場合、足元に怪我を負わせる可能性もあるため、重大事故につながりうる。"
+    }
+  },
+  "8": {
+    "risk_prediction_id": 8,
+    "Semantic_state": {
+      "risk_prediction_id": 8,
+      "state_instance_id": 6,
+      "state_category": "stacked",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "related_objects_01": "book",
+      "related_objects_01_id": "book_0",
+      "related_objects_02": "book",
+      "related_objects_02_id": "book_1",
+      "risk_judge": "特に心配なし",
+      "risk_reason": "本が2冊、壁に立てかけて積み重ねられている（stacked）。この配置が特に不安定であるという情報がなく、通常、本の積み重ねが大きな事故リスク（重大な怪我や損害）に繋がる可能性は非常に低いため、実質的な事故リスクはないと判断する。"
+    },
+    "Semantic_state_RiskScore": {
+      "risk_prediction_id": 8,
+      "state_instance_id": 6,
+      "state_category": "stacked",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "related_objects_01": "book",
+      "related_objects_01_id": "book_0",
+      "related_objects_02": "book",
+      "related_objects_02_id": "book_1",
+      "risk_judge": "特に心配なし",
+      "risk_reason": "本が2冊、壁に立てかけて積み重ねられている（stacked）。この配置が特に不安定であるという情報がなく、通常、本の積み重ねが大きな事故リスク（重大な怪我や損害）に繋がる可能性は非常に低いため、実質的な事故リスクはないと判断する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "フィードバックを受けて評価を「特に心配なし」から「潜在軽微」へ更新する。積み重ね自体は安定している可能性が高いが、関連オブジェクト（book_0, book_1）は、周辺環境に中毒・窒息リスク (toxic_suffocation: 1.0, contamination_poisoning: 1.0) を伝播している。積み重ねが崩壊すること自体は軽微な事故に留まるが、崩壊が引き金となって周囲の目に見えない重大リスクを顕在化させる可能性を考慮し、注意喚起の目的で潜在軽微に引き上げる。ただし、この状態単体で事故が発生する可能性は非常に低い。"
+    },
+    "Semantic_state_RiskScore_Persona_01": {
+      "risk_prediction_id": 8,
+      "state_instance_id": 6,
+      "state_category": "stacked",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "related_objects_01": "book",
+      "related_objects_01_id": "book_0",
+      "related_objects_02": "book",
+      "related_objects_02_id": "book_1",
+      "risk_judge": "特に心配なし",
+      "risk_reason": "本が2冊、壁に立てかけて積み重ねられている（stacked）。この配置が特に不安定であるという情報がなく、通常、本の積み重ねが大きな事故リスク（重大な怪我や損害）に繋がる可能性は非常に低いため、実質的な事故リスクはないと判断する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "関連オブジェクト（book_0, book_1）が contamination_poisoning=1.0、toxic_suffocation=1.0 と、最大の中毒・汚染リスクの伝播を受けているというフィードバックを考慮し、評価を潜在重大に変更する。積み重ね状態自体は安定していても、その物体を扱うことで健康被害リスクを負う可能性があるため、潜在的な重大リスクとして判断する。",
+      "updated_02": 1,
+      "updated_judge_02": "特に心配なし",
+      "updated_reason_02": "本が壁に立てかけられており、物理的な安定性は高い。若年健常者にとって、この積み重ねが崩れて怪我をするリスクは極めて低い。定量データが示す最大の中毒・汚染リスクは、この『stacked』状態が直接引き起こすものではなく、環境由来のリスクであり、物理的な事故リスクがないため、最初の判断を維持する。"
+    },
+    "Semantic_state_RiskScore_Persona_02": {
+      "risk_prediction_id": 8,
+      "state_instance_id": 6,
+      "state_category": "stacked",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "related_objects_01": "book",
+      "related_objects_01_id": "book_0",
+      "related_objects_02": "book",
+      "related_objects_02_id": "book_1",
+      "risk_judge": "特に心配なし",
+      "risk_reason": "本が2冊、壁に立てかけて積み重ねられている（stacked）。この配置が特に不安定であるという情報がなく、通常、本の積み重ねが大きな事故リスク（重大な怪我や損害）に繋がる可能性は非常に低いため、実質的な事故リスクはないと判断する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "積み重ねられた本（book_0, book_1）は、物理的な不安定性は低いものの、内在的な健康リスク（contamination_poisoning=1.0, toxic_suffocation=1.0）が最高レベルであり、長期的な健康被害のリスクが重大です。物理的な安定性ではなく、内在するハザード性を考慮し、『特に心配なし』から『潜在重大』に格上げします。",
+      "updated_02": 0,
+      "updated_judge_02": "潜在重大",
+      "updated_reason_02": "F2では物理的な安定性から『特に心配なし』とされましたが、Instance 1と同様に、定量スコアで示された化学的・毒性的な健康リスク（1.0）が極めて高いため、この潜在的な重大リスクを重視し、判断を維持します。"
+    },
+    "Semantic_state_RiskScore_Persona_03": {
+      "risk_prediction_id": 8,
+      "state_instance_id": 6,
+      "category": "stacked",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "related_objects_01": "book",
+      "related_objects_01_id": "book_0",
+      "related_objects_02": "book",
+      "related_objects_02_id": "book_1",
+      "risk_judge": "特に心配なし",
+      "risk_reason": "本が2冊、壁に立てかけて積み重ねられている（stacked）。この配置が特に不安定であるという情報がなく、通常、本の積み重ねが大きな事故リスク（重大な怪我や損害）に繋がる可能性は非常に低いため、実質的な事故リスクはないと判断する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "評価を「特に心配なし」から「潜在重大」に更新する。元の評価は物理的な落下リスクに基づいていたが、定量データによると、積み重ねられた書籍は contamination_poisoning (1.000) および toxic_suffocation (1.000) の伝播リスクスコアが最大値である。これはカビ、埃、化学物質による汚染・中毒といった、長期的にユーザーの健康に重大な影響を及ぼしうる潜在的な健康被害リスクが高いため、物理的事故ではないものの、潜在重大リスクとして評価する。"
+    },
+    "Semantic_state_RiskScore_Persona_04": {
+      "risk_prediction_id": 8,
+      "state_instance_id": 6,
+      "state_category": "stacked",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "related_objects_01": "book",
+      "related_objects_01_id": "book_0",
+      "related_objects_02": "book",
+      "related_objects_02_id": "book_1",
+      "risk_judge": "特に心配なし",
+      "risk_reason": "本が2冊、壁に立てかけて積み重ねられている（stacked）。この配置が特に不安定であるという情報がなく、通常、本の積み重ねが大きな事故リスク（重大な怪我や損害）に繋がる可能性は非常に低いため、実質的な事故リスクはないと判断する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在重大",
+      "updated_reason_01": "元の評価を「特に心配なし」から「潜在重大」に更新する。物理的な安定性は高いが、定量データ上、関連オブジェクト（book_0, book_1）は周囲の環境から伝播した化学的・環境的リスク（contamination_poisoning 1.000, toxic_suffocation 1.000）が最大値を示している。これは、周辺に強い汚染源や有毒物質が存在し、長期的な健康被害や中毒に繋がる潜在的な重大リスクを無視できないため、「潜在重大」と判断する。"
+    },
+    "Semantic_state_RiskScore_Persona_05": {
+      "risk_prediction_id": 8,
+      "state_instance_id": 6,
+      "state_category": "stacked",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "related_objects_01": "book",
+      "related_objects_01_id": "book_0",
+      "related_objects_02": "book",
+      "related_objects_02_id": "book_1",
+      "risk_judge": "特に心配なし",
+      "risk_reason": "本が2冊、壁に立てかけて積み重ねられている（stacked）。物理的な安定性が高く、通常、大きな事故リスクに繋がる可能性は非常に低いため、実質的な事故リスクはないと判断する。",
+      "updated_01": 1,
+      "updated_judge_01": "潜在軽微",
+      "updated_reason_01": "物理的な安定性は高いが、書籍（book_0, book_1）は propagated_risk_score.contamination_poisoning (1.0) および toxic_suffocation (1.0) という極端に高い衛生的リスクスコアを持つ。これは物理的リスクではないが、潜在的な汚染リスクを示唆するため、『特に心配なし』から『潜在軽微』に格上げする。",
+      "updated_02": 0,
+      "updated_judge_02": "潜在軽微",
+      "updated_reason_02": "前回のフィードバックで『潜在軽微』に格上げ済み。物理的には安定しており、86歳のユーザーにとっても転倒リスクは低い。ただし、衛生面での潜在的なリスク（汚染/中毒リスクスコア）が残るため、軽微なリスクとして評価を維持する。"
+    },
+    "Semantic_state_Stickler": {
+      "risk_prediction_id": 8,
+      "state_instance_id": 6,
+      "state_category": "stacked",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "related_objects_01": "book",
+      "related_objects_01_id": "book_0",
+      "related_objects_02": "book",
+      "related_objects_02_id": "book_1",
+      "risk_judge": "特に心配なし",
+      "risk_reason": "本が2冊、壁に立てかけて積み重ねられている（stacked）。この配置が特に不安定であるという情報がなく、通常、本の積み重ねが大きな事故リスク（重大な怪我や損害）に繋がる可能性は非常に低いため、実質的な事故リスクはないと判断する。",
+      "updated_01": 0,
+      "updated_judge_01": "特に心配なし",
+      "updated_reason_01": "このインスタンスはフィードバック対象ではないため、判断を変更しない。本が壁に立てかけられている状態は安定しており、実質的な事故リスクはないため、『特に心配なし』を維持する。"
+    },
+    "Semantic_state_Persona_01": {
+      "risk_prediction_id": 8,
+      "state_instance_id": 6,
+      "state_category": "stacked",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "related_objects_01": "book",
+      "related_objects_01_id": "book_0",
+      "related_objects_02": "book",
+      "related_objects_02_id": "book_1",
+      "risk_judge": "特に心配なし",
+      "risk_reason": "本が2冊、壁に立てかけて積み重ねられている（stacked）。この配置が特に不安定であるという情報がなく、通常、本の積み重ねが大きな事故リスク（重大な怪我や損害）に繋がる可能性は非常に低いため、実質的な事故リスクはないと判断する。",
+      "updated_01": 0,
+      "updated_judge_01": "特に心配なし",
+      "updated_reason_01": "他のエージェントからのフィードバック（評価は妥当）と前回の評価は一致している。本が壁に立てかけられ積み重ねられている状態について、明確な不安定さや転倒リスクの根拠が見られないため、「特に心配なし」という評価を維持する。"
+    },
+    "Semantic_state_Persona_02": {
+      "risk_prediction_id": 8,
+      "state_instance_id": 6,
+      "state_category": "stacked",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "related_objects_01": "book",
+      "related_objects_01_id": "book_0",
+      "related_objects_02": "book",
+      "related_objects_02_id": "book_1",
+      "risk_judge": "特に心配なし",
+      "risk_reason": "本が2冊、壁に立てかけて積み重ねられている（stacked）。この配置が特に不安定であるという情報がなく、通常、本の積み重ねが大きな事故リスク（重大な怪我や損害）に繋がる可能性は非常に低いため、実質的な事故リスクはないと判断する。",
+      "updated_01": 0,
+      "updated_judge_01": "特に心配なし",
+      "updated_reason_01": "元の判断「特に心配なし」を維持する。本が壁に立てかけられ積み重ねられている状態は、不安定さを示す情報がない限り、67歳のユーザーにとって重大な事故リスクを引き起こす可能性は極めて低い。実質的な事故リスクがないため、特に心配する必要はないと判断する。"
+    },
+    "Semantic_state_Persona_03": {
+      "risk_prediction_id": 8,
+      "state_instance_id": 6,
+      "state_category": "stacked",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "related_objects_01": "book",
+      "related_objects_01_id": "book_0",
+      "related_objects_02": "book",
+      "related_objects_02_id": "book_1",
+      "risk_judge": "特に心配なし",
+      "risk_reason": "本が2冊、壁に立てかけて積み重ねられている（stacked）。この配置が特に不安定であるという情報がなく、通常、本の積み重ねが大きな事故リスク（重大な怪我や損害）に繋がる可能性は非常に低いため、実質的な事故リスクはないと判断する。",
+      "updated_01": 0,
+      "updated_judge_01": "特に心配なし",
+      "updated_reason_01": "フィードバックでも評価は妥当とされており、本が壁に立てかけられている状態は、不安定さが示されておらず、実質的な事故リスクは非常に低いと判断し、初期の評価「特に心配なし」を維持する。"
+    },
+    "Semantic_state_Persona_04": {
+      "risk_prediction_id": 8,
+      "state_instance_id": 6,
+      "state_category": "stacked",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "related_objects_01": "book",
+      "related_objects_01_id": "book_0",
+      "related_objects_02": "book",
+      "related_objects_02_id": "book_1",
+      "risk_judge": "特に心配なし",
+      "risk_reason": "本が2冊、壁に立てかけて積み重ねられている（stacked）。この配置が特に不安定であるという情報がなく、通常、本の積み重ねが大きな事故リスク（重大な怪我や損害）に繋がる可能性は非常に低いため、実質的な事故リスクはないと判断する。",
+      "updated_01": 0,
+      "updated_judge_01": "特に心配なし",
+      "updated_reason_01": "前回の評価（特に心配なし）を維持する。壁に立てかけられた本であり、不安定さを示す記述もなく、ペルソナ情報によってリスクが増幅される要因も見当たらないため、実質的な事故リスクはないと判断する。"
+    },
+    "Semantic_state_Persona_05": {
+      "risk_prediction_id": 8,
+      "state_instance_id": 6,
+      "category": "stacked",
+      "related_room": "Studyroom",
+      "related_landmarks_01": "diningtable_9",
+      "related_objects_01": "book",
+      "related_objects_01_id": "book_0",
+      "related_objects_02": "book",
+      "related_objects_02_id": "book_1",
+      "risk_judge": "特に心配なし",
+      "risk_reason": "本が2冊、壁に立てかけて積み重ねられている（stacked）。この配置が特に不安定であるという情報がなく、通常、本の積み重ねが大きな事故リスク（重大な怪我や損害）に繋がる可能性は非常に低いため、実質的な事故リスクはないと判断する。",
+      "updated_01": 0,
+      "updated_judge_01": "特に心配なし",
+      "updated_reason_01": "「特に心配なし」の判断を維持する。本が壁に立てかけられている状態は安定しており、高齢者や認知障害の有無にかかわらず、転倒や重大な外傷のリスクに繋がる可能性は極めて低く、実質的な事故リスクはないと判断する。"
+    },
+    "observations": [
+      {
+        "observation_id": "obs_20251227_010022_59f48157",
+        "timestamp": "2025-12-27T01:00:24",
+        "robot_pose": {
+          "x": -2.5349691479948375,
+          "y": -1.6624815467652052,
+          "yaw": -2.888291524117051
+        },
+        "nearest_landmark": "chair_4",
+        "rgb_path": "obs_20251227_010022_59f48157/rgb.jpg",
+        "depth_path": "obs_20251227_010022_59f48157/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              638,
+              143,
+              727,
+              345
+            ],
+            "reason": "Crumpled paper and loose documents are piled up on the desk surface."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.75,
+            "bbox_2d": [
+              513,
+              143,
+              726,
+              808
+            ],
+            "reason": "Multiple unrelated objects (laptop, books, crumpled paper, open book, scissors, correction tape, plant) are scattered across the desk surface."
+          },
+          {
+            "category": "stacked",
+            "score": 0.9,
+            "bbox_2d": [
+              513,
+              289,
+              664,
+              383
+            ],
+            "reason": "Two books are stacked on top of each other, leaning against the wall."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "diningtable_9",
+          "matched_room": "Studyroom",
+          "matched_category": "stacked",
+          "matched_detected_state": {
+            "category": "stacked",
+            "score": 0.9,
+            "bbox_2d": [
+              513,
+              289,
+              664,
+              383
+            ],
+            "reason": "Two books are stacked on top of each other, leaning against the wall."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_010046_2f7025d5",
+        "timestamp": "2025-12-27T01:00:48",
+        "robot_pose": {
+          "x": -2.6263799717891776,
+          "y": -1.4450912814142889,
+          "yaw": -2.7101060285393936
+        },
+        "nearest_landmark": "chair_4",
+        "rgb_path": "obs_20251227_010046_2f7025d5/rgb.jpg",
+        "depth_path": "obs_20251227_010046_2f7025d5/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              617,
+              140,
+              742,
+              688
+            ],
+            "reason": "The desk surface is cluttered with various objects like a laptop, books, crumpled paper, scissors, and a tape measure."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.8,
+            "bbox_2d": [
+              620,
+              140,
+              742,
+              377
+            ],
+            "reason": "The left side of the desk has crumpled paper, an open book, and other papers, indicating a cluttered state."
+          },
+          {
+            "category": "stacked",
+            "score": 0.9,
+            "bbox_2d": [
+              579,
+              286,
+              646,
+              344
+            ],
+            "reason": "Two books/binders are stacked vertically against the wall on the desk."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "diningtable_9",
+          "matched_room": "Studyroom",
+          "matched_category": "stacked",
+          "matched_detected_state": {
+            "category": "stacked",
+            "score": 0.9,
+            "bbox_2d": [
+              579,
+              286,
+              646,
+              344
+            ],
+            "reason": "Two books/binders are stacked vertically against the wall on the desk."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_010225_4f95f5a5",
+        "timestamp": "2025-12-27T01:02:27",
+        "robot_pose": {
+          "x": -2.6896505272210236,
+          "y": -2.5484496967071,
+          "yaw": 2.800962912299128
+        },
+        "nearest_landmark": "chair_4",
+        "rgb_path": "obs_20251227_010225_4f95f5a5/rgb.jpg",
+        "depth_path": "obs_20251227_010225_4f95f5a5/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.9,
+            "bbox_2d": [
+              739,
+              147,
+              999,
+              358
+            ],
+            "reason": "Crumpled papers are scattered on the desk surface, indicating a cluttered state."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.75,
+            "bbox_2d": [
+              690,
+              383,
+              970,
+              644
+            ],
+            "reason": "An open book and papers are spread out on the desk along with other items, contributing to the clutter."
+          },
+          {
+            "category": "stacked",
+            "score": 0.85,
+            "bbox_2d": [
+              542,
+              138,
+              749,
+              229
+            ],
+            "reason": "Two books are stacked on top of each other, leaning against the wall."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "diningtable_9",
+          "matched_room": "Studyroom",
+          "matched_category": "stacked",
+          "matched_detected_state": {
+            "category": "stacked",
+            "score": 0.85,
+            "bbox_2d": [
+              542,
+              138,
+              749,
+              229
+            ],
+            "reason": "Two books are stacked on top of each other, leaning against the wall."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_010242_c6acd5dc",
+        "timestamp": "2025-12-27T01:02:44",
+        "robot_pose": {
+          "x": -2.6896505272210236,
+          "y": -2.5484496967071,
+          "yaw": 2.800962912299128
+        },
+        "nearest_landmark": "chair_4",
+        "rgb_path": "obs_20251227_010242_c6acd5dc/rgb.jpg",
+        "depth_path": "obs_20251227_010242_c6acd5dc/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.85,
+            "bbox_2d": [
+              256,
+              88,
+              902,
+              910
+            ],
+            "reason": "The table surface is cluttered with various objects including crumpled papers, books, a laptop, a potted plant, scissors, and a small white device."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.9,
+            "bbox_2d": [
+              730,
+              155,
+              900,
+              363
+            ],
+            "reason": "A significant amount of crumpled paper and loose sheets are piled up on the table, indicating clutter."
+          },
+          {
+            "category": "stacked",
+            "score": 0.8,
+            "bbox_2d": [
+              473,
+              88,
+              641,
+              250
+            ],
+            "reason": "Two books are stacked on top of each other against the wall."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "diningtable_9",
+          "matched_room": "Studyroom",
+          "matched_category": "stacked",
+          "matched_detected_state": {
+            "category": "stacked",
+            "score": 0.8,
+            "bbox_2d": [
+              473,
+              88,
+              641,
+              250
+            ],
+            "reason": "Two books are stacked on top of each other against the wall."
+          }
+        }
+      },
+      {
+        "observation_id": "obs_20251227_010301_7ae1a99c",
+        "timestamp": "2025-12-27T01:03:03",
+        "robot_pose": {
+          "x": -2.4816259090971498,
+          "y": -2.6205959979208995,
+          "yaw": 2.813354749988288
+        },
+        "nearest_landmark": "chair_4",
+        "rgb_path": "obs_20251227_010301_7ae1a99c/rgb.jpg",
+        "depth_path": "obs_20251227_010301_7ae1a99c/depth.png",
+        "detected_states": [
+          {
+            "category": "cluttered",
+            "score": 0.9,
+            "bbox_2d": [
+              644,
+              210,
+              849,
+              392
+            ],
+            "reason": "Crumpled papers are piled up on the desk surface, indicating a cluttered state."
+          },
+          {
+            "category": "stacked",
+            "score": 0.85,
+            "bbox_2d": [
+              629,
+              143,
+              700,
+              274
+            ],
+            "reason": "Two books are stacked next to each other, one leaning against the other."
+          },
+          {
+            "category": "cluttered",
+            "score": 0.7,
+            "bbox_2d": [
+              680,
+              396,
+              778,
+              617
+            ],
+            "reason": "A laptop and an open book are placed on the desk, along with loose papers, contributing to a cluttered workspace."
+          }
+        ],
+        "match_details": {
+          "landmark_match": true,
+          "room_match": true,
+          "category_match": true,
+          "reason_match": true,
+          "matched_landmark": "diningtable_9",
+          "matched_room": "Studyroom",
+          "matched_category": "stacked",
+          "matched_detected_state": {
+            "category": "stacked",
+            "score": 0.85,
+            "bbox_2d": [
+              629,
+              143,
+              700,
+              274
+            ],
+            "reason": "Two books are stacked next to each other, one leaning against the other."
+          }
+        }
+      }
+    ],
+    "reason_history": [
+      "Two books are stacked on top of each other, leaning against the wall.",
+      "Two books/binders are stacked vertically against the wall on the desk.",
+      "Two books are stacked on top of each other, leaning against the wall.",
+      "Two books are stacked on top of each other against the wall.",
+      "Two books are stacked next to each other, one leaning against the other."
+    ],
+    "VLM": {
+      "room_name": "LivingLab",
+      "landmark_name": "",
+      "object_name": "ハサミ",
+      "risk_prediction_id": 8,
+      "risk_judge": "潜在重大",
+      "risk_reason": "ハサミ（鋭利な物体）がデスクの端に近い位置に置かれており、作業中や離着席時に誤って接触したり、落下させたりすることで、切り傷などの怪我をする潜在的なリスクがある。すぐに事故が起こるわけではないが、放置すると重大な傷害につながりうる。"
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        786,\n        448,\n        999,\n        570\n      ],\n      \"analysis\": {\n        \"category\": \"on fire\",\n        \"score\": 0.95,\n        \"reason\": \"The space heater is turned on, and the heating element is glowing red, which constitutes being 'on fire' according to the definition (object is turned on fire, not burning).\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        638,\n        333,\n        960,\n        448\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.8,\n        \"reason\": \"A blue garment is draped over the yellow chair, indicating that the chair surface is cluttered with an object.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        289,\n        729,\n        449,\n        999\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.75,\n        \"reason\": \"Several cardboard boxes and other items are piled up on the partition wall/shelf in the background.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        479,\n        756,\n        715,\n        861\n      ],\n      \"analysis\": {\n        \"category\": \"stacked\",\n        \"score\": 0.9,\n        \"reason\": \"Potted plants are stacked on the tiers of a wire shelving unit.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          786,
+          448,
+          999,
+          570
+        ],
+        "analysis": {
+          "category": "on fire",
+          "score": 0.95,
+          "reason": "The space heater is turned on, and the heating element is glowing red, which constitutes being 'on fire' according to the definition (object is turned on fire, not burning)."
+        }
+      },
+      {
+        "bbox_2d": [
+          638,
+          333,
+          960,
+          448
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.8,
+          "reason": "A blue garment is draped over the yellow chair, indicating that the chair surface is cluttered with an object."
+        }
+      },
+      {
+        "bbox_2d": [
+          289,
+          729,
+          449,
+          999
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.75,
+          "reason": "Several cardboard boxes and other items are piled up on the partition wall/shelf in the background."
+        }
+      },
+      {
+        "bbox_2d": [
+          479,
+          756,
+          715,
+          861
+        ],
+        "analysis": {
+          "category": "stacked",
+          "score": 0.9,
+          "reason": "Potted plants are stacked on the tiers of a wire shelving unit."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T00:57:20",
+  "timestamp_ros": "1766764640.8500564"
+}

@@ -1,0 +1,63 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        576,\n        588,\n        994,\n        667\n      ],\n      \"analysis\": {\n        \"category\": \"on fire\",\n        \"score\": 0.9,\n        \"reason\": \"The space heater is turned on, showing a visible orange glow indicating heat generation, which fits the definition of 'on fire' for objects that are turned on and produce fire/intense heat, but are not burning objects.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        629,\n        430,\n        995,\n        555\n      ],\n      \"analysis\": {\n        \"category\": \"about to fall\",\n        \"score\": 0.8,\n        \"reason\": \"The blue shirt is draped over the chair, with a significant portion hanging down and nearly touching the floor, making it unstable and likely to fall off the chair completely.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        290,\n        0,\n        506,\n        505\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.75,\n        \"reason\": \"Various small objects and cables are piled up on the low partition wall/shelf area near the window blinds.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        533,\n        2,\n        998,\n        479\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.6,\n        \"reason\": \"The area under the bed/gurney is cluttered with various mechanical components, wires, and parts of the frame, which are piled up or arranged in a messy manner.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          576,
+          588,
+          994,
+          667
+        ],
+        "analysis": {
+          "category": "on fire",
+          "score": 0.9,
+          "reason": "The space heater is turned on, showing a visible orange glow indicating heat generation, which fits the definition of 'on fire' for objects that are turned on and produce fire/intense heat, but are not burning objects."
+        }
+      },
+      {
+        "bbox_2d": [
+          629,
+          430,
+          995,
+          555
+        ],
+        "analysis": {
+          "category": "about to fall",
+          "score": 0.8,
+          "reason": "The blue shirt is draped over the chair, with a significant portion hanging down and nearly touching the floor, making it unstable and likely to fall off the chair completely."
+        }
+      },
+      {
+        "bbox_2d": [
+          290,
+          0,
+          506,
+          505
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.75,
+          "reason": "Various small objects and cables are piled up on the low partition wall/shelf area near the window blinds."
+        }
+      },
+      {
+        "bbox_2d": [
+          533,
+          2,
+          998,
+          479
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.6,
+          "reason": "The area under the bed/gurney is cluttered with various mechanical components, wires, and parts of the frame, which are piled up or arranged in a messy manner."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T00:56:10",
+  "timestamp_ros": "1766764570.894135"
+}

@@ -1,0 +1,50 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        485,\n        345,\n        650,\n        570\n      ],\n      \"analysis\": {\n        \"category\": \"wet\",\n        \"score\": 0.9,\n        \"reason\": \"There is a visible dark patch of liquid on the wooden table surface, indicating the surface is wet.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        488,\n        448,\n        638,\n        569\n      ],\n      \"analysis\": {\n        \"category\": \"about to fall\",\n        \"score\": 0.8,\n        \"reason\": \"The mug is lying on its side, which is an unstable position, and it is near the edge of the table, making it likely to fall if the table is bumped.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        493,\n        34,\n        542,\n        377\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.7,\n        \"reason\": \"Multiple objects (coffee makers, dispensers, paper, and a pen) are piled up/placed close together on the table surface near the wall.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          485,
+          345,
+          650,
+          570
+        ],
+        "analysis": {
+          "category": "wet",
+          "score": 0.9,
+          "reason": "There is a visible dark patch of liquid on the wooden table surface, indicating the surface is wet."
+        }
+      },
+      {
+        "bbox_2d": [
+          488,
+          448,
+          638,
+          569
+        ],
+        "analysis": {
+          "category": "about to fall",
+          "score": 0.8,
+          "reason": "The mug is lying on its side, which is an unstable position, and it is near the edge of the table, making it likely to fall if the table is bumped."
+        }
+      },
+      {
+        "bbox_2d": [
+          493,
+          34,
+          542,
+          377
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.7,
+          "reason": "Multiple objects (coffee makers, dispensers, paper, and a pen) are piled up/placed close together on the table surface near the wall."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T04:27:05",
+  "timestamp_ros": "1766777225.6834888"
+}

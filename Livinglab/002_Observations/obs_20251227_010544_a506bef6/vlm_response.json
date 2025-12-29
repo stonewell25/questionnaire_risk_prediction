@@ -1,0 +1,50 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        778,\n        138,\n        1000,\n        805\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.9,\n        \"reason\": \"Numerous cables, power strips, and a small appliance are scattered and tangled on the floor.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        684,\n        786,\n        1000,\n        1000\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.85,\n        \"reason\": \"A cluster of cables and electronic devices are piled up behind and beneath the TV stand.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        690,\n        830,\n        770,\n        999\n      ],\n      \"analysis\": {\n        \"category\": \"stacked\",\n        \"score\": 0.9,\n        \"reason\": \"The TV stand consists of multiple shelves stacked vertically on top of each other.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          778,
+          138,
+          1000,
+          805
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.9,
+          "reason": "Numerous cables, power strips, and a small appliance are scattered and tangled on the floor."
+        }
+      },
+      {
+        "bbox_2d": [
+          684,
+          786,
+          1000,
+          1000
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.85,
+          "reason": "A cluster of cables and electronic devices are piled up behind and beneath the TV stand."
+        }
+      },
+      {
+        "bbox_2d": [
+          690,
+          830,
+          770,
+          999
+        ],
+        "analysis": {
+          "category": "stacked",
+          "score": 0.9,
+          "reason": "The TV stand consists of multiple shelves stacked vertically on top of each other."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T01:05:51",
+  "timestamp_ros": "1766765151.7651687"
+}

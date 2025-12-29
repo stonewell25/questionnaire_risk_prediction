@@ -1,0 +1,76 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        485,\n        489,\n        617,\n        576\n      ],\n      \"analysis\": {\n        \"category\": \"about to fall\",\n        \"score\": 0.85,\n        \"reason\": \"The mug is lying on its side on the table, indicating it has recently fallen or is in an unstable position, though not actively falling from a height.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        550,\n        561,\n        588,\n        677\n      ],\n      \"analysis\": {\n        \"category\": \"wet\",\n        \"score\": 0.9,\n        \"reason\": \"There is a visible puddle of liquid on the wooden table surface, indicating the surface is wet.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        578,\n        146,\n        606,\n        329\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.5,\n        \"reason\": \"Several small appliances (coffee makers, grinder) and cables are placed closely together on the back edge of the table, contributing to a cluttered surface.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        465,\n        122,\n        607,\n        418\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.45,\n        \"reason\": \"Multiple items (appliances, paper, knife) are occupying the table surface, making it look cluttered.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        581,\n        122,\n        608,\n        148\n      ],\n      \"analysis\": {\n        \"category\": \"about to fall\",\n        \"score\": 0.7,\n        \"reason\": \"The knife is positioned precariously with a significant portion of the blade hanging over the edge of the table, making it unstable and likely to fall.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          485,
+          489,
+          617,
+          576
+        ],
+        "analysis": {
+          "category": "about to fall",
+          "score": 0.85,
+          "reason": "The mug is lying on its side on the table, indicating it has recently fallen or is in an unstable position, though not actively falling from a height."
+        }
+      },
+      {
+        "bbox_2d": [
+          550,
+          561,
+          588,
+          677
+        ],
+        "analysis": {
+          "category": "wet",
+          "score": 0.9,
+          "reason": "There is a visible puddle of liquid on the wooden table surface, indicating the surface is wet."
+        }
+      },
+      {
+        "bbox_2d": [
+          578,
+          146,
+          606,
+          329
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.5,
+          "reason": "Several small appliances (coffee makers, grinder) and cables are placed closely together on the back edge of the table, contributing to a cluttered surface."
+        }
+      },
+      {
+        "bbox_2d": [
+          465,
+          122,
+          607,
+          418
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.45,
+          "reason": "Multiple items (appliances, paper, knife) are occupying the table surface, making it look cluttered."
+        }
+      },
+      {
+        "bbox_2d": [
+          581,
+          122,
+          608,
+          148
+        ],
+        "analysis": {
+          "category": "about to fall",
+          "score": 0.7,
+          "reason": "The knife is positioned precariously with a significant portion of the blade hanging over the edge of the table, making it unstable and likely to fall."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T04:20:12",
+  "timestamp_ros": "1766776812.6540816"
+}

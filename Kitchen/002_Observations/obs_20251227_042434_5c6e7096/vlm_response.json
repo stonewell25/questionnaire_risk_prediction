@@ -1,0 +1,50 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        383,\n        345,\n        561,\n        617\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.85,\n        \"reason\": \"Several kitchen appliances (coffee maker, grinder, milk frother) are clustered together on the table surface, making it cluttered.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        805,\n        286,\n        1000,\n        513\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.75,\n        \"reason\": \"The shelf area beneath the table is cluttered with various storage containers and items.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        683,\n        597,\n        800,\n        771\n      ],\n      \"analysis\": {\n        \"category\": \"about to fall\",\n        \"score\": 0.6,\n        \"reason\": \"A knife is lying on the edge of the table with the blade extending over the edge, making it precariously positioned and likely to fall or be knocked off.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          383,
+          345,
+          561,
+          617
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.85,
+          "reason": "Several kitchen appliances (coffee maker, grinder, milk frother) are clustered together on the table surface, making it cluttered."
+        }
+      },
+      {
+        "bbox_2d": [
+          805,
+          286,
+          1000,
+          513
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.75,
+          "reason": "The shelf area beneath the table is cluttered with various storage containers and items."
+        }
+      },
+      {
+        "bbox_2d": [
+          683,
+          597,
+          800,
+          771
+        ],
+        "analysis": {
+          "category": "about to fall",
+          "score": 0.6,
+          "reason": "A knife is lying on the edge of the table with the blade extending over the edge, making it precariously positioned and likely to fall or be knocked off."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T04:24:41",
+  "timestamp_ros": "1766777081.8981867"
+}

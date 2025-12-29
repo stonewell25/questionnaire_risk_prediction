@@ -1,0 +1,15 @@
+﻿参加者名,平林大
+開始時刻,2025-12-25T05:10:46.390Z
+終了時刻,2025-12-25T05:57:38.509Z
+
+=== 評価サマリー ===
+
+画像ID,Semantic_state_同意度,Semantic_state_熟慮度,Semantic_state_RiskScore_同意度,Semantic_state_RiskScore_熟慮度,Semantic_state_RiskScore_Persona_01_同意度,Semantic_state_RiskScore_Persona_01_熟慮度,Semantic_state_RiskScore_Persona_02_同意度,Semantic_state_RiskScore_Persona_02_熟慮度,Semantic_state_RiskScore_Persona_03_同意度,Semantic_state_RiskScore_Persona_03_熟慮度,Semantic_state_RiskScore_Persona_04_同意度,Semantic_state_RiskScore_Persona_04_熟慮度,Semantic_state_RiskScore_Persona_05_同意度,Semantic_state_RiskScore_Persona_05_熟慮度,Semantic_state_Stickler_同意度,Semantic_state_Stickler_熟慮度,Semantic_state_Persona_01_同意度,Semantic_state_Persona_01_熟慮度,Semantic_state_Persona_02_同意度,Semantic_state_Persona_02_熟慮度,Semantic_state_Persona_03_同意度,Semantic_state_Persona_03_熟慮度,Semantic_state_Persona_04_同意度,Semantic_state_Persona_04_熟慮度,Semantic_state_Persona_05_同意度,Semantic_state_Persona_05_熟慮度,VLM_同意度,VLM_熟慮度,
+0,2,3,4,3,4,5,4,5,2,3,2,2,3,4,2,4,2,2,1,1,4,3,2,2,2,2,2,3,
+1,2,1,2,1,2,3,1,4,1,3,3,2,2,2,2,4,2,2,2,3,2,2,2,2,2,4,3,3,
+2,3,4,2,2,2,3,3,4,1,3,1,3,2,3,2,2,1,2,2,3,2,3,2,4,2,3,3,2,
+3,4,3,5,3,5,4,5,4,5,4,4,2,5,4,5,2,5,4,5,4,5,4,4,5,4,2,5,4,
+4,4,3,2,2,2,2,2,3,2,2,4,4,3,4,3,4,3,4,4,1,4,4,3,4,2,2,3,2,
+5,3,4,5,4,2,3,4,4,4,5,4,4,4,4,2,4,2,2,4,4,4,4,3,4,2,4,4,4,
+6,2,2,2,2,1,1,3,2,2,4,3,3,3,4,3,4,2,2,1,1,2,3,3,4,3,4,3,1,
+7,1,1,1,2,1,1,3,3,1,3,3,3,2,3,3,4,2,2,1,1,2,2,3,4,4,4,3,2,

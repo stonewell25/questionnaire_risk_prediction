@@ -1,0 +1,50 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        738,\n        448,\n        999,\n        606\n      ],\n      \"analysis\": {\n        \"category\": \"on fire\",\n        \"score\": 0.9,\n        \"reason\": \"The space heater is turned on, with its heating element glowing red, which constitutes the 'on fire' state as defined (an object turned on fire, not a burning object).\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        470,\n        299,\n        761,\n        452\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.75,\n        \"reason\": \"A shirt or piece of blue cloth is draped and piled up on the yellow chair, which constitutes clutter on the surface of the chair.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        424,\n        882,\n        478,\n        999\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.65,\n        \"reason\": \"Various small objects and boxes are piled up on the dark counter/shelf in the background.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          738,
+          448,
+          999,
+          606
+        ],
+        "analysis": {
+          "category": "on fire",
+          "score": 0.9,
+          "reason": "The space heater is turned on, with its heating element glowing red, which constitutes the 'on fire' state as defined (an object turned on fire, not a burning object)."
+        }
+      },
+      {
+        "bbox_2d": [
+          470,
+          299,
+          761,
+          452
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.75,
+          "reason": "A shirt or piece of blue cloth is draped and piled up on the yellow chair, which constitutes clutter on the surface of the chair."
+        }
+      },
+      {
+        "bbox_2d": [
+          424,
+          882,
+          478,
+          999
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.65,
+          "reason": "Various small objects and boxes are piled up on the dark counter/shelf in the background."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T00:57:36",
+  "timestamp_ros": "1766764656.6195369"
+}

@@ -1,0 +1,50 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        487,\n        278,\n        508,\n        396\n      ],\n      \"analysis\": {\n        \"category\": \"wet\",\n        \"score\": 0.65,\n        \"reason\": \"There are visible dark streaks and patches on the wooden table surface, suggesting liquid has been spilled and the surface is wet or stained by liquid.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        502,\n        399,\n        526,\n        507\n      ],\n      \"analysis\": {\n        \"category\": \"wet\",\n        \"score\": 0.6,\n        \"reason\": \"There are visible dark streaks and patches on the wooden table surface, suggesting liquid has been spilled and the surface is wet or stained by liquid.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        484,\n        308,\n        504,\n        392\n      ],\n      \"analysis\": {\n        \"category\": \"about to fall\",\n        \"score\": 0.75,\n        \"reason\": \"The white mug is lying on its side on the table, and while it is not actively falling, its position is unstable and it could easily roll or be knocked off the table if disturbed.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          487,
+          278,
+          508,
+          396
+        ],
+        "analysis": {
+          "category": "wet",
+          "score": 0.65,
+          "reason": "There are visible dark streaks and patches on the wooden table surface, suggesting liquid has been spilled and the surface is wet or stained by liquid."
+        }
+      },
+      {
+        "bbox_2d": [
+          502,
+          399,
+          526,
+          507
+        ],
+        "analysis": {
+          "category": "wet",
+          "score": 0.6,
+          "reason": "There are visible dark streaks and patches on the wooden table surface, suggesting liquid has been spilled and the surface is wet or stained by liquid."
+        }
+      },
+      {
+        "bbox_2d": [
+          484,
+          308,
+          504,
+          392
+        ],
+        "analysis": {
+          "category": "about to fall",
+          "score": 0.75,
+          "reason": "The white mug is lying on its side on the table, and while it is not actively falling, its position is unstable and it could easily roll or be knocked off the table if disturbed."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T04:27:23",
+  "timestamp_ros": "1766777243.2447312"
+}

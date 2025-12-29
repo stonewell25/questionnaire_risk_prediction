@@ -1,0 +1,63 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        479,\n        610,\n        756,\n        747\n      ],\n      \"analysis\": {\n        \"category\": \"about to fall\",\n        \"score\": 0.6,\n        \"reason\": \"The mug is lying on its side near the edge of the table, making it slightly unstable and potentially prone to rolling or being knocked off if the table is bumped.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        452,\n        377,\n        537,\n        561\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.7,\n        \"reason\": \"Multiple objects (coffee makers/dispensers) are grouped together on the table surface, contributing to a cluttered appearance in that area.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        542,\n        217,\n        579,\n        438\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.65,\n        \"reason\": \"A knife and a piece of paper are left on the table surface, contributing to the clutter.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        455,\n        383,\n        522,\n        423\n      ],\n      \"analysis\": {\n        \"category\": \"stacked\",\n        \"score\": 0.5,\n        \"reason\": \"The red object appears to have stacked or layered components, resembling a manual coffee grinder or similar device with stacked parts.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          479,
+          610,
+          756,
+          747
+        ],
+        "analysis": {
+          "category": "about to fall",
+          "score": 0.6,
+          "reason": "The mug is lying on its side near the edge of the table, making it slightly unstable and potentially prone to rolling or being knocked off if the table is bumped."
+        }
+      },
+      {
+        "bbox_2d": [
+          452,
+          377,
+          537,
+          561
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.7,
+          "reason": "Multiple objects (coffee makers/dispensers) are grouped together on the table surface, contributing to a cluttered appearance in that area."
+        }
+      },
+      {
+        "bbox_2d": [
+          542,
+          217,
+          579,
+          438
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.65,
+          "reason": "A knife and a piece of paper are left on the table surface, contributing to the clutter."
+        }
+      },
+      {
+        "bbox_2d": [
+          455,
+          383,
+          522,
+          423
+        ],
+        "analysis": {
+          "category": "stacked",
+          "score": 0.5,
+          "reason": "The red object appears to have stacked or layered components, resembling a manual coffee grinder or similar device with stacked parts."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T04:20:38",
+  "timestamp_ros": "1766776838.6703222"
+}

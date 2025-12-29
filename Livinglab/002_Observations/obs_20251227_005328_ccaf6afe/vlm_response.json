@@ -1,0 +1,63 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        379,\n        2,\n        617,\n        1000\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.5,\n        \"reason\": \"The overall scene appears somewhat cluttered due to the combination of a bed, a chair with clothes on it, a heater, and miscellaneous boxes/items in the background, suggesting an unorganized space.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        374,\n        690,\n        500,\n        999\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.7,\n        \"reason\": \"Various cardboard boxes and other items are piled up on the partition wall in the background, indicating a cluttered surface.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        770,\n        606,\n        999,\n        982\n      ],\n      \"analysis\": {\n        \"category\": \"on fire\",\n        \"score\": 0.95,\n        \"reason\": \"The electric space heater is turned on, as evidenced by the visible glowing element, which fits the definition of 'on fire' for a device that is actively generating heat/light.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        485,\n        723,\n        658,\n        820\n      ],\n      \"analysis\": {\n        \"category\": \"stacked\",\n        \"score\": 0.8,\n        \"reason\": \"Small potted plants are stacked on a tiered metal shelf next to the toilet.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          379,
+          2,
+          617,
+          1000
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.5,
+          "reason": "The overall scene appears somewhat cluttered due to the combination of a bed, a chair with clothes on it, a heater, and miscellaneous boxes/items in the background, suggesting an unorganized space."
+        }
+      },
+      {
+        "bbox_2d": [
+          374,
+          690,
+          500,
+          999
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.7,
+          "reason": "Various cardboard boxes and other items are piled up on the partition wall in the background, indicating a cluttered surface."
+        }
+      },
+      {
+        "bbox_2d": [
+          770,
+          606,
+          999,
+          982
+        ],
+        "analysis": {
+          "category": "on fire",
+          "score": 0.95,
+          "reason": "The electric space heater is turned on, as evidenced by the visible glowing element, which fits the definition of 'on fire' for a device that is actively generating heat/light."
+        }
+      },
+      {
+        "bbox_2d": [
+          485,
+          723,
+          658,
+          820
+        ],
+        "analysis": {
+          "category": "stacked",
+          "score": 0.8,
+          "reason": "Small potted plants are stacked on a tiered metal shelf next to the toilet."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T00:53:39",
+  "timestamp_ros": "1766764419.0617619"
+}

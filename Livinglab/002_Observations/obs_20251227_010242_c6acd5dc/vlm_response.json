@@ -1,0 +1,50 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        256,\n        88,\n        902,\n        910\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.85,\n        \"reason\": \"The table surface is cluttered with various objects including crumpled papers, books, a laptop, a potted plant, scissors, and a small white device.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        730,\n        155,\n        900,\n        363\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.9,\n        \"reason\": \"A significant amount of crumpled paper and loose sheets are piled up on the table, indicating clutter.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        473,\n        88,\n        641,\n        250\n      ],\n      \"analysis\": {\n        \"category\": \"stacked\",\n        \"score\": 0.8,\n        \"reason\": \"Two books are stacked on top of each other against the wall.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          256,
+          88,
+          902,
+          910
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.85,
+          "reason": "The table surface is cluttered with various objects including crumpled papers, books, a laptop, a potted plant, scissors, and a small white device."
+        }
+      },
+      {
+        "bbox_2d": [
+          730,
+          155,
+          900,
+          363
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.9,
+          "reason": "A significant amount of crumpled paper and loose sheets are piled up on the table, indicating clutter."
+        }
+      },
+      {
+        "bbox_2d": [
+          473,
+          88,
+          641,
+          250
+        ],
+        "analysis": {
+          "category": "stacked",
+          "score": 0.8,
+          "reason": "Two books are stacked on top of each other against the wall."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T01:02:50",
+  "timestamp_ros": "1766764970.0264642"
+}

@@ -1,0 +1,50 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        786,\n        550,\n        960,\n        960\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.9,\n        \"reason\": \"Cables and the vacuum cleaner hose are piled up on the floor, indicating a cluttered state.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        470,\n        408,\n        529,\n        579\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.7,\n        \"reason\": \"A small potted plant and a remote control are placed on the table, indicating a minor cluttered state on the surface.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        778,\n        559,\n        891,\n        642\n      ],\n      \"analysis\": {\n        \"category\": \"about to fall\",\n        \"score\": 0.8,\n        \"reason\": \"A mug is positioned very close to the edge of the table, appearing unstable and likely to fall if slightly nudged.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          786,
+          550,
+          960,
+          960
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.9,
+          "reason": "Cables and the vacuum cleaner hose are piled up on the floor, indicating a cluttered state."
+        }
+      },
+      {
+        "bbox_2d": [
+          470,
+          408,
+          529,
+          579
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.7,
+          "reason": "A small potted plant and a remote control are placed on the table, indicating a minor cluttered state on the surface."
+        }
+      },
+      {
+        "bbox_2d": [
+          778,
+          559,
+          891,
+          642
+        ],
+        "analysis": {
+          "category": "about to fall",
+          "score": 0.8,
+          "reason": "A mug is positioned very close to the edge of the table, appearing unstable and likely to fall if slightly nudged."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T01:07:11",
+  "timestamp_ros": "1766765231.267869"
+}

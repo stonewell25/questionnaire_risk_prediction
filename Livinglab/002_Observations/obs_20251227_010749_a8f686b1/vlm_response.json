@@ -1,0 +1,50 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        299,\n        183,\n        479,\n        424\n      ],\n      \"analysis\": {\n        \"category\": \"ajar\",\n        \"score\": 0.8,\n        \"reason\": \"A cabinet door under the counter is slightly open or ajar.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        383,\n        138,\n        500,\n        219\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.75,\n        \"reason\": \"The open shelf/cabinet area contains several small, loosely placed objects, indicating clutter.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        300,\n        289,\n        383,\n        485\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.7,\n        \"reason\": \"The top of the counter/divider is cluttered with various objects, including boxes and a monitor/screen.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          299,
+          183,
+          479,
+          424
+        ],
+        "analysis": {
+          "category": "ajar",
+          "score": 0.8,
+          "reason": "A cabinet door under the counter is slightly open or ajar."
+        }
+      },
+      {
+        "bbox_2d": [
+          383,
+          138,
+          500,
+          219
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.75,
+          "reason": "The open shelf/cabinet area contains several small, loosely placed objects, indicating clutter."
+        }
+      },
+      {
+        "bbox_2d": [
+          300,
+          289,
+          383,
+          485
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.7,
+          "reason": "The top of the counter/divider is cluttered with various objects, including boxes and a monitor/screen."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T01:07:58",
+  "timestamp_ros": "1766765278.620232"
+}

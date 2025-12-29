@@ -1,0 +1,76 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [287, 137, 545, 273],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.85,\n        \"reason\": \"The dish rack area is cluttered with various dishes, utensils, and cleaning supplies.\"\n      }\n    },\n    {\n      \"bbox_2d\": [499, 14, 589, 114],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.75,\n        \"reason\": \"The sink area is cluttered with bottles of cleaning supplies and other items.\"\n      }\n    },\n    {\n      \"bbox_2d\": [587, 363, 679, 497],\n      \"analysis\": {\n        \"category\": \"wet\",\n        \"score\": 0.9,\n        \"reason\": \"There is a visible spill of liquid on the wooden tabletop surface.\"\n      }\n    },\n    {\n      \"bbox_2d\": [603, 558, 818, 676],\n      \"analysis\": {\n        \"category\": \"about to fall\",\n        \"score\": 0.4,\n        \"reason\": \"The mug is lying on its side, which is an unstable position, although it is currently resting on the table.\"\n      }\n    },\n    {\n      \"bbox_2d\": [337, 169, 521, 269],\n      \"analysis\": {\n        \"category\": \"stacked\",\n        \"score\": 0.8,\n        \"reason\": \"Dishes and cups are stacked on the shelves of the dish drying rack.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          287,
+          137,
+          545,
+          273
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.85,
+          "reason": "The dish rack area is cluttered with various dishes, utensils, and cleaning supplies."
+        }
+      },
+      {
+        "bbox_2d": [
+          499,
+          14,
+          589,
+          114
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.75,
+          "reason": "The sink area is cluttered with bottles of cleaning supplies and other items."
+        }
+      },
+      {
+        "bbox_2d": [
+          587,
+          363,
+          679,
+          497
+        ],
+        "analysis": {
+          "category": "wet",
+          "score": 0.9,
+          "reason": "There is a visible spill of liquid on the wooden tabletop surface."
+        }
+      },
+      {
+        "bbox_2d": [
+          603,
+          558,
+          818,
+          676
+        ],
+        "analysis": {
+          "category": "about to fall",
+          "score": 0.4,
+          "reason": "The mug is lying on its side, which is an unstable position, although it is currently resting on the table."
+        }
+      },
+      {
+        "bbox_2d": [
+          337,
+          169,
+          521,
+          269
+        ],
+        "analysis": {
+          "category": "stacked",
+          "score": 0.8,
+          "reason": "Dishes and cups are stacked on the shelves of the dish drying rack."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T04:22:07",
+  "timestamp_ros": "1766776927.285919"
+}

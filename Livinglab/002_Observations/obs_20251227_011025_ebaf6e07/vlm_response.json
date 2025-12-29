@@ -1,0 +1,50 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        431,\n        64,\n        994,\n        429\n      ],\n      \"analysis\": {\n        \"category\": \"ajar\",\n        \"score\": 0.95,\n        \"reason\": \"The cabinet doors beneath the sink are open, meaning they are ajar.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        292,\n        205,\n        434,\n        617\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.8,\n        \"reason\": \"Multiple objects (monitor, boxes, white goods) are piled up on the counter surface.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        344,\n        229,\n        433,\n        375\n      ],\n      \"analysis\": {\n        \"category\": \"stacked\",\n        \"score\": 0.7,\n        \"reason\": \"There are small boxes stacked on top of each other behind the monitor.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          431,
+          64,
+          994,
+          429
+        ],
+        "analysis": {
+          "category": "ajar",
+          "score": 0.95,
+          "reason": "The cabinet doors beneath the sink are open, meaning they are ajar."
+        }
+      },
+      {
+        "bbox_2d": [
+          292,
+          205,
+          434,
+          617
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.8,
+          "reason": "Multiple objects (monitor, boxes, white goods) are piled up on the counter surface."
+        }
+      },
+      {
+        "bbox_2d": [
+          344,
+          229,
+          433,
+          375
+        ],
+        "analysis": {
+          "category": "stacked",
+          "score": 0.7,
+          "reason": "There are small boxes stacked on top of each other behind the monitor."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T01:10:34",
+  "timestamp_ros": "1766765434.5635216"
+}

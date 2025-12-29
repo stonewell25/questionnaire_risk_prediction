@@ -1,0 +1,50 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        771,\n        584,\n        965,\n        646\n      ],\n      \"analysis\": {\n        \"category\": \"on fire\",\n        \"score\": 0.9,\n        \"reason\": \"The space heater is turned on, indicated by the glowing red heating element, which fits the definition of an object being 'turned on fire' (like a candle).\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        290,\n        14,\n        455,\n        256\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.5,\n        \"reason\": \"A small wooden shelf unit is present, and while not heavily piled, the presence of items (likely on the shelves, though obscured) and the general untidiness of the area around the bed suggests a mild state of clutter.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        278,\n        143,\n        473,\n        848\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.6,\n        \"reason\": \"The window sill/countertop is cluttered with various small objects and cables, particularly visible near the center and left.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          771,
+          584,
+          965,
+          646
+        ],
+        "analysis": {
+          "category": "on fire",
+          "score": 0.9,
+          "reason": "The space heater is turned on, indicated by the glowing red heating element, which fits the definition of an object being 'turned on fire' (like a candle)."
+        }
+      },
+      {
+        "bbox_2d": [
+          290,
+          14,
+          455,
+          256
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.5,
+          "reason": "A small wooden shelf unit is present, and while not heavily piled, the presence of items (likely on the shelves, though obscured) and the general untidiness of the area around the bed suggests a mild state of clutter."
+        }
+      },
+      {
+        "bbox_2d": [
+          278,
+          143,
+          473,
+          848
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.6,
+          "reason": "The window sill/countertop is cluttered with various small objects and cables, particularly visible near the center and left."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T00:56:33",
+  "timestamp_ros": "1766764593.0687559"
+}

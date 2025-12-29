@@ -1,0 +1,37 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        275,\n        506,\n        695,\n        988\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.85,\n        \"reason\": \"Multiple objects (coffee maker, milk frother, grinder, knife, cutting board, cloth) are placed on the counter surface, making it cluttered.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        642,\n        569,\n        878,\n        849\n      ],\n      \"analysis\": {\n        \"category\": \"about to fall\",\n        \"score\": 0.55,\n        \"reason\": \"A large knife is placed on a cutting board with its handle near the edge of the counter, posing a slight risk of being knocked off or falling if the counter is bumped.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          275,
+          506,
+          695,
+          988
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.85,
+          "reason": "Multiple objects (coffee maker, milk frother, grinder, knife, cutting board, cloth) are placed on the counter surface, making it cluttered."
+        }
+      },
+      {
+        "bbox_2d": [
+          642,
+          569,
+          878,
+          849
+        ],
+        "analysis": {
+          "category": "about to fall",
+          "score": 0.55,
+          "reason": "A large knife is placed on a cutting board with its handle near the edge of the counter, posing a slight risk of being knocked off or falling if the counter is bumped."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T04:29:34",
+  "timestamp_ros": "1766777374.1748497"
+}

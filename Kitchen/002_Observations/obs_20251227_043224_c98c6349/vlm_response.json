@@ -1,0 +1,63 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        28,\n        0,\n        651,\n        251\n      ],\n      \"analysis\": {\n        \"category\": \"stacked\",\n        \"score\": 0.9,\n        \"reason\": \"Mugs and cups are stacked on top of each other in the drying rack.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        677,\n        0,\n        839,\n        188\n      ],\n      \"analysis\": {\n        \"category\": \"stacked\",\n        \"score\": 0.95,\n        \"reason\": \"Plates are stacked on top of each other on the countertop.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        680,\n        211,\n        835,\n        345\n      ],\n      \"analysis\": {\n        \"category\": \"stacked\",\n        \"score\": 0.85,\n        \"reason\": \"Bowls are stacked on top of each other on the countertop.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        642,\n        322,\n        889,\n        697\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.7,\n        \"reason\": \"The countertop surface has multiple objects (bowls, cloth, pot, water filter, pitcher) placed on it, indicating a cluttered state.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          28,
+          0,
+          651,
+          251
+        ],
+        "analysis": {
+          "category": "stacked",
+          "score": 0.9,
+          "reason": "Mugs and cups are stacked on top of each other in the drying rack."
+        }
+      },
+      {
+        "bbox_2d": [
+          677,
+          0,
+          839,
+          188
+        ],
+        "analysis": {
+          "category": "stacked",
+          "score": 0.95,
+          "reason": "Plates are stacked on top of each other on the countertop."
+        }
+      },
+      {
+        "bbox_2d": [
+          680,
+          211,
+          835,
+          345
+        ],
+        "analysis": {
+          "category": "stacked",
+          "score": 0.85,
+          "reason": "Bowls are stacked on top of each other on the countertop."
+        }
+      },
+      {
+        "bbox_2d": [
+          642,
+          322,
+          889,
+          697
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.7,
+          "reason": "The countertop surface has multiple objects (bowls, cloth, pot, water filter, pitcher) placed on it, indicating a cluttered state."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T04:32:33",
+  "timestamp_ros": "1766777553.3543212"
+}

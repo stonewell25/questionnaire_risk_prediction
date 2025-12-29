@@ -1,0 +1,50 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        268,\n        281,\n        433,\n        632\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.85,\n        \"reason\": \"The counter surface behind the sink area is cluttered with monitors, boxes, and other miscellaneous items.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        484,\n        179,\n        963,\n        597\n      ],\n      \"analysis\": {\n        \"category\": \"ajar\",\n        \"score\": 0.95,\n        \"reason\": \"The cabinet doors and a drawer beneath the sink are open (ajar).\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        484,\n        467,\n        963,\n        597\n      ],\n      \"analysis\": {\n        \"category\": \"ajar\",\n        \"score\": 0.9,\n        \"reason\": \"The cabinet door on the right side of the sink unit is open (ajar).\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          268,
+          281,
+          433,
+          632
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.85,
+          "reason": "The counter surface behind the sink area is cluttered with monitors, boxes, and other miscellaneous items."
+        }
+      },
+      {
+        "bbox_2d": [
+          484,
+          179,
+          963,
+          597
+        ],
+        "analysis": {
+          "category": "ajar",
+          "score": 0.95,
+          "reason": "The cabinet doors and a drawer beneath the sink are open (ajar)."
+        }
+      },
+      {
+        "bbox_2d": [
+          484,
+          467,
+          963,
+          597
+        ],
+        "analysis": {
+          "category": "ajar",
+          "score": 0.9,
+          "reason": "The cabinet door on the right side of the sink unit is open (ajar)."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T01:10:53",
+  "timestamp_ros": "1766765453.2544012"
+}

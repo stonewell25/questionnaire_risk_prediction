@@ -1,0 +1,50 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        550,\n        345,\n        617,\n        450\n      ],\n      \"analysis\": {\n        \"category\": \"about to fall\",\n        \"score\": 0.9,\n        \"reason\": \"The mug is lying on its side on the table, indicating it has fallen or is in a highly unstable position, likely to roll or fall off the edge.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        560,\n        370,\n        610,\n        460\n      ],\n      \"analysis\": {\n        \"category\": \"wet\",\n        \"score\": 0.95,\n        \"reason\": \"There is a clear puddle of liquid on the wooden table surface, indicating the surface is wet.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        737,\n        867,\n        999,\n        999\n      ],\n      \"analysis\": {\n        \"category\": \"stacked\",\n        \"score\": 0.8,\n        \"reason\": \"There are objects (boxes/papers) stacked on the lower shelf of the white shelving unit.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          550,
+          345,
+          617,
+          450
+        ],
+        "analysis": {
+          "category": "about to fall",
+          "score": 0.9,
+          "reason": "The mug is lying on its side on the table, indicating it has fallen or is in a highly unstable position, likely to roll or fall off the edge."
+        }
+      },
+      {
+        "bbox_2d": [
+          560,
+          370,
+          610,
+          460
+        ],
+        "analysis": {
+          "category": "wet",
+          "score": 0.95,
+          "reason": "There is a clear puddle of liquid on the wooden table surface, indicating the surface is wet."
+        }
+      },
+      {
+        "bbox_2d": [
+          737,
+          867,
+          999,
+          999
+        ],
+        "analysis": {
+          "category": "stacked",
+          "score": 0.8,
+          "reason": "There are objects (boxes/papers) stacked on the lower shelf of the white shelving unit."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T04:28:49",
+  "timestamp_ros": "1766777329.8708763"
+}

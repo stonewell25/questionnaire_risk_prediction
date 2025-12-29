@@ -1,0 +1,63 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        299,\n        138,\n        700,\n        753\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.85,\n        \"reason\": \"The table surface is cluttered with various objects like a laptop, books, crumpled paper, an open book, scissors, and correction tape.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        595,\n        497,\n        642,\n        550\n      ],\n      \"analysis\": {\n        \"category\": \"about to fall\",\n        \"score\": 0.6,\n        \"reason\": \"The scissors are positioned very close to the edge of the table, making them susceptible to being knocked off.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        485,\n        307,\n        707,\n        580\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.8,\n        \"reason\": \"The area around the open book and laptop shows several items (crumpled paper, open book, laptop) piled up on the table surface.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        483,\n        286,\n        620,\n        353\n      ],\n      \"analysis\": {\n        \"category\": \"stacked\",\n        \"score\": 0.9,\n        \"reason\": \"Two books/notebooks are stacked vertically against the wall.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          299,
+          138,
+          700,
+          753
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.85,
+          "reason": "The table surface is cluttered with various objects like a laptop, books, crumpled paper, an open book, scissors, and correction tape."
+        }
+      },
+      {
+        "bbox_2d": [
+          595,
+          497,
+          642,
+          550
+        ],
+        "analysis": {
+          "category": "about to fall",
+          "score": 0.6,
+          "reason": "The scissors are positioned very close to the edge of the table, making them susceptible to being knocked off."
+        }
+      },
+      {
+        "bbox_2d": [
+          485,
+          307,
+          707,
+          580
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.8,
+          "reason": "The area around the open book and laptop shows several items (crumpled paper, open book, laptop) piled up on the table surface."
+        }
+      },
+      {
+        "bbox_2d": [
+          483,
+          286,
+          620,
+          353
+        ],
+        "analysis": {
+          "category": "stacked",
+          "score": 0.9,
+          "reason": "Two books/notebooks are stacked vertically against the wall."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T01:01:16",
+  "timestamp_ros": "1766764876.7106864"
+}

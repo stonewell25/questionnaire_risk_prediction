@@ -1,0 +1,63 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        318,\n        715,\n        438,\n        857\n      ],\n      \"analysis\": {\n        \"category\": \"stacked\",\n        \"score\": 0.9,\n        \"reason\": \"Cardboard boxes are stacked on top of each other on the counter.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        430,\n        187,\n        648,\n        576\n      ],\n      \"analysis\": {\n        \"category\": \"ajar\",\n        \"score\": 0.95,\n        \"reason\": \"The cabinet door under the sink is ajar (open).\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        673,\n        463,\n        999,\n        576\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.85,\n        \"reason\": \"The inside of the open cabinet is cluttered with various items and materials.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        383,\n        747,\n        440,\n        854\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.75,\n        \"reason\": \"The counter surface is cluttered with various objects including boxes and gloves.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          318,
+          715,
+          438,
+          857
+        ],
+        "analysis": {
+          "category": "stacked",
+          "score": 0.9,
+          "reason": "Cardboard boxes are stacked on top of each other on the counter."
+        }
+      },
+      {
+        "bbox_2d": [
+          430,
+          187,
+          648,
+          576
+        ],
+        "analysis": {
+          "category": "ajar",
+          "score": 0.95,
+          "reason": "The cabinet door under the sink is ajar (open)."
+        }
+      },
+      {
+        "bbox_2d": [
+          673,
+          463,
+          999,
+          576
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.85,
+          "reason": "The inside of the open cabinet is cluttered with various items and materials."
+        }
+      },
+      {
+        "bbox_2d": [
+          383,
+          747,
+          440,
+          854
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.75,
+          "reason": "The counter surface is cluttered with various objects including boxes and gloves."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T01:10:01",
+  "timestamp_ros": "1766765401.6536162"
+}

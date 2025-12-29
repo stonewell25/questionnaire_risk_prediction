@@ -1,0 +1,50 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        276,\n        503,\n        617,\n        805\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.7,\n        \"reason\": \"Multiple objects (coffee maker, dispenser, milk frother, and a cloth/mat) are placed close together on the counter surface.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        642,\n        537,\n        886,\n        1000\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.6,\n        \"reason\": \"A knife is placed on a cutting board on the wooden counter, contributing to the general clutter of the workspace.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        680,\n        537,\n        849,\n        747\n      ],\n      \"analysis\": {\n        \"category\": \"about to fall\",\n        \"score\": 0.55,\n        \"reason\": \"A knife is placed on a cutting board with its handle resting on the board and the blade extending over the edge of the counter, making it susceptible to being knocked off or falling.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          276,
+          503,
+          617,
+          805
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.7,
+          "reason": "Multiple objects (coffee maker, dispenser, milk frother, and a cloth/mat) are placed close together on the counter surface."
+        }
+      },
+      {
+        "bbox_2d": [
+          642,
+          537,
+          886,
+          1000
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.6,
+          "reason": "A knife is placed on a cutting board on the wooden counter, contributing to the general clutter of the workspace."
+        }
+      },
+      {
+        "bbox_2d": [
+          680,
+          537,
+          849,
+          747
+        ],
+        "analysis": {
+          "category": "about to fall",
+          "score": 0.55,
+          "reason": "A knife is placed on a cutting board with its handle resting on the board and the blade extending over the edge of the counter, making it susceptible to being knocked off or falling."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T04:29:22",
+  "timestamp_ros": "1766777362.034893"
+}

@@ -1,0 +1,50 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        638,\n        143,\n        727,\n        345\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.85,\n        \"reason\": \"Crumpled paper and loose documents are piled up on the desk surface.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        513,\n        143,\n        726,\n        808\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.75,\n        \"reason\": \"Multiple unrelated objects (laptop, books, crumpled paper, open book, scissors, correction tape, plant) are scattered across the desk surface.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        513,\n        289,\n        664,\n        383\n      ],\n      \"analysis\": {\n        \"category\": \"stacked\",\n        \"score\": 0.9,\n        \"reason\": \"Two books are stacked on top of each other, leaning against the wall.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          638,
+          143,
+          727,
+          345
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.85,
+          "reason": "Crumpled paper and loose documents are piled up on the desk surface."
+        }
+      },
+      {
+        "bbox_2d": [
+          513,
+          143,
+          726,
+          808
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.75,
+          "reason": "Multiple unrelated objects (laptop, books, crumpled paper, open book, scissors, correction tape, plant) are scattered across the desk surface."
+        }
+      },
+      {
+        "bbox_2d": [
+          513,
+          289,
+          664,
+          383
+        ],
+        "analysis": {
+          "category": "stacked",
+          "score": 0.9,
+          "reason": "Two books are stacked on top of each other, leaning against the wall."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T01:00:30",
+  "timestamp_ros": "1766764830.6619496"
+}

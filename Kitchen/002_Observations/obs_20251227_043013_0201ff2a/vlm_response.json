@@ -1,0 +1,50 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        342,\n        0,\n        617,\n        340\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.85,\n        \"reason\": \"Multiple objects (coffee machine, milk dispenser, frother) are clustered together on a small area of the counter/table, indicating a cluttered state.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        478,\n        229,\n        588,\n        450\n      ],\n      \"analysis\": {\n        \"category\": \"wet\",\n        \"score\": 0.6,\n        \"reason\": \"There appears to be a damp or wet area on the paper towel/mat under the coffee machine/dispenser, suggesting liquid spillage.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        642,\n        463,\n        1000,\n        618\n      ],\n      \"analysis\": {\n        \"category\": \"about to fall\",\n        \"score\": 0.75,\n        \"reason\": \"A knife is placed on a cutting board with a significant portion of its blade hanging over the edge of the table, making it precariously positioned and likely to fall if disturbed.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          342,
+          0,
+          617,
+          340
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.85,
+          "reason": "Multiple objects (coffee machine, milk dispenser, frother) are clustered together on a small area of the counter/table, indicating a cluttered state."
+        }
+      },
+      {
+        "bbox_2d": [
+          478,
+          229,
+          588,
+          450
+        ],
+        "analysis": {
+          "category": "wet",
+          "score": 0.6,
+          "reason": "There appears to be a damp or wet area on the paper towel/mat under the coffee machine/dispenser, suggesting liquid spillage."
+        }
+      },
+      {
+        "bbox_2d": [
+          642,
+          463,
+          1000,
+          618
+        ],
+        "analysis": {
+          "category": "about to fall",
+          "score": 0.75,
+          "reason": "A knife is placed on a cutting board with a significant portion of its blade hanging over the edge of the table, making it precariously positioned and likely to fall if disturbed."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T04:30:22",
+  "timestamp_ros": "1766777422.7576182"
+}

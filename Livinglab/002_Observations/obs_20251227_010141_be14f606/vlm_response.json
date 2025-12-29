@@ -1,0 +1,50 @@
+{
+  "raw_text": "```json\n{\n  \"detected_regions\": [\n    {\n      \"bbox_2d\": [\n        529,\n        159,\n        946,\n        896\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.85,\n        \"reason\": \"The desk surface is cluttered with various objects including a laptop, books, crumpled paper, a plant, and scissors.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        731,\n        159,\n        946,\n        450\n      ],\n      \"analysis\": {\n        \"category\": \"cluttered\",\n        \"score\": 0.9,\n        \"reason\": \"A significant pile of crumpled and loose papers is spread out on the desk surface.\"\n      }\n    },\n    {\n      \"bbox_2d\": [\n        529,\n        159,\n        731,\n        289\n      ],\n      \"analysis\": {\n        \"category\": \"stacked\",\n        \"score\": 0.75,\n        \"reason\": \"Two books are stacked or leaning against each other on the desk.\"\n      }\n    }\n  ]\n}\n```",
+  "parsed": {
+    "detected_regions": [
+      {
+        "bbox_2d": [
+          529,
+          159,
+          946,
+          896
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.85,
+          "reason": "The desk surface is cluttered with various objects including a laptop, books, crumpled paper, a plant, and scissors."
+        }
+      },
+      {
+        "bbox_2d": [
+          731,
+          159,
+          946,
+          450
+        ],
+        "analysis": {
+          "category": "cluttered",
+          "score": 0.9,
+          "reason": "A significant pile of crumpled and loose papers is spread out on the desk surface."
+        }
+      },
+      {
+        "bbox_2d": [
+          529,
+          159,
+          731,
+          289
+        ],
+        "analysis": {
+          "category": "stacked",
+          "score": 0.75,
+          "reason": "Two books are stacked or leaning against each other on the desk."
+        }
+      }
+    ]
+  },
+  "model": "gemini-2.5-flash-preview-09-2025",
+  "topic_id": "cluster_0",
+  "timestamp": "2025-12-27T01:01:48",
+  "timestamp_ros": "1766764908.9459133"
+}
