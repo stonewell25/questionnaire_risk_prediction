@@ -40,7 +40,7 @@ python3 -m http.server 8000
 npx serve .
 ```
 
-ブラウザで `http://localhost:8001/risk_evaluation_survey.html` を開く
+ブラウザで `http://localhost:8001/index.html` を開く
 
 ### 2. Google Spreadsheet連携の設定
 
