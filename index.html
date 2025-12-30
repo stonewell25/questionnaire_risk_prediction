@@ -1652,6 +1652,10 @@
       }
       document.getElementById('progress-text').textContent = progressText;
 
+      // バリデーション状態をリセット
+      skipValidationEnabled = false;
+      skipValidationClickCount = 0;
+
       // LivingLabの場合は元のprediction_idを計算
       let predictionId = imageId;
       if (basePath === 'LivingLab') {
@@ -1867,6 +1871,9 @@
 
         const reason = agentData.updated_reason_01 || agentData.risk_reason;
         if (!reason) continue;
+
+        // タスク計画が存在しない場合はスキップ（表示されていないため）
+        if (!taskPlan[agentKey]) continue;
 
         // name属性を 'task-agree-...' と 'task-thought-...' に変更しています
         const agreeInput = document.querySelector(`input[name="task-agree-${imageId}-${agentKey}"]:checked`);
