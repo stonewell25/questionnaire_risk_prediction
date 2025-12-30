@@ -2005,11 +2005,11 @@
       const statusDiv = document.getElementById('spreadsheet-status');
 
       btn.disabled = true;
-      btn.textContent = '送信中...';
+      btn.textContent = 'sending...';
       statusDiv.style.display = 'block';
       statusDiv.style.backgroundColor = '#fff3cd';
       statusDiv.style.color = '#856404';
-      statusDiv.textContent = 'Google Spreadsheetに送信中...';
+      statusDiv.textContent = 'Sending...';
 
       try {
         // Validityデータ (Phase 1)
@@ -2083,15 +2083,15 @@
             await new Promise(resolve => setTimeout(resolve, 2000));
             statusDiv.style.backgroundColor = '#fff3cd';
             statusDiv.style.color = '#856404';
-            statusDiv.innerHTML = `✅送信しました<br><small>Validity: ${validityData.length}件, Task: ${taskPlanningDataForSpreadsheet.length}件</small>`;
-            btn.textContent = '✅ 送信完了';
+            statusDiv.innerHTML = `✅Finished!<br><small>Validity: ${validityData.length}件, Task: ${taskPlanningDataForSpreadsheet.length}件</small>`;
+            btn.textContent = '✅ Send Complete';
             const warningText = document.getElementById('warning-text');
             if (warningText) {
-              warningText.innerHTML = '送信が完了しました！そのまま画面を閉じてください';
+              warningText.innerHTML = 'Send Complete! Please close the page';
               warningText.style.color = '#137333'; // Green color
             }
           } catch (noCorsError) {
-            throw new Error(`送信失敗: ${noCorsError.message}`);
+            throw new Error(`Send failed: ${noCorsError.message}`);
           }
           return;
         }
@@ -2101,10 +2101,10 @@
           if (result.success) {
             statusDiv.style.backgroundColor = '#d4edda';
             statusDiv.style.color = '#155724';
-            statusDiv.innerHTML = `✅ 送信成功！<br><small>参加者: ${result.participant}<br>Validity: ${validityData.length}件<br>Task: ${taskPlanningDataForSpreadsheet.length}件</small>`;
-            btn.textContent = '✅ 送信完了';
+            statusDiv.innerHTML = `✅ Send Success!<br><small>Participant: ${result.participant}<br>Validity: ${validityData.length}件<br>Task: ${taskPlanningDataForSpreadsheet.length}件</small>`;
+            btn.textContent = '✅ Send Complete';
           } else {
-            throw new Error(result.error || '送信失敗');
+            throw new Error(result.error || 'Send failed');
           }
         } else {
           throw new Error(`HTTPエラー: ${response.status}`);
@@ -2166,11 +2166,11 @@
 
       // ボタンを無効化
       btn.disabled = true;
-      btn.textContent = '送信中...';
+      btn.textContent = 'Sending...';
       statusDiv.style.display = 'block';
       statusDiv.style.backgroundColor = '#fff3cd';
       statusDiv.style.color = '#856404';
-      statusDiv.textContent = 'Google Spreadsheetに送信中...';
+      statusDiv.textContent = 'Sending to Google Spreadsheet...';
 
       try {
         // データをGoogle Apps Scriptが期待する形式に変換
@@ -2252,12 +2252,12 @@
             // 成功メッセージ（no-cors）
             statusDiv.style.backgroundColor = '#fff3cd';
             statusDiv.style.color = '#856404';
-            statusDiv.innerHTML = `✅送信しました<br><small>Validity: ${validityData.length}件, Task: ${taskPlanningDataForSpreadsheet.length}件</small>`;
-            btn.textContent = '✅ 送信完了';
+            statusDiv.innerHTML = `✅Send<br><small>Validity: ${validityData.length}件, Task: ${taskPlanningDataForSpreadsheet.length}件</small>`;
+            btn.textContent = '✅ Send Complete';
 
             const warningText = document.getElementById('warning-text');
             if (warningText) {
-              warningText.innerHTML = '送信が完了しました！そのまま画面を閉じてください';
+              warningText.innerHTML = 'Send Complete! Please close the page';
               warningText.style.color = '#137333'; // Green color
             }
           } catch (noCorsError) {
@@ -2278,11 +2278,11 @@
             // 成功メッセージを表示
             statusDiv.style.backgroundColor = '#d4edda';
             statusDiv.style.color = '#155724';
-            statusDiv.innerHTML = `✅ 送信成功！<br><small>参加者: ${result.participant || surveyData.participant.name}<br>Validity評価: ${result.validityCount || validityData.length}件<br>Task評価: ${taskPlanningDataForSpreadsheet.length}件</small>`;
-            btn.textContent = '✅ 送信完了';
+            statusDiv.innerHTML = `✅ Send Success!<br><small>Participant: ${result.participant || surveyData.participant.name}<br>Validity: ${result.validityCount || validityData.length}<br>Task: ${taskPlanningDataForSpreadsheet.length}</small>`;
+            btn.textContent = '✅ Send Complete';
             const warningText = document.getElementById('warning-text');
             if (warningText) {
-              warningText.innerHTML = '送信が完了しました！そのまま画面を閉じてください';
+              warningText.innerHTML = 'Send Complete! Please close the page';
               warningText.style.color = '#137333'; // Green color
             }
           } else {
@@ -2299,7 +2299,7 @@
         console.error('送信エラー詳細:', error);
         statusDiv.style.backgroundColor = '#f8d7da';
         statusDiv.style.color = '#721c24';
-        statusDiv.innerHTML = `❌ 送信エラー: ${error.message}<br><small>送信データ: ${validityData.length}件のValidity評価, ${taskPlanningDataForSpreadsheet.length}件のTask評価<br>エンドポイント: ${endpoint}<br><br>トラブルシューティング:<br>1. Google Apps Scriptのデプロイ設定を確認してください<br>2. ブラウザのコンソール（F12）でエラー詳細を確認してください<br>3. Google Apps Scriptの実行ログを確認してください<br>4. CSVまたはJSONでダウンロードして、手動でSpreadsheetにコピーしてください</small>`;
+        statusDiv.innerHTML = `❌ Send Error: ${error.message}<br><small>送信データ: ${validityData.length}件のValidity評価, ${taskPlanningDataForSpreadsheet.length}件のTask評価<br>エンドポイント: ${endpoint}<br><br>トラブルシューティング:<br>1. Google Apps Scriptのデプロイ設定を確認してください<br>2. ブラウザのコンソール（F12）でエラー詳細を確認してください<br>3. Google Apps Scriptの実行ログを確認してください<br>4. CSVまたはJSONでダウンロードして、手動でSpreadsheetにコピーしてください</small>`;
         btn.disabled = false;
         btn.textContent = '📊 Google Spreadsheetに送信';
       }
@@ -2521,7 +2521,7 @@
       const timer = setInterval(() => {
         const idx = Math.floor(Math.random() * OMIKUJI_RESULTS.length);
         const res = OMIKUJI_RESULTS[idx];
-        resultEl.textContent = `抽選中... 【${res.title}】 ${res.message}`;
+        resultEl.textContent = `Lottery... 【${res.title}】 ${res.message}`;
         count++;
 
         if (count >= maxCount) {
@@ -2529,7 +2529,7 @@
           // 最終結果を決定
           const finalIdx = Math.floor(Math.random() * OMIKUJI_RESULTS.length);
           const finalRes = OMIKUJI_RESULTS[finalIdx];
-          resultEl.innerHTML = `<span style="font-size: 1.2em; font-weight: bold; color: #e37400;">🎉 結果: ${finalRes.message}</span>`;
+          resultEl.innerHTML = `<span style="font-size: 1.2em; font-weight: bold; color: #e37400;">🎉 Result: ${finalRes.message}</span>`;
           if (noteEl) {
             noteEl.style.display = 'block';
           }
